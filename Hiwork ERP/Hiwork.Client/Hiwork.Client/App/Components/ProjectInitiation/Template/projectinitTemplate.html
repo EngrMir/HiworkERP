@@ -1,0 +1,65 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="fa fa-close pull-right" ng-click="$ctrl.Close()"></button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="projectInitForm">
+            <div class="form-group">
+                <div class="col-md-3"><span>Project No:</span></div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" ng-model="$ctrl.modalData.ProjectNo" readonly />
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3"><span>Project Name:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="Name" class="form-control"
+                           ng-model="$ctrl.modalData.Name"  required/>
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <span>Description:</span>
+                </div>
+                <div class="col-md-9">
+                    <textarea id="description" name="description" class="form-control" ng-model="$ctrl.modalData.Description" ng-class="{'invalid-input':isTryToSend && projectInitForm.description.$error.required}"></textarea>
+                </div>
+            </div>
+             <div class="clearfix" style="height:3px;"></div>
+            <div class="table-responsive">
+                <table st-table="$ctrl.dataList" id="smartTable" class="table table-striped table-hover">
+                    <thead class="bg-light-blue">
+                        <tr>
+                            <th>
+                                <input type="checkbox" ng-click="$ctrl.allItemsSelectionChanged(this)"  id="allselect"/>  <!--ng-change="$ctrl.allItemsSelectionChanged()"-->
+                            </th>
+                            <th>Estimation No</th>
+                            <th>Company</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in  $ctrl.dataList">
+                            <td>
+                                <input  type="checkbox"  ng-click="$ctrl.addEstimation(item.ID)"  id="@item.ID" /> <!--ng-model="$ctrl.IsSelected" -->
+                            </td>
+                            <td style="cursor:pointer;">{{item.EstimationNo}}</td>
+                            <td>{{item.ClientName}}</td>
+                            <td>{{item.RegistrationDate  | date : "dd-MM-yyyy" }}</td>
+                            <td>{{item.EstimationStatusName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer" ng-hide="$ctrl.isReadOnly == true">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.Save()" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

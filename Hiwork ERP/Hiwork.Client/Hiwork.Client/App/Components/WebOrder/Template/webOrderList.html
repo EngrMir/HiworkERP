@@ -1,0 +1,196 @@
+﻿
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Search Module
+        </h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary" ng-click="vm.goForSearch()">Search</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Clear</button>
+                    </div>
+					<div class="clearfix"></div>
+					<div class="clearfix" style="height: 3px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+									<div class="form-group">
+										<div class="col-sm-3">
+											Estimation No
+											<input type="text" style="" placeholder="" class="form-control" ng-model="vm.EstimationNo">
+										</div>
+										
+										<div class="col-sm-3">
+											Company Type
+											 <select id="selectUnit" class="form-control"
+                                                        ng-model="vm.CompanyTypeID"
+                                                        ng-change="vm.UpdateUnitPriceByUnit()"
+                                                        ng-options="r.ID as r.Name for r in ::vm.CompanyList">
+                                                    <option value="" selected="selected">Select Company Type</option>
+                                                </select>
+										</div>
+										<div class="col-sm-3">
+											Introducer No
+											<input type="text" style="" placeholder="" class="form-control" ng-model="vm.IntroducerNo">
+										</div>
+										
+										<div class="col-sm-3" style="margin-top:20px" >
+											<input type="text" style="" placeholder="" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="clearfix" style="height: 3px;"></div>
+									<div class="form-group">
+										<div class="col-sm-3">
+											Language
+											<select id="selectSourceLang" class="form-control"
+                                                        ng-model="vm.SourceLanguageID"
+                                                        ng-change="vm.UpdateUnitPrice(item)"
+                                                        ng-options="r.ID as r.Name for r in ::vm.languages">
+
+                                                    <option value="" selected="selected" disabled="disabled">Select Source Language</option>
+                                                </select>
+										</div>
+									
+										<div class="col-sm-3" style="margin-top:20px">
+											
+											<select id="selectSourceLang" class="form-control"
+                                                        ng-model="vm.TargetLanguageID"
+                                                        ng-change="vm.UpdateUnitPrice(item)"
+                                                        ng-options="r.ID as r.Name for r in ::vm.languages">
+                                                    <option value="" selected="selected" disabled="disabled">Select Target Language</option>
+                                                </select>
+										</div>
+										<div class="col-sm-3">
+											Customer No
+											<input type="text" style="" placeholder="" class="form-control" ng-model="vm.CustomerNo">
+										</div>
+										
+										<div class="col-sm-3" style="margin-top:20px">
+											<input type="text" style="" placeholder="" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="clearfix" style="height: 3px;"></div>
+								
+									<div class="form-group">
+										<div class="col-sm-3">
+											Registration Date
+											<div class="input-group">
+												   <input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.StartDate" show-weeks="true" is-open="contactFromOpened1" ng-click="contactFromOpened1 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen -->
+											</div><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen -->
+											</div>
+												   <div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen -->
+											</div>
+												   <span class="input-group-btn">
+													<span for="contactDate" class="btn btn-default remove-padding">
+													 <i class="fa fa-calendar"></i>
+													</span>
+												   </span>
+												  </div>
+										</div>
+										<div class="col-sm-3" style="margin-top:20px">
+														
+											<div class="input-group">
+												   <input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.EndDate" show-weeks="true" is-open="contactFromOpened2" ng-click="contactFromOpened2 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen -->
+											</div><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen -->
+											</div>
+												   <div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen -->
+											</div>
+												   <span class="input-group-btn">
+													<span for="contactDate" class="btn btn-default remove-padding">
+													 <i class="fa fa-calendar"></i>
+													</span>
+												   </span>
+											</div>		  
+																								   
+													   
+													   
+										</div>
+										<div class="col-sm-3">
+											Translation No
+											<input type="text" style="" placeholder="" class="form-control" ng-model="vm.TranslatorNo">
+										</div>
+										
+										<div class="col-sm-3" style="margin-top:20px">
+											<input type="text" style="" placeholder="" class="form-control">
+										</div>
+									</div>
+								
+                                </div>							
+                            </div>
+                            
+                             </div>
+                        </div>
+                        
+                    </div>          
+             </div>
+			 					
+					<div class="col-md-4 thumbnail">
+						<div class="row">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-primary">Clear</button>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label remove-padding">Level</label>
+								<div class="checkbox thumbnail">
+									<label class="margin-right50"><input type="checkbox" ng-model="vm.IsLight"> Light</label>
+									<label class="margin-right50"><input type="checkbox" ng-model="vm.IsBusiness"> Business</label>
+									<label class="margin-right50"><input type="checkbox" ng-model="vm.IsExpert"> Expert</label>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label remove-padding">Item Status</label>
+								<button class="btn btn-default btn-sm" style="width:100%;" type="button">All</button>
+								<div class="clearfix"></div>
+								<div class="clearfix" style="height: 3px;"></div>
+								<button class="btn btn-default btn-sm" style="width:100%;" type="button">In Operation</button>
+								<div class="clearfix"></div>
+								<div class="clearfix" style="height: 3px;"></div>
+								<button class="btn btn-default btn-sm" style="width:100%;" type="button">Done</button>
+							</div>
+							
+							<div class="col-md-4" >
+								<div class="checkbox" style="border:1px solid #aaa; overflow-y:auto; max-height:120px">
+									<label class="margin-right50"><input type="checkbox"> All</label>
+									<label class="margin-right50"><input type="checkbox"> In operation</label>
+									<label class="margin-right50"><input type="checkbox"> Done</label>
+									<label class="margin-right50"><input type="checkbox"> All</label>
+									<label class="margin-right50"><input type="checkbox"> All</label>
+									<label class="margin-right50"><input type="checkbox"> In operation</label>
+									<label class="margin-right50"><input type="checkbox"> Done</label>
+									<label class="margin-right50"><input type="checkbox"> All</label>
+								</div>
+							</div>
+						</div>
+					</div>
+  
+        </div>
+    </div>
+
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            List Of All Orders
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <div ui-grid="gridOptions" ui-grid-pagination ui-grid-save-state ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-exporter></div>
+        </div>
+    </div>
+</div>
+
+

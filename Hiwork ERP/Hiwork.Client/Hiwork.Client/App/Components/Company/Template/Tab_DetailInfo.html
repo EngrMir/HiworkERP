@@ -1,0 +1,105 @@
+﻿<div role="tabpanel" class="tab-pane active" id="detailed-information">
+    <form class="box-body" ng-submit="saveCompany(2)" name="detailInfo">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+                    <label><input type="checkbox" class="flat" ng-model="vm.IsStopTrading" />{{'STOPTRADING'|translator}}</label>
+                    <label><input type="checkbox" ng-model="vm.IsSharedRecord" />{{'SHARERECORD'|translator}}</label>
+                </div>
+                <div class="form-group">
+                    <label>{{'BUSINESSSUMMERY'|translator}}</label>
+                    <textarea class="form-control"  rows="5" ng-model="vm.BusinessSummary"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>{{'COMPANYINTRODUCTION'|translator}}</label>
+                    <textarea class="form-control" rows="5" ng-model="vm.CompanyIntroduction"></textarea>
+                </div>
+                <div class="form-group">
+                    <label> {{  'IMPRESSIONOFTHECOMPANY'|translator}} </label>
+                    <textarea class="form-control" rows="5" ng-model="vm.CompanyImpression"></textarea>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-6" ng-if="$index <= 1" ng-repeat="companyIndustryClassificationList in industryClassificationChunk">
+                            <div class="form-group" ng-repeat="companyIndustryClassification in companyIndustryClassificationList">
+                                <label>
+                                    <input type="checkbox" class="checkbox pull-left" ng-model="companyIndustryClassification.IsSelected"
+                                           ng-change="companyIndustryClassificationSelectionChanged(companyIndustryClassification)">
+                                    {{companyIndustryClassification.Name}}
+                                </label>
+                                <div class="clearfix"></div>
+                                <div ng-if="companyIndustryClassification.IsOther" class="col-md-12 col-xs-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <ul style="list-style-type:none">
+                                    <li ng-repeat="companyIndustryClassificationItem in companyIndustryClassification.itemList">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" ng-model="companyIndustryClassificationItem.State.IsSelected"
+                                                   ng-change="companyIndustryClassificationItemSelectionChanged(companyIndustryClassification, companyIndustryClassificationItem)">
+                                            {{companyIndustryClassificationItem.Name}}
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-md-6 col-sm-6 col-xs-6" ng-if="$index > 1" ng-repeat="companyIndustryClassificationList in industryClassificationChunk">
+                        <div class="form-group" ng-repeat="companyIndustryClassification in companyIndustryClassificationList">
+                            <label>
+                                <input type="checkbox" class="checkbox pull-left" ng-model="companyIndustryClassification.IsSelected"
+                                       ng-change="companyIndustryClassificationSelectionChanged(companyIndustryClassification)">
+                                {{companyIndustryClassification.Name}}
+                            </label>
+                            <div class="clearfix"></div>
+                            <div ng-if="companyIndustryClassification.IsOther" class="col-md-12 col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <ul style="list-style-type:none">
+                                <li ng-repeat="companyIndustryClassificationItem in companyIndustryClassification.itemList">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" ng-model="companyIndustryClassificationItem.State.IsSelected"
+                                               ng-change="companyIndustryClassificationItemSelectionChanged(companyIndustryClassification, companyIndustryClassificationItem)">
+                                        {{companyIndustryClassificationItem.Name}}
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <!--<button class="btn btn-primary" ng-click="SaveCompanyIndustryClassification()">Submit</button>-->
+            <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step" ui-sref="CompanyRegistration.companyInfo">Previous</button></li>
+                <li><button type="submit" class="btn btn-primary next-step">Save and continue</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

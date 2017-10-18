@@ -1,0 +1,341 @@
+﻿<div role="tabpanel" class="tab-pane active" id="sales-record">
+    <form class="box-body" ng-submit="saveCompany(3)" name="companyBasicInfo">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+            <div class="col-lg-8 thumbnail">
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="col-md-10 col-sm-10 col-xs-10 remove-padding">
+                        <p>{{'SALESRECORDREGISTRATION'|translator}}</p>
+                        <div class="form-group col-md-3 col-sm-3 col-xs-3 remove-padding">
+                            <div class="input-group">
+                                <input type="text"
+                                       id="SalesRegistrationDate"
+                                       class="form-control"
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       placeholder="{{'SALESREGISTRATIONDATE'|translator}}"
+                                       min-date="dateFrom"
+                                       max-date="dateTo"
+                                       close-text="Close"
+                                       ng-model="vm.SalesRecordRegDate"
+                                       show-weeks="true"
+                                       is-open="SalesRegistrationDate"
+                                       ng-click="SalesRegistrationDate = true"
+                                       filter-by="placed"
+                                       filter-type="dateFrom"
+                                       ng-blur="gridActions.filter()"
+                                       ng-focus="gridActions.filter()" />
+                                <span class="input-group-btn">
+                                    <label for="SalesRegistrationDate" class="btn btn-default remove-padding">
+                                        <i class="fa fa-calendar"></i>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group">
+
+                                <select name="ActivityType" class="form-control"
+                                        ng-model="vm.ActivityTypeID"
+                                        ng-options="r.ID as r.Name for r in ::vm.ActivityType">
+                                    <option value="" selected="selected" disabled="disabled">{{'TYPEOFACTIVITY'|translator}}</option>
+                                </select>
+
+
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-3 col-xs-3">
+                            <select name="ActivityResultType" class="form-control"
+                                    ng-model="vm.ActivityResultID"
+                                    ng-options="item.Id as item.Name for item in ::vm.ResultofActivity">
+                                <option value="" selected="selected" disabled="disabled">{{'RESULTOFACTIVITY'|translator}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-3 col-xs-3">
+                            <label><input type="checkbox" />{{ 'DELETE'|translator}}</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="button" class="btn  btn-sm btn-block" value="{{'ADD'|translator}}" />
+                        <input type="button" class="btn  btn-sm btn-block" value="{{'UPDATE'|translator}}" />
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" ng-model="vm.Comment" placeholder="{{'COMMENTS'|translator}}"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="form-group">
+                        <label for="endTime" class="col-md-4 col-sm-4 col-xs-4 remove-padding">{{'STARTTIME'|translator}}</label>
+                        <input type="datetime-local" class="col-md-8 col-sm-8 col-xs-8 remove-padding" ng-model="vm.StartTime" id="startTime" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime" class="col-md-4 col-sm-4 col-xs-4 remove-padding">{{'ENDTIME'|translator}}</label>
+                        <input type="datetime-local" class="col-md-8 col-sm-8 col-xs-8 remove-padding" ng-model="vm.EndTime" id="endTime" />
+                    </div>
+                    <div class="form-group">
+                        <!--<select class="form-control">
+                            <option>Member(client site)</option>
+                        </select>-->
+                        <input type="text" class="form-control" placeholder="{{ 'MEMBER(CLIENT)'|translator}}" ng-model="vm.ClientMemberName" />
+                    </div>
+                    <div class="form-group">
+                        <comm-selection dlg-title="{{'MEMBER(EMPLOYEE)'|translator}}" url="employee/list" data="{{vm.EmployeeMemberID}}" text="{{vm.EmployeeMemberName}}" listento="selectedEmployee"></comm-selection>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 thumbnail">
+                <textarea class="form-control" placeholder="Changing history 2016/12/15　watanabe　⇒　aoyagi 2015/04/11　Amano　⇒　watanabe"></textarea>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <label>{{'SALESRECORD1'|translator}}</label>
+                <p>{{'ENTIRECOMPANY'|translator}}</p>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                    <p>{{ 'SALESRECORDLISTWITHOTHERDEPARTMENTSINTHATSAMECOMPANY'|translator}}</p>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>department</td>
+                                <td>Type</td>
+                                <td>Result</td>
+                                <td>Employee In charge</td>
+                                <td>Comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>TR</td>
+                                <td>Visit</td>
+                                <td>Mr.ABC</td>
+                                <td>smith</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>HR</td>
+                                <td>Call</td>
+                                <td>Mr.ABC</td>
+                                <td>Naju Mia</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="form-group">
+                    <label>{{'DETAILSOFBRANCHOFFICE,DEPARTMENT'|translator}}</label>
+                    <select class="form-control">
+                        <option>{{'SEARCHOFFICE/BRANCH'|translator}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                    <p>{{        'SALESRECORDLISTWITHOTHERSALESRECORDLISTWITHOTHERPICSINTHATSAMEDEPARTMENT'|translator}}</p>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Brance/office</td>
+                                <td>Type</td>
+                                <td>result</td>
+                                <td>employee in charge</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>TR</td>
+                                <td>visit</td>
+                                <td>Mr.ABC</td>
+                                <td>ok</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>HR</td>
+                                <td>visit</td>
+                                <td>Mr.ABC</td>
+                                <td>ok</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="form-group">
+                    <label>{{'PERSONINCHARGEINFO1'|translator}}</label>
+                    <select class="form-control">
+                        <option>{{'PICEMAILADDRESS'|translator}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                    <p>{{ 'HISTORYLISTOFEMAILWITHPIC'|translator}}</p>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Time</td>
+                                <td>department</td>
+                                <td>PIC</td>
+                                <td>Status</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>HR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>{{      'EMAILHISTORY'|translator}}</label>
+                <p>{{'ENTIRECOMPANY1'|translator}}</p>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                    <p>{{'HISTORYLISTOFEMAILSWITHOTHERDEPARTMENTSINTHATCOMPANY'|translator}}</p>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Time</td>
+                                <td>department</td>
+                                <td>PIC</td>
+                                <td>Status</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>HR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="form-group">
+                    <label>{{'DETAILSOFBRANCHOFFICE,DEPARTMENT'|translator}}</label>
+                    <select class="form-control">
+                        <option>{{'SEARCHTRADINGOFFICE'|translator}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+
+                    <p>{{'HISTORYLISTOFEMAILWITHOTHERDEPARTMENTSINTHATCOMPANY'|translator}}</p>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Time</td>
+                                <td>department</td>
+                                <td>PIC</td>
+                                <td>Status</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>HR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="form-group">
+                    <label>{{'PERSONINCHARGEINFO2'|translator}}</label>
+                    <select class="form-control">
+                        <option>{{ 'PICEMAILADDRESS1'|translator}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                    <p>{{ 'HISTORYLISTOFEMAILWITHPIC1'|translator}}</p>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Time</td>
+                                <td>department</td>
+                                <td>PIC</td>
+                                <td>Status</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>HR</td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>greetings for....</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step" ui-sref="CompanyRegistration.detailInfo">{{ 'PRIVIOUS'|translator}}</button></li>
+                <li><button type="submit" class="btn btn-primary next-step">{{'SAVEANDCONTINUE1'|translator}}</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

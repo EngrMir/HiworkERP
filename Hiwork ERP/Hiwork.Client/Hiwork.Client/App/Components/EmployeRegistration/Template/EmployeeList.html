@@ -1,0 +1,95 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Employee List
+        </h3>
+    </div>
+    <div class="panel-body">
+	
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-group">
+							Branch office
+							<input class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.condition.branch" placeholder="b-cause" style="" type="text">
+							<div class="clearfix"></div>
+							<div class="clearfix" style="height: 3px;"></div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-4 padding-left0">
+								<div class="checkbox margin-top23">
+									<label class="margin-right50"><input type="checkbox" ng-model="vm.condition.resign"> Resigned</label>
+								</div>
+							</div>
+							<div class="col-sm-8 padding-right0">
+								<div class="form-group">
+									Role
+									<select class="form-control" id="" ng-model="vm.condition.role">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+									</select>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="clearfix" style="height: 3px;"></div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+                            Employee Type
+                            <select id="selectEmployeeType" class="form-control" ng-model="vm.condition.type"
+                                    ng-options="r.Id as r.Name for r in vm.RoleList">
+                                <option value="" ng-selected="true">Select...</option>
+                            </select>
+                        </div>
+						
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+						
+						<div class="form-group">
+							Authorization
+							<select class="form-control" id="" ng-model="vm.condition.author">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<div class="col-sm-12">
+								Employee ID
+								<input class="form-control" ng-model="vm.condition.eid" placeholder="Employee ID" style="" type="text">
+							</div>
+							<div class="clearfix"></div>
+							<div class="clearfix" style="height: 3px;"></div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-12">
+								Employee Name
+								<input class="form-control" ng-model="vm.condition.ename" placeholder="Employee Name" style="" type="text">
+							</div>
+							<div class="clearfix"></div>
+							<div class="clearfix" style="height: 3px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+        <button type="submit" class="btn btn-sm btn-primary" ng-click="vm.SearchEmployee()" value="submit">
+         Search
+        </button>
+		<div class="clearfix" style="border-bottom:1px solid #ddd; margin:15px 0;"></div>
+	
+        <div class="form-group">
+            <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-save-state ui-grid-selection ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-exporter></div>
+        </div>
+    </div>
+</div>

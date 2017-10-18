@@ -1,0 +1,748 @@
+﻿<style>
+    .selected-cal-box{
+        background-color: burlywood;
+    }
+</style>
+
+<div class="content-wrapper staff-registration dashboard">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Translation Order Details
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"> Translation Order Details </li>
+        </ol>
+    </section>
+
+    <section class="content content-main">
+        <form id="transQuotation" name="transQuotation">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-body remove-padding">
+                            <label class="btn btn-flat btn-default pull-left" style="margin: 5px;">
+                                Retrval
+                            </label>
+                            <label class="btn btn-flat btn-default pull-left" ng-click="vm.saveOrder()" style="margin: 5px;">
+                                Registration / Update
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-body remove-padding">
+                            <button class="btn btn-flat btn-primary pull-left" style="margin: 5px;">
+                                Quotation Details
+                            </button>
+                            <button class="btn btn-flat btn-primary pull-left" style="margin: 5px;">
+                                Project
+                            </button>
+                            <button class="btn btn-flat btn-primary pull-left" style="margin: 5px;">
+                                Condition
+                            </button>
+                            <button class="btn btn-flat btn-primary pull-left" style="margin: 5px;">
+                                Offer email
+                            </button>
+                            <button class="btn btn-flat btn-primary pull-left" style="margin: 5px;">
+                                Completion notification
+                            </button>
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-body">
+                            <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                            <!--<span>Quotation No.</span>-->
+                                            <input type="text" class="form-control" placeholder="Quotation No." ng-model="vm.EstimationModel.EstimationNo">
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Project">
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Contact date" ng-model="vm.EstimationModel.InquiryDate">
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                            <select id="selectRoute" class="form-control"
+                                                    data-ng-model="vm.EstimationModel.EstimateRouteID"
+                                                    ng-options="r.ID as r.Name for r in ::vm.routes">
+                                                <option value="" selected="selected" disabled="disabled">Select Quotation route</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Client" ng-model="vm.EstimationModel.ClientName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Outward Sales" ng-model="vm.EstimationModel.OutwardSalesName">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Large Sales" ng-model="vm.EstimationModel.LargeSalesName">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Coordinator1" ng-model="vm.EstimationModel.CoordinatorName">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Sales Rep." ng-model="vm.EstimationModel.SalesPersonName">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Preparation of Quotation" ng-model="vm.EstimationModel.AssistantName">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Coordinator2" ng-model="vm.EstimationModel.CoordinatorName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 20px;"></div>
+                                <div class="col-md-9 col-sm-9 col-xs-9 remove-padding">
+                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Business No." ng-model="vm.EstimationModel.BusinessCategoryName">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" class="form-control" placeholder="Business Name" ng-model="vm.EstimationModel.BusinessCategoryName">
+
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <input type="text" name="" class="form-control" placeholder="New/Existing" ng-model="vm.EstimationModel.ClientStatus">
+                                            <select id="selectActionType" class="form-control" ng-model="vm.EstimationModel.ClientStatus"
+                                                    ng-options="r.No as r.Name for r in vm.ClientStatusList">
+                                                <option value="" ng-selected="true" disabled="disabled">New/Existing</option>
+                                            </select>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                                <input type="text" class="form-control" placeholder="Person Incharge" ng-model="vm.EstimationModel.ClientPersonInCharge">
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4  remove-padding">
+                                                <input type="text" class="form-control" placeholder="Email" ng-model="vm.EstimationModel.ClientEmailCC">
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4  remove-padding">
+                                                <input type="checkbox" ng-model="vm.EstimationModel.IsProspect"> Prospect
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Address" ng-model="vm.EstimationModel.ClientAddress">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4  remove-padding">
+                                                    <input type="text" name="" class="form-control" placeholder="Undisclosed">
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                <div class="col-md-2 col-sm-2 col-xs-2 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Phone" ng-model="vm.EstimationModel.ClientContactNo">
+                                                </div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Fax" ng-model="vm.EstimationModel.ClientFax">
+                                                </div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Business Classification">
+                                                </div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="payment Terms">
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                                    <input type="button" class="btn btn-default btn-flat btn-custom" value="Research">
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="CC: " ng-model="vm.EstimationModel.ClientEmailCC">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Change">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                                    <input type="text" class="form-control" placeholder="Delivery destination：" ng-model="vm.EstimationModel.DeliveryAddress">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                    <div class="form-group">
+                                        <label>Task In Progress</label>
+                                        <input type="text" name="" class="form-control" placeholder="PO" />
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Sender
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  Incharge
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Reparesentative
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Attn.
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li class="">
+                                            <input type="checkbox" name="" class="checkbox pull-left">  Incharge
+                                        </li>
+                                        <li class="">
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Company Name
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Seal
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  None
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Present
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group" style="">
+
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Tax
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  Incl. Tax
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Before Tax
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Content
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  All
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Detail View
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Revision.
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  None
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Present
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">
+                                        Language
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  Japanese
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> English
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group  checkbox-group">
+
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left">  Order Form
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Invoice
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Delivery Statement
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" class="checkbox pull-left"> Receipt
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                        <button class="btn btn-block btn-default remove-padding btn-flat">Make PDF of the quotation</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 remove-padding">
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                        <input type="text" class="form-control datepicker" placeholder="Next Gen. Date">
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+
+                                        <select class="form-control">
+                                            <option>Content of the next communication</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                        <textarea class="form-control" rows="3" placeholder="Response Details"></textarea>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group" style="height: 90px; overflow: scroll;">
+                                    <ul style="padding-left: 15px;">
+                                        <li>[2016/09/26][Watanabe]　Order</li>
+                                        <li>[2016/09/25][Watanabe]　Sending Confirmation Email</li>
+                                        <li>[2016/09/20][Watanabe]　Confirmation by phone.</li>
+                                        <li>[2016/09/16][Watanabe]　Sending Quotation Email</li>
+                                        <li>[2016/09/16][Oh]　  　  　&nbsp;&nbsp;&nbsp;Approval</li>
+                                        <li>[2016/09/16][Watanabe]　Record</li>
+                                        <li>[2016/09/14][Watanabe]　Waiting for original document</li>
+                                        <li>[2016/09/14][Watanabe]　Temporary Registration</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+
+                                </div>
+                                <button class="btn btn-flat btn-primary pull-right">Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                <table class="table-responsive table-bordered">
+                                    <tbody>
+
+                                        <tr>
+                                            <td colspan="2" class="text-center bg-gray">{{vm.EstimationModel.PurposeDetails}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-gray" valign="top">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Start Date" class="form-control" ng-model="vm.EstimationModel.FirstDeliveryDate" />
+                                                </div>
+                                                <div class="clearfix">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding " style="">
+                                                        <!--<input type="text" class="form-control" placeholder="Field of Expertise">-->
+                                                        <select id="selectTargetLang" class="form-control"
+                                                                ng-model="vm.EstimationModel.SpecializedFieldID"
+                                                                ng-options="r.ID as r.Name for r in ::vm.specializedFields">
+                                                            <option value="" selected="selected" disabled="disabled">Specialized Field</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--<div class="col-md-6 col-sm-6 col-xs-6 remove-padding " style="">
+                                                        <input type="text" class="form-control" placeholder="Intended Use">
+                                                    </div>-->
+                                                    <div class="col-md-12 col-sm-12 col-xs-12  remove-right-padding">
+                                                        <label class="col-md-10 col-sm-10 col-xs-10">Manuscript Attachment</label>
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 remove-padding">
+                                                            <span class="btn btn-default btn-flat pull-right btn-custom btn-block ">
+                                                                <a ng-if="vm.EstimationModel.AttachedMaterialFileName != ''" href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>DL</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                                        <textarea class="form-control" placeholder="Direct Manuscript" cols="100" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="" bg-gray" valign="top">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="End Date" ng-model="vm.EstimationModel.FinalDeliveryDate">
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" ng-model="vm.EstimationModel.OrderTitle" placeholder="Order Items">
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="6" cols="100" placeholder="Precautions from Coordinator"></textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <textarea class="form-control" placeholder="Notes to Staff" ng-model="vm.EstimationModel.CoordinatorNotes" rows="7"></textarea>
+                                            </td>
+                                            <td>
+                                                <textarea class="form-control" placeholder="Coordinator Memo" rows="7" ng-model="vm.EstimationModel.CoordinatorNotes"></textarea>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <table class="table">
+                                    <tr>
+                                        <td class="remove-border"><input type="text" class="form-control" ng-model="vm.OrderModel.Deadline" placeholder="Deadline"></td>
+                                        <td class="remove-border"><input type="text" class="form-control" ng-model="vm.OrderModel.PaymentDate" placeholder="Payment date"></td>
+                                        <td class="remove-border"><input type="text" class="form-control" ng-model="vm.OrderModel.EstimatedDateOfDeposit" placeholder="Est. date of deposit"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Quoted Price</td>
+                                        <td colspan="2" class="remove-border"><input type="text" ng-model="vm.OrderModel.QuoatedPrice" name="Quoted Price" class="form-control"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Consumption Tax</td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Consumption Tax" class="form-control" ng-model="vm.OrderModel.ConsumptionTax"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Cost(Excl. Tax) </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Cost(Excl. Tax)" class="form-control" ng-model="vm.OrderModel.CostExclTax"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Billing Amount </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Billing Amount" class="form-control" ng-model="vm.OrderModel.BillingAmount"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Original Cost </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Original Cost" class="form-control" ng-model="vm.OrderModel.OriginalCost"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Withdrawal Amount </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Withdrawal Amoun" ng-model="vm.OrderModel.WithdrawlAmount" class="form-control"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Profit </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Profit" ng-model="vm.OrderModel.Profit" class="form-control"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">Gross Interest Rate </td>
+                                        <td colspan="2" class="remove-border"> <input type="text" name="Gross Interest Rate" ng-model="vm.OrderModel.GrossInterestRate" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border">
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       id="billingDate"
+                                                       class="form-control"
+                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                       placeholder="Billing Date"
+                                                       min-date="dateFrom"
+                                                       max-date="dateTo"
+                                                       close-text="Close"
+                                                       ng-model="vm.OrderModel.BillingDate"
+                                                       show-weeks="true"
+                                                       is-open="nextActionDate"
+                                                       ng-click="nextActionDate = true"
+                                                       filter-by="placed"
+                                                       filter-type="dateFrom"
+                                                       ng-blur="gridActions.filter()"
+                                                       ng-focus="gridActions.filter()" />
+                                                <span class="input-group-btn">
+                                                    <span for="birthDate" class="btn btn-default remove-padding">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="remove-border"> <input type="text" class="form-control" ng-model="vm.OrderModel.InvoiceNo" placeholder="Invoice No.">  </td>
+                                        <td class="remove-border"> <input type="checkbox" ng-model="vm.OrderModel.IsDeposited" class="checkbox pull-left">  Deposit</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-border" colspan="3">
+                                            <textarea placeholder="Notes to Staff" class="form-control" ng-model="vm.OrderModel.NotesToStaff" rows="5"> </textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td><input type="checkbox" ng-model="vm.OrderModel.InternalComplain" class="pull-left checkbox"> Internal Complaint</td>
+                                        <td><input type="checkbox" ng-model="vm.OrderModel.ClientComplain" class="pull-left checkbox"> Client's Complaint</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-padding">
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       id="complaintDate"
+                                                       class="form-control"
+                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                       placeholder="Complaint Date"
+                                                       min-date="dateFrom"
+                                                       max-date="dateTo"
+                                                       close-text="Close"
+                                                       ng-model="vm.OrderModel.ComplainDate"
+                                                       show-weeks="true"
+                                                       is-open="nextActionDate"
+                                                       ng-click="nextActionDate = true"
+                                                       filter-by="placed"
+                                                       filter-type="dateFrom"
+                                                       ng-blur="gridActions.filter()"
+                                                       ng-focus="gridActions.filter()" />
+                                                <span class="input-group-btn">
+                                                    <span for="birthDate" class="btn btn-default remove-padding">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="remove-padding">
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       id="responseCompletionDate"
+                                                       class="form-control"
+                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                       placeholder="Response Completion Date"
+                                                       min-date="dateFrom"
+                                                       max-date="dateTo"
+                                                       close-text="Close"
+                                                       ng-model="vm.OrderModel.ResponseComplainDate"
+                                                       show-weeks="true"
+                                                       is-open="nextActionDate"
+                                                       ng-click="nextActionDate = true"
+                                                       filter-by="placed"
+                                                       filter-type="dateFrom"
+                                                       ng-blur="gridActions.filter()"
+                                                       ng-focus="gridActions.filter()" />
+                                                <span class="input-group-btn">
+                                                    <span for="birthDate" class="btn btn-default remove-padding">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-padding" colspan="2">
+                                            <textarea class="form-control" ng-model="vm.OrderModel.ComplainDetails" placeholder="Complaint Details / Response Content" rows="7"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="remove-padding" colspan="2">
+                                            <textarea class="form-control" ng-model="vm.OrderModel.AccountingRelatedMemo" placeholder="Accounting-related Memo" rows="6"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-responsive">
+                                            <tr class="bg-light-blue">
+                                                <td class="remove-border text-center" rowspan="2">No</td>
+                                                <td class="remove-border text-center">Language</td>
+                                                <td class="remove-border text-center">Service</td>
+                                                <td class="remove-border text-center">Page</td>
+                                                <td class="remove-border text-center">Condition</td>
+                                                <td class="remove-border text-center">Delivery</td>
+                                                <td class="remove-border  text-center">Staff Name</td>
+                                            </tr>
+                                            <tbody ng-repeat="item in vm.EstimationModel.EstimationItems track by $index">
+                                                <tr class="">
+                                                    <td>{{$index + 1}}</td>
+                                                    <td>{{item.SourceLanguage}}→{{item.TargetLanguage}}</td>
+                                                    <td>{{item.ServiceTypeName}}</td>
+                                                    <td>{{item.PageCount1}}</td>
+                                                    <td>
+                                                        <select id="selectTargetLang" class="form-control"
+                                                                ng-model="item.Condition"
+                                                                ng-options="r.ID as r.Name for r in ::vm.specializedFields">
+                                                            <option value="" selected="selected" disabled="disabled">Condition</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="text"
+                                                                   id="contactDate"
+                                                                   class="form-control"
+                                                                   uib-datepicker-popup="dd/MM/yyyy"
+                                                                   min-date="dateFrom"
+                                                                   max-date="dateTo"
+                                                                   close-text="Close"
+                                                                   ng-model="item.DeliveryDate"
+                                                                   show-weeks="true"
+                                                                   is-open="contactFromOpened"
+                                                                   ng-click="contactFromOpened = true"
+                                                                   filter-by="placed"
+                                                                   filter-type="dateFrom"
+                                                                   ng-blur="gridActions.filter()"
+                                                                   ng-change="vm.displayInCalendar(item.DeliveryDate)"
+                                                                   ng-focus="gridActions.filter()" />
+                                                            <span class="input-group-btn">
+                                                                <span for="contactDate" class="btn btn-default remove-padding">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <!--<comm-selection dlg-title="Staff" tooltip-placement="top" uib-tooltip="Staff" item="{{item}}" url="staff/list" text="{{vm.EstimationModel.StaffName}}" data="{{vm.EstimationModel.StaffID}}" listento="selectedStaff"></comm-selection>-->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="box box-primary" id="cal-container">
+                                        <div class="box-body no-padding">
+                                            <div ui-calendar="uiConfig.calendar" class="span8 calendar" calendar="myCalendar" ng-model="eventSources"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                            
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <button class="btn btn-default btn-flat btn-custom">c Hand</button>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="Int. Response">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="Ext. Response">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="Front">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="s hand">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="b hand">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder="Sales">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" c hand ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" PIC1 ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" Partner ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" PIC2 ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" Net Profit ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" Gross Profit ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" Net Margin Rate ">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <input type="text" class="form-control" placeholder=" Gross Margin Rate ">
+                                </div>
+
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 bg-white">
+                                <div class="table-responsive " style="height: 100px;">
+                                    <table class="table table-bordered bg-white">
+                                        <thead class="bg-light-blue">
+                                            <tr>
+                                                <td>No</td>
+                                                <td>Staff No.</td>
+                                                <td>Staff Name</td>
+                                                <td>Email Address</td>
+                                                <td>Evaluation</td>
+                                                <td>Number of pages</td>
+                                                <td>Penalty</td>
+                                                <td>Payment Amount</td>
+                                                <td>Agency Commission</td>
+                                                <td>Delivery</td>
+                                                <td>Complaint</td>
+                                                <td>Place of Residence</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-repeat="item in vm.OrderDetails track by $index">
+                                            <tr>
+                                                <td>{{$index + 1}}</td>
+                                                <td>{{item.StaffNo}}</td>
+                                                <td>{{item.StaffName}}</td>
+                                                <td>{{item.EmailAddress}}</td>
+                                                <td>
+                                                    <input type="text" class="form-control" ng-model="item.Evaluation" placeholder="Evaluation">
+                                                </td>
+                                                <td>{{item.PageCount1}}</td>
+                                                <td>
+                                                    <input type="text" class="form-control" ng-model="item.Penalty" placeholder="Penalty">
+                                                </td>
+                                                <td>{{item.PaymentAmount}}</td>
+                                                <td>{{item.AgencyCommission}}</td>
+                                                <td>{{item.DeliveryDate}}</td>
+                                                <td>
+                                                    <input type="text" class="form-control" ng-model="item.ComplainDetails" placeholder="Complain">
+                                                </td>
+                                                <td>{{item.Residence}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </form>
+
+    </section>
+</div>

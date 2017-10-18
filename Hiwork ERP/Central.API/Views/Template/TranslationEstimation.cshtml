@@ -1,0 +1,129 @@
+﻿@using HiWork.BLL.Models
+@using HiWork.DAL.Database;
+
+@{ 
+    Layout = null;
+    var _dbContext = new CentralDBEntities();
+    EstimationModel estimation = null;
+    Company company = null;
+    var values = ViewData.Model.Values;
+    foreach (EstimationModel est in values)
+    {
+        estimation = est;
+    }
+    if (estimation == null)
+    {
+        estimation = new EstimationModel();
+    }
+
+    var user = _dbContext.UserInformations.Find(estimation.CurrentUserID) ?? new UserInformation();
+    
+    var currency = _dbContext.Master_Currency.Find(estimation.CurrencyID);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+    <div class="top-header">
+        <span>Translation Estimation</span>
+    </div>
+
+    <div class="client-info">
+        <label>Client Information</label>
+        <div class="info-container">
+            <div class="info">
+                <span>Post Code:</span> <span></span>
+            </div>
+            <div class="info">
+                <span>Address:</span> <span></span>
+            </div>
+            @if (estimation.IsCompanyName)
+            {
+                <div class="info">
+                    <span>Company (client) name:</span> <span>@estimation.ClientName</span>
+                </div>
+            }
+            @if (estimation.IsAttnIncharge)
+            {
+                <div class="info">
+                    <span>Person in charge (client):</span> <span></span>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="user-info">
+        <label>User Information</label>
+        <div class="info-container">
+            <div class="info">
+                <span>Company (user) name:</span> <span>@($"{user.FirstName} {user.LastName}")</span>
+            </div>
+            @if (estimation.IsSenderIncharge)
+            {
+                <div class="info">
+                    <span>Person in charge (user):</span> <span></span>
+                </div>
+            }
+            <div class="info">
+                <span>Address:</span> <span>Address...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="st-text">
+        <span>Thank you for using our service.</span>
+        <span>Please check the estimation bellow.</span>
+    </div>
+
+    <div class="ord-no">
+        <span>Order No. :</span> <span>Order No...</span>
+    </div>
+
+    <div class="tbl-items">
+        <table st-table="displayColl" st-safe-src="vm.rowCollection" class="table table-responsive table-bordered">
+            <tr>
+                <td class="bg-light-blue text-center"> Item</td>
+                <td class="bg-light-blue text-center"> Price</td>
+            </tr>
+
+            <tbody>
+                @{
+                    foreach (var item in estimation.EstimationItems)
+                    {
+                        var total = item.UnitPrice1 * item.PageCount1;
+                        if (total > 0)
+                        {
+                            <tr class="task-row-container">
+                                <td> @item.Contents</td>
+                                <td> @($"{currency.Symbol}{total}")</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+            <tfoot>
+                @if (estimation.IsInclTax)
+                {
+                    <tr>
+                        <td class="bg-gray"> Tax</td>
+                        <td class="text-right">@($"{currency.Symbol}{estimation.ConsumptionOnTax}")</td>
+                    </tr>
+                }
+                <tr>
+                    <td class="bg-gray"> Total</td>
+                    <td class="text-right">@($"{currency.Symbol}{estimation.QuotationInclTax}")</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="footer">
+        <span>We are supporting International Business and Multicultural Communication</span>
+    </div>
+
+</body>
+</html>

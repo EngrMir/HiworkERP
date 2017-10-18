@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7316CDD1-4979-408E-BA03-D9045A030F2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HiWork.DAL</RootNamespace>
+    <AssemblyName>HiWork.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\AccessLog.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AdditionalOperationPermission.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AdditionalScreenPermission.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AdvertizementSetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Application.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CentralDBEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentralDBEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CentralDBEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CentralDBEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CentralDBEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Company.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyAgentBusiness.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyAgentCharacterstic.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyAgentDesignation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyBusinessHistory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyBusinessInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyCooperativeInfo.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyIndustryClassification.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyRFMAnalysi.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyShare.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CompanyTradingCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Company_AgencyPrice.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Company_Department.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Company_TransproPartner.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ContactU.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EmailDeliverySetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EmailHistory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EmailTemplate.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Employee.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ErrorLog.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ErrorReportWeb.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Estimation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationAction.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationActionType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationApproval.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationCompetency.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationDeliveryFileType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationDetail.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationFile.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationNarrationExpense.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationProject.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationRequestHistory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationUserAccess.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\EstimationWorkContent.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\f_TEMP_ASTAFF_INCOMPLETE_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\HiworkLanguagePrice.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\IdentityInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Address.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_AgentBusiness.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_AgentCharacterstics.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_AgentFreeDesignation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Bank.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_BankAccount.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_BankAccountType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_BankBranch.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_BranchOffice.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyBusinessService.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyBusinessSpeciality.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyIndustryClassification.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyIndustryClassificationItem.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyTradingCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyTradingCategoryItem.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CompanyTradingDivision.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Country.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Culture.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Currency.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_CurrencyRate.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_DeliveryMethod.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Department.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Designation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Division.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EmailCategorySettings.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EmailGroupSettings.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationRoutes.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationServiceType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationSpecializedField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationStatus.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationSubSpecializedField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_EstimationType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Language.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Market.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_PartnerServiceType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_PaymentType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Penalty.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffBusinessCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffBusinessCategoryDetails.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffCurrentState.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffDevelopmentSkill.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffDevelopmentSkillItem.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffEducationalDegree.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffEmploymentType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffInterpretationFields.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffJobCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffJobCategoryDetails.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffKnowledgeField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffKnowledgeFieldItem.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffLanguageQualifications.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffMajorSubject.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffMajorSubjectDetails.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffMedicalField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffNarrationType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffPatentField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffProfession.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffResearchField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffSoftwareSkill.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffSpecialField.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffTechnicalSkillCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffTechnicalSkillItems.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffTranslationFields.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_StaffVisaType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Team.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_TeamToMarket.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_Unit.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_UnitPriceSetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_WebOrderStatus.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Master_WorkingStatus.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Menu.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Message.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Module.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Notice.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\OrderAppointedToStaff_Web.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\OrderDetail.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\OrderEvaluationByCustomer.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\OrderRequestedToStaff_Web.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order_DeliveryDocuments.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order_StaffAllowance.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order_Web.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order_WebDocuments.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\PayPalTransaction.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ProfitShareSetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Role.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\RoleAudit.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\RoleManagement.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\RoleWiseOperationPermission.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\RoleWiseScreenPermission.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Screen.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ScreenOperation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_AllTranslation_History_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_Dashboard_SAdmin_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetAllEstimationActionType_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetAllEstimationFiles_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetAllOrderStaffAllowance_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetAllTranslationCertificateSettings_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetOrderWebDocuments_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\SP_GetStaffList_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_helpdiagrams_Result.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_BankAccountInfo.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_CurrentStates.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_DevelopmentSkill.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_EditingproInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_EducationalHistory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_InterpretationSpecialFields.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_JobCategories.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_JobHistory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_KnowledgeFields.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_ManagementExperience.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_NarrationInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_NarrationVoiceFiles.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_ProfessionalSpeciality.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_ServiceTypes.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_SkillCertificate.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_SoftwareSkill.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\staff_tbd.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_TechnicalCertificate.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_TranslateInterpretExperience.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_TranslationSpecialFields.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff_TransproInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sysdiagram.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TranslationCertificateSetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TranslationLevel.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TranslatorBlackList.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TranslatorFavouriteList.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TransproDeliveryPlanSetting.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TransproLanguagePriceCategory.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TransproLanguagePriceDetail.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\UserInformation.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\UserInRole.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\UserType.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\VW_GetAdvancedSearch.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\VW_GetAdvancedSearch_OLD.cs">
+      <DependentUpon>CentralDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdvertizementSettingsRepository.cs" />
+    <Compile Include="Repositories\ApplicationRepository.cs" />
+    <Compile Include="Repositories\BankAccountRepository.cs" />
+    <Compile Include="Repositories\BankBranchRepository.cs" />
+    <Compile Include="Repositories\BankRepository.cs" />
+    <Compile Include="Repositories\CompanyIndustryClassificationItemRepository.cs" />
+    <Compile Include="Repositories\CompanyRepository.cs" />
+    <Compile Include="Repositories\CompanyIndustryClassificationRepository.cs" />
+    <Compile Include="Repositories\CompanyTradingDivisionRepository.cs" />
+    <Compile Include="Repositories\ContactUsRepository.cs" />
+    <Compile Include="Repositories\EducationalHistoryRepository.cs" />
+    <Compile Include="Repositories\EmailDeliverySettingsRepository.cs" />
+    <Compile Include="Repositories\EmailTemplateRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\EmploymentTypeRepository.cs" />
+    <Compile Include="Repositories\EmpolyeeRepository.cs" />
+    <Compile Include="Repositories\ErrorReportWebRepository.cs" />
+    <Compile Include="Repositories\EstimationSubSpecializedFieldRepository.cs" />
+    <Compile Include="Repositories\HiworkLanguagePriceRepository.cs" />
+    <Compile Include="Repositories\JobHistoryRepository.cs" />
+    <Compile Include="Repositories\CompanyTradingCategoryItemRepository.cs" />
+    <Compile Include="Repositories\CompanyTradingCategoryRepository.cs" />
+    <Compile Include="Repositories\EstimationServiceTypeRepository.cs" />
+    <Compile Include="Repositories\InterpretationFieldsRepository.cs" />
+    <Compile Include="Repositories\LanguageQualificationRepository.cs" />
+    <Compile Include="Repositories\LanguageRepository.cs" />
+    <Compile Include="Repositories\BranchRepository.cs" />
+    <Compile Include="Repositories\BusinessCategoryDetailsRepository.cs" />
+    <Compile Include="Repositories\BusinessCategoryRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\CountryRepository.cs" />
+    <Compile Include="Repositories\CountryToBranchRepository.cs" />
+    <Compile Include="Repositories\CurrencyRepository.cs" />
+    <Compile Include="Repositories\CurrentStateRepository.cs" />
+    <Compile Include="Repositories\DepartmentRepository.cs" />
+    <Compile Include="Repositories\DesignationRepository.cs" />
+    <Compile Include="Repositories\DivisionRepository.cs" />
+    <Compile Include="Repositories\CultureRepository.cs" />
+    <Compile Include="Repositories\EducationRepository.cs" />
+    <Compile Include="Repositories\JobCategoryDetailsRepository.cs" />
+    <Compile Include="Repositories\JobCategoryRepository.cs" />
+    <Compile Include="Repositories\JobTypeRepository.cs" />
+    <Compile Include="Repositories\LanguageSkillLevelRepository.cs" />
+    <Compile Include="Repositories\MajorSubjectDetailsRepository.cs" />
+    <Compile Include="Repositories\MajorSubjectRepository.cs" />
+    <Compile Include="Repositories\EstimationTypeRepository.cs" />
+    <Compile Include="Repositories\EstimationRoutesRepository.cs" />
+    <Compile Include="Repositories\EstimationSpecializedFieldRepository.cs" />
+    <Compile Include="Repositories\MasterStaffSoftwareSkillRepository.cs" />
+    <Compile Include="Repositories\MasterStaffTechnicalFieldsRepository.cs" />
+    <Compile Include="Repositories\MessageRepository.cs" />
+    <Compile Include="Repositories\NarrationVoiceFilesRepository.cs" />
+    <Compile Include="Repositories\NarrationInformationRepository.cs" />
+    <Compile Include="Repositories\NoticeRepository.cs" />
+    <Compile Include="Repositories\OrderDetailsRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\OrderStaffAllowanceRepository.cs" />
+    <Compile Include="Repositories\OtherExperiencesRepository.cs" />
+    <Compile Include="Repositories\PartnerServiceTypeRepository.cs" />
+    <Compile Include="Repositories\PenaltyRepository.cs" />
+    <Compile Include="Repositories\ProfessionalCerificateRepository.cs" />
+    <Compile Include="Repositories\ProfessionalSpecialityRepository.cs" />
+    <Compile Include="Repositories\ProfessionRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\StaffBankAccountInfoRepository.cs" />
+    <Compile Include="Repositories\StaffCurrentStateRepository.cs" />
+    <Compile Include="Repositories\StaffDevelopmentSkillItemRepository.cs" />
+    <Compile Include="Repositories\StaffDevelopmentSkillRepository.cs" />
+    <Compile Include="Repositories\StaffKnowledgeFieldItemRepository.cs" />
+    <Compile Include="Repositories\StaffKnowledgeFieldRepository.cs" />
+    <Compile Include="Repositories\StaffMedicalFieldRepository.cs" />
+    <Compile Include="Repositories\StaffSoftwareSkillRepository.cs" />
+    <Compile Include="Repositories\WorkingStatusRepository.cs" />
+    <Compile Include="Repositories\StaffNarrationTypeRepository.cs" />
+    <Compile Include="Repositories\StaffPatentFieldRepository.cs" />
+    <Compile Include="Repositories\StaffProfessioanlSpecialityRepository.cs" />
+    <Compile Include="Repositories\StaffRepository.cs" />
+    <Compile Include="Repositories\StaffSpecialFieldRepository.cs" />
+    <Compile Include="Repositories\StaffTranslationFieldsRepository.cs" />
+    <Compile Include="Repositories\StaffTranslationSpecialFieldsRepository.cs" />
+    <Compile Include="Repositories\StaffTypeRepository.cs" />
+    <Compile Include="Repositories\TeamRepository.cs" />
+    <Compile Include="Repositories\TechnicalSkillCategoryRepository.cs" />
+    <Compile Include="Repositories\TechnicalSkillItemsRepository.cs" />
+    <Compile Include="Repositories\TechnicalSkillLevelRepository.cs" />
+    <Compile Include="Repositories\EstimationRepository.cs" />
+    <Compile Include="Repositories\TranslateInterpretExperienceRepository.cs" />
+    <Compile Include="Repositories\TransproDeliveryPlanRepository.cs" />
+    <Compile Include="Repositories\TransproInformationRepository.cs" />
+    <Compile Include="Repositories\UnitPriceRepository.cs" />
+    <Compile Include="Repositories\UnitRepository.cs" />
+    <Compile Include="Repositories\UserInfoRepository.cs" />
+    <Compile Include="Repositories\UserInRoleRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UserTypeRepository.cs" />
+    <Compile Include="Repositories\VisaTypeRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Database\CentralDBEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CentralDBEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\CentralDBEntities.edmx.diagram">
+      <DependentUpon>CentralDBEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HiWork.Utils\HiWork.Utils.csproj">
+      <Project>{f7436c83-100a-41f1-a2b6-d5137caf3cb9}</Project>
+      <Name>HiWork.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\CentralDBEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CentralDBEntities.edmx</DependentUpon>
+      <LastGenOutput>CentralDBEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\CentralDBEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CentralDBEntities.edmx</DependentUpon>
+      <LastGenOutput>CentralDBEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

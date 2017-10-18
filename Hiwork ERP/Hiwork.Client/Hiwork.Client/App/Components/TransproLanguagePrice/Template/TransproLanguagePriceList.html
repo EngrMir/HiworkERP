@@ -1,0 +1,100 @@
+﻿
+
+<style type="text/css">
+    .transproprice-dialog .modal-dialog {
+        width : 36vw;
+        height: 100%;
+    }
+</style>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Transpro Language Price 
+        </h3>
+    </div>
+    <div class="panel-body" ng-init="$ctrl.init();">
+        <div>
+            <button class="btn btn-primary" value="addModal" ng-click="$ctrl.open(null,'Add TransproLanguage Price')">{{'ADDNEW' | translator}}</button>
+        </div>
+        <div class="clearfix" style="height: 5px;"></div>
+        <div class="table-responsive">
+            <table st-table="tlpColl" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">
+                <thead class="bg-light-blue">
+                    <tr>
+                        <th st-sort="SourceLanguageName">{{'SOURCELANGUAGE' | translator}}<i st-sort="SourceLanguageName"></i></th>
+                        <th st-sort="TargetLanguageName">{{'TARGETLANGUAGE' | translator}}<i st-sort="TargetLanguageName"></i></th>
+                        <th st-sort="CurrencyName">{{'CURRENCY' | translator}}<i st-sort="CurrencyName"></i></th>
+                        <th st-sort="SpecializedFieldName">{{'SPECIALIZEDFIELD' | translator}}<i st-sort="SpecializedFieldName"></i></th>
+                        <th st-sort="SubSpecializedFieldName">{{'SUBSPECIALIZEDFIELD' | translator}}<i st-sort="SubSpecializedFieldName"></i></th>
+                        <th>{{'ACTIVE' | translator}}</th>
+                        <th>{{'ACTION' | translator}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="SourceLanguageName" placeholder="Search by SourceLanguage Name" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="TargetLanguageName" placeholder="Search by TargetLanguage Name" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="CurrencyName" placeholder="Search by Currency" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="SpecializedFieldName" placeholder="Search by SpecializedField" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="SubSpecializedFieldName" placeholder="Search by SubSpecializedField" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="transprolpc in tlpColl">
+                        <td>{{ transprolpc.SourceLanguageName}}</td>
+                        <td>{{ transprolpc.TargetLanguageName}}</td>
+                        <td>{{ transprolpc.CurrencyName}} ( {{ transprolpc.CurrencySymbol }} )</td>
+                        <td>{{ transprolpc.SpecializedFieldName}}</td>
+                        <td>{{ transprolpc.SubSpecializedFieldName }}</td>
+                        <td>
+                            <input style="width: 16px;height: 16px;" type="checkbox" value="{{transprolpc.IsActive}}" ng-disabled="true" ng-checked="transprolpc.IsActive" ng-model="transprolpc.IsActive" />
+                        </td>
+                        <td>
+                            <div class="glyphicon glyphicon-edit" value="Edit" ng-click="$ctrl.open(transprolpc,'Edit Transpro Language Price')"> </div>
+                            <div class="glyphicon glyphicon-remove" confirm-window
+                                 confirm-data="{{transprolpc}}"
+                                 confirm-url="{{'transprolpc/delete'}}" confirm-value="{{transprolpc.Description}}"
+                                 modal-title="Are you sure you want to delete '{{transprolpc.Description}}'?">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="border:none !important;">
+                    <tr style="border:none !important;">
+                        <td colspan="5" class="text-center" style="border:none !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div st-items-by-page="15" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

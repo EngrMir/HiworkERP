@@ -1,0 +1,66 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{'VISATYPE' | translator}}
+        </h3>
+    </div>
+    <div class="panel-body" ng-init="$ctrl.init();">
+        <div>
+            <button class="btn btn-primary" value="addModal" ng-click="$ctrl.open(null,'Add Visa Type')">{{'ADDNEW' | translator}}</button>
+        </div>
+        <div class="clearfix" style="height: 5px;"></div>
+        <div class="table-responsive">
+            <table st-table="displayColl" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">
+                <thead class="bg-light-blue">
+                    <tr>
+                        <th st-sort="{{'NAME' | translator}}" st-sort-default="regular">{{'NAME' | translator}}<i st-sort="{{'NAME' | translator}}"></i></th>
+                        <th st-sort="{{'DESCRIPTION' | translator}}" st-sort-default="regular">{{'DESCRIPTION' | translator}}<i st-sort="{{'DESCRIPTION' | translator}}"></i></th>
+                        <th>{{'ACTIVE' | translator}}</th>
+                        <th>{{'ACTION' | translator}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Name" placeholder="{{'SEARCHBYNAME' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Description" placeholder="{{'SEARCHBYDESCRIPTION' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+
+                    <tr ng-repeat="visaType in displayColl">
+                        <td>{{ visaType.Name}}</td>
+                        <td>{{ visaType.Description}}</td>
+                        <td><input style="width: 16px;height: 16px;" type="checkbox" value="{{visaType.IsActive}}" ng-disabled="true" ng-checked="visaType.IsActive" ng-model="visaType.IsActive" /> </td>
+                        <td>
+                            <div class="glyphicon glyphicon-edit" value="Edit" ng-click="$ctrl.open(visaType,'Edit Visa Type')"> </div>
+                            <div class="glyphicon glyphicon-remove" confirm-window
+                                 confirm-data="{{visaType}}"
+                                 confirm-url="{{'visaType/delete'}}" confirm-value="{{visaType.Name}}"
+                                 modal-title="Are you sure you want to delete '{{visaType.Name}}'?">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="border:none !important;">
+                    <tr style="border:none !important;">
+                        <td colspan="5" class="text-center" style="border:none !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div st-items-by-page="20" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+</div>

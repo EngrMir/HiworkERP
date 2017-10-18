@@ -1,0 +1,12 @@
+-f bcause.bd001@gmail.com -t mojahid.cse08@gmail.com -u Someone Logged Into Your Computer -m Someone just logged into your computer! -s smtp.gmail.com:587 -xu bcause.bd001@gmail.com -xp ngh4h6fE -o tls=yes
+
+
+Notice 
+---------------
+must allow less secure apps
+
+lesssecureapps
+
+
+bcause.bd001@gmail.com
+ngh4h6fE

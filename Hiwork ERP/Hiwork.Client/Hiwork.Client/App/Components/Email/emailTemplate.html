@@ -1,0 +1,98 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="fa fa-close pull-right" ng-click="$ctrl.Close()"></button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="emailForm">
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                    <select class="form-control" name="Template"
+                            ng-model="$ctrl.model.EmailCategoryList"
+                            ng-class="{'invalid-input':isTriedSave && emailForm.Template.$error.required}"
+                            ng-options="item as item.Name for item in $ctrl.CategoryList" required>
+                        <option value="" selected="selected" disabled="disabled">Select Email Category</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-control" name="Template"
+                            ng-model="$ctrl.model.EmailGroupList"
+                            ng-class="{'invalid-input':isTriedSave && emailForm.Template.$error.required}"
+                            ng-options="item as item.Name for item in $ctrl.GroupList" required>
+                        <option value="" selected="selected" disabled="disabled">Select Group</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-control" name="Template"
+                            ng-model="$ctrl.model.EmailTemplateList"
+                            ng-class="{'invalid-input':isTriedSave && emailForm.Template.$error.required}"
+                            ng-options="item as item.Child group by item.Parent for item in $ctrl.NewList" required data-ng-change="$ctrl.getEmailSubjectBodyList()">
+                        <option value="" selected="selected" disabled="disabled">Select Template Name</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-3"><span>To:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="emailto" class="form-control" ng-class="{'invalid-input':isTryToSend && emailForm.emailto.$error.required}"
+                           ng-model="$ctrl.model.EmailTo" required />
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <!--
+             <div class="createemail">
+                <input type="button" value="Create Email" class="btn btn-default" ng-click="$ctrl.openCreateEmailWindow()">
+            </div>
+              -->
+            <div class="form-group">
+                <div class="col-md-3"><span>Cc:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="emailcc" class="form-control"
+                           ng-model="$ctrl.model.EmailCc" />
+                </div>
+            </div>
+
+            
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3"><span>Subject:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="emailsubject" class="form-control" ng-class="{'invalid-input':isTryToSend && emailForm.emailsubject.$error.required}"
+                           ng-model="$ctrl.model.EmailSubject" required />
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3"><span>Upload file:</span></div>
+                <div class="col-md-9">
+                    <input type="file" load-file ng-model="$ctrl.AttachedFile" id="fileName" />
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <span>Email Description:</span>
+                </div>
+                <div class="col-md-9">
+                    <textarea id="emailbody" class="email-body" ng-model="$ctrl.model.EmailBody" ng-class="{'invalid-input':isTryToSend && emailForm.emailbody.$error.required}"></textarea>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="createtemplate col-md-1">
+                        <input type="button" value="Create Template" class="btn btn-default" ng-click="$ctrl.openCreateEmailWindow()">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                    <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.sendEmail()" value="Send" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

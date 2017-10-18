@@ -1,0 +1,58 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="countryForm">
+
+            <div class="form-group">
+
+                <div class="col-md-2">
+                <span>{{'NAME' | translator}}</span></div>
+                <div class="col-md-6">
+                    <input type="text" name="Name" class="form-control" 
+                           ng-class="{'invalid-input':isTriedSave && countryForm.name.$error.required}"
+                           ng-model="$ctrl.modalData.Name" required />
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'CODE' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="Code" class="form-control" 
+                           ng-class="{'invalid-input':isTriedSave && countryForm.code.$error.required}"
+                           ng-model="$ctrl.modalData.Code" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'CURRENCY' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="Cur" id="changeCur" class="form-control"
+                            ng-model="$ctrl.modalData.CurrencyID"
+                            ng-class="{'invalid-input':isTriedSave && countryForm.Cur.$error.required}"
+                            ng-options="item.Id as item.Name for item in $ctrl.curList" required>
+
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                <span>{{'ACTIVE' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                <input type="checkbox" style="width:20px;height:20px;" 
+                       ng-model="$ctrl.modalData.IsActive" /></div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">{{'CANCEL' | translator}}</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.save()" value="{{'SAVE'| translator}}" />
+            </div>
+        </form>
+    </div>
+</div>

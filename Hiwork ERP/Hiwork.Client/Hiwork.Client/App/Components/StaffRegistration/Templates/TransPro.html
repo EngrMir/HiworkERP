@@ -1,0 +1,574 @@
+﻿<div class="tab-pane" id="Trans-Pro">
+    <div class="clearfix" style="height: 18px;"></div>
+
+    <div class="panel-body">
+
+        <form name="transProForm" novalidate role="form">
+
+            <fieldset>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 ">
+
+                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding  ">
+                        <div class="col-md-12 col-sm-12 col-xs-12 bg-gray remove-padding">
+                            <lables class="pull-left">Trans-Pro {{'SCORES' | translator}}</lables>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 15px;"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'OVERALLSCORE' | translator}}" ng-model="vm.StaffTranProModel.OverallScore" ng-required="true">
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'NUMBEROFWORKS' | translator}}" ng-model="vm.StaffTranProModel.NumberOfWorks" ng-required="true">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'INTERNALSCORE' | translator}}" ng-model="vm.StaffTranProModel.InternalScore" ng-required="true">
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'CUSTOMEREVALUATION' | translator}}" ng-model="vm.StaffTranProModel.CustomerEvaluationPoint" ng-required="true">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                                            <input type="text" class="form-control" placeholder="{{'FOREIGNLANGUAGE3' | translator}}" ng-model="vm.StaffTranProModel.foreignLanguage3" ng-required="true">
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="text" class="form-control" placeholder="{{'FOREIGNLANGUAGE4' | translator}}" ng-model="vm.foreignLanguage4" ng-required="true">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'FAVORITE' | translator}}" ng-model="vm.StaffTranProModel.FavoritePoint" ng-required="true">
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'PENALTYPOINT' | translator}}" ng-model="vm.StaffTranProModel.PenaltyPoint" ng-required="true">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                                            <input type="text" class="form-control" placeholder="{{'BLACKLISTBLOCKED' | translator}}" ng-model="vm.blackList" ng-required="true">
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="number" class="form-control" placeholder="{{'NEGATIVEPOINT' | translator}}" ng-model="vm.StaffTranProModel.NegativePoint" ng-required="true">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+
+                                            <input type="datetime"
+                                                   name="bannedPeriodFrom"
+                                                   class="form-control"
+                                                   uib-datepicker-popup="dd/MM/yyyy"
+                                                   ng-required="true"
+                                                   placeholder="{{'BANNEDPERIODFROM' | translator}}"
+                                                   min-date="dateFrom"
+                                                   max-date="dateTo"
+                                                   close-text="Close"
+                                                   ng-model="vm.StaffTranProModel.BannedPeriodFrom"
+                                                   show-weeks="true"
+                                                   is-open="bannedPeriodFromOpened"
+                                                   ng-click="bannedPeriodFromOpened = true"
+                                                   filter-by="placed"
+                                                   filter-type="dateFrom"
+                                                   ng-blur="gridActions.filter()"
+                                                   ng-focus="gridActions.filter()" />
+
+
+
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding">
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding " show-errors>
+                                            <input type="datetime"
+                                                   name="bannedPeriodTo"
+                                                   class="form-control"
+                                                   uib-datepicker-popup="dd/MM/yyyy"
+                                                   ng-required="true"
+                                                   placeholder="{{'BANNEDPERIODTO' | translator}}"
+                                                   min-date="dateFrom"
+                                                   max-date="dateTo"
+                                                   close-text="Close"
+                                                   ng-model="vm.StaffTranProModel.BannedPeriodTo"
+                                                   show-weeks="true"
+                                                   is-open="bannedPeriodToOpened"
+                                                   ng-click="bannedPeriodToOpened = true"
+                                                   filter-by="placed"
+                                                   filter-type="dateFrom"
+                                                   ng-blur="gridActions.filter()"
+                                                   ng-focus="gridActions.filter()" />
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 remove-padding" show-errors>
+                                            <textarea class="form-control" placeholder="{{'CUSTOMEREVALUATION' | translator}}" cols="100" rows="7" ng-model="vm.StaffTranProModel.CustomerEvaluation" ng-required="true"></textarea>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 25px;"></div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+
+                                <div class="bg-white">
+                                    <table class="table table-bordered white">
+                                        <thead class="bg-light-blue">
+                                            <tr>
+                                                <td>Order Number</td>
+                                                <td>Type</td>
+                                                <td>Client name</td>
+                                                <td>Project Name</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> 170717O005 </td>
+                                                <td> TR</td>
+                                                <td> ABC INC </td>
+                                                <td> translation for Magazine </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 170717O005 </td>
+                                                <td> TR</td>
+                                                <td> ABC INC </td>
+                                                <td> translation for Magazine </td>
+                                            </tr>
+                                            <tr>
+                                                <td> ...... </td>
+                                                <td> ...</td>
+                                                <td> ......... </td>
+                                                <td> ............ </td>
+                                            </tr>
+                                            <tr>
+                                                <td> .......... </td>
+                                                <td> .....</td>
+                                                <td> .......</td>
+                                                <td> ...... </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 170713O022 </td>
+                                                <td> Native</td>
+                                                <td> Ok CO </td>
+                                                <td> native check for ENG->JPN translation </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+
+
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5 ">
+                        <div class="col-md-12 col-sm-12 col-xs-12 bg-gray ">
+
+                            <div class="col-md-4 col-sm-4 col-xs-4  ">
+                                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                    <label>{{'SPECIALFIELD' | translator}}</label>
+                                    <div class="box-body" style="border: 1px solid black">
+
+                                        <ul class="list-unstyled">
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'SHOWINWEBSITE' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'PARTNERNARRATOR' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left"> Promote</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'SHOWINWEBSITE' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'PARTNERNARRATOR' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left"> Promote</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'SHOWINWEBSITE' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'PARTNERNARRATOR' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'SHOWINWEBSITE' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left"> Promote</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'PARTNERNARRATOR' | translator}}</li>
+                                            <li><input type="checkbox" class="checkbox pull-left">{{'SHOWINWEBSITE' | translator}}</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4 ">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                    <label>{{'MEDICALFIELD' | translator}}</label>
+                                    <div class="box-body" style="border: 1px solid black">
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINFIELD' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINWEBSITE' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>Promote</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINWEBSITE' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINWEBSITE' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>Complete</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINFIELD' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'PARTNERNARRATOR' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                    <label>Research & Field </label>
+                                    <div class="box-body" style="border: 1px solid black">
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'PARTNERNARRATOR' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINFIELD' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINWEBSITE' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'COMPONENT' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix" style="height: 20px;"></div>
+                                </div>
+
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                    <label>Research & Field </label>
+                                    <div class="box-body" style="border: 1px solid black">
+
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'PARTNERNARRATOR' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINFIELD' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'SHOWINWEBSITE' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                                                <labels>{{'COMPONENT' | translator}}</labels>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                                <label><input type="checkbox" class="checkbox pull-left" /></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 remove-padding ">
+                        <div class="col-md-12 col-sm-12 col-xs-12 bg-gray remove-padding">
+
+                            <labels>Expert Certificate</labels>
+                            <div class="form-group">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <labels><input type="checkbox" class="checkbox pull-left" ng-model="vm.StaffTranProModel.ExpertCertificate.selected" /> Certify as Expert</labels>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 15px;"></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <lable>Last evaluation date</lable>
+                                <div class="clearfix"></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="datetime"
+                                           name="LastEvaluationDate"
+                                           class="form-control"
+                                           uib-datepicker-popup="dd/MM/yyyy"
+                                           ng-required="true"
+                                           placeholder="Last evaluation date"
+                                           min-date="dateFrom"
+                                           max-date="dateTo"
+                                           close-text="Close"
+                                           ng-model="vm.StaffTranProModel.LastEvaluationDate"
+                                           show-weeks="true"
+                                           is-open="LastEvaluationOpened"
+                                           ng-click="LastEvaluationOpened = true"
+                                           filter-by="placed"
+                                           filter-type="dateFrom"
+                                           ng-blur="gridActions.filter()"
+                                           ng-focus="gridActions.filter()" />
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+                                <lable>Next evaluation date</lable>
+                                <div class="clearfix"></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="datetime"
+                                           name="NextEvaluationDate"
+                                           class="form-control"
+                                           uib-datepicker-popup="dd/MM/yyyy"
+                                           ng-required="true"
+                                           placeholder="Next evaluation date"
+                                           min-date="dateFrom"
+                                           max-date="dateTo"
+                                           close-text="Close"
+                                           ng-model="vm.StaffTranProModel.NextEvaluationDate"
+                                           show-weeks="true"
+                                           is-open="NextEvaluationOpened"
+                                           ng-click="NextEvaluationOpened = true"
+                                           filter-by="placed"
+                                           filter-type="dateFrom"
+                                           ng-blur="gridActions.filter()"
+                                           ng-focus="gridActions.filter()"  />
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 ">
+                                    <select class="form-control">
+                                        <option> Select Month</option>
+                                        <option> 1 </option>
+                                        <option> 2 </option>
+                                        <option> 3 </option>
+                                        <option> 4 </option>
+                                        <option> 5 </option>
+                                        <option> 6 </option>
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 15px;"></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <lable>Evaluation history</lable>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 " show-errors>
+                                    <textarea class="form-control" placeholder="" cols="100" rows="5" ng-model="vm.StaffTranProModel.EvaluationHistory" ng-required="true"></textarea>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 30px;"></div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

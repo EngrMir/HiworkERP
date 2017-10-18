@@ -1,0 +1,892 @@
+﻿<div class="content-wrapper staff-registration dashboard">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Task Quotation Input
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"> Task Quotation </li>
+        </ol>
+    </section>
+
+    <section class="content content-main">
+        <form id="transQuotation" name="transQuotation" novalidate role="form">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-body remove-padding">
+                         <span class="btn  btn-default pull-left" type="submit" ng-submit="transQuotation.$valid" style="margin: 5px;" ng-click="vm.registerQuotaion()">
+                             {{vm.ButtonTitles[0]}}
+                            </span>
+                            <span class="btn  btn-default pull-left" style="margin: 5px;">
+                                Copy
+                            </span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-body remove-padding">
+                            <button class="btn btn-order-details btn-primary pull-left" style="margin: 5px;" ng-click="vm.orderDetails()" disabled="disabled">
+                                {{vm.ButtonTitles[1]}}
+                            </button>
+                            <button class="btn btn-temp-reg btn-primary pull-left" style="margin: 5px;" ng-click="vm.tempRegistration()" disabled="disabled">
+                                <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsTemporaryRegistration" ng-checked="vm.TaskQuotationModel.IsTemporaryRegistration" />
+                                {{vm.ButtonTitles[2]}}
+                            </button>
+                            <button class="btn btn-project btn-primary pull-left" style="margin: 5px;" ng-click="vm.projectInitiation()" disabled="disabled">
+                                {{vm.ButtonTitles[3]}}
+                            </button>
+                            <button class="btn btn-approval-req btn-primary pull-left" style="margin: 5px;" ng-click="vm.manageApproval('approvalrequest')" disabled="disabled">
+                                {{vm.ButtonTitles[4]}}
+                            </button>
+                            <button class="btn btn-approval btn-primary pull-left" style="margin: 5px;" ng-click="vm.manageApproval('approverequest')" disabled="disabled">
+                                {{vm.ButtonTitles[5]}}
+                            </button>
+                            <button class="btn btn-quotation-email btn-primary pull-left" style="margin: 5px;" ng-click="vm.openEmailWindow()" disabled="disabled">
+                                {{vm.ButtonTitles[6]}}
+                            </button>
+                            <button class="btn btn-quotation-request btn-primary pull-left" style="margin: 5px;" ng-click="vm.quotationRequest()" disabled="disabled">
+                                {{vm.ButtonTitles[7]}}
+                            </button>
+                            <button class="btn btn-conf-email btn-primary pull-left" style="margin: 5px;" ng-click="vm.confirmationEmail()" disabled="disabled">
+                                {{vm.ButtonTitles[8]}}
+                            </button>
+                            <button class="btn btn-order btn-primary pull-left" style="margin: 5px;" ng-click="vm.order_Click()" disabled="disabled">
+                                Order
+                            </button>
+                            <button class="btn btn-order-loss btn-primary pull-left" style="margin: 5px;" ng-click="vm.orderLoss_Click()" disabled="disabled">
+                                Order Loss
+                            </button>
+                            <button class="btn btn-delete btn-primary pull-left" style="margin: 5px;" disabled="disabled">
+                                {{vm.ButtonTitles[9]}}
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="box-body">
+                            <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <span>Quotation No.</span>
+                                            <input type="text" class="form-control" value="{{vm.TaskQuotationModel.EstimationNo}}" readonly />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                            <span>Project No.</span>
+                                            <input type="text" class="form-control" name="ProjectID" ng-required="true" ng-model="vm.TaskQuotationModel.ProjectID" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                            <span>Trading with.</span>
+                                            <comm-selection dlg-title="Client" tooltip-placement="top" uib-tooltip="Client" url="branch/list" text="{{vm.TaskQuotationModel.TradingName}}" data="{{vm.TaskQuotationModel.TradingID}}" listento="selectedTrade"></comm-selection>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                            <span>Contact date.</span>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       id="contactDate"
+                                                       class="form-control"
+                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                       min-date="dateFrom"
+                                                       max-date="dateTo"
+                                                       close-text="Close"
+                                                       ng-model="vm.TaskQuotationModel.InquiryDate"
+                                                       show-weeks="true"
+                                                       is-open="contactFromOpened"
+                                                       ng-click="contactFromOpened = true"
+                                                       filter-by="placed"
+                                                       filter-type="dateFrom"
+                                                       ng-blur="gridActions.filter()"
+                                                       ng-focus="gridActions.filter()" />
+                                                <span class="input-group-btn">
+                                                    <span for="contactDate" class="btn btn-default remove-padding">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <span>Quotation route</span>
+                                            <select id="selectRoute" class="form-control"
+                                                    data-ng-model="vm.TaskQuotationModel.EstimateRouteID"
+                                                    ng-options="r.ID as r.Name for r in ::vm.routes">
+                                                <option value="" selected="selected" disabled="disabled">Select..</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                            <span>Team</span>
+                                            <comm-selection dlg-title="Affiliated Team" url="department/list" data="{{vm.TaskQuotationModel.AffiliateTeamID}}" text="{{vm.TaskQuotationModel.AffiliateTeamName}}" listento="selectedTeam"></comm-selection>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Sales out.</span>
+                                            <comm-selection dlg-title="Outward sales" url="employee/list" data="{{vm.TaskQuotationModel.OutwardSalesID}}" text="{{vm.TaskQuotationModel.OutwardSalesName}}" listento="selectedOutwardSales"></comm-selection>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Sales large.</span>
+                                            <comm-selection dlg-title="Large sales" url="employee/list" data="{{vm.TaskQuotationModel.LargeSalesID}}" text="{{vm.TaskQuotationModel.LargeSalesName}}" listento="selectedLargeSales"></comm-selection>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Approved By</span>
+                                            <comm-selection dlg-title="Internal approval" url="employee/list" data="{{vm.TaskQuotationModel.ApprovalID}}" text="{{vm.TaskQuotationModel.ApprovalName}}" listento="selectedApprovals"></comm-selection>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Sales person</span>
+                                            <comm-selection dlg-title="Sales Rep." url="employee/list" data="{{vm.TaskQuotationModel.SalesPersonID}}" text="{{vm.TaskQuotationModel.SalesPersonName}}" listento="selectedRepresentative"></comm-selection>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Assistant</span>
+                                            <comm-selection dlg-title="Prep. Quotation" url="employee/list" data="{{vm.TaskQuotationModel.AssistantID}}" text="{{vm.TaskQuotationModel.AssistantName}}" listento="selectedprepQuotaion"></comm-selection>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                            <span>Coordinator</span>
+                                            <comm-selection dlg-title="Coordinator" url="employee/list" data="{{vm.TaskQuotationModel.CoordinatorID}}" text="{{vm.TaskQuotationModel.CoordinatorName}}" listento="selectedCoordinator"></comm-selection>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:96px;">
+                                    <div class="col-md-6 col-xs-6 col-sm-6">
+                                        <div class="box">
+                                            <div class="box-body">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <label>Client information</label>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsCompanyPrivate" ng-checked="vm.TaskQuotationModel.IsCompanyPrivate" /> Keep Private
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-md-5 col-sm- col-xs-5">
+                                                    <span>Client</span>
+                                                    <comm-selection dlg-title="Select client" url="company/viewlist" data="{{vm.TaskQuotationModel.ClientID}}" text="{{vm.TaskQuotationModel.ClientName}}" listento="selectedClient"></comm-selection>
+                                                </div>
+
+                                                <div class="col-md-7 col-sm-7 col-xs-7 ">
+                                                    <span>Business category</span>
+                                                    <select id="selectTargetLang" class="form-control"
+                                                            ng-model="vm.TaskQuotationModel.BusinessCategoryID"
+                                                            ng-options="r.ID as r.Name for r in ::vm.businessCategories">
+                                                        <option value="" selected="selected" disabled="disabled">Select..</option>
+                                                    </select>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <span>Person in Charge</span>
+                                                    <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.ClientPersonInCharge" />
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <span>E-mail Address</span>
+                                                    <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.ClientEmailCC" />
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <span>Client Status</span>
+                                                    <!--<select id="selectActionType" class="form-control" ng-model="vm.TaskQuotationModel.ClientStatus"
+                                                            ng-options="r.No as r.Name for r in vm.ClientStatusList">
+                                                        <option value="" ng-selected="true" disabled="disabled">----</option>
+                                                    </select>-->
+                                                    <select id="selectActionType" class="form-control" ng-model="vm.TaskQuotationModel.ClientStatus"
+                                                            ng-options="r.No as r.Name for r in vm.ClientStatusList">
+                                                        <option value="" ng-selected="true" disabled="disabled">Select...</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                    <span>Client Address</span>
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-8 col-xs-8 ">
+                                                            <textarea class="form-control" ng-model="vm.CulturalItem.ClientAddress" rows="4"></textarea>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                                            <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsProspect" ng-checked="vm.TaskQuotationModel.IsProspect" /> Prospect
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                                    <span>Contact no.</span>
+                                                    <input type="text" ng-model="vm.TaskQuotationModel.ClientContactNo" class="form-control" />
+                                                    <div class="clearfix"></div>
+                                                    <button class="btn btn-default" style="margin-top:5px;">Failed order</button>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                                    <span>FAX</span>
+                                                    <input type="text" ng-model="vm.TaskQuotationModel.ClientFax" class="form-control" />
+                                                    <div class="clearfix"></div>
+                                                    <button class="btn btn-default" style="margin-top:5px;">Research note</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 col-sm-6">
+                                        <div class="box">
+                                            <div class="box-body">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <label>Billing information</label>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsPostingBill" ng-checked="vm.TaskQuotationModel.IsPostingBill" /> Posting bill
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <span>Client Name</span>
+                                                    <input type="text" name="" class="form-control" ng-model="vm.CulturalItem.BillingCompanyName" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <span>Billing to</span>
+                                                    <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.BillingTo" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <span>E-mail Address (CC)</span>
+                                                    <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.BillingEmailCC" />
+                                                </div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <span>Billing address</span>
+                                                    <textarea class="form-control" rows="4" ng-model="vm.CulturalItem.BillingAddress"></textarea>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                                    <span>Contact no.</span>
+                                                    <input type="text" name="" class="form-control" ng-model="vm.TaskQuotationModel.BillingContactNo" />
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                                    <span>FAX</span>
+                                                    <input type="text" name="" class="form-control" ng-model="vm.TaskQuotationModel.BillingFax" />
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:2%">
+                                                    <span>Payment terms</span>
+                                                    <input type="text" class="form-control" placeholder="End of next month" ng-model="vm.TaskQuotationModel.PaymentTerms" />
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 estimation-pdf">
+                                <div class="form-group bg-gray checkbox-group" ">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Sender
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" name="sender" ng-model="vm.TaskQuotationModel.IsSenderIncharge" value="true"> Incharge
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="sender" ng-model="vm.TaskQuotationModel.IsSenderRepresentative" value="true"> Representative
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Attn.
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li class="">
+                                            <input type="radio" name="attn" ng-model="vm.TaskQuotationModel.IsAttnIncharge" value="true"> Incharge
+                                        </li>
+                                        <li class="">
+                                            <input type="radio" name="attn" ng-model="vm.TaskQuotationModel.IsCompanyName" value="true"> Company Name
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Seal
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" name="seal" ng-model="vm.TaskQuotationModel.IsSealNone" value="true"> None
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="seal" ng-model="vm.TaskQuotationModel.IsSealPresent" value="true"> Present
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group" style="">
+
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Tax
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" name="tax" ng-model="vm.TaskQuotationModel.IsInclTax" value="true"> Incl. Tax
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="tax" ng-model="vm.TaskQuotationModel.IsBeforeTax" value="true"> Before Tax
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Content
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" name="content" ng-model="vm.TaskQuotationModel.IsContentAll" value="true"> All
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="content" ng-model="vm.TaskQuotationModel.IsContentDetailView" value="true"> Detail View
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group bg-gray checkbox-group">
+                                    <label class="col-md-4 col-sm-3 col-xs-3">
+                                        Revision.
+                                    </label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" name="revision" ng-model="vm.TaskQuotationModel.IsRevisionNone" value="true"> None
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="revision" ng-model="vm.TaskQuotationModel.IsRevisionPresent" value="true"> Present
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                        <button class="btn btn-block btn-default remove-padding" ng-click="vm.prepareQuotationPdf()">Make PDF of the quotation</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-xs-12 col-sm-12 remove-padding" style="margin-top:2%;">
+
+                                    <div class="box">
+                                        <div class="box-body">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <label>Delivery information</label>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <span>Client name</span>
+                                                <input type="text" class="form-control" ng-model="vm.CulturalItem.DeliveryCompanyName" />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <span>Deliver to</span>
+                                                <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.DeliveryTo" />
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <span>E-mail Address (CC)</span>
+                                                <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.DeliveryEmailCC" />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <span>Delivering address</span>
+                                                <textarea class="form-control" rows="4" ng-model="vm.CulturalItem.DeliveryAddress"></textarea>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                                <span>Contact no.</span>
+                                                <input type="text" name="" class="form-control" ng-model="vm.TaskQuotationModel.DeliveryContactNo" />
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                                <span>FAX</span>
+                                                <input type="text" name="" class="form-control" ng-model="vm.TaskQuotationModel.DeliveryFax" />
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:2%">
+                                                <span>Delvery instructions</span>
+                                                <input type="text" class="form-control" placeholder="Note about delivery instructions" ng-model="vm.TaskQuotationModel.DeliveryInstruction" />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <div class="form-group">
+                                        <label>Todo Action List</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <span class="btn btn-default pull-left" style="margin: 5px;" ng-disabled="{{vm.TaskQuotationModel.IsActionBtnDisable}}" ng-click="vm.saveEstimationAction(vm.TaskQuotationModel.IsActionBtnDisable)">
+                                        Save
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div class="box">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+
+                                                <span>Next Action Date.</span>
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                           id="nextDate"
+                                                           class="form-control"
+                                                           uib-datepicker-popup="dd/MM/yyyy"
+                                                           placeholder="Next Gen. Date"
+                                                           min-date="dateFrom"
+                                                           max-date="dateTo"
+                                                           close-text="Close"
+                                                           ng-model="vm.EstimationAction.NextActionDate"
+                                                           show-weeks="true"
+                                                           is-open="nextActionDate"
+                                                           ng-click="nextActionDate = true"
+                                                           filter-by="placed"
+                                                           filter-type="dateFrom"
+                                                           ng-blur="gridActions.filter()"
+                                                           ng-focus="gridActions.filter()" />
+                                                    <span class="input-group-btn">
+                                                        <span for="birthDate" class="btn btn-default remove-padding">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                                <span>Action details</span>
+                                                <textarea class="form-control" ng-model="vm.CulturalItem.ActionDetails" rows="3"></textarea>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                                <span>Type of Action</span>
+                                                <select id="selectActionType" class="form-control"
+                                                        ng-model="vm.EstimationAction.ActionType"
+                                                        ng-options="r.No as r.Name_{{vm.TaskQuotationModel.CurrentCulture}} for r in vm.ActionTypeList">
+                                                    <option value="" ng-selected="true" disabled="disabled">Select Action Type..</option>
+                                                </select>
+                                                <div class="clearfix"></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+
+                                            <div class="table-responsive table-standard">
+                                                <table st-table="displayColl" class="table table-responsive table-bordered">
+                                                    <thead>
+                                                        <tr class="bg-light-blue text-center">
+                                                            <td>
+                                                                Date
+                                                            </td>
+                                                            <td>
+                                                                Updated by
+                                                            </td>
+                                                            <td>
+                                                                Detail
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody ng-repeat="item in vm.TaskQuotationModel.ActionItems track by $index">
+                                                        <tr>
+                                                            <td>
+                                                                {{item.Date | date:'yyyy/MM/dd'}}
+                                                            </td>
+                                                            <td>
+                                                                {{item.Updatedby}}
+                                                            </td>
+                                                            <td>
+                                                                {{item.Detail}}
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <span ng-click="vm.deleteEstimationAction(item)"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 ">
+
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="box">
+                                        <div class="box-body">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 add-margin-bottom">
+                                                <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.PurposeDetails" placeholder="Contents and Intended Use" />
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 add-margin-bottom">
+                                                <input type="text" class="form-control" ng-model="vm.TaskQuotationModel.OrderTitle" placeholder="Task name" />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 add-margin-bottom">
+                                                    <span class="col-md-4 col-sm-4 col-xs-4">
+                                                        Start date
+                                                    </span>
+                                                    <div class="col-md-4 col-xs-4 col-sm-4">
+                                                        <div class="input-group">
+                                                            <input type="text"
+                                                                   id="FirstDeliveryDate"
+                                                                   class="form-control"
+                                                                   uib-datepicker-popup="dd/MM/yyyy"
+                                                                   min-date="dateFrom"
+                                                                   max-date="dateTo"
+                                                                   close-text="Close"
+                                                                   ng-model="vm.TaskQuotationModel.FirstDeliveryDate"
+                                                                   show-weeks="true"
+                                                                   is-open="firstDeliveryDate"
+                                                                   ng-click="firstDeliveryDate = true"
+                                                                   filter-by="placed"
+                                                                   filter-type="dateFrom"
+                                                                   ng-blur="gridActions.filter()"
+                                                                   ng-focus="gridActions.filter()" />
+                                                            <span class="input-group-btn">
+                                                                <span for="contactDate" class="btn btn-default remove-padding">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 add-margin-bottom">
+                                                    <span class="col-md-4 col-sm-4 col-xs-4">
+                                                        Completion date
+                                                    </span>
+                                                    <div class="col-md-4 col-xs-4 col-sm-4">
+                                                        <div class="input-group">
+                                                            <input type="text"
+                                                                   id="FinalDeliveryDate"
+                                                                   class="form-control"
+                                                                   uib-datepicker-popup="dd/MM/yyyy"
+                                                                   min-date="dateFrom"
+                                                                   max-date="dateTo"
+                                                                   close-text="Close"
+                                                                   ng-model="vm.TaskQuotationModel.FinalDeliveryDate"
+                                                                   show-weeks="true"
+                                                                   is-open="finalDeliveryDate"
+                                                                   ng-click="finalDeliveryDate = true"
+                                                                   filter-by="placed"
+                                                                   filter-type="dateFrom"
+                                                                   ng-blur="gridActions.filter()"
+                                                                   ng-focus="gridActions.filter()" />
+                                                            <span class="input-group-btn">
+                                                                <span for="contactDate" class="btn btn-default remove-padding">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                                <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsRemarksHideInPDF" ng-checked="vm.TaskQuotationModel.IsRemarksHideInPDF" /> Remarks will be shown in PDF
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                                <textarea class="form-control" rows="4" placeholder="Notes on quotation" ng-model="vm.CulturalItem.Remarks"></textarea>
+                                            </div>
+                                            <div class="col-md-3 col-xs-3 col-sm-3">
+                                                <ul class="list-unstyled">
+                                                    <li><input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsCampaign" ng-checked="vm.TaskQuotationModel.IsCampaign" /> Promotion</li>
+                                                    <li><input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsSpecialPrice" ng-checked="vm.TaskQuotationModel.IsSpecialPrice" /> Special Price</li>
+                                                    <li><input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsSpecialDeal" ng-checked="vm.TaskQuotationModel.IsSpecialDeal" /> Special payment</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div class="box remove-margin">
+                                        <div class="box-body">
+                                            <Label>Remarks for cordinator</Label>
+                                            <div class="clearfix"></div>
+                                            <ul style="list-style: none;padding:0px;">
+                                                <li><input type="checkbox" class="checkbox pull-left" value="1" ng-model="vm.RemarksState[0]" />Past Complaints</li>
+                                                <li><input type="checkbox" class="checkbox pull-left" value="2" ng-model="vm.RemarksState[1]" />Quality</li>
+                                                <li><input type="checkbox" class="checkbox pull-left" value="3" ng-model="vm.RemarksState[2]" />Requested Content</li>
+                                                <li><input type="checkbox" class="checkbox pull-left" value="4" ng-model="vm.RemarksState[3]" />Selected</li>
+                                                <li><input type="checkbox" class="checkbox pull-left" value="5" ng-model="vm.RemarksState[4]" />Expertise</li>
+                                                <li><input type="checkbox" class="checkbox pull-left" value="6" ng-model="vm.RemarksState[5]" />Ongoing Task</li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                            <textarea class="form-control" rows="4" placeholder="Note for coordinator" ng-model="vm.TaskQuotationModel.CoordinatorNotes"></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="box remove-margin">
+                                        <div class="box-body">
+                                            <label> How was the HP known </label>
+                                            <div class="clearfix"></div>
+                                            <ul class="list-inline">
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.KnownByGoogle"> Google</li>
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.KnownByYahoo"> Yahoo!</li>
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.KnownByEmail"> Email</li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                            <label> Preferred Translator </label>
+                                            <div class="clearfix"></div>
+                                            <ul class="list-inline">
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsPerformance"> Performance </li>
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsPrice"> Price </li>
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsAccuracy"> Accuracy </li>
+                                                <li> <input type="checkbox" class="checkbox pull-left" ng-model="vm.TaskQuotationModel.IsLocal"> Local </li>
+                                            </ul>
+                                            <div class="clearfix">   </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <label style="margin-left: -15px;">Attached Reference Material</label>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <a style="text-decoration:underline;cursor:pointer;" ng-click="vm.uploadFile('Document Information', vm.TaskQuotationModel.Document, $index)">Upload Translation Document</a>
+                                                <span ng-if="vm.TaskQuotationModel.AttachedMaterialFileName != ''"> | </span>
+                                                <span style="text-decoration:underline;cursor:pointer;">
+                                                    <a ng-if="vm.TaskQuotationModel.AttachedMaterialFileName != ''" href="{{vm.TaskQuotationModel.AttachedMaterialDownloadURL}}" download>Download {{vm.TaskQuotationModel.AttachedMaterialFileName}}</a>
+                                                </span>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <input type="file" name="file" id="file" class="inputfile" style="display:none" />
+                                            <!--<input type="text" class="form-control " placeholder="No File Uploaded" readonly />-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select id="selectTargetLang" class="form-control"
+                                                ng-model="vm.TaskQuotationModel.SpecializedFieldID"
+                                                ng-options="r.ID as r.Name for r in ::vm.specializedFields">
+                                            <option value="" selected="selected" disabled="disabled">Specialized Field</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select id="selectTargetLang" class="form-control"
+                                                ng-model="vm.TaskQuotationModel.SubSpecializedFieldID"
+                                                ng-options="r.ID as r.Name for r in ::vm.subSpecializedFields">
+                                            <option value="" selected="selected" disabled="disabled">Sub-Specialized Field</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select id="selectCurrency" class="form-control"
+                                                ng-model="vm.Currency" ng-change="vm.changeCurrency()"
+                                                ng-options="r as r.Name for r in ::vm.currencyList">
+                                            <option value="" selected="selected" disabled="disabled">Select Currency</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <div class="box">
+                                        <div class="box-body">
+                                            <!--<div class="col-md-7 col-sm-7 col-xs-7">-->
+                                            <div class="table-responsive">
+                                                <table st-table="displayColl" st-safe-src="vm.rowCollection" class="table table-responsive table-bordered">
+                                                    <tr>
+                                                        <td class="bg-light-blue text-center"> Source Language</td>
+                                                        <td class="bg-light-blue text-center"> Target Language</td>
+                                                        <td class="bg-light-blue text-center">Tax Status</td>
+                                                        <td class="bg-light-blue text-center">Contents</td>
+                                                        <td class="bg-light-blue text-center">Evaluation      </td>
+                                                        <td class="bg-light-blue text-center">Quantity    </td>
+                                                        <td class="bg-light-blue text-center">Discount Rate  </td>
+                                                        <td class="bg-light-blue text-center">Amount of Discount</td>
+                                                        <td class="bg-light-blue text-center">Total </td>
+                                                        <td> </td>
+                                                    </tr>
+                                                    <tbody ng-repeat="item in vm.TaskQuotationModel.TaskQuotationItems track by $index">
+                                                        <tr class="task-row-container">
+                                                            <td>
+                                                                <input type="hidden" ng-model="item.ID" />
+                                                                <select id="selectSourceLang" class="form-control"
+                                                                        ng-model="item.SourceLanguageID"
+                                                                        ng-options="lang.ID as lang.Name for lang in ::vm.languages">
+                                                                    <option value="" selected="selected" disabled="disabled">Select Source Language</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select id="selectSourceLang" class="form-control"
+                                                                        ng-model="item.TargetLanguageID"
+                                                                        ng-options="lang.ID as lang.Name for lang in ::vm.languages">
+                                                                    <option value="" selected="selected" disabled="disabled">Select Target Language</option>
+                                                                </select>
+                                                            </td>
+                                                            <td class="remove-border">
+                                                                <input type="checkbox" class="pull-left" ng-model="item.ExcludeTax" ng-change="vm.calculateAmount(item)" /> Excl. Tax
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <input type="text" class="task-quotation-input" ng-model="item.Contents" value="" />
+                                                            </td>
+                                                            <td class="text-right">
+                                                                {{vm.Currency.Symbol}}
+                                                                <input type="text" class="task-quotation-input" ng-model="item.UnitPrice1" ng-change="vm.calculateAmount(item)" only-decimal />
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <input type="text" class="task-quotation-input" ng-model="item.PageCount1" ng-change="vm.calculateAmount(item)" only-digits />
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <input type="text" class="task-quotation-input" ng-model="item.DiscountRate" ng-change="vm.calculateDiscountRateOrValue(item, 'rate')" only-digits />%
+                                                            </td>
+                                                            <td class="text-right">
+                                                                {{vm.Currency.Symbol}}
+                                                                <input type="text" class="task-quotation-input" ng-model="item.Discount1" ng-change="vm.calculateDiscountRateOrValue(item, 'val')" only-digits />
+                                                            </td>
+                                                            <td class="text-right">
+                                                                {{vm.Currency.Symbol}}
+                                                                <label>{{item.ItemTotal | number : 2}}</label>
+                                                            </td>
+                                                            <td class="text-right">
+                                                                <span ng-click="vm.removeTableRow(item)"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Average Unit Price  </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.AverageUnitPrice | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Subtotal  </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.Subtotal | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Tax Estimate  </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.TaxEstimate | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Excl. Tax Quotation </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.ExclTaxQuotation | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Consumption Tax (8%) </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.ConsumptionTax | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Excl. Tax Cost </td>
+                                                            <td class="text-right">
+                                                                {{vm.Currency.Symbol}}
+                                                                <input type="text" class="" ng-model="vm.TaskQuotationModel.ExcludedTaxCost" ng-change="vm.calculateAmount()" only-deciaml />
+                                                            </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                            <td class="bg-gray"> Total Cost </td>
+                                                            <td class="text-right"> {{vm.Currency.Symbol}} {{vm.TotalCost | number : 2}}</td>
+                                                            <td class="remove-border"> &nbsp;  </td>
+                                                        </tr>
+
+                                                    </tfoot>
+                                                </table>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                                        <button class="btn btn-primary" ng-click="vm.addItem()">Add a row</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+        </form>
+
+    </section>
+</div>

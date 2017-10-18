@@ -1,0 +1,88 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        {{'COMPANYREGISTRATION'| translator}}
+    </div>
+    <div class="panel-body">
+        <div class="content-wrapper">
+            <div class="row">
+                <!--<div class="col-md-3 col-sm-3 col-xs-3">
+                    div 1
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    div 2
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    div 3
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    div 4
+                </div>
+            </div>-->
+            <section class="content">
+                <div class="clearfix"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                    <ul class="nav nav-tabs reg-tabs" id="regtabs">
+                        <li  ui-sref-active="active" id="companyInfo">
+                            <a ui-sref=".companyInfo">
+                                {{'BASICINFO'|translator}}
+                            </a>
+                        </li>
+                        <li  ui-sref-active="active" id="detail" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".detailInfo" ng-click="RouteForExistingCompany($event)">
+                                {{'DETAIL'|translator}}
+                            </a>
+                        </li>
+                        <li id="salesRecord" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".salesRecord" ng-click="RouteForExistingCompany($event)">
+                                {{'SALESRECORD'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="subcaontact" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".subcontact" ng-click="RouteForExistingCompany($event)">
+                                {{'SUBCONTRACTOR/AGENCY'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="bank" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".bank" ng-click="RouteForExistingCompany($event)">
+                                {{'BANKPAYMENT'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="transpro" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".transpro" ng-click="RouteForExistingCompany($event)">
+                                {{'TRANS-PROPARTNER'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="editingpro" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".editingpro" ng-click="RouteForExistingCompany($event)">
+                               {{'EDITING-PROPARTNER'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="hrpartner" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".hrpartner" ng-click="RouteForExistingCompany($event)">
+                           {{'HRPARTNER'|translator}}
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" id="dispatch" ng-class="{'disabled':IsBlocked}">
+                            <a ui-sref=".dispatch" ng-click="RouteForExistingCompany($event)">
+                               {{'DISPATCH,JOBINTRODUCTION'|translator}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="clearfix"></div>
+                <div class="tab-content ">
+                    <div class="tab-pane active" id="details">
+                        <div class="panel panel-default">
+                            <div class="panel-body remove-padding">
+                                <div ui-view></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    

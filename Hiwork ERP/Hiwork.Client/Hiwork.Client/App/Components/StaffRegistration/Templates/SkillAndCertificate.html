@@ -1,0 +1,738 @@
+﻿<div class="tab-pane" id="skill">
+    <div class="clearfix" style="height: 18px;"></div>
+    <div class="panel-body">
+        <form name="skillCertificateForm" novalidate role="form">
+            <fieldset>
+                <div class="col-md-4 col-xs-4 col-sm-4 ">
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray  ">
+                        <div class="col-md-5 col-xs-5 col-sm-5 bg-gray  ">
+                            <label class="pull-left">{{'INFORMATION' | translator}}</label>
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                <div class="form-group" show-errors>
+                                    <ui-select ng-model="vm.staffTechSkillItemData.selected" ng-required="true" theme="bootstrap">
+                                        <ui-select-match placeholder="Country">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="techSkill in vm.staffTechSkillItemData | filter: $select.search">
+                                            <span ng-bind-html="techSkill.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="form-group">
+                                    <ul class="list-unstyled">
+                                        <li><input type="checkbox" class="checkbox pull-left"> Don't Send e-Mail</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> Research</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> MS Office</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> Mac OS</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> Adobe</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> Mail NG</li>
+                                        <li><input type="checkbox" class="checkbox pull-left"> Mail NG</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 col-sm-1 remove-padding">
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6 bg-gray remove-padding ">
+                            <label class="pull-left">{{'DEVELOPMENTSKILLS' | translator}}</label>
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>OS</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option>-- Select Option --</option>
+                                            <option selected="selected">Linux</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right">
+                                        <input type="text" class="form-control" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>{{'PROGRAMINGLANGUAGE' | translator}}</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option> -- Select Option --</option>
+                                            <option selected="selected"> C/C+</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right">
+                                        <input type="text" class="form-control" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>{{'TYPEOFDATABASE' | translator}}</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option> -- Select Option --</option>
+                                            <option selected="selected">Oracle </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right" show-errors>
+                                        <input type="text" class="form-control" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>{{'PLATFORM' | translator}}</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option> -- Select Option --</option>
+                                            <option selected="selected">Platform </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right" show-errors>
+                                        <input type="text" class="form-control" ng-model="vm.platform" ng-required="true" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>Web</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option>-- Select Option --</option>
+                                            <option selected="selected"> Web </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right" show-errors>
+                                        <input type="text" class="form-control" ng-model="vm.web" ng-required="true" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                        <labels>Embeded</labels>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 remove-padding">
+                                        <select class="form-control">
+                                            <option> -- Select Option --</option>
+                                            <option selected="selected"> Embeded </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 remove-padding pull-right" show-errors>
+                                        <input type="text" class="form-control" ng-model="vm.embeded" ng-required="true" placeholder="Foregin Language 3">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix" style="height:10px"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix" style="height:25px"></div>
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="clearfix" style="height:10px"></div>
+                    </div>
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray">
+                        <labels class="form-group">{{'TECHNICALCERTIFICATE' | translator}}</labels>
+                        <div class="clearfix"></div>
+                        <button type="button" class="btn-flat">+</button>
+
+                        <div class="form-group">
+                            <div class="col-md-3 col-sm-3 col-xs-3 remove-padding" show-errors>
+                                <input type="text" class="form-control" ng-model="vm.TechnicalCertificateModel.Name_en" ng-required="true" placeholder="Medical DOCTOR">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 " show-errors>
+                                <input type="text" class="form-control datepicker" ng-model="vm.TechnicalCertificateModel.IssuedPlace" ng-required="true" value="06/08/2017">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 " show-errors>
+
+                                <input type="text"
+                                       name="issuedDate"
+                                       class="form-control"
+                                       ng-required="true"
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       placeholder="Issued Date (DD/MM/yyyy)"
+                                       min-date="dateFrom"
+                                       max-date="dateTo"
+                                       close-text="Close"
+                                       ng-model="vm.TechnicalCertificateModel.IssuedDate"
+                                       show-weeks="true"
+                                       is-open="dateFromOpened"
+                                       ng-click="dateFromOpened = true"
+                                       filter-by="placed"
+                                       filter-type="dateFrom"
+                                       ng-blur="gridActions.filter()"
+                                       ng-focus="gridActions.filter()" />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 " show-errors>
+                                <input type="text" class="form-control" ng-model="vm.TechnicalCertificateModel.UploadLink" ng-required="true" placeholder="Link">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 ">
+                                <button type="button" class="btn-flat" ng-click="vm.addSkill()">BTN</button>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-3 col-sm-3 col-xs-3 remove-padding" show-errors>
+                                <input type="text" class="form-control" ng-model="vm.TechnicalCertificateModel.Name_en" ng-required="true" placeholder="Medical DOCTOR">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 " show-errors>
+                                <input type="text" class="form-control datepicker" ng-model="vm.TechnicalCertificateModel.IssuedPlace" ng-required="true" value="06/08/2017">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 " show-errors>
+                                <input type="text"
+                                       name="issuedDate"
+                                       class="form-control"
+                                       ng-required="true"
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       placeholder="Issued Date (DD/MM/yyyy)"
+                                       min-date="dateFrom"
+                                       max-date="dateTo"
+                                       close-text="Close"
+                                       ng-model="vm.TechnicalCertificateModel.IssuedDate"
+                                       show-weeks="true"
+                                       is-open="dateFromOpened"
+                                       ng-click="dateFromOpened = true"
+                                       filter-by="placed"
+                                       filter-type="dateFrom"
+                                       ng-blur="gridActions.filter()"
+                                       ng-focus="gridActions.filter()" />
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 " show-errors>
+                                <input type="text" class="form-control" ng-model="vm.TechnicalCertificateModel.UploadLink" ng-required="true" placeholder="Link">
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 ">
+                                <button type="button" class="btn-flat" ng-click="vm.addSkill()">BTN</button>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height:235px;"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-4 col-xs-4 col-sm-4 bg-gray ">
+                    <label class="pull-left">{{'DEVELOPMENTSKILLS' | translator}}</label>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group" show-errors>
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                            <ui-select id="inputmainLanguages1" name="inputmainLanguages1" ng-model="vm.staffLanguageDataSkill.selected" ng-required="true" theme="bootstrap">
+                                <ui-select-match placeholder="Main Language">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="staffLanguage in vm.staffLanguageData | filter: $select.search">
+                                    <span ng-bind-html="staffLanguage.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5" show-errors>
+                            <ui-select name="inputSkillLevelsML1" id="inputSkillLevelsML1" ng-model="vm.skilLevels1Sk.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="skilLevel in vm.skilLevels2 | filter: $select.search">
+                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <ui-select id="inputmainLanguages1" name="inputmainLanguages1" ng-model="vm.staffLanguagefl1Skill.selected" ng-required="true" theme="bootstrap">
+                                <ui-select-match placeholder="Foreign Language1">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="staffLanguage in vm.staffLanguagefl1 | filter: $select.search">
+                                    <span ng-bind-html="staffLanguage.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+                            <ui-select name="inputSkillLevelsML1" id="inputSkillLevelsML1" ng-model="vm.skilLevels2Sk.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="skilLevel in vm.skilLevels2 | filter: $select.search">
+                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <ui-select id="inputmainLanguages1" name="inputmainLanguages1" ng-model="vm.staffLanguagefl2Skill.selected" ng-required="true" theme="bootstrap">
+                                <ui-select-match placeholder="Foreign Language2">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="staffLanguage in vm.staffLanguagefl2 | filter: $select.search">
+                                    <span ng-bind-html="staffLanguage.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+                            <ui-select name="inputSkillLevelsML1" id="inputSkillLevelsML1" ng-model="vm.skilLevels3Sk.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="skilLevel in vm.skilLevels3 | filter: $select.search">
+                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <ui-select id="inputmainLanguages1" name="inputmainLanguages1" ng-model="vm.staffLanguagefl3Skill.selected" ng-required="true" theme="bootstrap">
+                                <ui-select-match placeholder="Foreign Language2">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="staffLanguage in vm.staffLanguagefl2 | filter: $select.search">
+                                    <span ng-bind-html="staffLanguage.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+                            <ui-select name="inputSkillLevelsML1" id="inputSkillLevelsML1" ng-model="vm.skilLevels4Sk.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="skilLevel in vm.skilLevels4 | filter: $select.search">
+                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="clearfix" style="height: 10px;"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-1 col-sm-1 col-xs-1  remove-padding">
+                            <labels>TOEIC</labels>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 remove-padding " show-errors>
+                            <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.TOEICScore" ng-required="true" placeholder="980">
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3 " show-errors>
+                            <input type="text"
+                                   name="InputTOEICDate"
+                                   class="form-control"
+                                   ng-required="true"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="TOEICScore Date"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.SkillCertificateModel.TOEICDate"
+                                   show-weeks="true"
+                                   is-open="dateFromOpenedtofc"
+                                   ng-click="dateFromOpenedtofc = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                            <lables></lables>
+                        </div>
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                            <labels>TOEFL</labels>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-2  " show-errors>
+                            <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.TOFELScore" ng-required="true" placeholder="980">
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-2 remove-padding " show-errors>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-required="true"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="TOFELScore Date (DD/MM/YYYY)"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.SkillCertificateModel.TOFELDate"
+                                   show-weeks="true"
+                                   is-open="dateFromOpenedtof"
+                                   ng-click="dateFromOpenedtof = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="clearfix" style="height:20px"></div>
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.CertificateName1" ng-required="true" placeholder="{{'CERTIFICATE1' | translator}}">
+
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+
+
+                            <input type="text"
+                                   name="InputTOEICDate"
+                                   class="form-control"
+                                   ng-required="true"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="CertificateDate1 (DD/MM/YYYY)"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.SkillCertificateModel.CertificateDate1"
+                                   show-weeks="true"
+                                   is-open="dateFromOpenedCert1"
+                                   ng-click="dateFromOpenedCert1 = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.CertificateName2" ng-required="true" placeholder="{{'CERTIFICATE2' | translator}}">
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+                            <input type="text"
+                                   name="InputTOEICDate"
+                                   class="form-control"
+                                   ng-required="true"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="CertificateDate2 (DD/MM/YYYY)"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.SkillCertificateModel.CertificateDate2"
+                                   show-weeks="true"
+                                   is-open="dateFromOpenedCert2"
+                                   ng-click="dateFromOpenedCert2 = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding" show-errors>
+                            <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.CertificateName3" ng-required="true" placeholder="{{'CERTIFICATE3' | translator}}">
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 ">
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5 " show-errors>
+                            <input type="text"
+                                   name="InputTOEICDate"
+                                   class="form-control"
+                                   ng-required="true"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="CertificateDate3 (DD/MM/YYYY)"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.SkillCertificateModel.CertificateDate3"
+                                   show-weeks="true"
+                                   is-open="dateFromOpenedcert3"
+                                   ng-click="dateFromOpenedcert3 = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <div class="clearfix" style="height:20px"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <lables>{{'SPECIALIZEDFIELD' | translator}}</lables>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <ui-select ng-model="vm.staffTranslation1.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="translation in vm.staffSpecialField | filter: $select.search">
+                                    <span ng-bind-html="translation.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <ui-select ng-model="vm.staffTranslation2.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="translation in vm.staffSpecialField | filter: $select.search">
+                                    <span ng-bind-html="translation.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <ui-select ng-model="vm.staffTranslation3.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="translation in vm.staffSpecialField | filter: $select.search">
+                                    <span ng-bind-html="translation.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <ui-select ng-model="vm.staffTranslation4.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="translation in vm.staffSpecialField | filter: $select.search">
+                                    <span ng-bind-html="translation.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+                            <ui-select ng-model="vm.staffTranslation5.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="translation in vm.staffSpecialField | filter: $select.search">
+                                    <span ng-bind-html="translation.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height:10px;"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-10 col-sm-10 col-xs-10 remove-padding" show-errors>
+                            <textarea class="form-control" rows="4" ng-model="vm.SkillCertificateModel.Comment_en" ng-required="true" placeholder="{{'NOTECOMMENT' | translator}}"></textarea>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height:20px;"></div>
+                </div>
+
+
+                <div class="col-md-4 col-xs-4 col-sm-4 ">
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray">
+                        <div class="form-group">
+                            <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                <label>{{'PROJECTMANAGEMENT' | translator}}</label>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 18px;"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                    <labels>{{'PROJECT1' | translator}}</labels>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.startingmonth.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="{{'STARTINGMONTH' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="month in  vm.monthNames  | filter: $select.search">
+                                            <span ng-bind-html="month.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.startingyear.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="{{'STARTINGYEAR' | translator}}">{{$select.selected.Value}}</ui-select-match>
+                                        <ui-select-choices repeat="year in  vm.yearNames  | filter: $select.search">
+                                            <span ng-bind-html="year.Value | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project1TeamSize" ng-required="true" placeholder="Team Size">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.finishingmonth.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="finishingMonth">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="month in  vm.monthNames  | filter: $select.search">
+                                            <span ng-bind-html="month.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.finishingyear.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="Finishing Year">{{$select.selected.Value}}</ui-select-match>
+                                        <ui-select-choices repeat="year in vm.yearNames  | filter: $select.search">
+                                            <span ng-bind-html="year.Value | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project1Budget" ng-required="true" placeholder="Budget">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project1CompanyName_en" ng-required="true" placeholder="Name of The Company">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.companyname2" ng-required="true" placeholder="Name of the Company">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project1Role_en" ng-required="true" placeholder="Role">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix" style="height: 30px;"></div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+                                    <labels>{{'PROJECT2' | translator}}</labels>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.startingmonth2.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="{{'STARTINGMONTH' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="month in  vm.monthNames  | filter: $select.search">
+                                            <span ng-bind-html="month.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.startingyear2.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                        <ui-select-match placeholder="Starting Year">{{$select.selected.Value}}</ui-select-match>
+                                        <ui-select-choices repeat="year in vm.yearNames  | filter: $select.search">
+                                            <span ng-bind-html="year.Value | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project2TeamSize" ng-required="true" placeholder="Team Size">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.finishingmonth2.selected" theme="bootstrap" title="Choose a Month">
+                                        <ui-select-match placeholder="Finishing Month">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="month in  vm.monthNames  | filter: $select.search">
+                                            <span ng-bind-html="month.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <ui-select ng-model="vm.finishingyear2.selected" theme="bootstrap" title="Choose a Month">
+                                        <ui-select-match placeholder="Finishing Year">{{$select.selected.Value}}</ui-select-match>
+                                        <ui-select-choices repeat="year in  vm.yearNames | filter: $select.search">
+                                            <span ng-bind-html="year.Value | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project2Budget" ng-required="true" placeholder="Budget">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project2CompanyName_en" ng-required="true" placeholder="Name of The Company">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.companyname4" ng-required="true" placeholder="Name of the Company">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-6 " show-errors>
+                                    <input type="text" class="form-control" ng-model="vm.SkillCertificateModel.Project2Role_en" ng-required="true" placeholder="Role">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="height: 162px;"></div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</div>

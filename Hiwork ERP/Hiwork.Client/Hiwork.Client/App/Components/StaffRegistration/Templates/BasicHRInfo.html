@@ -1,0 +1,294 @@
+﻿<div class="tab-pane active" id="details">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form name="hRBasicInfoForm" novalidate role="form">
+                <fieldset>
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="col-md-5 col-xs-5 col-sm-5">
+                            <div class="col-md-12 col-xs-12 col-sm-12 bg-gray remove-padding">
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                        <label>HR documents</label>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                        <labels>Resume(Local)</labels>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                        <div class="col-md-1 col-xs-1 col-sm-1 remove-padding ">
+                                            <a href="#" class="btn btn-default btn-block "> Delete </a>
+                                        </div>
+                                        <div class="col-md-5 col-xs-5 col-sm-5 " show-errors>
+                                            <input type="text" class="form-control" style="height: 32px" placeholder="Resume.pdf" ng-model="vm.resumepdf" ng-required="true">
+                                        </div>
+                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block"> Upload </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Download </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Preview </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="clearfix" style="height: 10px;"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                        <labels>Resume(English)</labels>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                        <div class="col-md-1 col-xs-1 col-sm-1 remove-padding ">
+                                            <a href="#" class="btn btn-default btn-block ">{{'DELETE' | translator}}</a>
+                                        </div>
+                                        <div class="col-md-5 col-xs-5 col-sm-5 " show-errors>
+                                            <input type="text" class="form-control" style="height: 32px" placeholder="Resume.pdf" ng-model="vm.resumepdf2" ng-required="true">
+                                        </div>
+                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block"> Upload </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Download </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Preview </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="clearfix" style="height: 10px;"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                        <labels>JOB History</labels>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                        <div class="col-md-1 col-xs-1 col-sm-1 remove-padding ">
+                                            <a href="#" class="btn btn-default btn-block "> Delete </a>
+                                        </div>
+                                        <div class="col-md-5 col-xs-5 col-sm-5 " show-errors>
+                                            <input type="text" class="form-control" style="height: 32px" placeholder="Resume.pdf" ng-model="vm.resumepdf3" ng-required="true">
+                                        </div>
+                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block"> Upload </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Download </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Preview </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="clearfix" style="height: 10px;"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                        <labels>Other Certificate</labels>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                        <div class="col-md-2 col-xs-2 col-sm-2 remove-padding ">
+                                            <ul class="list-inline">
+                                                <li><a href="#" class="btn btn-default btn-block ">+</a></li>
+                                                <li><a href="#" class="btn btn-default btn-block "> Delete </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                            <input type="text" class="form-control" style="height: 32px" placeholder="Resume.pdf" ng-model="vm.resumepdf4" ng-required="true">
+                                        </div>
+                                        <div class="col-md-6 col-xs-6 col-sm-6 ">
+
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block"> Upload </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Download </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-default btn-block "> Preview </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="clearfix" style="height: 10px;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <div class="clearfix"> </div>
+                                <div class="clearfix" style="height: 20px;"></div>
+                            </div>
+
+                            <div class="col-md-12 col-xs-12 col-sm-12 bg-gray remove-padding">
+                                <div class="col-md-12 col-xs-12 col-sm-12 ">
+                                    <div class="clearfix" style="height: 20px;"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                            <label><input type="checkbox" class="checkbox pull-left" /> Add to HR stock</label>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                            <textarea class="form-control" placeholder="Offering position" cols="90" rows="3"></textarea>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="clearfix" style="height: 15px;"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                            <textarea class="form-control" placeholder="Educational back ground" cols="90" rows="3"></textarea>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="clearfix" style="height: 15px;"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                            <textarea class="form-control" placeholder="Job History" cols="90" rows="3"></textarea>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="clearfix" style="height: 15px;"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                            <textarea class="form-control" placeholder="enter the text to explain why we would like to keep this person in our HR stock list.Any skill, knowledge, ability, certificate....etc" cols="90" rows="3"></textarea>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="clearfix" style="height: 15px;"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-xs-7 col-sm-7">
+                            <div class="col-md-12 col-sm-12 col-xs-12 bg-gray">
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <lable>Summury of Resume</lable>
+                                        <div class="clearfix"></div>
+                                        <textarea class="form-control" placeholder="Show the information from Resume" cols="90" rows="7"></textarea>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix" style="height: 20px;"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <lable>Operation Evaluation</lable>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                        <select class="form-control">
+                                            <option> Ratings A/B/C/D</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix" style="height: 30px;"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <lable>Current State</lable>
+                                        <div class="clearfix"></div>
+                                        <textarea class="form-control" placeholder="enter the elavuation ,Write the current situation of Staff, family, skills etc." cols="90" rows="7"></textarea>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix" style="height: 20px;"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <lable>Application History</lable>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <table class="table table-bordered white">
+                                            <thead class="bg-light-blue">
+                                                <tr>
+                                                    <td>Applied date</td>
+                                                    <td>Applied Time</td>
+                                                    <td>Status</td>
+                                                    <td>Company name</td>
+                                                    <td>Job circuler No.</td>
+                                                    <td>Job Circuler Title </td>
+                                                    <td>Note/Memo</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> 2017/07/03 </td>
+                                                    <td> 10:25</td>
+                                                    <td> applied</td>
+                                                    <td> ABC University </td>
+                                                    <td> H170703001</td>
+                                                    <td> 【TOKYO/ENGLISH】 Assistant professor for XXXX </td>
+                                                    <td> Whispering </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> 2017/07/03 </td>
+                                                    <td> 10:25 </td>
+                                                    <td> applied </td>
+                                                    <td> ABC University </td>
+                                                    <td> H170703001</td>
+                                                    <td> 【KANAGAWA/ENGLISH】 English teacher for business course </td>
+                                                    <td> Immidiate </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> 2017/07/03 </td>
+                                                    <td> 10:25 </td>
+                                                    <td> applied </td>
+                                                    <td> ABC University </td>
+                                                    <td> H170703001</td>
+                                                    <td> 【TOKYO/ENGLISH】 Secretary of xxxxxx </td>
+                                                    <td> 2016 </td>
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix" style="height: 100px;"></div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

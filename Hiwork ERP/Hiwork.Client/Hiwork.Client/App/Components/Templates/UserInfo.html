@@ -1,0 +1,53 @@
+﻿<div class="panel panel-primary" style="max-height:450px;">
+    <div class="panel-heading"
+         style="font-size:large">
+        User List
+    </div>
+    <div class="panel-body">
+
+        <fieldset>
+            <div class="col-sm-9">
+
+                <label class="col-sm-1 control-label" for="inputSearch">Search</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="inputSearchTags" type="text"
+                           placeholder="Product search keywords separated by commas"
+                           ng-model="vm.search" />
+
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary " ng-click="vm.AddNewUser()" value="submit">
+                        <span class="glyphicon glyphicon-plus"> Add</span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+        <br />
+        <br />
+
+        <fieldset>
+
+            <table class="table">
+                <tbody>
+                    <tr ui-grid="vm.gridOptions"  ></tr>
+                </tbody>
+            </table>
+
+        </fieldset>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

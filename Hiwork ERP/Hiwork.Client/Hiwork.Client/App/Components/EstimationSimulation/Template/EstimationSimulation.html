@@ -1,0 +1,185 @@
+﻿
+
+<style type="text/css">
+    .padding-0 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .margin-content {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    .max-width {
+        width: 100%;
+    }
+    .solid-border {
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+    }
+    .no-border {
+        border-style: none;
+    }
+    .cell-pad-small {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+    .cell-pad-normal {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .cell-pad-large {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .cell-pad-extra {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .decimal-style {
+        width: calc(100% - 25px);
+        text-align: right;
+        padding-right: 4px;
+        background: transparent;
+    }
+    .padding-cell {
+        padding-right: 2px;
+    }
+    .float-left {
+        float: left;
+        padding-left: 3px;
+    }
+    .font-bold {
+        font-weight: bold;
+    }
+    .set-width-staff {
+        width: 130px;
+    }
+</style>
+
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="selectionForm">
+            <div class="modal-body" style="overflow-y:scroll; overflow-x: auto; width:100%; height: 75vh;">
+                <div class="table-responsive">
+                    <table class="max-width table-striped table-hover">
+                        <tbody ng-repeat="Details in $ctrl.DetailsList track by $index">
+                            <tr class="bg-light-blue text-center">
+                                <td class="solid-border">
+                                    <div class="float-left">
+                                        <span class="font_bold">{{$index + 1}}.</span>
+                                    </div>
+                                    <span>Language</span>
+                                </td>
+                                <td class="solid-border cell-pad-small">Phase</td>
+                                <td class="solid-border cell-pad-normal">Pages</td>
+                                <td class="solid-border cell-pad-large">Unit Price</td>
+                                <td class="solid-border cell-pad-small">Total Amount</td>
+                                <td class="solid-border">Discount (%)</td>
+                                <td class="solid-border cell-pad-small">Unit Price After</td>
+                                <td class="solid-border cell-pad-small">Total Estimation</td>
+                                <td class="solid-border cell-pad-small">Staff Payment</td>
+                                <td class="solid-border cell-pad-large">Cost (%)</td>
+                                <td class="solid-border cell-pad-extra">Cost</td>
+                                <td class="solid-border cell-pad-large">Profit (%)</td>
+                                <td class="solid-border cell-pad-extra">Profit</td>
+                            </tr>
+                            <tr ng-repeat="i in $ctrl.Number" ng-if="Details.Phase[i] == true">
+                                <td class="remove-padding no-border" ng-if="i == Details.First">
+                                    {{Details.SourceLanguageName}}
+                                </td>
+                                <td class="remove-padding no-border" ng-if="i != Details.First && i != Details.Last"></td>
+                                <td class="remove-padding no-border" ng-if="i == Details.Last && Details.Last > Details.First">
+                                    {{Details.TargetLanguageName}}
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{i + 1}}.
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.PageCount[i]}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.UnitPrice[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.TotalAmount[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.Discount[i] | number: 0}}<span> %</span>
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.UnitPriceAfter[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.TotalEstimation[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border set-width-staff" align="right">
+                                    <input type="text" class="decimal-style no-border"
+                                            ng-model="Details.StaffPayment[i]"
+                                            ng-change="$ctrl.SimulateEstimation()" only-decimal />
+                                    <span class="padding-cell">
+                                        {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.CostPercentage[i] | number: 0}}<span> %</span>
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.Cost[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.ProfitPercentage[i] | number: 0}}<span> %</span>
+                                    </span>
+                                </td>
+                                <td class="remove-padding no-border" align="right">
+                                    <span class="padding-cell">
+                                        {{Details.Profit[i] | number: 2}} {{$ctrl.Currency.Symbol}}
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr ng-if="$index < $ctrl.DetailsList.length - 1">
+                                <td colspan="13">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <div class="modal-footer">
+            <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+        </div>
+    </div>
+</div>

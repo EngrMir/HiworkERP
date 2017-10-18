@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Editing-Pro title goes here</title>
+	<style type="text/css">
+        *:not(br):not(tr):not(html) {
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100% !important;
+            height: 100%;
+            margin: 0;
+            line-height: 1.4;
+            background-color: #fff;
+            color: #222;
+            -webkit-text-size-adjust: none;
+        }
+		.mt15 {
+			margin-top: 15px;
+		}
+		table {
+			width: 100%;
+		}
+		.header .center-block {
+			background: #1a74b3 none repeat scroll 0 0;
+			border-bottom: 2px solid #0f4469;
+			padding: 15px 0;
+		}		
+		.center-block {
+			margin: 0 auto;
+			width: 570px;
+		}
+		.header .center-block table tbody tr td h2 {
+			color: #fff;
+			font-size: 20px;
+			margin: 0;
+			text-align: center;
+		}
+		.main-content {
+			padding: 15px 0;
+		}
+		.info-part {
+			margin-bottom: 15px;
+		}
+		.info-part table {
+			margin-bottom: 5px;
+		}
+		.info-part p {
+			margin: 0 0 5px;
+		}
+		.sub-heading {
+			text-align: center;
+		}
+		.heading-btn {
+			background: #00a7e6 none repeat scroll 0 0;
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 8px 25px;
+		}
+		.inquiry-part {
+			background: #f7f7f7 none repeat scroll 0 0;
+			padding: 15px;
+		}
+		.inquiry-part p {
+			margin: 0 0 5px;
+		}
+		
+		.inquiry-part table tr td:nth-child(1) {
+			width: 30%;
+		}
+		.inquiry-part table tr td:nth-child(2) {
+			text-align: center;
+			width: 8%;
+		}
+		.inquiry-part table tr td:nth-child(3) {
+			width: 62%;
+		}
+		.inquiry-part table tbody tr td {
+			padding: 3px 0;
+		}
+		.inquiry-part table tbody tr td ol {
+			list-style: outside none none;
+			margin: 0;
+			padding: 0;
+		}
+		.footer .center-block {
+			background: #1a74b3 none repeat scroll 0 0;
+			border-top: 2px solid #0f4469;
+			padding: 15px 0;
+			text-align: center;
+		}
+		.footer .center-block p {
+			color: #fff;
+			font-size: 14px;
+			margin: 0 0 4px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<div class="center-block">
+			<table>
+				<tr>
+					<td><h2>{Title}</h2></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="main-content">
+		<div class="center-block">
+			<div class="info-part">
+				<p>{Message}</p>
+			</div>
+			
+			<div class="inquiry-part">
+				<table>
+					<tr>
+						<td>● 联系日期</td>
+						<td>:</td>
+						<td>{ContactDate}</td>
+					</tr>
+					<tr>
+						<td>● 公司名</td>
+						<td>:</td>
+						<td>{CompanyName}</td>
+					</tr>
+					<tr>
+						<td>● 名称</td>
+						<td>:</td>
+						<td>{Name}</td>
+					</tr>
+					<tr>
+						<td>● 部</td>
+						<td>:</td>
+						<td>{Department}</td>
+					</tr>
+					<tr>
+						<td>● 电话号码</td>
+						<td>:</td>
+						<td>{PhoneNumber}</td>
+					</tr>
+					<tr>
+						<td>● 电子邮件</td>
+						<td>:</td>
+						<td>{Email}</td>
+					</tr>
+					<tr>
+						<td>● 公司实力</td>
+						<td>:</td>
+						<td>{Comments}</td>
+					</tr>
+					<tr>
+						<td>● 网站</td>
+						<td>:</td>
+						<td>
+							<ol>
+								<li>{WebURL1}</li>
+								<li>{WebURL2}</li>
+							</ol>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="footer">
+		<div class="center-block">
+			<p>校正プロ（trans-pro）事務局</p>
+			<p>〒105-0013 東京都港区浜松町2-1-3 第二森ビル4F</p>
+			<p>Tel：03-5733-4264 &#12288;Fax：03-3433-3320</p>
+			<p>(メール)info@editing-pro.jp</p>
+		</div>
+	</div>
+	
+</body>
+</html>

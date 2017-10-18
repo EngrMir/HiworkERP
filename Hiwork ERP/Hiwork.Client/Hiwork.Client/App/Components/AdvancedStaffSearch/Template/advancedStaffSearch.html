@@ -1,0 +1,913 @@
+﻿<div class="content-wrapper staff-registration dashboard">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Advanced Staff Search
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"> Advanced Staff Search </li>
+        </ol>
+    </section>
+
+    <section class="content content-main">
+        <form id="advancedStaffSearch">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-body remove-padding">
+                            <span class="btn  btn-primary pull-left" style="margin: 5px;" ng-click="vm.search()">
+                                Search
+                            </span>
+                            <span class="btn  btn-default pull-left" style="margin: 5px;">
+                                Clear
+                            </span>
+                        </div>
+                        <div class="clearfix"></div>                        
+                        <div class="box-body">
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Text Search</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Staff Number
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="staffNumber" placeholder="Staff Number" ng-model="vm.AdvancedStaffSearchModel.RegistrationID" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        My Number
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="myNumber" placeholder="My Number" ng-model="vm.AdvancedStaffSearchModel.MyIdentityNo" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Email
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="email" placeholder="Email" ng-model="vm.AdvancedStaffSearchModel.StaffEmailID"/>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Name
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="name" placeholder="Name" ng-model="vm.AdvancedStaffSearchModel.Name" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Contact Number
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="col-md-4 remove-padding">
+                                                            <input type="text" class="form-control primary" name="contactTelephone" placeholder="Telephone" ng-model="vm.AdvancedStaffSearchModel.Telephone" />
+                                                        </div>
+                                                        <div class="col-md-4 remove-padding">
+                                                            <input type="text" class="form-control primary" name="contactMobile" placeholder="Mobile" ng-model="vm.AdvancedStaffSearchModel.Mobile" />
+                                                        </div>
+                                                        <div class="col-md-4 remove-padding">
+                                                            <input type="text" class="form-control primary" name="contactFax" placeholder="FAX" ng-model="vm.AdvancedStaffSearchModel.Fax" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Text Search
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="textSearch" placeholder="Text Search" ng-model="vm.AdvancedStaffSearchModel.TextSearch" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Achievement Search
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control primary" name="achievementSearch" placeholder="Search by Achievement" ng-model="vm.AdvancedStaffSearchModel.AchievementSearch" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Source of Registration
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.SourceOfRegistrationID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.sourceofregistration">
+                                                            <option value="" selected="selected" >Select Source of Registration</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Language</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForiegnLanguage1ID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.language">
+                                                            <option value="" selected="selected" >Select Language</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForeignLang1Level"
+                                                                ng-options="r.Id as r.Name for r in ::vm.languagelevel">
+                                                            <option value="" selected="selected" >Select Level</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForiegnLanguage2ID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.language">
+                                                            <option value="" selected="selected" >Select Language</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForeignLang2Level"
+                                                                ng-options="r.Id as r.Name for r in ::vm.languagelevel">
+                                                            <option value="" selected="selected" >Select Level</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForiegnLanguage3ID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.language">
+                                                            <option value="" selected="selected" >Select Language</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForeignLang3Level"
+                                                                ng-options="r.Id as r.Name for r in ::vm.languagelevel">
+                                                            <option value="" selected="selected" >Select Level</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForiegnLanguage4ID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.language">
+                                                            <option value="" selected="selected" >Select Language</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ForeignLang4Level"
+                                                                ng-options="r.Id as r.Name for r in ::vm.languagelevel">
+                                                            <option value="" selected="selected" >Select Level</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Basic</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Gender
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="col-md-4">
+                                                            <input type="radio" name="gender" value="male" ng-model="vm.AdvancedStaffSearchModel.Sex" />&nbsp;Male
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="radio" name="gender" value="female" ng-model="vm.AdvancedStaffSearchModel.Sex" />&nbsp;Female
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="radio" name="gender" value="all" ng-model="vm.AdvancedStaffSearchModel.Sex" checked="checked" />&nbsp;All
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Age
+                                                    </div>
+                                                    <div class="col-md-8 no-padding">
+                                                        <div class="col-md-6">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.AgeFrom"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.age">
+                                                                <option value="" selected="selected">From</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.AgeTo"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.age">
+                                                                <option value="" selected="selected">To</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Nationality
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.NationalityID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.nationality">
+                                                            <option value="" selected="selected">Country Name</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        Visa
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.VisaCountryID"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.nationality">
+                                                                <option value="" selected="selected">Country</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.VisaTypeID"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.visatype">
+                                                                <option value="" selected="selected">Type</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3 no-padding">
+                                                            <div class="input-group">
+                                                                <input type="text"
+                                                                       id="contactDate"
+                                                                       class="form-control"
+                                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                                       min-date="dateFrom"
+                                                                       max-date="dateTo"
+                                                                       close-text="Close"
+                                                                       ng-model="vm.AdvancedStaffSearchModel.VisaExpire"
+                                                                       show-weeks="true"
+                                                                       is-open="contactFromOpened"
+                                                                       ng-click="contactFromOpened = true"
+                                                                       filter-by="placed"
+                                                                       filter-type="dateFrom"
+                                                                       ng-blur="gridActions.filter()"
+                                                                       placeholder="Expire Date"
+                                                                       ng-focus="gridActions.filter()" />
+                                                                <span class="input-group-btn">
+                                                                    <span for="contactDate" class="btn btn-default remove-padding">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Residence</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <input type="radio" name="residence" value="all" ng-model="vm.AdvancedStaffSearchModel.RdoResidenceType" />&nbsp;All
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <input type="radio" name="residence" value="overseas" ng-model="vm.AdvancedStaffSearchModel.RdoResidenceType" />&nbsp;Overseas
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ResidenceNationalityID"
+                                                                ng-options="r.Id as r.Value for r in ::vm.nationality">
+                                                            <option value="" selected="selected">Country Name</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <input type="radio" name="residence" value="japan" ng-model="vm.AdvancedStaffSearchModel.RdoResidenceType" />&nbsp;Japan
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Others</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="introvideo" name="introVideo" ng-model="vm.AdvancedStaffSearchModel.IsIntroVideo" />&nbsp;Introduction Video
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="chkactive30days" name="chkActive30Days" ng-model="vm.AdvancedStaffSearchModel.ChkActive30Days" />&nbsp;Display staff that are active within 30 days at the top
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="checkbox" value="snsaccount" name="snsaccount" ng-model="vm.AdvancedStaffSearchModel.IsSNS" />&nbsp;SNS Account
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.SNSAccount"
+                                                                ng-options="r.Id as r.Value for r in ::vm.snsaccount">
+                                                            <option value="" selected="selected">SNS Account</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="checkbox" value="dtpexperience" name="dtpexperience" ng-model="vm.AdvancedStaffSearchModel.IsDtpExperience" />&nbsp;Number of DTP experience
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.DtpExp"
+                                                                ng-options="r.Id as r.Value for r in ::vm.dtp">
+                                                            <option value="" selected="selected">DTP experience</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Technical Skill</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.TechnicalSkillParent"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.technicalSkillParent">
+                                                                <option value="" selected="selected">Technical Skill Parent Category</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.TechnicalSkillChild"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.technicalSkillChild">
+                                                                <option value="" selected="selected">Technical Skill Child Category</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Development Skill</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.DevelopmentSkillParent"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.developmentSkillParent">
+                                                                <option value="" selected="selected">Development Skill Parent Category</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.DevelopmentSkillChild"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.developmentSkillChild">
+                                                                <option value="" selected="selected">Development Skill Child Category</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Knowledge Skill</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.KnowledgeSkillParent"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.knowledgeSkillParent">
+                                                                <option value="" selected="selected">Development Skill Parent Category</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.KnowledgeSkillChild"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.knowledgeSkillChild">
+                                                                <option value="" selected="selected">Development Skill Child Category</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Medical Skill</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.MedicalSkillParent"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.medicalSkillParent">
+                                                                <option value="" selected="selected">Medical Skill Parent Category</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6 no-padding">
+                                                            <select class="form-control"
+                                                                    ng-model="vm.AdvancedStaffSearchModel.MedicalSkillChild"
+                                                                    ng-options="r.Id as r.Value for r in ::vm.medicalSkillChild">
+                                                                <option value="" selected="selected">Medical Skill Child Category</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <!-- <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>PC SKILL</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.OfficeType"
+                                                                ng-options="r.Id as r.Value for r in ::vm.officetype">
+                                                            <option value="" selected="selected">Office-Type</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.WebType"
+                                                                ng-options="r.Id as r.Value for r in ::vm.webtype">
+                                                            <option value="" selected="selected">Web-Type</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.TranslationTools"
+                                                                ng-options="r.Id as r.Value for r in ::vm.translationtools">
+                                                            <option value="" selected="selected">Translation Tools</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.ToolName"
+                                                                ng-options="r.Id as r.Value for r in ::vm.toolname">
+                                                            <option value="" selected="selected">Tool Name</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.Design"
+                                                                ng-options="r.Id as r.Value for r in ::vm.design">
+                                                            <option value="" selected="selected">Design</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.SoftwareName"
+                                                                ng-options="r.Id as r.Value for r in ::vm.softwarename">
+                                                            <option value="" selected="selected">Software Name</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!--<div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Priority List</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="priorityFlag" ng-model="vm.AdvancedStaffSearchModel.PriorityList[0]" />&nbsp; Priority Flag
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="registerAsACompany" ng-model="vm.AdvancedStaffSearchModel.PriorityList[1]" />&nbsp; Register as a Company
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="realtimeStaff" ng-model="vm.AdvancedStaffSearchModel.PriorityList[2]" />&nbsp; Realtime Staff
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="freelance" ng-model="vm.AdvancedStaffSearchModel.PriorityList[3]" />&nbsp; Freelance
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="employee" ng-model="vm.AdvancedStaffSearchModel.PriorityList[4]" />&nbsp; Employee
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="transpro" ng-model="vm.AdvancedStaffSearchModel.PriorityList[5]" />&nbsp; Transpro
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="noRegisteredDetails" ng-model="vm.AdvancedStaffSearchModel.PriorityList[6]" />&nbsp; No Registered Details
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Internally Certified Expert</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="patent" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[0]" />&nbsp; Patent
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="medicine" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[1]" />&nbsp; Medicine/Medicine
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="it" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[2]" />&nbsp; IT
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="law" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[3]" />&nbsp; Law
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="finance" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[4]" />&nbsp; Finance
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="simultaneousInterpretation" ng-model="vm.AdvancedStaffSearchModel.CertifiedExpert[5]" />&nbsp; Simultaneous Interpretation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />-->
+                                </div>
+                            </div>
+                            <!--<div class="col-lg-2">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Exclusion List</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="cautionNeeded" ng-model="vm.AdvancedStaffSearchModel.Exclusion[0]" />&nbsp; Caution Needed
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="realtimeStaff" ng-model="vm.AdvancedStaffSearchModel.Exclusion[1]" />&nbsp; Realtime Staff
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="emailDisconnected" ng-model="vm.AdvancedStaffSearchModel.Exclusion[2]" />&nbsp; Email Disconnected
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="phoneDisconnected" ng-model="vm.AdvancedStaffSearchModel.Exclusion[3]" />&nbsp; Phone Disconnected
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="priorityFlag" ng-model="vm.AdvancedStaffSearchModel.Exclusion[4]" />&nbsp; Priority Flag
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="employee" ng-model="vm.AdvancedStaffSearchModel.Exclusion[5]" />&nbsp; Employee
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="registerAsACompany" ng-model="vm.AdvancedStaffSearchModel.Exclusion[6]" />&nbsp; Register as a Company
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="" name="noRegisteredDetails" ng-model="vm.AdvancedStaffSearchModel.Exclusion[7]" />&nbsp; No Registered Details
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+                                    
+                                </div>
+                            </div>-->
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Translation</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        Number of completed translation
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.TranslationFrom"
+                                                                ng-options="r.Id as r.Value for r in ::vm.tin">
+                                                            <option value="" selected="selected" >From</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.TranslationTo"
+                                                                ng-options="r.Id as r.Value for r in ::vm.tin">
+                                                            <option value="" selected="selected" >To</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        Translation Unit Price：
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control primary" name="translationUnitPrice" placeholder="Translation Unit Price" ng-model="vm.AdvancedStaffSearchModel.TranslationUnitPrice" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Interpretation</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="dropdown">
+                                                            Number of Completed Interpretation
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.InterpretationFrom"
+                                                                ng-options="r.Id as r.Value for r in ::vm.iin">
+                                                            <option value="" selected="selected" >From</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.InterpretationTo"
+                                                                ng-options="r.Id as r.Value for r in ::vm.iin">
+                                                            <option value="" selected="selected" >To</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 5px">
+                                                    <div class="col-md-6" style="background-color: #eff0f1; padding-bottom: 10px;">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                Interpretation Unit Price
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input type="radio" name="unitPrice" value="unitPriceHourly" ng-model="vm.AdvancedStaffSearchModel.InterpretationUnitPriceType" />Hourly
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input type="radio" name="unitPrice" value="unitPriceHalfDay" ng-model="vm.AdvancedStaffSearchModel.InterpretationUnitPriceType" />Half Day
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input type="radio" name="unitPrice" value="unitPriceOneDay" ng-model="vm.AdvancedStaffSearchModel.InterpretationUnitPriceType" />One Day
+                                                        </div>
+                                                        <div class="col-lg-12 no-padding">
+                                                            <input type="text" class="form-control primary" name="interpretationunitPrice" placeholder="Unit Price" ng-model="vm.AdvancedStaffSearchModel.InterpretationUnitPriceValue" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <input type="checkbox" value="" name="succInterpretation" ng-model="vm.AdvancedStaffSearchModel.IsSuccessiveInterpretation" />&nbsp;Successive interpretation
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <input type="checkbox" value="" name="succInterpretation" ng-model="vm.AdvancedStaffSearchModel.IsWhisperingInterpretation" />&nbsp;Whispering Interpretation
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <input type="checkbox" value="" name="succInterpretation" ng-model="vm.AdvancedStaffSearchModel.IsSimultaneousInterpretation" />&nbsp;Simultaneous Interpretation
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="box">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Narration</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="dropdown">
+                                                            Number of Completed Narration
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.NarrationFrom"
+                                                                ng-options="r.Id as r.Value for r in ::vm.nin">
+                                                            <option value="" selected="selected" >From</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.NarrationTo"
+                                                                ng-options="r.Id as r.Value for r in ::vm.nin">
+                                                            <option value="" selected="selected" >To</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding-bottom: 5px;">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" value="specialistNarator" ng-model="vm.AdvancedStaffSearchModel.IsSpecialistNarator" />
+                                                        Specialist Narator
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding-bottom: 5px;">
+                                                    <div class="col-md-4">
+                                                        Performance
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select class="form-control"
+                                                                ng-model="vm.AdvancedStaffSearchModel.NarrationPerformance"
+                                                                ng-options="r.Id as r.Value for r in ::vm.narrationperformance">
+                                                            <option value="" selected="selected" >Performance</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="col-md-12" style="background-color: #eff0f1;">
+                                                            <label>Voice</label>
+                                                        </div>
+                                                        <div class="col-md-12" style="background-color: #eff0f1; padding-bottom: 10px;">
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    Voice Quality
+                                                                </div>
+                                                                <div class="col-sm-8">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    Voice Age
+                                                                </div>
+                                                                <div class="col-md-8">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    Voice Type
+                                                                </div>
+                                                                <div class="col-md-8">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    Search Sample
+                                                                </div>
+                                                                <div class="col-md-8">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

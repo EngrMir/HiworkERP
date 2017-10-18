@@ -1,0 +1,68 @@
+﻿angular.module("hiworkApp").service("companyService", ['$q', '$timeout', '$http', 'ajaxService', 'appSettings', 'AppStorage', 'sessionFactory', 'ajaxService', function ($q, $timeout, $http, ajaxService, appSettings, AppStorage, sessionFactory, ajaxService) {
+
+    var currentCulture = sessionFactory.GetData(AppStorage.currentLanguage);
+    var currentUser = sessionFactory.GetObject(AppStorage.userData);
+
+
+    var BaseModel = {}
+    BaseModel.CurrentUserID = currentUser.CurrentUserID;
+    BaseModel.CurrentCulture = currentCulture;
+    BaseModel.ApplicationId = appSettings.ApplicationId;
+
+    var service = {
+        getCompany: getCompanyList, 
+        getCompanyConfigData: GetConfigData,
+        getBank: getBank,
+        getBankAccountType: getBankAccountType,
+        getBankBranches: getBankBranches,
+        getDesignation: getDesignation
+    };
+
+    return service;
+
+    function getCompanyList() {
+        return httpPost("company/viewlist", BaseModel);
+    }
+
+
+    function GetConfigData()
+    {
+        return httpPost("company/config", BaseModel);
+    }
+
+    function getBank() {
+        return httpPost("bank/list", BaseModel);
+    };
+
+    function getBankAccountType() {
+        return httpPost("bankAccountType/list", BaseModel);
+    };
+
+    function getBankBranches() {
+        return httpPost("bankbranch/list", BaseModel);
+    };
+
+    function getCompanyIndustryClassifications() {
+        return httpPost("companyindustryclassification/list", BaseModel);
+    }
+
+     function getDesignation() {
+         return httpPost("designation/list", BaseModel);
+        }
+    function httpExecute(requestUrl, method, data) {
+       
+        return $http({
+            url: appSettings.API_BASE_URL + requestUrl,
+            method: method,
+            data: data
+        }).then(function (response) {
+            return response.data;
+        }, function (error) {
+            exceptionHandler.handleException(error);
+        });
+    }
+
+    function httpPost(url, data) {
+        return httpExecute(url, 'POST', data);
+    }
+}]);

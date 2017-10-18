@@ -1,0 +1,950 @@
+﻿<style>
+.mousechange:hover {
+ cursor:pointer;
+    }
+</style>
+
+    <div class="wrapper" ng-controller="homeController" ng-init="init()">
+        <header class="main-header">
+			
+			<div class="header-top-area">
+				<div class="container-fluid">
+					<div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+						<div class="site-logo logo">
+							<!-- Logo -->
+							<a ui-sref="dashboard" class="">
+								<img src="content/images/logo.png"/>
+							</a>
+						</div>
+					</div>
+					
+					<div class="col-lg-5 col-md-4 col-sm-6 hidden-xs">
+						<div class="header-middle">
+							<div class="row">
+								<ul class="list-inline " id="top-search" align="center">
+									<li class="col-sm-4 col-xs-12">
+										<div class="">
+											<input type="text" class="form-control" placeholder="Order No" id="orderId" ng-model="orderId" ng-keyup="orderKeyUp($event)" >
+										</div>
+									</li>
+									<li class="col-sm-4 col-xs-12">
+										<div class="">
+											<input type="text" class="form-control" placeholder="Staff No" id="staffId" ng-model="staffId" ng-keyup="staffKeyUp($event)">
+										</div>
+									</li>
+									<li class="col-sm-4 col-xs-12">
+										<div class="">
+											<input type="text" class="form-control" placeholder="Client No" id="clientId" ng-model="clientId" ng-keyup="clientKeyUp($event)">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-5 col-sm-6">
+						<div class="header-right">
+							<div class="navbar-custom-menu">
+								<ul class="nav navbar-nav">
+									<!-- Messages: style can be found in dropdown.less-->
+									<!--<li class="dropdown messages-menu">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-envelope-o"></i>
+											<span class="label label-success">4</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li class="header">You have 4 messages</li>
+											<li>
+												<ul class="menu">
+													<li>
+														<a>
+															<div class="pull-left">
+																<img src="content/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+															</div>
+															<h4>
+																Support Team
+																<small><i class="fa fa-clock-o"></i> 5 mins</small>
+															</h4>
+															<p>Why not buy a new awesome theme?</p>
+														</a>
+													</li>
+													<li>
+														<a>
+															<div class="pull-left">
+																<img src="content/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+															</div>
+															<h4>
+																AdminLTE Design Team
+																<small><i class="fa fa-clock-o"></i> 2 hours</small>
+															</h4>
+															<p>Why not buy a new awesome theme?</p>
+														</a>
+													</li>
+													<li>
+														<a>
+															<div class="pull-left">
+																<img src="content/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+															</div>
+															<h4>
+																Developers
+																<small><i class="fa fa-clock-o"></i> Today</small>
+															</h4>
+															<p>Why not buy a new awesome theme?</p>
+														</a>
+													</li>
+													<li>
+														<a>
+															<div class="pull-left">
+																<img src="content/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+															</div>
+															<h4>
+																Sales Department
+																<small><i class="fa fa-clock-o"></i> Yesterday</small>
+															</h4>
+															<p>Why not buy a new awesome theme?</p>
+														</a>
+													</li>
+													<li>
+														<a>
+															<div class="pull-left">
+																<img src="content/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+															</div>
+															<h4>
+																Reviewers
+																<small><i class="fa fa-clock-o"></i> 2 days</small>
+															</h4>
+															<p>Why not buy a new awesome theme?</p>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li class="footer"><a>See All Messages</a></li>
+										</ul>
+									</li>-->
+									<!-- Notifications: style can be found in dropdown.less -->
+									<li class="dropdown notifications-menu" ng-click="loadNotifications()">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-bell-o"></i>
+											<span class="label label-warning">{{unreadcount}}</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li class="header">You have {{unapprovedcount}} notification{{unapprovedcount > 1 ? 's' : ''}}</li>
+											<li>
+												<!-- inner menu: contains the actual data -->
+												<ul class="menu" ng-repeat="n in notifications track by $i">
+													<li ng-click="traceOutNotification($event, n)">
+														<a>
+															<i class="fa fa-users text-aqua"></i> {{n.Description}}
+														</a>
+													</li>
+												</ul>
+
+											</li>
+											<li class="footer"><a ui-sref="ApprovalEstimationList">View all</a></li>
+										</ul>
+									</li>
+									<!-- Tasks: style can be found in dropdown.less -->
+									<!--<li class="dropdown tasks-menu">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-flag-o"></i>
+											<span class="label label-danger">9</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li class="header">You have 9 tasks</li>
+											<li>
+												<ul class="menu">
+													<li>
+														<a>
+															<h3>
+																Design some buttons
+																<small class="pull-right">20%</small>
+															</h3>
+															<div class="progress xs">
+																<div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+																	<span class="sr-only">20% Complete</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a>
+															<h3>
+																Create a nice theme
+																<small class="pull-right">40%</small>
+															</h3>
+															<div class="progress xs">
+																<div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+																	<span class="sr-only">40% Complete</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a>
+															<h3>
+																Some task I need to do
+																<small class="pull-right">60%</small>
+															</h3>
+															<div class="progress xs">
+																<div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+																	<span class="sr-only">60% Complete</span>
+																</div>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a>
+															<h3>
+																Make beautiful transitions
+																<small class="pull-right">80%</small>
+															</h3>
+															<div class="progress xs">
+																<div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+																	<span class="sr-only">80% Complete</span>
+																</div>
+															</div>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li class="footer">
+												<a>View all tasks</a>
+											</li>
+										</ul>
+									</li>-->
+
+							 
+									<li ng-if="currentUser.Team === 'System User'">
+										<a>{{currentUser.Team}}</a>
+									</li>
+									<li ng-if="currentUser.Branch && currentUser.Team === 'System User'">
+									   <a><strong>Role</strong>:{{currentUser.Branch}}</a>
+									</li>
+							 
+									<!-- User Account: style can be found in dropdown.less -->
+									<li ng-if="currentUser.Team && currentUser.Team !=='System User'">
+										<a><strong>Team</strong>: {{currentUser.Team}} </a>
+									</li>
+									<li ng-if="currentUser.Branch && currentUser.Team !=='System User'">
+										<a><strong>Branch</strong>:{{currentUser.Branch}}</a>
+									</li>
+									<li class="dropdown user user-menu">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<!--<img src="content/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
+											<span>{{currentUser.Username}}</span>
+										</a>
+
+										<ul class="dropdown-menu">
+											<!-- User image -->
+											<li class="user-header">
+												<img src="content/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+												<p>
+													Alexander Pierce - Web Developer
+													<small>Member since Nov. 2012</small>
+												</p>
+											</li>
+
+											<!-- Menu Body -->
+											<!--<li class="user-body">
+										<div class="row">
+											<div class="col-xs-4 text-center">
+												<a >Followers</a>
+											</div>
+											<div class="col-xs-4 text-center">
+												<a >Sales</a>
+											</div>
+											<div class="col-xs-4 text-center">
+												<a >Friends</a>
+											</div>
+										</div>
+									</li>-->
+											<!-- Menu Footer-->
+											<li class="user-footer">
+												<!--<div class="pull-left">
+											<a  class="btn btn-default btn-flat">Profile</a>
+										</div>-->
+												<div class="pull-right">
+													<a ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<!-- Control Sidebar Toggle Button -->
+									<li class="dropdown tasks-menu">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-gears"></i>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<!-- inner menu: contains the actual data -->
+												<ul class="menu">
+													<li ng-repeat="lang in languages" ng-click="languageChanged(lang)">
+														<a>
+															{{lang.Name}}
+														</a>
+													</li>
+												</ul>
+											<li>
+										</ul>
+									</li>
+									<li class="toggle-nav" ng-click="deviceStyle={display:'block'}">
+										<a><i class="fa fa-bars"></i> Menu</a>
+									</li>
+								</ul>
+							</div> <!-- navbar-custom-menu end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Main menu area start -->
+            <nav id="mainmenu" class="mainmenu-area">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMenu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> <!-- mobile menu button, shows only in mobile -->
+                        <a class="navbar-brand hidden-lg hidden-md" ui-sref="dashboard">
+							<div class="site-logo logo">
+								<img src="content/images/logo.png"/>
+							</div>
+						</a>
+                    </div><!-- /* navbar-header end */ -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse m_menu" id="navMenu">
+						<ul id="menubar" ng-style="deviceStyle" class="nav navbar-nav m_center_menu">
+							<!--
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								...
+								<li class="dropdown-submenu">
+									<a tabindex="-1">More options</a>
+									<ul class="dropdown-menu">
+										...
+									</ul>
+								</li>
+							</ul>
+							-->
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Dashboard
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">									
+									<li><a class="nav-home-menu" ui-sref="dashboard">Super Admin</a></li>
+									<li><a class="nav-home-menu" ui-sref="accountsdashboard">Accounts</a></li>
+									<li><a ui-sref="hrdashboard">HR( Human Resource )</a></li>
+									<li><a ui-sref="translatordashboard">Translator</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Administrative Settings
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a ui-sref="SystemSettings">System Settings</a></li>
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Security Management</a>
+										<ul class="dropdown-menu">
+											<li><a class="nav-home-menu" ui-sref="Role">Role Management</a></li>
+											<li><a ui-sref="UserInfo">User Management</a></li>
+										</ul>
+									</li>
+									<li><a ui-sref="Language">Language</a></li>
+									<li><a ui-sref="Unit">Unit</a></li>
+									<li><a ui-sref="UnitPrice">Unit Price Settings</a></li>
+									<li><a ui-sref="TransproLanguagePrice">Transpro Language Price </a></li>
+                                    <!--<li><a ui-sref="AdvertizementSettings">AdvertizementSettings</a></li>-->
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Organizational Management</a>
+										<ul class="dropdown-menu">
+											<li><!--<a ui-sref="Division">Company Division</a>--></li>
+											<li><a ui-sref="Country">Country</a></li>
+											<li><a ui-sref="Branch">Branch Office</a></li>
+											<li><a ui-sref="Department">Department</a></li>
+											<!--<li><a ui-sref="Team">Team</a></li>
+											<li><a ui-sref="Designation">Designation</a></li>-->
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Bank Account Management</a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="Bank">Bank</a></li>
+											<li><a ui-sref="BankBranch">Bank Branch</a></li>
+											<li><a ui-sref="BankAccount">Bank Account</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Management Analysis
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class=""><a ui-sref="EmployeRegistration">Employee Registration</a></li>
+									<li><a ui-sref="EmployeeList">Employee List</a></li>
+									<!--<li><a>Yearly Target</a></li>-->
+									<li><a>My Page</a></li>
+									<!--<li><a>Conference Proceedings</a></li>-->
+
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Accounts   </a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="StaffPayment">Payment management</a></li>
+											<li><a>Cost & Regal Record</a></li>
+											<li><a>Orderwise sales list</a></li>
+											<li><a>Income management</a></li>
+											<li><a>Sales List</a> </li>
+											<!--<li><a>Super Admin</a></li>
+											<li><a>Accounts</a></li>
+											<li><a>HR( Human Resource )</a></li>
+											<li><a>Translator</a></li>
+											<li><a ui-sref="StaffPayment">Staff and Client Payments</a></li>
+											<li><a ui-sref="StaffTaxReport">Staff and Client Tax Report</a></li>
+											<li><a >Staff Payments (Company)</a></li>
+											<li><a>Affiliate Payments (Trans-pro)</a></li>
+											<li><a>Staff Tax with Holding and Payment Records</a></li>
+											<li><a>Payment for Affiliate (Co-operatives)</a></li>
+											<li><a>Not Used</a></li>
+											<li><a>Company to Company Invoice</a></li>
+											<li><a >Income of Company</a></li>-->
+
+										</ul>
+									</li>
+
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">Sales Analysis  </a>
+										<ul class="dropdown-menu">
+											<li><a>Real-time Staff Pay</a></li>
+											<li><a>Translation department Number Management</a></li>
+											<li><a>Translation team current status confirmation</a></li>
+											<li><a>Translation team weekly analysis</a></li>
+											<li><a>Business valuation analysis</a></li>
+											<li><a>Month, day of the week, day totals (site estimate form)</a></li>
+											<li><a>Human resources department number management</a></li>
+											<li><a>Human resources department by employee number management</a></li>
+											<li><a>Inquiry number of Dispatch introduce by rank and progress</a></li>
+											<li><a>Dispatch introduce inquiry source</a></li>
+											<li><a>Dispatch introduces inquiry number</a></li>
+											<li><a>Total annual sales</a></li>
+											<li><a>Employee analysis</a></li>
+											<li><a>Employee activity analysis</a></li>
+											<li><a>Company’s sales total</a></li>
+										</ul>
+									</li>-->
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Staff Management
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Basic Settings</a>
+										<ul class="dropdown-menu">
+											<!--<li><a ui-sref="Category">Category</a></li>-->
+											<!--<li><a ui-sref="JobType">Job Type</a></li>-->
+
+											<li><a ui-sref="VisaType">Visa Type</a></li>
+
+											<li><!--<a ui-sref="CurrentState">Current State</a>--></li>
+
+											<li><a ui-sref="Profession">Profession</a></li>
+											<li><a ui-sref="BusinessCategory">Business Category</a></li>
+											<li><a ui-sref="BusinessCategoryDetails">Business Category Details</a></li>
+											<li><a ui-sref="TechnicalSkillCategory">Technical Skill Category</a></li>
+											<li><a ui-sref="TechnicalSkillItems">Technical Skill Category Details</a></li>
+											<!--<li><a ui-sref="StaffType">Staff Types</a></li>-->
+											<li><a ui-sref="StaffTranslationFields">Translation Fields</a></li>
+											<li><a ui-sref="Education">Educational Degree</a></li>
+											<li><a ui-sref="StaffMajorSubject">Major Subjects</a></li>
+											<li><a ui-sref="StaffMajorSubjectDetails">Major Subject Details</a></li>
+											<li><a ui-sref="JobCategory">Job Category</a></li>
+											<li><a ui-sref="JobCategoryDetails">Job Category Details</a></li>
+											<li><a ui-sref="InterpretationFields">Interpretation Fields</a></li>
+											<li><a ui-sref="LanguageQualification">Language Qualification</a></li>
+											<li><a ui-sref="StaffDevelopmentSkill">Staff Development Skill</a></li>
+											<li><a ui-sref="StaffKnowledgeField">Staff Knowledge Field</a></li>
+											<li><a ui-sref="StaffKnowledgeFieldItem">Staff Knowledge Field Item</a></li>
+											<li><a ui-sref="StaffMedicalField">Staff Medical Field</a></li>
+											<li><a ui-sref="StaffPatentField">Staff Patent Field</a></li>
+                                            <li><a ui-sref="StaffSoftwareskill">Staff Software skill</a></li>
+										</ul>
+									</li>
+									<!--<li><a>STAFF EASY SEARCH Pay</a></li>
+									<li><a>Translator Search Easily</a></li>
+									<li><a>Resume Search Easily</a></li>
+									<li><a>STAFF SEARCH</a></li>-->
+									<li><a ui-sref="AdvancedStaffSearch">Advanced Staff Search</a></li>
+									<!--<li><a>Staff Search List</a></li>
+									<li><a>Translator Search</a></li>
+									<li><a>Resume Search</a></li>
+									<li><a>Technical Book Search</a></li>
+									<li><a href="#l">Program List</a></li>-->
+									<li><a ui-sref="StaffList">Staff List</a></li>
+									<li><a ui-sref="StaffRegistration.details">Staff Registration</a></li>
+									<!--<li><a>Staff Performance List</a></li>
+									<li><a>Applicant List</a></li>
+									<li><a>Company Scout Registration</a></li>
+									<li><a>Scout List</a></li>
+									<li><a>Evaluation of Scout Works</a></li>
+									<li><a>Internal Scout List</a></li>
+									<li><a>Scout List for Registered Company</a></li>
+									<li><a>Level-1 of the Staff</a></li>
+									<li><a>Visa Expired List</a></li>-->
+
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Company Job Offer
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Company Basic Setting</a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="CompanyTradingCategory">Trading Category</a></li>
+											<li><a ui-sref="CompanyTradingCategoryItem">Trading Category Items</a></li>
+											<li><a ui-sref="CompanyIndustryClassification">Industry Classification</a></li>
+											<li><a ui-sref="CompanyIndustryClassificationItem">Industry Classification Item</a></li>
+											<li><a ui-sref="CompanyBusiness">Company Business Service</a></li>
+											<li><a ui-sref="CompanyBusinessSpeciality">Company Business Speciality</a></li>
+											<li><a ui-sref="CompanyTradingDivision">Company Trading Division</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Agent Basic Settings</a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="AgentBusiness">Agent Business</a></li>
+											<li><a ui-sref="AgentCharacterstics">Agent Characterstics</a></li>
+											<li><a ui-sref="AgentFreeDesignation">Agent Free Designation</a></li>
+										</ul>
+									</li>
+									<li> <a ui-sref="CompanyRegistration.companyInfo">Company Registration</a></li>
+									<li> <a ui-sref="CompanyList">Company List</a></li>
+									<!--
+									<li>  <a> Business Card Information</a></li>
+									<li>  <a> Agent Registration</a></li>
+									<li>  <a> Job List</a></li>
+									<li>  <a> Job Registration</a></li>
+									<li>  <a> Export Job List as CSV File</a></li>
+									<li>  <a> Published Authority Management</a></li>
+									<li>  <a> Email History Management</a></li>
+									<li>  <a> Company RFM Analysis</a></li>
+									<li>  <a> Affiliate Management</a></li>
+									<li>  <a> Affiliate Subscriber List</a></li>-->
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									Estimate Order
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Basic Settings  </a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="EstimationRoutes">Define Routes</a></li>
+											<li><a ui-sref="EstimationServiceType"> Service Type</a></li>
+											<li><a ui-sref="EstimationSpecializedField"> Specialized Field</a></li>
+											<li><a ui-sref="EstimationSubSpecializedField">Sub Specialized Field</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a tabindex="-1">Translation Estimate  </a>
+										<ul class="dropdown-menu">
+											<li><a ui-sref="EstimationList">Estimation List for Translation Team</a></li>
+											<li><a ui-sref="TranslationEstimation({id: ''})">Translation</a></li>
+											<li><a ui-sref="EstimationInterpretationQuotation({id: ''})">Interpretation</a></li>
+											<!--<li><a>School Excursion</a></li>-->
+											<li><a ui-sref="ShortTermEstimation({id: ''})">Short Term Dispatch</a></li>
+											<li><a ui-sref="TaskQuotationInput({id: ''})">Project</a></li>
+											<li><a ui-sref="DTPEstimation({id: ''})">DTP</a></li>
+											<li><a ui-sref="NarrationEstimation({id: ''})">Narration</a></li>
+											<li><a ui-sref="TranscriptionEstimation({id: ''})">Transcription</a></li>
+											<li><a ui-sref="OverheadCostQuotation({id: ''})">Overhead Cost Quotation</a></li>
+											<!--<li><a>Tape Over</a></li>
+											<li><a>Web Creation</a></li>-->
+										</ul>
+									</li>
+                                    <li class="dropdown-submenu">
+                                     <a tabindex="-1">Transpro Order</a> 
+                                        <ul class="dropdown-menu">
+                                            <li> <a ui-sref="WebOrderList"> Order List </a></li>
+                                            <li> <a ui-sref="WebOrderModule">Order Module </a></li>
+                                        </ul>
+                                    </li>
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">
+											Human Resource Estimate
+
+										</a>
+										<ul class="dropdown-menu">
+											<li><a>Translation Business</a></li>
+											<li><a>Introducing List</a></li>
+											<li><a>Translation Team Sales</a></li>
+											<li><a>Human Resource Team Sales</a></li>
+											<li><a>Questionnaire after Delivery</a></li>
+											<li><a>Questionnaire After Delivery Narration</a></li>
+										</ul>
+									</li>-->
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">QUESTIONNAIRE  </a>
+										<ul class="dropdown-menu">
+											<li><a>Questionnaire List</a> </li>
+										</ul>
+
+									</li>-->
+
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">BUSINESS SALES LIST </a>
+										<ul class="dropdown-menu">
+											<li> <a>Translation Business</a></li>
+											<li> <a>Introducing List</a></li>
+											<li> <a>Translation Team Sales</a></li>
+											<li> <a>Human Resource Team Sales</a></li>
+											<li> <a> Questionnaire after Delivery</a></li>
+											<li> <a> Questionnaire After Delivery Narration</a></li>
+										</ul>
+									</li>-->
+
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">SITE PERFORMANCE MANAGEMENT </a>
+										<ul class="dropdown-menu">
+											<li> <a>Actual registration</a></li>
+											<li> <a>Dispatching Management Ledger</a></li>
+											<li> <a>Task</a></li>
+										</ul>
+									</li>-->
+
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">SCHEDULE</a>
+										<ul class="dropdown-menu">
+											<li> <a>Interpretation Translation Employee List</a></li>
+											<li> <a>Individual Interpretation Translation</a></li>
+											<li> <a> Human Resource Department </a></li>
+											<li> <a> Campaign Management</a></li>
+											<li> <a> Claim List</a></li>
+										</ul>
+									</li>-->
+
+
+								</ul>
+
+							</li>
+
+							<!--<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									SALES ANALYSIS
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a>Sales Appointment List</a></li>
+									<li><a>Order List</a></li>
+									<li><a>Lost Order or Sales List</a></li>
+									<li><a>Sales List</a></li>
+									<li><a>Business Day Confirmation</a></li>
+								</ul>
+							</li>-->
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									CODE MANAGEMENT
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">WEB MASTER MANAGEMENT</a>
+										<ul class="dropdown-menu">
+											<li><a>Error Reporting List</a></li>
+											<li><a>Calendar Management</a></li>
+										</ul>
+									</li>-->
+
+
+									<!--<li class="dropdown-submenu">
+										<a tabindex="-1">LANGUAGE MANAGEMENT</a>
+										<ul class="dropdown-menu">
+											<li><a>Language List</a></li>
+											<li><a>Translation Price List</a></li>
+											<li><a ui-sref="Notice">Notice</a></li>
+										</ul>
+									</li>-->
+
+
+                                    <li>
+                                        
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1">ITE MANAGEMENT</a>
+                                        <ul class="dropdown-menu">
+                                            <!--<li><a>Group</a></li>
+                                            <li><a>Site</a></li>
+                                            <li><a>Page</a></li>-->
+                                            <li><a ui-sref="Penalty">Penalty Settings</a></li>
+                                            <li><a ui-sref="Notice">Notice</a></li>
+                                            <li><a ui-sref="InquiryList">Inquiry List</a></li>
+                                            <li><a ui-sref="AdvertizementSettings">Advertisement Settings</a></li>
+                                            
+
+                                        </ul>
+                                    </li>
+
+
+								</ul>
+							</li>
+
+							<!--<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">
+									TEST
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a>User</a></li>
+
+								</ul>
+							</li>-->
+						</ul>
+                    </div><!-- /* navbar-collapse end */ -->
+                </div>
+            </nav>
+			<!-- Main menu area end -->
+        </header>
+
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content">
+                <div ui-view></div>
+            </section>
+           
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-left hidden-xs">
+                <!--<b>Version</b> 2.3.8-->
+                <strong>Copyright &copy; All Rights Reserved. <a >Hiwork</a></strong>
+                &nbsp;
+            </div>
+            &nbsp;
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                                    <p>New phone +1(800)555-1234</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                                    <p>nora@example.com</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                                    <p>Execution time 5 seconds</p>
+                                </div>
+                            </a>
+                        </li> 
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Custom Template Design
+                                    <span class="label label-danger pull-right">70%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Update Resume
+                                    <span class="label label-success pull-right">95%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Laravel Integration
+                                    <span class="label label-warning pull-right">50%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Back End Framework
+                                    <span class="label label-primary pull-right">68%</span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Allow mail redirect
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Other sets of options are available
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Expose author name in posts
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Allow the user to show his name in blog posts
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Show me as online
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Turn off notifications
+                                <input type="checkbox" class="pull-right">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+   
+
+<!--</body>
+</html>-->

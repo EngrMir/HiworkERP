@@ -1,0 +1,319 @@
+﻿
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="tlpForm">
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Source Language</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="SourceLanguage" id="SourceLanguage" class="form-control"
+                            ng-model="$ctrl.modalData.SourceLanguageID"
+                            ng-class="{'invalid-input':isTriedSave && tlpForm.SourceLanguage.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.LanguageList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Target Language</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="TargetLanguage" id="TargetLanguage" class="form-control"
+                            ng-model="$ctrl.modalData.TargetLanguageID"
+                            ng-class="{'invalid-input':isTriedSave && tlpForm.TargetLanguage.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.LanguageList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Specialized Field</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="SpecializedField" id="SpecializedField" class="form-control"
+                            ng-model="$ctrl.modalData.SpecialityFieldID"
+                            ng-class="{'invalid-input':isTriedSave && tlpForm.SpecializedField.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.SpecializedFieldList" required>
+
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Sub Specialized Field</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="SubSpecializedField" id="SubSpecializedField" class="form-control"
+                            ng-model="$ctrl.modalData.SubSpecialityFieldID"
+                            ng-class="{'invalid-input':isTriedSave && tlpForm.SubSpecializedField.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.SubSpecializedFieldList" required>
+
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Base Currency</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="Currency" id="Currency" class="form-control"
+                            ng-model="$ctrl.modalData.CurrencyID"
+                            ng-class="{'invalid-input':isTriedSave && tlpForm.Currency.$error.required}"
+                            ng-options="item.Id as (item.Name + ' ( ' + item.Symbol + ' )') for item in $ctrl.CurrencyList" required>
+
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <span>Word Per Page</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="WordPerPage" class="form-control" placeholder="Word per page number field"
+                           ng-class="{'invalid-input':isTriedSave && tlpForm.WordPerPage.$error.required || $ctrl.modalData.WordPerPage.length > 100}"
+                           ng-model="$ctrl.modalData.WordPerPage" only-digits required />
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <span>Description</span>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <textarea ng-model="$ctrl.modalData.Description"
+                              name="" rows="2" cols="20"
+                              style="height:110px; width:100%; max-width:100%; min-width: 200px;"></textarea>
+                </div>
+            </div>
+            <div class="clearfix" style="height:2px;"></div>
+
+            <!--<div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <select name="TargetLanguage" id="TargetLanguage" class="form-control"
+                                    ng-model="$ctrl.modalData.TargetLanguageID"
+                                    ng-class="{'invalid-input':isTriedSave && tlpForm.TargetLanguage.$error.required}"
+                                    ng-options="item.ID as item.Name for item in $ctrl.LanguageList" required>
+
+                                <option value="" ng-selected="true">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <select name="TargetLanguage" id="TargetLanguage" class="form-control"
+                                    ng-model="$ctrl.modalData.TargetLanguageID"
+                                    ng-class="{'invalid-input':isTriedSave && tlpForm.TargetLanguage.$error.required}"
+                                    ng-options="item.ID as item.Name for item in $ctrl.LanguageList" required>
+
+                                <option value="" ng-selected="true">Select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 3px;"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <select name="SpecializedField" id="SpecializedField" class="form-control"
+                                    ng-model="$ctrl.modalData.SpecialityFieldID"
+                                    ng-class="{'invalid-input':isTriedSave && tlpForm.SpecializedField.$error.required}"
+                                    ng-options="item.ID as item.Name for item in $ctrl.SpecializedFieldList" required>
+
+                                <option value="" ng-selected="true">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <select name="Currency" id="Currency" class="form-control"
+                                    ng-model="$ctrl.modalData.CurrencyID"
+                                    ng-class="{'invalid-input':isTriedSave && tlpForm.Currency.$error.required}"
+                                    ng-options="item.Id as item.Name for item in $ctrl.CurrencyList" required>
+
+                                <option value="" ng-selected="true">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 3px;"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <input type="text" name="WordPerPage" class="form-control" placeholder="Word per page number field"
+                               ng-class="{'invalid-input':isTriedSave && tlpForm.WordPerPage.$error.required || $ctrl.modalData.WordPerPage.length > 100}"
+                               ng-model="$ctrl.modalData.WordPerPage" only-digit required />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 2px;"></div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <textarea ng-model="$ctrl.modalData.Description"
+                                  name="" rows="2" cols="20"
+                                  style="height:90px; width:100%; max-width:100%; min-width: 200px;"></textarea>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 8px;"></div>
+                </div>
+            </div>-->
+
+            <div class="form-group">
+                <div class="com-sm-12">
+                    <div class="col-sm-3">
+                        <label class="checkbox-inline">
+                            {{'ACTIVE' | translator}}
+                            <input type="checkbox" ng-model="$ctrl.modalData.IsActive" required />
+                        </label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="checkbox-inline">
+                            Light Price
+                            <input type="checkbox" ng-model="$ctrl.modalData.IsLightPrice" required />
+                        </label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="checkbox-inline">
+                            Business Price
+                            <input type="checkbox" ng-model="$ctrl.modalData.IsBusinessPrice" required />
+                        </label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="checkbox-inline">
+                            Expert Price
+                            <input type="checkbox" ng-model="$ctrl.modalData.IsExpertPrice" required />
+                        </label>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!--<div class="col-sm-4">
+                        <div class="col-sm-4">
+                            <div class="col-md-10"><span>{{'ACTIVE' | translator}}</span></div>
+                            <div class="col-md-2"><input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsActive" required /></div>
+                        </div>
+                        <div class="col-sm-8">
+                            <label class="checkbox-inline">
+                                Light Price
+                                <input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsLightPrice" required />
+                            </label>
+                            <div class="col-md-10"><span>Light Price</span></div>
+                            <div class="col-md-2"><input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsLightPrice" required /></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="col-sm-6">
+                            <label class="checkbox-inline">
+                                Business Price
+                                <input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsBusinessPrice" required />
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="checkbox-inline">
+                                Expert Price
+                                <input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsExpertPrice" required />
+                            </label>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+            <br>
+
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="table-responsive" style="overflow-y:scroll; min-height:200px; max-height:200px; width:100%;">
+                    <table id="smartTable" class="table table-striped table-bordered table-hover">
+                        <thead class="bg-light-blue">
+                            <tr>
+                                <th class="ng-binding">Delivery Plans</th>
+                                <th class="ng-binding text-right">Sort By</th>
+                                <th class="ng-binding text-right" ng-show="$ctrl.modalData.IsLightPrice">Light Price</th>
+                                <th class="ng-binding text-right" ng-show="$ctrl.modalData.IsBusinessPrice">Business Price</th>
+                                <th class="ng-binding text-right" ng-show="$ctrl.modalData.IsExpertPrice">Expert Price</th>
+                                <th class="ng-binding text-right">Is Default For View</th>
+                                <th class="ng-binding text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="Item in $ctrl.modalData.PriceDetailsList | filter : {IsMarkedForDelete: false}" >
+                                <td>
+                                    <select name="DeliveryPlan" id="DeliveryPlan" class="form-control"
+                                            ng-model="Item.DeliveryPlanID"
+                                            ng-class="{'invalid-input':isTriedSave && tlpForm.DeliveryPlan.$error.required}"
+                                            ng-options="item.ID as item.Name for item in $ctrl.DeliveryPlanList" required>
+                                        <option value="" ng-selected="true">Select Delivery Plan...</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="text-right" type="text" size="5" name="SortBy" ng-model="Item.SortBy" only-digits/>
+                                </td>
+                                <td ng-show="$ctrl.modalData.IsLightPrice">
+                                    <input class="text-right" type="text" size="8" name="LightPrice" ng-model="Item.LightPrice" only-decimal>
+                                </td>
+                                <td ng-show="$ctrl.modalData.IsBusinessPrice">
+                                    <input class="text-right" type="text" size="8" name="BusinessPrice" ng-model="Item.BusinessPrice" only-decimal>
+                                </td>
+                                <td ng-show="$ctrl.modalData.IsExpertPrice">
+                                    <input class="text-right" type="text" size="8" name="ExpertPrice" ng-model="Item.ExpertPrice" only-decimal>
+                                </td>
+                                <td>
+                                    <input type="radio" name="IsDefaultForView" ng-model="$ctrl.DefaultViewID" ng-value="Item.ID" />
+                                </td>
+                                <td>
+                                    <div class="glyphicon glyphicon-remove" value="Remove" ng-click="Item.IsMarkedForDelete = true">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="clearfix" style="height: 2px;"></div>
+
+            <div class="form-group">
+                <button id="btnAddRow" type="button" class="btn btn-primary" ng-click="$ctrl.AddNewRow()">Add Row</button>
+            </div>
+            <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                <button id="btnClose" type="button" class="btn btn-primary" ng-click="$ctrl.SaveTransproPriceSettings()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

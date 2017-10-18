@@ -1,0 +1,318 @@
+﻿<div class="content-wrapper">
+    <form class="well form-inline" name="frmStaffPayment">
+        <section class="content-header">
+            <h1 class="ng-binding">
+                {{'NOTICE'|translator}}
+                <small class="ng-binding">Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">{{'NOTICE'|translator}}</li>
+            </ol>
+        </section>
+        <div class="panel-body box box-primary">
+            <!--<div class="box">-->
+                <div class="row">
+
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-5 ">
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label>{{'SETPRIORITY'|translator}}</label>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                      
+                                        <select id="selectActionType" class="form-control" style="width:251px" ng-model="vm.model.Priority"
+                                                ng-options="r.Id as r.Name for r in vm.SetPriority">
+                                            <option value="" ng-selected="true" disabled="disabled">{{'SELECTPRIORITY'|translator}}</option>
+                                        </select>
+
+                                        <!--<input type="text" class="form-control" style="width: 100%" ng-model="vm.model.Priority" name="SetPriority" placeholder="SetPriority">-->
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                           
+                        </div>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label>{{'NOTICEDATE'|translator}}</label>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-group">
+                                            <div class="input-group" style="width: 253px">
+                                                <input type="text"
+                                                       id="RegisteredDate"
+                                                       class="form-control"
+                                                       uib-datepicker-popup="dd/MM/yyyy"
+                                                       placeholder="{{'NOTICEDATE'|translator}}"
+                                                       min-date="dateFrom"
+                                                       max-date="dateTo"
+                                                       close-text="Close"
+                                                       ng-model="vm.model.RegisteredDate"
+                                                       show-weeks="true"
+                                                       is-open="EstablishedDate"
+                                                       ng-click="EstablishedDate = true"
+                                                       filter-by="placed"
+                                                       filter-type="dateFrom"
+                                                       ng-blur="gridActions.filter()"
+                                                       ng-focus="gridActions.filter()" />
+                                                <span class="input-group-btn">
+                                                    <label for="EstablishedDate" class="btn btn-default remove-padding">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="clearfix" style="height: 10px"></div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label>{{'TITLE'|translator}}</label>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" style="width: 100%" class="form-control" ng-model="vm.model.Title" name="Title" placeholder="{{'TITLE'|translator}}">
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix" style="height: 10px"></div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div class="row">
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                        <label>{{'NOTICEURL'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <input id="checkBox"  name="noticeURL"  ng-model="checkboxSelection" ng-change="vm.isCheckboxSelected(this)" type="checkbox">
+                                        <!--<input type="radio" name="noticeURL" value="1" ng-model="checkboxSelection" ng-change="isCheckboxSelected(1)" class="checkbox pull-left">-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" style="width: 100%" class="form-control" ng-model="vm.model.NoticeURL" ng-disabled="vm.isDisabled" name="NoticeURL" placeholder="URL">
+                                    </div>
+                                </div>
+
+                               
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix" style="height: 10px"></div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label>{{'DESCRIPTION'|translator}}</label>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <textarea style="resize: none; width:400px; height:200px" class="form-control" ng-model="vm.model.Description" placeholder="{{'DESCRIPTION'|translator}}"></textarea>
+                            </div>
+
+                        </div>
+                        <div >
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="bg-light-blue text-center">
+                                    <td>{{'ACTION1'|translator}}</td>
+                                    <td>{{'CLIENT'|translator}}</td>
+                                    <td>{{'TRANSLATOR'|translator}}</td>
+                                    <td>{{'PARTNER'|translator}}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!--Show for value = 1-->
+                                    <td>Show</td>
+                                    <td class="text-center"><input type="radio" name="client" ng-model="vm.ClientRadio" value="ShowClient" > </td>
+                                    <td class="text-center"><input type="radio" name="Translator" ng-model="vm.StaffRadio" value="ShowTranslator" ></td>
+                                    <td class="text-center"><input type="radio" name="Partner" ng-model="vm.PartnerRadio" value="ShowPartner" ></td>
+                                </tr>
+                                <tr>
+                                    <!--Hide for value =2-->
+                                    <td>Hide</td>
+                                    <td class="text-center"><input type="radio" name="client" ng-model="vm.ClientRadio" value="HideClient" ></td>
+                                    <td class="text-center"><input type="radio"  name="Translator" ng-model="vm.StaffRadio" value="HideTranslator" ></td>
+                                    <td class="text-center"><input type="radio"  name="Partner" ng-model="vm.PartnerRadio" value="HidePartner"></td>
+                                </tr>
+                                <tr>
+                                    <!--ShowAfterLogin for value =3 -->
+                                    <td>ShowAfterLogin</td>
+                                    <td class="text-center"><input type="radio" name="client" ng-model="vm.ClientRadio" value="shClient" ></td>
+                                    <td class="text-center"><input type="radio"  name="Translator" ng-model="vm.StaffRadio" value="shTranslator"></td>
+                                    <td class="text-center"><input type="radio"  name="Partner" ng-model="vm.PartnerRadio" value="shPartner"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                          
+
+                        <div class="row">
+
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary next-step" ng-click="vm.saveData()">Save</button>
+
+
+                        </div>
+
+                        
+
+
+                    </div>
+                    <!--<div class="clearfix"></div>
+                    <div class="clearfix" style="height :200px"></div>-->
+                    
+                </div>
+            <div class="clearfix" style="height :200px"></div>
+            <div Class="row">
+                <div class="table-responsive">
+                    <!--<table st-table="Staffsoftcoll" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">-->
+                    <table id="smartTable" class="table table-striped table-bordered table-hover" st-safe-src="rowCollection" st-table="vm.NoticeList">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <!--<th>{{'SETPRIORITY'|translator}}</th>
+                                <th>{{'NOTICEDATE'|translator}}</th>
+                                <th>{{'TITLE'|translator}}</th>
+                                <th>{{'NOTICEURL'|translator}}</th>
+
+                                <th>{{'CLIENT'|translator}}</th>
+                                <th>{{'TRANSLATOR'|translator}}</th>
+                                <th>Partner</th>
+                                <th ng-if="!vm.isDescriptionHidden">{{'DESCRIPTION'|translator}}</th>
+                                <th>Action</th>-->
+                                <th st-sort="PriorityName" st-sort-default="regular">{{'SETPRIORITY'|translator}}<i st-sort="PriorityName"></i></th>
+                                <th st-sort="RegisteredDate">{{'NOTICEDATE'|translator}}<i st-sort="RegisteredDate"></i></th>
+                                <th st-sort="Title">{{'TITLE'|translator}}<i st-sort="Title"></i></th>
+                                <th st-sort="NoticeURL">{{'NOTICEURL'|translator}}<i st-sort="NoticeURL"></i></th>
+                                <th st-sort="ClientDisplayStatusName">{{'CLIENT'|translator}}<i st-sort="ClientDisplayStatusName"></i></th>
+                                <th st-sort="StaffDisplayStatusName">{{'TRANSLATOR'|translator}}<i st-sort="StaffDisplayStatusName"></i></th>
+                                <th st-sort="PartnerDisplayStatusName">Partner<i st-sort="PartnerDisplayStatusName"></i></th>
+                                <th ng-if="!vm.isDescriptionHidden">{{'DESCRIPTION'|translator}}</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="PriorityName" placeholder="Search by SetPriority" class="input-sm form-control" type="search" style="width:100%;" />
+
+
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="RegisteredDate" placeholder="Search by NoticeDate" class="input-sm form-control" type="search" style="width:100%;" />
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="Title" placeholder="Search by Title" class="input-sm form-control" type="search" style="width:100%;" />
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="NoticeURL" placeholder="Search by NoticeURL" class="input-sm form-control" type="search" style="width:100%;" />
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="ClientDisplayStatusName" placeholder="Search by Client" class="input-sm form-control" type="search" style="width:100%;"/>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="StaffDisplayStatusName" placeholder="Search by Translator" class="input-sm form-control" type="search" style="width:100%;" />
+                                </div>
+                            </th>
+                            <th>
+                                <div class="search-container">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input id="search" st-search="PartnerDisplayStatusName" placeholder="Search by Partner" class="input-sm form-control" type="search" style="width:100%;" />
+                                </div>
+                            </th>
+                            <th style="border-right:1px solid #000">
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr ng-repeat="notice in vm.NoticeList">
+                                <td>{{ notice.PriorityName }}</td>
+                                <td>{{ notice.RegisteredDate|date }}</td>
+                                <td>{{ notice.Title }}</td>
+                                <td>{{ notice.NoticeURL }}</td>
+                                <td>{{ notice.ClientDisplayStatusName}}</td>
+                                <td>{{ notice.StaffDisplayStatusName}}</td>
+                                <td>{{ notice.PartnerDisplayStatusName}}</td>
+
+                                <td ng-if="!vm.isDescriptionHidden">{{ notice.Description }}</td>
+                                <td>
+                                    <div class="glyphicon glyphicon-edit" value="Edit" ng-click="vm.edit(notice)"> </div>
+                                    <div class="glyphicon glyphicon-remove" confirm-window
+                                         confirm-data="{{notice }}"
+                                         confirm-url="{{'notice/delete'}}"
+                                         confirm-value="{{notice.PriorityName}}"
+                                         modal-title="Are you sure you want to delete '{{notice.PriorityName}}'?">
+                                    </div>
+                                    <div class="glyphicon glyphicon-pencil" value="Edit" ng-click="vm.hideDescription()"> </div>
+                                    <!--<a href="javascript:void(0)" ng-click="vm.edit(notice)">edit</a> | <a href="javascript:void(0)" ng-click="vm.delete(notice)">delete</a>-->
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot style="border:none !important;">
+                            <tr style="border:none !important;">
+                                <td colspan="5" class="text-center" style="border:none !important;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div st-items-by-page="4" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    </div>
+                </div>
+            <!--</div>-->
+           
+        </div>
+       
+      
+    </form>
+    
+
+</div>

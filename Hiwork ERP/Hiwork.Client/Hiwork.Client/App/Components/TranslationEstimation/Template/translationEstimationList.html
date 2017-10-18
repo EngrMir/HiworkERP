@@ -1,0 +1,270 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            List Of All Estimations
+        </h3>
+    </div>
+    <div class="panel-body">
+	
+		<div class="row">
+			<div class="col-lg-3 col-sm-4">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							Quotation No.
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<div class="form-group">
+							Company/Office
+							<select class="form-control" id="">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						Quatation Type
+						<select class="form-control" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+					
+					<div class="col-md-6">
+						Quotation route
+						<select class="form-control" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>				
+				
+				<div class="row">
+					<div class="col-md-6">
+						Sales Rep.
+						<div class="input-group">
+							<input readonly="" value="" class="form-control selection-input" placeholder="" type="text">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-primary custom-input-group-btn">S</button>
+							</span>
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						Coordinator
+						<div class="input-group">
+							<input readonly="" value="" class="form-control selection-input" placeholder="" type="text">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-primary custom-input-group-btn">S</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				
+				<div class="form-group">
+					<div class="col-sm-5 remove-padding">
+						Inquired date （From)
+						<div class="input-group">
+							<input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.EstimationModel.InquiryDate" show-weeks="true" is-open="contactFromOpened2" ng-click="contactFromOpened2 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen --></div><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen --></div>
+							<div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen --></div>
+							<span class="input-group-btn">
+								<span for="contactDate" class="btn btn-default remove-padding">
+									<i class="fa fa-calendar"></i>
+								</span>
+							</span>
+						</div>
+					</div>
+					
+					<div class="col-sm-1 remove-padding text-center margin-top23">~</div>
+					
+					<div class="col-sm-6 remove-padding">
+						Inquired date （TO)
+						<div class="input-group">
+							<input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched ng-untouched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.EstimationModel.InquiryDate" show-weeks="true" is-open="contactFromOpened2" ng-click="contactFromOpened2 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen --></div><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty" style=""><!-- ngIf: isOpen --></div>
+							<div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen --></div>
+							<span class="input-group-btn">
+								<span for="contactDate" class="btn btn-default remove-padding">
+									<i class="fa fa-calendar"></i>
+								</span>
+							</span>
+						</div>					
+					</div>
+					<div class="clearfix"></div>
+					<div class="clearfix" style="height: 3px;"></div>
+				</div>
+			</div>
+			
+			<div class="col-lg-3 col-lg-offset-1 col-sm-4">
+				<div class="form-group">
+					<div class="">Client No.</div>
+					<div class="col-sm-4 remove-padding">
+						<input class="form-control" placeholder="" style="" type="text">
+					</div>
+					<div class="col-sm-8 remove-padding">
+						<div class="input-group">
+							<input readonly="" value="" class="form-control selection-input" placeholder="Client Name" type="text">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-primary custom-input-group-btn">S</button>
+							</span>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="clearfix" style="height: 3px;"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							Person in Charge
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<div class="form-group">
+							E-mail
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>				
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							Phone
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<div class="form-group">
+							FAX
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				<div class="form-group">
+					Project name
+					<input class="form-control" placeholder="" style="" type="text">
+					<div class="clearfix"></div>
+					<div class="clearfix" style="height: 3px;"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-5 padding-right0">
+						Source language
+						<select class="form-control" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+					
+					<div class="col-md-1 remove-padding text-center margin-top23">⇔</div>
+					
+					<div class="col-md-6 padding-left0">
+						Target language
+						<select class="form-control" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>					
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-3 col-lg-offset-1 col-sm-4">
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="form-group">
+							Client Status
+							<select class="form-control" id="">
+								<option value="">New</option>
+								<option value="">Existing</option>
+								<option value="">Prospect</option>
+								<option value="">ALL</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="form-group">
+							Working Status
+							<select class="form-control" id="">
+								<option value="">Ongoing/Done</option>
+								<option value="">Not yet</option>
+								<option value="">ALL</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="form-group">
+							Order Status
+							<select class="form-control" id="">
+								<option value="">Ordered</option>
+								<option value="">Waiting</option>
+								<option value="">ALL</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+				
+				<div class="form-group margin-top23">
+					<label class="checkbox-inline">
+						<input value="" type="checkbox">File present
+					</label>
+					<label class="checkbox-inline">
+						<input value="" type="checkbox">Deleted quotation
+					</label>
+					<label class="checkbox-inline">
+						<input value="" type="checkbox">No order
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix" style="border-bottom:1px solid #ddd; margin:15px 0;"></div>
+
+        <div class="form-group">
+            <div ui-grid="gridOptions" ui-grid-pagination ui-grid-save-state ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-exporter></div>
+        </div>
+    </div>
+</div>

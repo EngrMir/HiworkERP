@@ -1,0 +1,513 @@
+﻿@using HiWork.BLL.Models
+@using HiWork.DAL.Database;
+
+@{
+    Layout = null;
+    var _dbContext = new CentralDBEntities();
+    EstimationModel estimation = null;
+    Company company = null;
+    var values = ViewData.Model.Values;
+    foreach (EstimationModel est in values)
+    {
+        estimation = est;
+    }
+    if (estimation == null)
+    {
+        estimation = new EstimationModel();
+    }
+
+    var user = _dbContext.UserInformations.Find(estimation.CurrentUserID) ?? new UserInformation();
+    if (estimation.ClientID == Guid.Empty)
+    {
+        company = new Company();
+    }
+    else
+    {
+        company = _dbContext.Companies.Find(estimation.ClientID);
+    }
+    var currency = _dbContext.Master_Currency.Find(estimation.CurrencyID);
+}
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        table {
+            width: 100%;
+        }
+
+        td {
+            width: 50%;
+        }
+
+        .tbl-2Cols-50 {
+            width: 50% !important;
+        }
+
+        .tbl-1Col-100 {
+            width: 100% !important;
+        }
+
+        .tbl-2Col-70 {
+            width: 70%;
+        }
+
+        .tbl-2Col-30 {
+            width: 30%;
+        }
+
+        .left {
+            text-align: left !important;
+        }
+
+        .right {
+            text-align: right !important;
+        }
+
+        .center {
+            text-align: center !important;
+        }
+
+        .table_bordered {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+            .table_bordered td {
+                border-top: thin solid;
+                border-bottom: thin solid;
+            }
+
+                .table_bordered td:first-child {
+                    border-left: thin solid;
+                }
+
+            .table_bordered td {
+                border-right: thin solid;
+            }
+
+                .table_bordered td:last-child {
+                    border-right: thin solid;
+                }
+    </style>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr style="text-align: center;">
+            <td style="col-span=2;" class="tbl-1Col-100"><b>御 見 積 書<b /></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="right">2017年01月25日</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="left">〒430-8533</td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">静岡県浜松市中区中央２丁目１−１</td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">公立大学法人静岡文化芸術大学</td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">石川清子 様</td>
+            <td class="right">株式会社 ビーコス</td>
+        </tr>
+
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">翻訳プロ(trans-Pro.) 事務局</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">〒105-0013</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">東京都港区浜松町2-1-3 第二森ビル4F</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">TEL.03-5408-9540 FAX.03-3433-3320</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">info@trans-pro.net</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </table>
+    <table style="border-collapse: collapse;">
+        <tr>
+            <td class="left">このたびは弊社サービスをご利用いただき、大変ありがとうございます</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">下記の通りお見積申し上げます。</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">よろしくご検討頂ますよう、お願いいたします。</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <table style="border-collapse: collapse;">
+        <tr style="border-bottom: thin solid;"><td>&nbsp;</td><td class="right"><b>案件NO：170125O040</b></td></tr>
+        <tr><td class="left;"><b>合計金額 ￥ &nbsp; 15,236</b></td><td>&nbsp;</td></tr>
+    </table>
+
+    <table class="table_bordered">
+        <tr>
+            <td class="tbl-2Col-70 center">摘 要</td>
+            <td class="tbl-2Col-30 center">金 額</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">フランス語→フランス語 指名翻訳 論文・学術・研究開発 Business 3日コース</td>
+            <td class="tbl-2Col-30 right">￥ 13,898</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">事務手数料</td>
+            <td class="tbl-2Col-30 right">￥ 210</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">消 費 税</td>
+            <td class="tbl-2Col-30 right">￥ 1,128</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">合 計</td>
+            <td class="tbl-2Col-30 right">￥ 15,236</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+@*<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+    <div class="top-header">
+        <h1 style="text-align:center">Estimation</h1>
+    </div>
+
+    <div class="quotation-date" style="text-align:right;">
+        <span style="margin-right: 50px;">@(DateTime.Now.ToShortDateString())</span>
+    </div>
+
+    <div class="" style="display:block; overflow:hidden; margin-bottom:50px;">
+        <div class="client-info" style="float: left; margin-left: 50px; width: 35%;">
+            <h3 style="margin:0 0 5px 0">Client Information</h3>
+            <div class="info-container">
+                <div class="info">
+                    <span>Post Code:</span> <span></span>
+                </div>
+                <div class="info">
+                    <span>Address:</span> <span></span>
+                </div>
+                @if (estimation.IsCompanyName == true)
+                {
+                    <div class="info">
+                        <span>Company (client) name:</span> <span>@company.Name_Global</span>
+                    </div>
+                }
+                @if (estimation.IsAttnIncharge == true)
+                {
+                    <div class="info">
+                        <span>Person in charge (client):</span> <span></span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="user-info" style="float: right; margin-top: 50px; width: 30%; margin-right: 50px;">
+            <h3 style="margin:0 0 5px 0">User Information</h3>
+            <div class="info-container">
+                <div class="info">
+                    <span>Company (user) name:</span> <span>@($"{user.FirstName} {user.LastName}")</span>
+                </div>
+                @if (estimation.IsSenderIncharge == true)
+                {
+                    <div class="info">
+                        <span>Person in charge (user):</span> <span></span>
+                    </div>
+                }
+                <div class="info">
+                    <span>Address:</span> <span>Address...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="st-text" style="margin: 25px 50px;">
+        <span>Thank you for using our service.</span>
+        <span>Please check the estimation bellow.</span>
+    </div>
+
+    <div class="ord-no" style="border-bottom: 3px solid #000; border-top: 1px solid #000; margin:0 50px; padding: 8px 0;">
+        <h3 style="margin: 0; text-align: right;">
+            <span>Order No. :</span> <span>Order No...</span>
+        </h3>
+    </div>
+
+    <div class="price-total" style="border-bottom: 3px solid #000; margin:0 50px; padding: 8px 0;">
+        <h3 style="margin: 0;">
+            <span>Total estimation price</span> <span>@($"{currency.Symbol}{estimation.GrandTotal ?? 0}")</span>
+        </h3>
+    </div>
+
+    <div class="tbl-items" style="border-bottom: 3px solid #000; display: block; margin: 0 50px 30px; overflow: hidden; padding-bottom: 30px;">
+        <table st-table="displayColl" st-safe-src="vm.rowCollection" class="table table-responsive table-bordered" style="width:100%; border-collapse: collapse; border:1px solid #000;">
+            <tr style="border:1px solid #000;">
+                <td class="" style="border:1px solid #000; padding:8px; width:30%; font-weight:bold; text-align:center;"> Item</td>
+                <td class="" style="border:1px solid #000; padding:8px; width:65%; font-weight:bold; text-align:center;"> Price</td>
+            </tr>
+
+            <tbody>
+                @{
+                    foreach (var item in estimation.TaskQuotationItems ?? new List<EstimationDetailsModel>())
+                    {
+                        var total = item.UnitPrice1 * item.PageCount1;
+                        if (total > 0)
+                        {
+                            <tr class="" style="border:1px solid #000;">
+                                <td style="border:1px solid #000; padding:8px; width:30%;"> @item.Contents</td>
+                                <td style="border:1px solid #000; padding:8px; width:70%;"> @($"{currency.Symbol}{total}")</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+            <tfoot>
+                @if (estimation.IsInclTax == true)
+                {
+                    <tr>
+                        <td class="" style="border:1px solid #000; padding:8px; width:30%;"> Tax</td>
+                        <td class="" style="border:1px solid #000; padding:8px; width:70%;">@($"{currency.Symbol}{estimation.ConsumptionOnTax}")</td>
+                    </tr>
+                }
+                <tr>
+                    <td class="" style="border:1px solid #000; padding:8px; width:30%;"> Total</td>
+                    <td class="" style="border:1px solid #000; padding:8px; width:70%;">@($"{currency.Symbol}{estimation.QuotationInclTax}")</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="footer" style="text-align:center; margin:0 50px;">
+        <span>We are supporting International Business and Multicultural Communication</span>
+    </div>
+
+</body>
+</html>*@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        body {
+            font-family: 'MS Mincho';
+            font: "10pt 'MS Mincho'"
+        }
+        table {
+            width: 100%;
+        }
+
+        td {
+            width: 50%;
+        }
+
+        .tbl-2Cols-50 {
+            width: 50% !important;
+        }
+
+        .tbl-1Col-100 {
+            width: 100% !important;
+        }
+
+        .tbl-2Col-70 {
+            width: 70%;
+        }
+
+        .tbl-2Col-30 {
+            width: 30%;
+        }
+
+        .left {
+            text-align: left !important;
+        }
+
+        .right {
+            text-align: right !important;
+        }
+
+        .center {
+            text-align: center !important;
+        }
+
+        .table_bordered {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+            .table_bordered td {
+                border-top: thin solid;
+                border-bottom: thin solid;
+            }
+
+                .table_bordered td:first-child {
+                    border-left: thin solid;
+                }
+
+            .table_bordered td {
+                border-right: thin solid;
+            }
+
+                .table_bordered td:last-child {
+                    border-right: thin solid;
+                }
+    </style>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr style="text-align: center;">
+            <td style="col-span: 2" class="tbl-1Col-100"><b>御 見 積 書</b></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="right">2017年01月25日</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="left">〒430-8533</td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left"><span>静岡県浜松市中区中央２丁目１−１</span></td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">公立大学法人静岡文化芸術大学</td>
+            <td class="">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">石川清子 様</td>
+            <td class="right">株式会社 ビーコス</td>
+        </tr>
+
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">翻訳プロ(trans-Pro.) 事務局</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">〒105-0013</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">東京都港区浜松町2-1-3 第二森ビル4F</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">TEL.03-5408-9540 FAX.03-3433-3320</td>
+        </tr>
+        <tr>
+            <td class="left">&nbsp;</td>
+            <td class="right">info@trans-pro.net</td>
+        </tr>
+    </table>
+    <table>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </table>
+    <table style="border-collapse: collapse;">
+        <tr>
+            <td class="left">このたびは弊社サービスをご利用いただき、大変ありがとうございます</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">下記の通りお見積申し上げます。</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left">よろしくご検討頂ますよう、お願いいたします。</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <hr />
+    <table style="border-collapse: collapse;">
+        <tr style="border-bottom: thin solid;"><td>&nbsp;</td><td class="right"><b>案件NO：170125O040</b></td></tr>
+        <tr><td class="left;"><b>合計金額 ￥ &nbsp; 15,236</b></td><td>&nbsp;</td></tr>
+    </table>
+
+    <table class="table_bordered">
+        <tr>
+            <td class="tbl-2Col-70 center">摘 要</td>
+            <td class="tbl-2Col-30 center">金 額</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">フランス語→フランス語 指名翻訳 論文・学術・研究開発 Business 3日コース</td>
+            <td class="tbl-2Col-30 right">￥ 13,898</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">&nbsp;</td>
+            <td class="tbl-2Col-30 right">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">事務手数料</td>
+            <td class="tbl-2Col-30 right">￥ 210</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">消 費 税</td>
+            <td class="tbl-2Col-30 right">￥ 1,128</td>
+        </tr>
+        <tr>
+            <td class="tbl-2Col-70">合 計</td>
+            <td class="tbl-2Col-30 right">￥ 15,236</td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+</body>
+</html>

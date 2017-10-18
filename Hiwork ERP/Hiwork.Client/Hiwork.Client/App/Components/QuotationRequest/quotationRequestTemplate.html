@@ -1,0 +1,28 @@
+﻿<style>
+    .company-container {
+    height: 500px;
+    overflow: scroll;
+}
+</style>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="fa fa-close pull-right" ng-click="vm.Close()"></button>
+        <h4 class="modal-title" align="center">{{vm.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal company-container" name="estimationReqForm">
+            <div class="form-group" ng-repeat="item in vm.dataList">
+                <label>
+                    <input type="checkbox" ng-model="item.IsSelected" ng-checked="item.IsSelected" /> {{item.Name}}
+                </label>
+            </div>
+        </form>
+        <div class="modal-footer">
+            <div class="row">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="vm.Close()">Cancel</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="vm.sendRequest()" value="Send Request" />
+            </div>
+        </div>
+    </div>
+</div>

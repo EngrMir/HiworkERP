@@ -1,0 +1,244 @@
+﻿<div class="tab-pane" id="Bank-Payment">
+    <div class="panel">
+        <div class="panel-body" style="height: 400px;">
+            <form name="staffBankPaymentForm" novalidate role="form">
+                <fieldset >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="panel bg-gray">
+                            <div class="panel-body remove-padding" style="height: 400px;">
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <label class="staff-reg-label">{{'BANKINFORMATION' | translator}}</label>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <ui-select name="inputCountry" ng-model="vm.bankCountries.selected" ng-required="true" theme="bootstrap" title="Choose a Country">
+                                            <ui-select-match placeholder="--Country--">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="country in vm.countryData | filter: $select.search">
+                                                <span ng-bind-html="country.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputCountry.$error.required">
+                                            {{'COUNTRYISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <ui-select name="inputAccountType" ng-model="vm.bankAccountsType.selected" ng-required="true" theme="bootstrap" title="Choose a Account Type">
+                                            <ui-select-match placeholder="--Account Type--">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="accountType in vm.bankAccountTypeData | filter: $select.search">
+                                                <span ng-bind-html="accountType.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputAccountType.$error.required">
+                                             {{'ACCOUNTTYPEISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                  <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <ui-select name="inputBankName" ng-model="vm.banks.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Bank Name">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="bank in vm.bankData | filter: $select.search">
+                                                <span ng-bind-html="bank.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputBankName.$error.required">
+                                              {{'BANKNAMEISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <ui-select name="inputBranchName" ng-model="vm.bankBranches.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Branch Name">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="bankBranch in vm.staffBankBranchData | filter: {BankID : vm.banks.selected.Id}">
+                                                <span ng-bind-html="bankBranch.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputBranchName.$error.required">
+                                            {{'BRANCHNAMEISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputBranchCode" type="text" name="inputBranchCode" class="form-control" placeholder="{{'BRANCHCODE' | translator}}"
+                                               ng-model="vm.BranchCode" ng-required="true" />
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputBranchCode.$error.required">
+                                             {{'BRANCHCODEISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputAccountNumber" type="text" name="inputAccountNumber" class="form-control" placeholder="{{'ACCOUNTNUMBER' | translator}}"
+                                               ng-model="vm.StaffBankModel.AccountNo" ng-required="true" />
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputAccountNumber.$error.required">
+                                              {{'ACCOUNTNUMBERISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputAccountHolderName" type="text" name="inputAccountHolderName" class="form-control" placeholder="{{'ACCOUNTHOLDERNAME' | translator}}"
+                                               ng-model="vm.StaffBankModel.AccountHolderName" ng-required="true" />
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputAccountHolderName.$error.required">
+                                             {{'ACCOUNTHOLDERNAMEISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputAccountHolderAddress" type="text" name="inputAccountHolderAddress" class="form-control" placeholder="{{'ACCOUNTHOLDERADDRESS' | translator}}"
+                                               ng-model="vm.StaffBankModel.AccountHolderAddress" ng-required="true" />
+                                        <span class="help-block"
+                                              ng-if="staffBankPaymentForm.inputAccountHolderAddress.$error.required">
+                                            {{'ACCOUNTHOLDERADDRESSISREQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputAccountHolderContactNumber" type="text" name="inputAccountHolderContactNumber" class="form-control" placeholder="{{'ACCOUNTHOLDERCONTACTNUMBER' | translator}}"
+                                               ng-model="vm.StaffBankModel.AccountHolderContactNo" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputBankAddress" type="text" name="inputBankAddress" class="form-control" placeholder="{{'BANKADDRESS' | translator}}"
+                                               ng-model="vm.BankAddress" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputBankCountryName" type="text" name="inputBankCountryName" class="form-control" placeholder="{{'BANKCOUNTRYNAME' | translator}}"
+                                               ng-model="vm.BankCountryName" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputBankCode" type="text" name="inputBankCode" class="form-control" placeholder="{{'BANKCODE' | translator}}"
+                                               ng-model="vm.BankCode" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputAccountNote" type="text" name="inputAccountNote" class="form-control" placeholder="{{'ACCOUNTNOTE' | translator}}"
+                                               ng-model="vm.StaffBankModel.AccountNote" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="panel bg-gray">
+                            <div class="panel-body remove-padding" style="height: 400px;">
+                                <div class="form-group">
+                                    <label class="staff-reg-label">{{'REPORTLOG' | translator}}</label>
+                                </div>
+                                <div class="form-group">
+                                    <table class="table table-bordered" id="Report-log-table">
+                                        <thead>
+                                            <tr>
+                                                <td>Date</td>
+                                                <td>Report Type </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2017/01/13</td>
+                                                <td> Tax Withdraw </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2016/01/22</td>
+                                                <td> Tax Withdraw </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="panel bg-gray">
+                            <div class="panel-body remove-padding" style="height: 400px;">
+                                <div class="form-group">
+                                    <label class="staff-reg-label" style="width: 100%;">{{'PAYMENTINFO' | translator}}<a href="#" class="btn btn-default pull-right"> e-mail</a></label>
+                                </div>
+                                <div class="form-group">
+                                    <table class="table table-bordered" id="Report-log-table">
+                                        <thead>
+                                            <tr>
+                                                <td> &nbsp; </td>
+                                                <td> Global  </td>
+                                                <td> Local JPY  </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>This Month </td>
+                                                <td> 8,900 </td>
+                                                <td> 890,00 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="clearfix" style="height: 50px;"></div>
+                                <div class="form-group">
+                                    <table class="table table-bordered" id="Report-log-table">
+                                        <thead>
+                                            <tr>
+                                                <td> &nbsp; </td>
+                                                <td> Global  </td>
+                                                <td> Local JPY  </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2017 </td>
+                                                <td> 8,900 </td>
+                                                <td> 890,00 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2016 </td>
+                                                <td> 11000 </td>
+                                                <td> 1100000 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2015 </td>
+                                                <td> 12000 </td>
+                                                <td> 12000 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2014 </td>
+                                                <td> 300 </td>
+                                                <td> 3000 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total </td>
+                                                <td> 32200 </td>
+                                                <td> 322000 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </fieldset>    
+              </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,830 @@
+﻿
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Web Order Module
+        </h3>
+    </div>
+    <div class="panel-body">
+		<div class="row">
+			<div class="col-sm-6">
+				<button type="submit" class="btn btn-primary">Update</button>
+			</div>
+			<div class="col-sm-6 text-right">
+				
+			</div>
+		</div>
+		
+		<div class="clearfix" style="border-bottom:1px solid #ddd; margin:15px 0;"></div>
+		
+		<div class="row">
+			<div class="col-md-7">
+				<form class="form-inline" action="">
+					<div class="form-group margin-right50">
+						<label>Order No.</label>
+						<input type="text" class="form-control" placeholder="" ng-model="vm.model.OrderNo">
+					</div>
+					<div class="form-group margin-right50">
+						<label for="pwd">Translation Status</label>
+						<input type="text" class="form-control" placeholder="">
+					</div>
+					<button type="button" class="btn btn-default margin-right50">Translation Status Change</button>
+				</form>
+				
+				<div class="clearfix"></div>
+				<div class="clearfix" style="height: 3px;"></div>
+			</div>
+			
+			<div class="col-md-5 text-right">
+                <div class="row">
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+				<form class="form-inline">
+					<div class="form-group margin-right50">
+						<select class="form-control" id="">
+							<option>Select Option 1</option>
+							<option>Select Option 2</option>
+							<option>Select Option 3</option>
+							<option>Select Option 4</option>
+							<option>Select Option 5</option>
+						</select>
+					</div>
+					
+					<div class="checkbox">
+						<label class="margin-right50"><input type="checkbox"> Seal</label>
+					</div>
+                    </form>
+                        </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                     <span class="btn btn-default btn-sm pull-right btn-custom btn-block">
+                         <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                     </span>
+                   </div> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="clearfix" style="border-bottom:1px solid #eee; margin:15px 0;"></div>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Request Information</label>
+				</div>
+				<div class="col-sm-12 thumbnail">
+					<div class="form-group">
+						<div class="col-sm-8">
+							Company Type
+							<input class="form-control" ng-model="vm.model.CompanyType" placeholder="" style="" type="text">
+						</div>
+						
+						<div class="col-sm-4">
+							Past Request
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							Customer Number
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.ClientID">
+						</div>
+						
+						<div class="col-sm-4">
+							RFM Rank
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-4">
+							Phone Number
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.MobileNo">
+						</div>
+						
+						<div class="col-sm-8">
+							<form class="form-inline margin-top15">
+								<label class="radio-inline">
+									<input type="radio" name="pay_type">Post pay
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="pay_type">No
+								</label>
+								<label class="radio-inline margin-right30">
+									Authorization
+								</label>
+								<button type="button" class="btn btn-default btn-sm">Change</button>
+							</form>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							Contact Name
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<input class="form-control" placeholder="" style="" type="text">
+								</div>
+								<div class="col-sm-6">
+									<button type="button" class="btn btn-default btn-sm">Recommendation</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							Introducer
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>					
+				</div>
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Translator Information</label>
+				</div>
+				<div class="col-sm-12 thumbnail">
+					<div class="form-group">
+						<div class="col-sm-6">
+							Translator No.
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.TranslatorNo">
+						</div>
+						
+						<div class="col-sm-6">
+							Affiliate Code
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Phone Number
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+							No Of Works
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+							Evaluation Point
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Translation Fee
+							<div class="row">
+								<div class="col-sm-8 padding-right2">
+									<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.TranslationFee">
+								</div>
+								<div class="col-sm-4 padding-left2">
+									<input class="form-control" placeholder="" style="" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							No Of Penalty
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+							Penalty Points
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							No Entrustment
+							<input class="form-control" placeholder="" style="" type="text">						
+						</div>
+						<div class="col-sm-6"></div>
+						
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Case Information</label>
+				</div>
+				<div class="col-sm-12 thumbnail">
+					<div class="form-group">
+						<div class="col-sm-12">
+							Site
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.WebSiteURL">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							Translation Language
+							<div class="">
+								<form class="form-inline">
+									<input class="form-control item-width1" placeholder="" name="" type="text" ng-model="vm.model.SourceLanguage">
+									<span>&rArr;</span>
+									<input class="form-control item-width1" placeholder="" name="" type="text" ng-model="vm.model.TargetLanguage">
+								</form>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							Word Count
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.WordCount">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							Translation Field
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.TranslationFieldName">
+						</div>
+						
+						<div class="col-sm-4">
+							Level
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.DeliveryLevelName">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							Delivery Plan
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.DeliveryPlan">
+						</div>
+						
+						<div class="col-sm-4">
+							Name
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.TranslatorName">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Order Date Time
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.OrderDate">
+						</div>
+						
+						<div class="col-sm-6">
+							Con-sultation
+							<div class="row">
+								<div class="col-sm-8 padding-right2">
+									<input class="form-control" placeholder="" style="" type="text">
+								</div>
+								<div class="col-sm-4 padding-left2">
+									<input class="form-control" placeholder="" style="" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Translation Start Date Time
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.StartDate">
+						</div>
+						<div class="col-sm-3">
+							Recruitment Time
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+							Translation Time
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Delivery Schedule Date Time
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-6">
+							Delivery Completion Date Time
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.CompletionDate">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				
+
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Estimates</label>
+				</div>
+				<div class="col-sm-12 thumbnail">
+					<div class="row padding-lr15">
+						<div class="col-md-3 padding-right2">
+							Word Count
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.WordCount" ng-change="vm.EstimateCalculation()">								
+						</div>
+						<div class="col-md-1 padding-lr2 text-center margin-top23">
+							&#10005;
+						</div>
+						<div class="col-md-3 padding-lr2">
+							Unit Price
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.UnitPrice" ng-change="vm.EstimateCalculation()">								
+						</div>
+						<div class="col-md-1 padding-lr2 text-center margin-top23">
+							=
+						</div>
+						<div class="col-md-4 padding-left2">
+							Estimated Price
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.EstimatedPrice">								
+						</div>
+					</div>
+					
+					<div class="row margin-top5 padding-lr15">
+						<div class="col-md-5 padding-lr2 text-right">
+							Discount
+						</div>
+						<div class="col-md-2 padding-lr2">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.Discount">								
+						</div>
+						<div class="col-md-1 padding-lr2"></div>
+						<div class="col-md-4 padding-left2">
+							<input class="form-control" placeholder="" style="" type="text">								
+						</div>
+					</div>
+					
+					<div class="row margin-top5 padding-lr15">
+						<div class="col-md-8 padding-lr2 text-right">
+							Consumption Tax
+						</div>
+						<div class="col-md-4 padding-left2">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.ConsumptionTax">								
+						</div>
+					</div>
+					
+					<div class="row margin-top5 padding-lr15">
+						<div class="col-md-8 padding-lr2 text-right">
+							Payment Amout (Tax Included)
+						</div>
+						<div class="col-md-4 padding-left2">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.PaymentAmount">								
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Settlement Error Code</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;"></div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Menu Script</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 1
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a  href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 2
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 3
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Original text
+						</div>
+						
+						<div class="col-sm-3 text-right remove-padding">
+							Word Count
+						</div>
+						
+						<div class="col-sm-3">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.WordCount">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control " rows="6" placeholder="" style="" ng-model="vm.model.MenuScript"></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							Comment to the Translator
+							<textarea class="form-control " rows="6" placeholder="" style=""></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-4">
+							Reference Material
+						</div>
+						<div class="col-sm-5 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.ReferenceFileName">
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-4">
+							Syle
+						</div>
+						<div class="col-sm-5 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-4">
+							Translation Method
+						</div>
+						<div class="col-sm-5 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Delivery</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 1
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 2
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-2">
+							File 3
+						</div>
+						<div class="col-sm-7 remove-padding">
+							<input class="form-control" placeholder="" style="" type="text" readonly>
+						</div>
+						<div class="col-sm-3">
+                            <span class="btn btn-default btn-sm pull-right btn-custom btn-block ">
+                                <a href="{{vm.EstimationModel.AttachedMaterialDownloadURL}}" download>Download</a>
+                            </span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							Delivery Comment
+							<textarea class="form-control " rows="6" placeholder="" style="" ng-model="vm.model.DeliveryComment"></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Delivery</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="form-group">
+						<div class="col-sm-12">
+							Company Notes
+							<textarea class="form-control " rows="10" placeholder="" style="" ng-model="vm.model.CompanyNotes"></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Customers Evaluation</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="row padding-lr15">
+						<div class="col-md-4 padding-right2">
+							Comment to the Translator
+						</div>
+						<div class="col-md-1 padding-lr2">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="vm.model.CommentToTranslator">								
+						</div>
+						<div class="col-md-1 padding-lr2">
+							<input class="form-control" placeholder="" style="" type="text">								
+						</div>
+						<div class="col-md-1 padding-lr2">
+							<input class="form-control" placeholder="" style="" type="text">								
+						</div>
+						<div class="col-md-1 padding-lr2">
+							<input class="form-control" placeholder="" style="" type="text">								
+						</div>
+						<div class="col-md-2 padding-lr2 text-right">
+							Average
+						</div>
+						<div class="col-md-2 padding-left2">
+							<input class="form-control" placeholder="" style="" type="text">								
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							Comments to b-cause
+						</div>
+						
+						<div class="col-sm-3 text-right remove-padding">
+							Reuse
+						</div>
+						
+						<div class="col-sm-3">
+							<input class="form-control" placeholder="" style="" type="text" ng-model="">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control " rows="6" placeholder="" style="" ng-model="vm.model.CommentToBcause"></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				<div class="col-sm-12 remove-padding">
+				</div>
+				<!--Start-->
+					<div class="col-sm-12 remove-padding">
+                        ﻿<div class="panel panel-primary">
+                             <label class="">Message</label>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div ui-grid="gridOptions" ui-grid-pagination ui-grid-save-state ui-grid-cellNav ui-grid-resize-columns ui-grid-move-columns ui-grid-exporter></div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				
+                <!--End-->
+                <div class="col-sm-12 col-md-12 col-xs-12">
+                    <label class="control-label remove-padding">Message Details</label>
+                </div>
+                <div class="col-sm-12 col-md-12 col-xs-12">
+                    <textarea class="form-control " rows="7" placeholder="" style="" ng-model="vm.model.MessageBody "></textarea>
+                </div>
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">Reason for Claim</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="checkbox-inline"><input type="checkbox" value="">Is Claimed</label>
+						</div>
+						
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.EstimationModel.InquiryDate" placeholder="Claim Date" show-weeks="true" is-open="contactFromOpened1" ng-click="contactFromOpened1 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text">
+								<div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen --></div>
+								<span class="input-group-btn">
+									<span for="contactDate" class="btn btn-default remove-padding">
+										<i class="fa fa-calendar"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control " rows="7" placeholder="" style="" ng-model=""></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="checkbox-inline"><input type="checkbox" value="">Is Solved</label>
+						</div>
+						
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" placeholder="Claim Solving Date" ng-model="vm.EstimationModel.InquiryDate" show-weeks="true" is-open="contactFromOpened2" ng-click="contactFromOpened2 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text">
+								<!--<div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""></div>-->
+								<span class="input-group-btn">
+									<span for="contactDate" class="btn btn-default remove-padding">
+										<i class="fa fa-calendar"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="row padding-lr15">
+						<div class="col-md-3 padding-right2 text-right">
+							Received Claim By
+						</div>
+						<div class="col-md-3 padding-lr2">
+							<div class="form-group">
+								<div class="input-group">
+                                    <comm-selection dlg-title="Person Name" url="employee/list" data="{{vm.EstimationModel.OutwardSalesID}}" text="{{vm.EstimationModel.OutwardSalesName}}" listento="selectedOutwardSales"></comm-selection>
+								
+								</div>
+							</div>							
+						</div>
+						<div class="col-md-3 padding-lr2 text-right">
+							Solved Claim By
+						</div>
+						<div class="col-md-3 padding-left2">
+							<div class="form-group">
+								<div class="input-group">
+                                    <comm-selection dlg-title="Person Name" url="employee/list" data="{{vm.EstimationModel.OutwardSalesID}}" text="{{vm.EstimationModel.OutwardSalesName}}" listento="selectedOutwardSales"></comm-selection>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control " rows="7" placeholder="" style=""></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="checkbox-inline"><input type="checkbox" value="">Illegal Queue Penalty</label>
+						</div>
+						
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input id="contactDate" class="form-control ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-date ng-touched" uib-datepicker-popup="dd/MM/yyyy" min-date="dateFrom" max-date="dateTo" close-text="Close" ng-model="vm.EstimationModel.InquiryDate" show-weeks="true" is-open="contactFromOpened3" ng-click="contactFromOpened3 = true" filter-by="placed" filter-type="dateFrom" ng-blur="gridActions.filter()" ng-focus="gridActions.filter()" style="" type="text">
+								<div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-pristine ng-untouched ng-valid ng-scope ng-empty ng-valid-date-disabled" style=""><!-- ngIf: isOpen --></div>
+								<span class="input-group-btn">
+									<span for="contactDate" class="btn btn-default remove-padding">
+										<i class="fa fa-calendar"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-8">
+							<div class="form-group">
+								<select class="form-control" id="">
+									<option>Select option 1</option>
+									<option>Select option 2</option>
+									<option>Select option 3</option>
+									<option>Select option 4</option>
+									<option>Select option 5</option>
+									<option>Select option 6</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<input class="form-control" placeholder="" style="" type="text">
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+				
+				
+				<div class="col-sm-12 remove-padding">
+					<label class="control-label remove-padding">LOG</label>
+				</div>
+				<div class="col-sm-12 thumbnail" style="min-height:100px;">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control " rows="7" placeholder="" style=""></textarea>
+						</div>
+						<div class="clearfix"></div>
+						<div class="clearfix" style="height: 3px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>

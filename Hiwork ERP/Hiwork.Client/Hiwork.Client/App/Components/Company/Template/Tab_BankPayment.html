@@ -1,0 +1,325 @@
+﻿<div role="tabpanel" class="tab-pane" id="payment-record">
+    <form class="box-body" ng-submit="saveCompany(5)" name="companyBasicInfo">
+        <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+        <p>{{   'PAYMENTINFO'|translator}}</p>
+        <div class="col-md-3 col-sm-3 col-xs-3  thumbnail ">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <labels>{{'WAYOFPAYMENT'|translator}}</labels>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <select name="ActivityResultType" class="form-control"
+                                ng-model="vm.PaymentWayID"
+                                ng-options="item.Id as item.Name for item in ::vm.PamentWayList">
+                            <option value="" selected="selected" disabled="disabled">{{  'PAYMENTBY'|translator}}</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 18px;"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <label></label>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <label>{{'PDF'|translator}}</label>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <label>{{'POST'|translator}}</label>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <label></label>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 5px;"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <labels>{{ 'DELIVERYNOTE'|translator}}</labels>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="invoicepdf" type="checkbox">
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="invoicepost" type="checkbox">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <select id="location"
+                                data-ng-model="vm.NoteDeliveryTypeID"
+                                ng-options="d.ID as d.Name for d in ::vm.DeliveryMethodList">
+                            <option value="" selected="selected">▼--------------</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 5px;"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <labels>{{'INVOICE'|translator}}</labels>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="receiptpdf" type="checkbox">
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="receiptpost" type="checkbox">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <select id="location"
+                                data-ng-model="vm.InvoiceDeliveryTypeID"
+                                ng-options="d.ID as d.Name for d in ::vm.DeliveryMethodList">
+                            <option value="" selected="selected">▼--------------</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 5px;"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <labels>{{'RECEIPT'|translator}}</labels>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="receiptpdf2" type="checkbox">
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        <input id="receiptpost2" type="checkbox">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <select id="location"
+                                data-ng-model="vm.RecieptDeliveryTypeID"
+                                ng-options="d.ID as d.Name for d in ::vm.DeliveryMethodList">
+                            <option value="" selected="selected">▼--------------</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 10px;"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <select name="PicTradingoffice" class="form-control"
+                                ng-model="vm.BankTradingOfficeID"
+                                ng-options="item.Id as item.Name for item in vm.TradingOfficeList" required>
+                            <option value="" selected="selected" disabled="disabled">Trading office</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 10px;"></div>
+                </div>
+                <p>{{  'BILLINGADDRESS'|translator}}</p>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                            <div class="list-unstyled">
+                                <label class="radio-inline"><input type="radio" name="billingAddress" value="1"  ng-model="checkboxSelection" ng-change="isCheckboxSelected(1)" class="checkbox pull-left">{{'USEREGISTEREDADDRESS'|translator}}</label>
+                                <div class="clearfix"></div>
+                                <label class="radio-inline"><input type="radio"  name="billingAddress" value="2"  ng-model="checkboxSelection" ng-change="isCheckboxSelected(2)" class="checkbox pull-left">{{ 'SENDTOFOLLOWINGADDRESS'|translator}}</label>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 8px;"></div>
+                            <input type="text"  class="form-control" ng-model="vm.BillingPostCode" ng-disabled="isDisabled" placeholder="{{'POSTCODE'|translator}}">
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 8px;"></div>
+                            <textarea class="form-control"  rows="3" ng-model="vm.BillingAddress"  ng-disabled="isDisabled" placeholder="{{'ADDRESS'|translator}}"></textarea>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 8px;"></div>
+                            <input type="text"  class="form-control" ng-model="vm.BilligPersonDesignation"  ng-disabled="isDisabled" placeholder="{{'TOWHOM(Position)'|translator}}">
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 8px;"></div>
+                            <input type="text"  class="form-control" ng-model="vm.BillingPersonName"  ng-disabled="isDisabled" placeholder="{{'TOWHOM(NAME)'|translator}}">
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="height: 8px;"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 8px;"></div>
+                                <p>{{   'PAYMENTAFTERDELIVERY'|translator}}</p>
+                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                    <label class="radio-inline"><input type="radio" name="PaymentIssue" ng-model="vm.AllowPaymentAfterDelivery" class="checkbox pull-left"> {{ 'ALLOWS'|translator}}</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                                    <label class="radio-inline"><input type="radio" name="PaymentIssue" ng-model="vm.AllowPaymentAfterDelivery" class="checkbox pull-left"> {{ 'NOTALLOWED'|translator}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="col-md-12 thumbnail">
+                <label>{{  'BASICINFOFORAFFILIATECOMPANY'|translator}}</label>
+                <div class="form-group col-md-12 remove-padding">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" ng-model="vm.AffiliateCode" placeholder="{{'AFFILIATECODE'|translator}}" />
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 remove-padding">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <select name="AffiliateType" class="form-control"
+                                ng-model="vm.AffiliateTypeID"
+                                ng-options="item.Id as item.Name for item in vm.AffiliateType" required>
+                            <option value="" selected="selected" disabled="disabled">{{'AFFILIATETYPE'|translator}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 remove-padding">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" ng-model="vm.AffiliateCompanyName" placeholder="{{'NAMETOSHOWASAFFILIATE'|translator}}" />
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-md-3 col-sm-3 remove-padding">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="{{'CLIENTNO1'|translator}}" />
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-md-12 col-sm-12">
+                    <label class="radio-inline"><input type="radio" name="optradio" />{{ 'BEFORE'|translator}}</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" />{{'ALLOW'|translator}}</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" />{{  'NOTALLOW'|translator}}</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" />{{'POSPONE'|translator}}</label>
+                </div>
+                <div class="form-group col-md-12 col-md-12 col-sm-12 remove-padding">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="input-group">
+                            <input type="text"
+                                   id="UpdateDate"
+                                   class="form-control"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="{{'UPDATEDATE1'|translator}}"
+                                   close-text="Close"
+                                   ng-model="vm.AffiliateUpdateDate"
+                                   show-weeks="true"
+                                   is-open="UpdateDate"
+                                   ng-click="UpdateDate = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                            <span class="input-group-btn">
+                                <label for="UpdateDate" class="btn btn-default remove-padding">
+                                    <i class="fa fa-calendar"></i>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" ng-model="vm.Note" placeholder="{{'NOTE'|translator}}"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12 col-md-12 col-sm-12 thumbnail">
+                <label>{{'SETTINGFORRECEVINGEMAIL'|translator}}</label>
+                <div class="form-group">
+                    <label><input type="checkbox" ng-model="vm.IsCampaignEmail" />{{  'RECIEVEADVERTISEMENTEMAILFORCAMPAIGN'|translator}}</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox" ng-model="vm.IsOrderShowEnable" />{{'AGREETOSHOWTHEORDERHISTORYINWEBSITE'|translator}}</label>
+                </div>
+                <label>{{ 'WAYTOSENDTHEOFFEREMAIL'|translator}}</label>
+                <p class="text-center">{{'SENDFROMTHETOP(highest translation score)'|translator}}</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 thumbnail">
+            <div class="col-md-12 col-md-12 col-sm-12">
+                <label>{{ 'PAYMENTINFORMATION'|translator}}</label>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="bg-light-blue text-center">
+                            <td>Sales</td>
+                            <td>Billing date</td>
+                            <td>Scheduled Deposit</td>
+                            <td>Billing Amount</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>4000001225</td>
+                            <td>Miss Johnson</td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>4000001225</td>
+                            <td>Mr.Smith</td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label>{{'BLACKLIST'|translator}}</label>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="bg-light-blue text-center">
+                            <td>Date</td>
+                            <td>Staff no</td>
+                            <td>Staff name</td>
+                            <td>delete</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2017/4/8</td>
+                            <td>4000001225</td>
+                            <td>Miss Johnson</td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>2016/12/7</td>
+                            <td>4000001225</td>
+                            <td>Mr.Smith</td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <label>{{ 'AVAILABLEDISCOUNTINFORMATION'|translator}}</label><input type="button" class="btn btn-deafult pull-right" value="{{'ADDDISCOUNTVOUCHER'|translator}}" />
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="bg-light-blue text-center">
+                            <td>Discount Type</td>
+                            <td>Amount</td>
+                            <td>date of expiery</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>Campaign</td>
+                            <td>5%</td>
+                            <td>2017/4/8</td>
+                        </tr>
+                        <tr>
+                            <td>evaluation</td>
+                            <td>10%</td>
+                            <td>2016/12/7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--</div>-->
+        <div class="">
+            <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step" ui-sref="CompanyRegistration.subcontact">{{'PREVIOUS'|translator}}</button></li>
+                <li><button type="submit" class="btn btn-primary next-step">{{'SAVEANDCONTINUE'|translator}}</button></li>
+            </ul>
+        </div>
+    </form>
+</div>

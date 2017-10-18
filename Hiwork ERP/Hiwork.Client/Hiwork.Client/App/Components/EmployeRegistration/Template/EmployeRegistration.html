@@ -1,0 +1,423 @@
+﻿   <div class="box box-primary" ng-init="$ctrl.init();">
+
+        <div class="content-wrapper" style="min-height: 861px;">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                   {{'EMPLOYEEREGISTRATION' | translator}}
+                    <small>{{'CONTROLPANEL' | translator}}</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">{{'EMPLOYEEREGISTRATION' | translator}}</li>
+                </ol>
+            </section>
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+                <!-- /.row -->
+                <!-- Main row -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form class="box-body"  name="empRegForm">
+                            <div class="box box-primary">
+                                <div class="box-body">
+
+
+                                    <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="country" id="changeCountry" class="form-control"
+                                                        ng-model="vm.CountryID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.country.$error.required}"
+                                                        ng-options="item.ID as item.Name for item in CountryList" data-ng-change="getBankList()" required>
+                                                    <option value="" ng-selected="true">{{'SELECTCOUNTRY' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input title="Attendance Time" ng-model="vm.ClockInTime" type="time" placeholder="{{'ATTENDANCETIME'| translator}}" name="attendtime" min="07:00" max="09:00" class="form-control" required>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="branch" id="changeDivision" class="form-control"
+                                                        ng-model="vm.BranchOfficeID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.branch.$error.required}"
+                                                        ng-options="item.ID as item.Name for item in BranchList" required>
+                                                    <option value="" ng-selected="true">Select Branch office</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input title="Leaving Time" ng-model="vm.ClockOutTime" type="time" placeholder="{{'LEAVINGTIME'| translator}}"  min="18:00" max="20:00" class="form-control" required>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.EmployeeID" value="vm.EmployeeID" class="form-control required" placeholder="{{'EMPLOYEEID' | translator}}" ng-blur='checkEmployeeID()' ng-model-options="{ getterSetter: true }" >
+                                                <div style="color:red">{{ employeeIDstatus }}</div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.homeAddress" class="form-control required" placeholder="{{'HOMEADDRESS' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" name="name" class="form-control" placeholder="{{'NAME' | translator}}" ng-model="vm.Name" ng-minlength="3" ng-maxlength="15"  ng-class="{'invalid-input':isTriedSave && empRegForm.name.$error.required}" required>
+                                                <p ng-show="empRegForm.name.$error.minlength" class="help-block alert-danger">{{'EMPLOYEENAMEISTOOSHORT' | translator}}</p>
+                                                <p ng-show="empRegForm.name.$error.maxlength" class="help-block">{{'EMPLOYEENAMEISTOOLONG' | translator}}</p>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.HomePhone" class="form-control required" placeholder="{{'CONTACTNO(HOME)' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="password" name="password" placeholder="{{'PASSWORD' | translator}}" ng-model="vm.Password" class="form-control" ng-minlength="6"  ng-class="{'invalid-input':isTriedSave && empRegForm.password.$error.required}" required>
+                                                <!--<p ng-show="empRegForm.password.$error.minlength" class="help-block alert-danger">{{'PASSWORDISTOOSHORT' | translator}}</p>
+                                                <p ng-show="empRegForm.password.$error.maxlength" class="help-block alert-success">{{'PASSWORDISSTRONG' | translator}}</p>-->
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.MobilePhone" class="form-control required" placeholder="{{'MOBILENO' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.WorkingArrangement" class="form-control" placeholder="{{'WORKINGARRANGEMENT' | translator}}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="email" ng-model="vm.PCEmail" class="form-control" placeholder="{{'PCEMAIL' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="department" id="changeDepartment" class="form-control" placeholder="{{'DEPARTMENT' | translator}}"
+                                                        ng-model="vm.DepartmentID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.department.$error.required}"
+                                                        ng-options="item.ID as item.Name for item in DeptList" required>
+                                                    <option value="" ng-selected="true">{{'SELECTDEPARTMENT' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="email" ng-model="vm.MobileEmail" class="form-control" placeholder="{{'MOBILEEMAIL' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="emptypeid" id="changeRoles" class="form-control" placeholder="{{'EMPLOYEETYPE' | translator}}"
+                                                        ng-model="vm.EmployeeTypeID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.emptypeid.$error.required}"
+                                                        ng-options="item.Id as item.Name for item in EmployeeTypeList" required>
+                                                    <option value="" ng-selected="true">{{'SELECTEMPLOYEETYPE' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" class="form-control" placeholder="{{'EMERGENCYCONTACTNO(HOME)' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="number" ng-model="vm.AttendanceDay" min="1" max="7" class="form-control required" placeholder="{{'ATTENDANCEDAYOFTHEWEEK' | translator}}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.Sns_one" class="form-control" placeholder="SNS 1">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                    </div>
+                                    <!--2nd Column Start-->
+                                    <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                        <div class="form-group">
+
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.Sns_two" class="form-control" placeholder="SNS 2">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.SkypeID" class="form-control" placeholder="{{'SKYPEID' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                           name="birthDate"
+                                                           class="form-control"
+                                                            ng-class="{'invalid-input':isTriedSave && empRegForm.birthDate.$error.required}"
+                                                           uib-datepicker-popup="dd/MM/yyyy"
+                                                           placeholder="{{'BIRTHDAYDATE' | translator}}"
+                                                           min-date="dateFrom"
+                                                           max-date="dateTo"
+                                                           close-text="{{'CLOSE' | translator}}"
+                                                           ng-model="vm.BirthDate"
+                                                           show-weeks="true"
+                                                           is-open="dateFromOpened"
+                                                           ng-click="dateFromOpened = true"
+                                                           filter-by="placed"
+                                                           filter-type="dateFrom"
+                                                           ng-blur="gridActions.filter()"
+                                                           ng-focus="gridActions.filter()" required/>
+                                                    <span class="input-group-btn">
+                                                        <label for="birthDate" class="btn btn-default remove-padding">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.SkypePassword" class="form-control" placeholder="{{'SKYPEPASSWORD' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="number" ng-model="vm.MyNumber" class="form-control" placeholder="{{'MYNUMBER' | translator}}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input name="email" type="email" ng-model="vm.Email"  class="form-control" placeholder="{{'EMAIL' | translator}}" ng-class="{'invalid-input':isTriedSave && empRegForm.email.$error.required}" required>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!--<div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="team" id="changeTeam" class="form-control"
+                                                        ng-model="vm.TeamID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.team.$error.required}"
+                                                        ng-options="item.Id as item.Name for item in TeamList" required>
+                                                    <option value="" ng-selected="true">{{'SELECTTEAM' | translator}}</option>
+                                                </select>
+                                                <div class="clearfix"></div>
+                                                <div class="clearfix" style="height:10px;"></div>
+                                            </div>-->
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="bank" id="changeBank" class="form-control"
+                                                        ng-model="vm.BankID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.bank.$error.required}"
+                                                        ng-options="item.Id as item.Name for item in BankList" data-ng-change="getBankBranchList()" required>
+                                                    <option value="" ng-selected="true">{{'SELECTBANKNAME' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                           name="Joindate"
+                                                           class="form-control"
+                                                           ng-class="{'invalid-input':isTriedSave && empRegForm.Joindate.$error.required}"
+                                                           uib-datepicker-popup="dd/MM/yyyy"
+                                                           placeholder="{{'JOINEDDATE' | translator}}"
+                                                           close-text="{{'CLOSE' | translator}}"
+                                                           ng-model="vm.JoiningDate"
+                                                           show-weeks="true"
+                                                           is-open="Joindate"
+                                                           ng-click="Joindate = true"
+                                                           filter-by="placed"
+                                                           filter-type="dateFrom"
+                                                           ng-blur="gridActions.filter()"
+                                                           ng-focus="gridActions.filter()" required/>
+                                                    <span class="input-group-btn">
+                                                        <label for="Joindate" class="btn btn-default remove-padding">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="bankbranch" id="changeBankbranch" class="form-control"
+                                                        ng-model="vm.BankBranchID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.bankbranch.$error.required}"
+                                                        ng-options="item.ID as item.Name for item in BankBranchList" required>
+                                                    <option value="" ng-selected="true">{{'SELECTBRANCHNAME' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                           id="Resigndate"
+                                                           class="form-control"
+                                                           uib-datepicker-popup="dd/MM/yyyy"
+                                                           placeholder="{{'RESIGNEDDATE' | translator}}"
+                                                           close-text="{{'CLOSE' | translator}}"
+                                                           ng-model="vm.LeavingDate"
+                                                           show-weeks="true"
+                                                           is-open="Resigndate"
+                                                           ng-click="Resigndate = true"
+                                                           filter-by="placed"
+                                                           filter-type="dateFrom"
+                                                           ng-blur="gridActions.filter()"
+                                                           ng-focus="gridActions.filter()" />
+                                                    <span class="input-group-btn">
+                                                        <label for="Resigndate" class="btn btn-default remove-padding">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <select name="acctype" id="changeAccType" class="form-control"
+                                                        ng-model="vm.BankAccountTypeID"
+                                                        ng-class="{'invalid-input':isTriedSave && empRegForm.acctype.$error.required}"
+                                                        ng-options="item.ID as item.Name for item in BankAccTypeList" required>
+                                                    <option value="" ng-selected="true">{{'SELECTACCOUNTTYPE' | translator}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.ExtPhoneNo" class="form-control" placeholder="{{'EXTENTIONPHONENO' | translator}}">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.BankAccountNumber" class="form-control" placeholder="{{'ACCOUNTNUMBER' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <!--3rd column last line-->
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <input type="text" ng-model="vm.BankAccountName" class="form-control" placeholder="{{'ACCOUNTNAME' | translator}}">
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:3px;"></div>
+                                        </div>
+
+                                    </div>
+                                    <!--4th coulmn-->
+                                    <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+                                        <div class="form-group">
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div style="float: left; font-size: 100px;" enctype="multipart/form-data">
+
+                                                    <a class="preview">
+                                                        <!--<i class="fa fa-picture-o" aria-hidden="true"></i>-->
+                                                        <img src="content/images/avatar.jpg" class="img-responsive" ng-if="!vm.Photo" />
+                                                        <img ng-if="vm.Photo" class="img-responsive" ng-src="{{vm.Photo}}" />
+                                                    </a>
+
+                                                    <label for="photoInput" class="btn btn-primary btn-flat btn-block">
+                                                        {{'UPLOADPHOTO' | translator}}
+                                                        <input type="file" id="photoInput"  load-image ng-model="vm.Photo"  accept="image/*" style="display:none;" />
+                                                    </label>
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="clearfix" style="height:10px;"></div>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                                <div class="form-group">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <select name="language1" id="changelanguage1" class="form-control"
+                                                                ng-model="vm.Language_one"
+                                                                ng-class="{'invalid-input':isTriedSave && empRegForm.language1.$error.required}"
+                                                                ng-options="item.ID as item.Name for item in LanguageList" required>
+                                                            <option value="" ng-selected="true">{{'SELECTLANGUAGE1' | translator}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="clearfix" style="height:5px;"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <select name="language2" id="changelanguage1" class="form-control"
+                                                                ng-model="vm.Language_two"
+                                                                ng-class="{'invalid-input':isTriedSave && empRegForm.language1.$error.required}"
+                                                                ng-options="item.ID as item.Name for item in LanguageList" required>
+                                                            <option value="" ng-selected="true">{{'SELECTLANGUAGE2' | translator}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="clearfix" style="height:5px;"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <select name="language3" id="changelanguage1" class="form-control"
+                                                                ng-model="vm.Language_three"
+                                                                ng-class="{'invalid-input':isTriedSave && empRegForm.language1.$error.required}"
+                                                                ng-options="item.ID as item.Name for item in LanguageList" required>
+                                                            <option value="" ng-selected="true">{{'SELECTLANGUAGE3' | translator}}</option>
+                                                        </select>
+                                                    </div>
+													<div class="clearfix"></div>
+                                                    <div class="clearfix" style="height:5px;"></div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <!--blank after language-->
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <textarea class="form-control" placeholder="{{'SELFINTRODUCTION' | translator}}" ng-model="vm.SelfIntroduction" wrap="hard" rows="4"></textarea>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="clearfix" style="height:6px;"></div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <textarea class="form-control" placeholder="{{'NOTE' | translator}}" ng-model="vm.Note" wrap="hard" rows="6"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix" style="height:6px;"></div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="clearfix"></div>
+                                        <div class="clearfix" style="height: 10px;"></div>
+
+                                        <input type="button" class="btn btn-primary  btn-lg pull-right" ng-disabled="IsSubmitEnable" ng-click="submitEmployeeForm(vm)" value="{{'SAVE' | translator}}" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>

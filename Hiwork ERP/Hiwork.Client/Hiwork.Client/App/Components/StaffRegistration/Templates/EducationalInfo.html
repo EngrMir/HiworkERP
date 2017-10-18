@@ -1,0 +1,163 @@
+﻿<div class="tab-pane" id="educatinal-info">
+    <div class="tab-pane" id="educatinal-info">
+        <form name="EducationalInfoForm" novalidate role="form">
+            <div class="clearfix" style="height: 18px;"></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 ">
+                <div class="col-md-12 col-xs-12 col-sm-12 ">
+                    <div class="col-md-6 col-xs-6 col-sm-6 ">
+                        <h4><label class="pull-left">{{'EDUCATIONALBACKGROUND' | translator}}</label></h4>
+                        <div class="clearfix" style="height:10px"></div>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="vm.EducationalInfoModel.InstituteName_en" placeholder="{{'NAMEOFINSTITUTE' | translator}}">
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <ui-select name="educationalDegree" ng-model="vm.staffDegreeData.selected" ng-required="true" theme="bootstrap" title="Choose an Employment Type">
+                                <ui-select-match placeholder="Educational Degree">{{$select.selected.Name_en}}</ui-select-match>
+                                <ui-select-choices repeat="education in vm.staffDegreeData | filter: $select.search">
+                                    <span ng-bind-html="education.Name_en | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <ui-select name="majorSubject" ng-model="vm.staffSubjectData.selected" ng-required="true" theme="bootstrap" title="Choose an Employment Type">
+                                <ui-select-match placeholder="Major Subject">{{$select.selected.Name_en}}</ui-select-match>
+                                <ui-select-choices repeat="major in vm.staffSubjectData | filter: $select.search">
+                                    <span ng-bind-html="major.Name_en | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <ui-select id="inputCountry" name="inputCountry" ng-model="vm.countryData.selected" ng-required="true" theme="bootstrap">
+                                <ui-select-match placeholder="{{'ISSUECOUNTRY' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                <ui-select-choices repeat="country in vm.countryData | filter: $select.search">
+                                    <span ng-bind-html="country.Name | highlight: $select.search"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <lable>{{'GRADUATEDATE' | translator}}</lable>
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                <input type="text"
+                                       id="InputGraduationYear"
+                                       name="InputGraduationYear"
+                                       class="form-control"
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       placeholder="GraduationYear(DD/MM/YYYY)"
+                                       min-date="dateFrom"
+                                       max-date="dateTo"
+                                       close-text="Close"
+                                       ng-model="vm.EducationalInfoModel.GraduationYear"
+                                       show-weeks="true"
+                                       is-open="dateFromOpened"
+                                       ng-click="dateFromOpened = true"
+                                       filter-by="placed"
+                                       filter-type="dateFrom"
+                                       ng-blur="gridActions.filter()"
+                                       ng-focus="gridActions.filter()" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <lable>{{'ENTRYDATE' | translator}}</lable>
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+
+
+                                <input type="text"
+                                       id="InputEntryYear"
+                                       name="InputEntryYear"
+                                       class="form-control"
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       placeholder="EntryYear(DD/MM/YYYY)"
+                                       min-date="dateFrom"
+                                       max-date="dateTo"
+                                       close-text="Close"
+                                       ng-model="vm.EducationalInfoModel.EntryYear"
+                                       show-weeks="true"
+                                       is-open="dateFromOpenedEntry"
+                                       ng-click="dateFromOpenedEntry = true"
+                                       filter-by="placed"
+                                       filter-type="dateFrom"
+                                       ng-blur="gridActions.filter()"
+                                       ng-focus="gridActions.filter()" />
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                                <textarea class="form-control" ng-model="vm.EducationalInfoModel.Comment_en" placeholder="Notes" cols="100" rows="2"></textarea>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+
+                        <div class="clearfix" style="height:4px"></div>
+                        <div class="form-group">
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                <button type="button" ng-click="vm.AddEducation()" class="btn">{{'ADDNEW' | translator}}  </button>
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                <button type="button" ng-click="vm.SaveEducation()" class="btn">{{'SAVE' | translator}}</button>
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                <button type="button" class="btn">{{'DELETE' | translator}}</button>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-xs-4 col-sm-4 ">
+                <div class="clearfix"></div>
+            </div>
+
+
+            <div class="col-md-4 col-xs-4 col-sm-4 ">
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="clearfix" style="height:20px"></div>
+
+        </form>
+
+        <div class="col-md-12 col-xs-12 col-sm-12 bg-gray ">
+
+
+            <div class="clearfix" style="height:10px"></div>
+
+            <h4>{{'LISTOFACADEMICHISTORY' | translator}}</h4>
+            <div class="clearfix"></div>
+            <div class="bg-white">
+                <table class="table table-bordered white">
+                    <tr>
+                        <td>
+                            <div id="grid1" ui-grid="vm.gridOptions" class="grid" ng-style="vm.getTableHeight()" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,329 @@
+﻿<div class="tab-pane" id="Narration">
+    <div class="panel-body">
+        <form name="NarrationForm" novalidate role="form">
+            <fieldset>
+                <div class="col-md-7 col-sm-7 col-xs-7 remove-padding">
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="panel bg-gray">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="staff-reg-label">{{'CURRENTWORKINGSTATUS' | translator}}</label>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <input type="number" class="form-control" placeholder="Experience 3 Years" ng-model="vm.NarrationModel.NoOfExpYear" ng-required="true">
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <ui-select ng-model="vm.staffProfession.selected" ng-required="true" theme="bootstrap">
+                                        <ui-select-match placeholder="Professional">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="profession in vm.staffProfession | filter: $select.search">
+                                            <span ng-bind-html="profession.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <input type="text" class="form-control" placeholder="If other selected write here" ng-model="vm.NarrationModel.OtherExperience" ng-required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <div class="panel bg-gray">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="staff-reg-label">{{'PRICEFREE' | translator}}</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'PRICEWORK' | translator}}" ng-model="vm.NarrationModel.PricePerWork" ng-required="true">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'PRICEWORKREQUEST' | translator}}" ng-model="vm.NarrationModel.PricePerWorkRequest" ng-required="true">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'PRICEHR' | translator}}" ng-model="vm.NarrationModel.PricePerHour" ng-required="true">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'PRICEHRREQUEST' | translator}}" ng-model="vm.NarrationModel.PricePerHourRequest" ng-required="true">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'MINPRICE' | translator}}" ng-model="vm.NarrationModel.MinPrice" ng-required="true">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                        <input type="number" class="form-control" placeholder="{{'MINPRICEREQUEST' | translator}}" ng-model="vm.NarrationModel.MinPriceRequest" ng-required="true">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel bg-gray">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label class="staff-reg-label">{{'VOICETYPE ' | translator}}</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2">{{'TYPE' | translator}}</label>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                        <ul class="list-inline">
+                                            <li><label> <input type="radio" ng-model="vm.VoiceType" ng-change="vm.VoiceTypeChanged()" value="3"> High</label></li>
+                                            <li><label> <input type="radio" ng-model="vm.VoiceType" ng-change="vm.VoiceTypeChanged()" value="1"> Low</label></li>
+                                            <li><label> <input type="radio" ng-model="vm.VoiceType" ng-change="vm.VoiceTypeChanged()" value="3"> Soft </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.VoiceType" ng-change="vm.VoiceTypeChanged()" value="4"> Strong / Hard </label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2">{{'AGEIMPRESSION' | translator}}</label>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                        <ul class="list-inline">
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="10"> Under 10 </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="16"> Teenage</label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="20"> 20s </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="30"> 30s </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="40"> 40s </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="50"> 50s </label></li>
+                                            <li><label> <input type="radio" ng-model="vm.AgeImpression" ng-change="vm.AgeImpressionChanged()" value="60"> 60s Over </label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2">{{'SENSEPURPOSE' | translator}}</label>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                        <ul class="list-inline">
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="CM"> CM </label></li>
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="Radio"> Radio</label></li>
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="Casting"> Casting </label></li>
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="Animation / Cartoons"> Animation / Cartoons </label></li>
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="Announcement"> Announcement  </label></li>
+                                            <li><label> <input type="checkbox" ng-model="vm.SceneOrPurposes" ng-change="vm.SceneOrPurposesChanged()" value="Educatinal"> Educatinal </label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="panel bg-gray">
+                            <div class="panel-body">
+                                <div class="clearfix"></div>
+                                <div class="clearfix" style="height: 10px;"></div>
+                                <div class="form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <ui-select ng-model="vm.narrationType.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Narration Type">{{$select.selected.Name_en}}</ui-select-match>
+                                            <ui-select-choices repeat="narration in vm.narrationType | filter: $select.search">
+                                                <span ng-bind-html="narration.Name_en | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4" show-errors>
+                                        <input type="text" class="form-control" placeholder="Order No" ng-model="vm.NarrationVoiceModel.OrderNo" ng-required="true">
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4" show-errors>
+                                        <input type="text" class="form-control" placeholder="{{'DETAILS' | translator}}" ng-model="vm.NarrationVoiceModel.VoiceDetail" ng-required="true">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-4" show-errors>
+                                        <input type="text" class="form-control datepicker" value="06/14/2017" ng-model="vm.date" ng-required="true" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4" show-errors>
+                                        <input type="text" class="form-control" placeholder="File Name" ng-model="vm.NarrationVoiceModel.NarrationFileName" ng-required="true">
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <a href="#" class="btn btn-default btn-block">{{'UPLOAD' | translator}}</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default btn-block ">{{'PLAY' | translator}}</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default btn-block ">{{'SAVE' | translator}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                    <div class="panel bg-gray">
+                        <div class="panel-body voice">
+                            <div class="form-group">
+                                <label class="staff-reg-label text-center">Voice Sample</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'DELETE' | translator}}</a>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Voicesample1.mp3" ng-model="vm.voicesample" ng-required="true">
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <label for="uploadmp31" class="btn btn-default">{{'UPLOAD' | translator}}</label>
+
+                                    <input type="file" id="uploadmp31" style="display: none;">
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'PLAY' | translator}}</a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'DELETE' | translator}}</a>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Voicesample2.mp3" ng-model="vm.voicesample2" ng-required="true">
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <label for="uploadmp31" class="btn btn-default">{{'UPLOAD' | translator}}</label>
+                                    <input type="file" id="uploadmp31" style="display: none;">
+
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'PLAY' | translator}}</a>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'DELETE' | translator}}</a>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Voicesample3.mp3" ng-model="vm.voicesample3" ng-required="true">
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <label for="uploadmp31" class="btn btn-default">{{'UPLOAD' | translator}}</label>
+
+                                    <input type="file" id="uploadmp31" style="display: none;">
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <a href="#" class="btn btn-default btn-block">{{'PLAY' | translator}}</a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12" show-errors>
+                                    <textarea class="form-control" rows="4" placeholder="Self Motivation Appeal, explanation for narration work" ng-model="vm.NarrationModel.SelfPromotion" ng-required="true"></textarea>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12" show-errors>
+                                    <textarea class="form-control" rows="4" placeholder="Coornator's Note" ng-model="vm.NarrationModel.Coordinator" ng-required="true"></textarea>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <div class="panel bg-gray">
+                        <div class="panel-body remove-padding">
+                            <table class="table remove-margin" id="narration-table" style="padding: 10px;">
+                                <thead class="bg-light-blue">
+                                    <tr>
+                                        <td>Narration</td>
+                                        <td>Detail</td>
+                                        <td>Order No</td>
+                                        <td>Rating</td>
+                                        <td>Date</td>
+                                        <td>File Name</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cartoon</td>
+                                        <td>Sample Text</td>
+                                        <td>Sample Text </td>
+                                        <td>8.0</td>
+                                        <td>2001/01/1</td>
+                                        <td>Sample Text</td>
+                                        <td>
+                                            <a href="#" class="btn btn-default">Delete</a>
+                                            <a href="#" class="btn btn-default">Download</a>
+                                            <a href="#" class="btn btn-default">Play</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DJ</td>
+                                        <td>Sample Text</td>
+                                        <td>Sample Text </td>
+                                        <td>7.2</td>
+                                        <td>2001/01/2</td>
+                                        <td>Sample Text</td>
+                                        <td>
+                                            <a href="#" class="btn btn-default">Delete</a>
+                                            <a href="#" class="btn btn-default">Download</a>
+                                            <a href="#" class="btn btn-default">Play</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pr Video</td>
+                                        <td>Sample Text</td>
+                                        <td>Sample Text </td>
+                                        <td>9.1</td>
+                                        <td>2001/01/2</td>
+                                        <td>Sample Text</td>
+                                        <td>
+                                            <a href="#" class="btn btn-default">Delete</a>
+                                            <a href="#" class="btn btn-default">Download</a>
+                                            <a href="#" class="btn btn-default">Play</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="panel bg-gray">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="staff-reg-label col-md-6 col-sm-6 col-xs-6"><input type="checkbox" class="checkbox pull-left" ng-model="vm.NarrationModel.IsShowWebsite" ng-checked="false"> Show in Website </label>
+                                <label class="staff-reg-label col-md-6 col-sm-6 col-xs-6"><input type="checkbox" class="checkbox pull-left" ng-model="vm.NarrationModel.IsPartnerNarrator" ng-checked="false"> Partner </label>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="staff-reg-label col-md-6 col-sm-6 col-xs-6"><input type="checkbox" class="checkbox pull-left" ng-model="vm.NarrationModel.IsPromote" ng-checked="false"> Promote </label>
+                                <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2">{{'PROIORITY' | translator}}</label>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <input type="number" class="form-control" ng-model="vm.NarrationModel.PriorityValue">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2"> &nbsp; </label>
+                                <label class="staff-reg-label ol-md-6 col-sm-6 col-xs-6">Customer Evaluation </label>
+                                <div class="col-md-4 col-sm-4 col-xs-4" show-errors>
+                                    <input type="number" class="form-control" ng-model="vm.NarrationModel.CustomerEvaluation">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

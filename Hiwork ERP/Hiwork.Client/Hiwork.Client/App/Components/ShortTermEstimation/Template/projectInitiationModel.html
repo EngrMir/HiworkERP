@@ -1,0 +1,64 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="fa fa-close pull-right" ng-click="$ctrl.Close()"></button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="projectInitForm">
+            <div class="form-group">
+                <div class="col-md-3"><span>Project No:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="ProjectNo" class="form-control" ng-class="{'invalid-input':isTryToSend && projectInitForm.ProjectNo.$error.required}"
+                           ng-model="$ctrl.modalData.ProjectNo" readonly />
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3"><span>Project Name:</span></div>
+                <div class="col-md-9">
+                    <input type="text" name="Name" class="form-control"
+                           ng-model="$ctrl.modalData.Name"  required/>
+                </div>
+            </div>
+            <div class="clearfix" style="height:3px;"></div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <span>Description:</span>
+                </div>
+                <div class="col-md-9">
+                    <textarea id="description" name="description" class="form-control" ng-model="$ctrl.modalData.Description" ng-class="{'invalid-input':isTryToSend && projectInitForm.description.$error.required}"></textarea>
+                </div>
+            </div>
+             <div class="clearfix" style="height:3px;"></div>
+            <div class="table-responsive">
+                <table st-table="$ctrl.dataList" id="smartTable" class="table table-striped table-hover">
+                    <thead class="bg-light-blue">
+                        <tr>
+                            <th>
+                                <input type="checkbox"  ng-model="$ctrl.selectEverything" ng-change="$ctrl.allItemsSelectionChanged()" />
+                            </th>
+                            <th>Estimation No</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in $ctrl.estimationList">
+                            <td>
+                                <input  type="checkbox"  ng-model="$ctrl.modalData.isRowSelected" ng-click="$ctrl.toggleSelection(item)"/>
+                            </td>
+                            <td style="cursor:pointer;">{{estimation.EstimationNo}}</td>
+                            <td>{{estimation.RegistrationDate  | date : "dd-MM-yyyy" }}</td>
+                            <td>{{estimation.EstimationStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.Save()" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

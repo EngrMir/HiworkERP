@@ -1,0 +1,219 @@
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\AutoMapper.Net4.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.BLL.dll.config
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.BLL.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.BLL.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\AutoMapper.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\EntityFramework.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.DAL.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.Utils.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Newtonsoft.Json.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\log4net.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\itextsharp.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Quartz.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Ninject.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Core.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.API.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.Runtime.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Media.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Text.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Util.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Jdbc.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Bind.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Security.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Beans.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Naming.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Crypto.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Misc.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.WebServices.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Management.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Remoting.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.Runtime.JNI.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Corba.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.AWT.WinForms.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Charsets.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Parse.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.XPath.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.DAL.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\HiWork.Utils.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\AutoMapper.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\AutoMapper.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\AutoMapper.Net4.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\EntityFramework.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Newtonsoft.Json.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\log4net.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\itextsharp.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Quartz.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Quartz.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Ninject.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\bin\Debug\Common.Logging.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\obj\Debug\HiWork.BLL.csprojResolveAssemblyReference.cache
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\obj\Debug\HiWork.BLL.Resources.CustomMessage.resources
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\obj\Debug\HiWork.BLL.csproj.GenerateResource.Cache
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\obj\Debug\HiWork.BLL.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\HiWork.BLL\obj\Debug\HiWork.BLL.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\AutoMapper.Net4.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.BLL.dll.config
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.BLL.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.BLL.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\AutoMapper.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\EntityFramework.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.DAL.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.Utils.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Newtonsoft.Json.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\log4net.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\itextsharp.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Quartz.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Ninject.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Core.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.API.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.Runtime.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Media.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Text.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Util.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Jdbc.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Bind.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Security.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Beans.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Naming.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Crypto.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Misc.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.WebServices.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Management.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Remoting.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.Runtime.JNI.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Corba.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.AWT.WinForms.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Charsets.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Parse.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.XPath.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.DAL.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\HiWork.Utils.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\AutoMapper.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\AutoMapper.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\AutoMapper.Net4.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\EntityFramework.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Newtonsoft.Json.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\log4net.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\itextsharp.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Quartz.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Quartz.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Ninject.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.Core.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.pdb
+D:\B-cause Development Documents\dev\HiWork.BLL\bin\Debug\Common.Logging.xml
+D:\B-cause Development Documents\dev\HiWork.BLL\obj\Debug\HiWork.BLL.csprojResolveAssemblyReference.cache
+D:\B-cause Development Documents\dev\HiWork.BLL\obj\Debug\HiWork.BLL.Resources.CustomMessage.resources
+D:\B-cause Development Documents\dev\HiWork.BLL\obj\Debug\HiWork.BLL.csproj.GenerateResource.Cache
+D:\B-cause Development Documents\dev\HiWork.BLL\obj\Debug\HiWork.BLL.dll
+D:\B-cause Development Documents\dev\HiWork.BLL\obj\Debug\HiWork.BLL.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\AutoMapper.Net4.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.BLL.dll.config
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.BLL.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.BLL.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\AutoMapper.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\EntityFramework.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.DAL.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.Utils.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Newtonsoft.Json.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\log4net.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\itextsharp.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Quartz.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Ninject.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\TikaOnDotNet.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Core.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.API.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.Core.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.Runtime.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Media.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Text.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Util.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Jdbc.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Bind.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Security.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Beans.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Naming.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Crypto.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Misc.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.WebServices.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Management.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Remoting.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.Runtime.JNI.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Corba.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.AWT.WinForms.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.Charsets.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.Parse.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\IKVM.OpenJDK.XML.XPath.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.DAL.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\HiWork.Utils.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\AutoMapper.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\AutoMapper.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\AutoMapper.Net4.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\EntityFramework.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Newtonsoft.Json.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\log4net.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\TikaOnDotNet.TextExtraction.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\itextsharp.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Quartz.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Quartz.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Ninject.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.Core.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.Core.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\bin\Debug\Common.Logging.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\obj\Debug\HiWork.BLL.csprojResolveAssemblyReference.cache
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\obj\Debug\HiWork.BLL.Resources.CustomMessage.resources
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\obj\Debug\HiWork.BLL.csproj.GenerateResource.Cache
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\obj\Debug\HiWork.BLL.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\HiWork.BLL\obj\Debug\HiWork.BLL.pdb

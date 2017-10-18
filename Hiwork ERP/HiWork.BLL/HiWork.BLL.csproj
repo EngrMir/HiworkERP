@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FE63953-507E-45C8-88E7-482DB9C0773B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HiWork.BLL</RootNamespace>
+    <AssemblyName>HiWork.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email\Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email\Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Email\ErrorInPasswordSet.aspx.cs">
+      <DependentUpon>ErrorInPasswordSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email\ErrorInPasswordSet.aspx.designer.cs">
+      <DependentUpon>ErrorInPasswordSet.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Email\SetPassword.aspx.cs">
+      <DependentUpon>SetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email\SetPassword.aspx.designer.cs">
+      <DependentUpon>SetPassword.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOC\DependencyInjector.cs" />
+    <Compile Include="ModelMapping\AutoMapperBootStrapper.cs" />
+    <Compile Include="ModelMapping\DatabaseToDomainProfile.cs" />
+    <Compile Include="ModelMapping\DomainToDatabaseProfile.cs" />
+    <Compile Include="Models\AdvancedStaffSearchModel.cs" />
+    <Compile Include="Models\AdvertizementSettingsModel.cs" />
+    <Compile Include="Models\CheckBoxModel.cs" />
+    <Compile Include="Models\DashboardSAdminModel.cs" />
+    <Compile Include="Models\ContactUsModel.cs" />
+    <Compile Include="Models\DeliveryMethodModel.cs" />
+    <Compile Include="Models\EstimationRoleAccessModel.cs" />
+    <Compile Include="Models\MasterStaffSoftwareSkillModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\NarrationCommon.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\OrderStaffAllowanceDetailsModel.cs" />
+    <Compile Include="Models\OrderStaffAllowanceModel.cs" />
+    <Compile Include="Models\OrderWebModel.cs" />
+    <Compile Include="Models\PayPalModel.cs" />
+    <Compile Include="Models\PenaltyModel.cs" />
+    <Compile Include="Models\StaffNestedModel.cs" />
+    <Compile Include="Models\StaffSkillTechModel.cs" />
+    <Compile Include="Models\StaffSoftwareSkillModel.cs" />
+    <Compile Include="Models\WorkingStatusModel.cs" />
+    <Compile Include="Models\AgentBusinessModel.cs" />
+    <Compile Include="Models\AgentCharactersticsModel.cs" />
+    <Compile Include="Models\AgentFreeDesignationModel.cs" />
+    <Compile Include="Models\ApplicationModel.cs" />
+    <Compile Include="Models\BankModel.cs" />
+    <Compile Include="Models\BranchModel.cs" />
+    <Compile Include="Models\BusinessCategoryDetailsModel.cs" />
+    <Compile Include="Models\BusinessCategoryModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CommonModelHelper.cs" />
+    <Compile Include="Models\CompanyBusinessServiceModel.cs" />
+    <Compile Include="Models\CompanyBusinessSpecialityModel.cs" />
+    <Compile Include="Models\CompanyIndustryClassificationItemModel.cs" />
+    <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\CompanyIndustryClassificationModel.cs" />
+    <Compile Include="Models\CompanyTradingDivisionModel.cs" />
+    <Compile Include="Models\CountryModel.cs" />
+    <Compile Include="Models\CountryToBranchModel.cs" />
+    <Compile Include="Models\CultureModel.cs" />
+    <Compile Include="Models\CurrencyModel.cs" />
+    <Compile Include="Models\CurrentStateModel.cs" />
+    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\DesignationModel.cs" />
+    <Compile Include="Models\DivisionModel.cs" />
+    <Compile Include="Models\EducationalHistoryModel.cs" />
+    <Compile Include="Models\EducationalInfoModel.cs" />
+    <Compile Include="Models\EducationModel.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\EmailTemplateModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\EmploymentTypeModel.cs" />
+    <Compile Include="Models\ErrorReportWebModel.cs" />
+    <Compile Include="Models\EstimationActionModel.cs" />
+    <Compile Include="Models\EstimationActionTypeModel.cs" />
+    <Compile Include="Models\EstimationDetailsModel.cs" />
+    <Compile Include="Models\EstimationFileModel.cs" />
+    <Compile Include="Models\EstimationSubSpecializedFieldModel.cs" />
+    <Compile Include="Models\HiworkLanguagePriceModel.cs" />
+    <Compile Include="Models\HomeSearchModel.cs" />
+    <Compile Include="Models\InterpretationFieldsModel.cs" />
+    <Compile Include="Models\JobCategoryDetailsModel.cs" />
+    <Compile Include="Models\JobCategoryModel.cs" />
+    <Compile Include="Models\JobHistoryModel.cs" />
+    <Compile Include="Models\JobTypeModel.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\LanguageQualificationModel.cs" />
+    <Compile Include="Models\LanguageSkillLevelModel.cs" />
+    <Compile Include="Models\MajorSubjectDetailsModel.cs" />
+    <Compile Include="Models\MajorSubjectModel.cs" />
+    <Compile Include="Models\CompanyTradingCategoryItemModel.cs" />
+    <Compile Include="Models\CompanyTradingCategoryModel.cs" />
+    <Compile Include="Models\EstimationTypeModel.cs" />
+    <Compile Include="Models\EstimationRoutesModel.cs" />
+    <Compile Include="Models\EstimationServiceTypeModel.cs" />
+    <Compile Include="Models\EstimationSpecializedFieldModel.cs" />
+    <Compile Include="Models\MasterEmailCategorySettingsModel.cs" />
+    <Compile Include="Models\MasterEmailGroupSettingsModel.cs" />
+    <Compile Include="Models\MasterEstimationClassificationModel.cs" />
+    <Compile Include="Models\MasterStaffTechnicalFieldsModel.cs" />
+    <Compile Include="Models\NarrationInformationModel.cs" />
+    <Compile Include="Models\NarrationVoiceFilesModel.cs" />
+    <Compile Include="Models\NoticeModel.cs" />
+    <Compile Include="Models\OrderDetailsModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\OtherExperiencesModel.cs" />
+    <Compile Include="Models\PartnerServiceTypeModel.cs" />
+    <Compile Include="Models\ProfessionalCerificateModel.cs" />
+    <Compile Include="Models\ProfessionalSpecialityModel.cs" />
+    <Compile Include="Models\ProfessionModel.cs" />
+    <Compile Include="Models\ResetPassword.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\StaffBankAccountInfoModel.cs" />
+    <Compile Include="Models\StaffCurrentStateModel.cs" />
+    <Compile Include="Models\StaffDevelopmentSkillItemModel.cs" />
+    <Compile Include="Models\StaffDevelopmentSkillModel.cs" />
+    <Compile Include="Models\StaffEducationalDegModel.cs" />
+    <Compile Include="Models\StaffHRField.cs" />
+    <Compile Include="Models\StaffKnowledgeField.cs" />
+    <Compile Include="Models\StaffKnowledgeFieldItemModel.cs" />
+    <Compile Include="Models\StaffKnowledgeFieldModel.cs" />
+    <Compile Include="Models\StaffMedicalFieldModel.cs" />
+    <Compile Include="Models\StaffMejorSubModel.cs" />
+    <Compile Include="Models\StaffModel.cs" />
+    <Compile Include="Models\StaffNarrationTypeModel.cs" />
+    <Compile Include="Models\StaffPatentFieldModel.cs" />
+    <Compile Include="Models\StaffProfesionalSpecialityModel.cs" />
+    <Compile Include="Models\StaffSpecialFieldModel.cs" />
+    <Compile Include="Models\StaffTranslationFieldsModel.cs" />
+    <Compile Include="Models\StaffTranslationSpecialFieldsModel.cs" />
+    <Compile Include="Models\StaffTypeModel.cs" />
+    <Compile Include="Models\TeamModel.cs" />
+    <Compile Include="Models\TechnicalSkillCategoryModel.cs" />
+    <Compile Include="Models\TechnicalSkillItemsModel.cs" />
+    <Compile Include="Models\TechnicalSkillLevelModel.cs" />
+    <Compile Include="Models\EstimationModel.cs" />
+    <Compile Include="Models\TranslateInterpretExperienceModel.cs" />
+    <Compile Include="Models\TranslationCertificateSettingsModel.cs" />
+    <Compile Include="Models\TransproDeliveryPlanSettingModel.cs" />
+    <Compile Include="Models\TransproInformationModel.cs" />
+    <Compile Include="Models\TransproLanguagePriceModels.cs" />
+    <Compile Include="Models\TransproUserModel.cs" />
+    <Compile Include="Models\UnitModel.cs" />
+    <Compile Include="Models\UnitPriceModel.cs" />
+    <Compile Include="Models\UserInfoModel.cs" />
+    <Compile Include="Models\UserInRoleModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserTypeModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Models\VisaTypeModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Resources\CustomMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHelper\ModelBinder.cs" />
+    <Compile Include="Services\AccountingService.cs" />
+    <Compile Include="Services\AdvertizementSettingsService.cs" />
+    <Compile Include="Services\ContactUsService.cs" />
+    <Compile Include="Services\EmailDeliverySettingsService.cs" />
+    <Compile Include="Services\ErrorReportWebService.cs" />
+    <Compile Include="Services\EstimationInterpretationService.cs" />
+    <Compile Include="Services\EstimationRoleAccessService.cs" />
+    <Compile Include="Services\HomeService.cs" />
+    <Compile Include="Services\AgentBusinessService.cs" />
+    <Compile Include="Services\AgentCharactersticsService.cs" />
+    <Compile Include="Services\AgentFreeDesignationService.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\BankAccountService.cs" />
+    <Compile Include="Services\BankBranchService.cs" />
+    <Compile Include="Services\BankService.cs" />
+    <Compile Include="Services\CompanyBusinessService.cs" />
+    <Compile Include="Services\CompanyBusinessSpecialityService.cs" />
+    <Compile Include="Services\CompanyIndustryClassificationItemService.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\CompanyIndustryClassificationService.cs" />
+    <Compile Include="Services\CompanyTradingDivisionService.cs" />
+    <Compile Include="Services\EducationalHistoryService.cs" />
+    <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\EmailTemplateService.cs" />
+    <Compile Include="Services\EmploymentTypeService.cs" />
+    <Compile Include="Services\EmpolyeeService.cs" />
+    <Compile Include="Services\DTPEstimationService.cs" />
+    <Compile Include="Services\EstimationActionService.cs" />
+    <Compile Include="Services\MasterStaffSoftwareSkillService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\OrderStaffAllowanceService.cs" />
+    <Compile Include="Services\OrderWebService.cs" />
+    <Compile Include="Services\PartnerServiceTypeService.cs" />
+    <Compile Include="Services\PayPalTransactionService.cs" />
+    <Compile Include="Services\PenaltyService.cs" />
+    <Compile Include="Services\StaffListService.cs" />
+    <Compile Include="Services\EstimationService.cs" />
+    <Compile Include="Services\HiworkLanguagePriceService.cs" />
+    <Compile Include="Services\NarrationEstimationService.cs" />
+    <Compile Include="Services\NoticeService.cs" />
+    <Compile Include="Services\OrderDetailsService.cs" />
+    <Compile Include="Services\ShortTermEstimationService.cs" />
+    <Compile Include="Services\OverheadCostQuotationService.cs" />
+    <Compile Include="Services\AdvancedStaffSearchService.cs" />
+    <Compile Include="Services\StaffCurrentStateService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\StaffProfessionalSpecialityService.cs" />
+    <Compile Include="Services\StaffSoftwareSkillService.cs" />
+    <Compile Include="Services\DashboardSuperAdminService.cs" />
+    <Compile Include="Services\TranscriptionEstimationService.cs" />
+    <Compile Include="Services\TaskQuotationService.cs" />
+    <Compile Include="Services\EstimationSubSpecializedFieldService.cs" />
+    <Compile Include="Services\InterpretationFieldsService.cs" />
+    <Compile Include="Services\JobCategoryDetailsService.cs" />
+    <Compile Include="Services\JobHistoryService.cs" />
+    <Compile Include="Services\LanguageQualificationService.cs" />
+    <Compile Include="Services\LanguageService.cs" />
+    <Compile Include="Services\BranchService.cs" />
+    <Compile Include="Services\BusinessCategoryDetailsService.cs" />
+    <Compile Include="Services\BusinessCategoryService.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\CultureService.cs" />
+    <Compile Include="Services\CurrencyService.cs" />
+    <Compile Include="Services\CurrentStateService.cs" />
+    <Compile Include="Services\DepartmentService.cs" />
+    <Compile Include="Services\DesignationService.cs" />
+    <Compile Include="Services\DivisionService.cs" />
+    <Compile Include="Services\EducationService.cs" />
+    <Compile Include="Services\JobCategoryService.cs" />
+    <Compile Include="Services\JobTypeService.cs" />
+    <Compile Include="Services\LanguageSkillLevelService.cs" />
+    <Compile Include="Services\MajorSubjectDetailsService.cs" />
+    <Compile Include="Services\MajorSubjectService.cs" />
+    <Compile Include="Services\CompanyTradingCategoryItemService.cs" />
+    <Compile Include="Services\CompanyTradingCategoryService.cs" />
+    <Compile Include="Services\EstimationRoutesService.cs" />
+    <Compile Include="Services\EstimationTypeService.cs" />
+    <Compile Include="Services\EstimationServiceTypeService.cs" />
+    <Compile Include="Services\EstimationSpecializedFieldService.cs" />
+    <Compile Include="Services\MasterStaffTechnicalFieldsService.cs" />
+    <Compile Include="Services\NarrationVoiceFilesService.cs" />
+    <Compile Include="Services\NarrationInformationService.cs" />
+    <Compile Include="Services\OtherExperiencesService.cs" />
+    <Compile Include="Services\ProfessionalCerificateService.cs" />
+    <Compile Include="Services\ProfessionalSpecialityService.cs" />
+    <Compile Include="Services\ProfessionService.cs" />
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="Services\StaffBankAccountInfoService.cs" />
+    <Compile Include="Services\StaffDevelopmentSkillItemService.cs" />
+    <Compile Include="Services\StaffDevelopmentSkillService.cs" />
+    <Compile Include="Services\StaffKnowledgeFieldItemService.cs" />
+    <Compile Include="Services\StaffKnowledgeFieldService.cs" />
+    <Compile Include="Services\StaffMedicalFieldService.cs" />
+    <Compile Include="Services\StaffNarrationTypeService.cs" />
+    <Compile Include="Services\StaffPatentFieldService.cs" />
+    <Compile Include="Services\StaffService.cs" />
+    <Compile Include="Services\StaffSpecialFieldService.cs" />
+    <Compile Include="Services\StaffTranslationFieldsService.cs" />
+    <Compile Include="Services\StaffTranslationSpecialFieldsService.cs" />
+    <Compile Include="Services\StaffTypeService.cs" />
+    <Compile Include="Services\TeamService.cs" />
+    <Compile Include="Services\TechnicalSkillCategoryService.cs" />
+    <Compile Include="Services\TechnicalSkillItemsService.cs" />
+    <Compile Include="Services\TechnicalSkillLevelService.cs" />
+    <Compile Include="Services\TranslateInterpretExperienceService.cs" />
+    <Compile Include="Services\TransproDeliveryTypeService.cs" />
+    <Compile Include="Services\TransproInformationService.cs" />
+    <Compile Include="Services\TransproLanguagePriceService.cs" />
+    <Compile Include="Services\TransproService.cs" />
+    <Compile Include="Services\UnitPriceService.cs" />
+    <Compile Include="Services\UnitService.cs" />
+    <Compile Include="Services\UserInfoService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\UserTypeService.cs" />
+    <Compile Include="Services\VisaTypeService.cs" />
+    <Compile Include="Services\WorkingStatusService.cs" />
+    <Compile Include="ViewModels\InquiryViewModel.cs" />
+    <Compile Include="ViewModels\StaffViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HiWork.DAL\HiWork.DAL.csproj">
+      <Project>{7316cdd1-4979-408e-ba03-d9045a030f2a}</Project>
+      <Name>HiWork.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HiWork.Utils\HiWork.Utils.csproj">
+      <Project>{f7436c83-100a-41f1-a2b6-d5137caf3cb9}</Project>
+      <Name>HiWork.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CustomMessage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Email\Confirmation.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Email\ErrorInPasswordSet.aspx" />
+    <Content Include="Email\MailTemplateEnglish.html" />
+    <Content Include="Email\SetPassword.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,135 @@
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\csc.exe
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Collections.Immutable.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Reflection.Metadata.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\vbc.exe
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe.config
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll.config
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.pdb
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.Web.Infrastructure.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.xml
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\obj\Debug\HiWork.Web.Client.csprojResolveAssemblyReference.cache
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.dll
+D:\Dev Project\HiWork-ERP\trunk\dev\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.pdb
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\csc.exe
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Collections.Immutable.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Reflection.Metadata.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\vbc.exe
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe.config
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll.config
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.pdb
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Agent.Intercept.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.Web.Infrastructure.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.xml
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\obj\Debug\HiWork.Web.Client.csprojResolveAssemblyReference.cache
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.dll
+D:\B-cause Development Documents\dev\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\csc.exe
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Collections.Immutable.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\vbc.exe
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\roslyn\VBCSCompiler.exe.config
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll.config
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Hiwork.Client.pdb
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.Web.Infrastructure.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.Web.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.AI.WindowsServer.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.ApplicationInsights.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Razor.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Deployment.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Webpages.Razor.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Helpers.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\bin\System.Web.Mvc.xml
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\obj\Debug\HiWork.Web.Client.csprojResolveAssemblyReference.cache
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.dll
+D:\Project For Github\5.Hiwork\Hiwork ERP\Hiwork.Client\Hiwork.Client\obj\Debug\Hiwork.Client.pdb

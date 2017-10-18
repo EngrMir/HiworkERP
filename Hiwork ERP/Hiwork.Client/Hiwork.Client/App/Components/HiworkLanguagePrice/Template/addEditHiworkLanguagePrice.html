@@ -1,0 +1,91 @@
+﻿.<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="hiworkLanguagePriceForm">                   
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>Source Language</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="languagec" id="changeLanguagec" class="form-control"
+                            ng-model="$ctrl.modalData.SourceLanguageID"
+                            ng-class="{'invalid-input':isTriedSave && hiworkLanguagePriceForm.languagec.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.languageList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>Target Language</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="language" id="changeLanguage" class="form-control"
+                            ng-model="$ctrl.modalData.TargetLanguageID"
+                            ng-class="{'invalid-input':isTriedSave && hiworkLanguagePriceForm.language.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.languageList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+               </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'CURRENCY' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="currency" id="changeCurrency" class="form-control"
+                            ng-model="$ctrl.modalData.CurrencyId"
+                            ng-class="{'invalid-input':isTriedSave && hiworkLanguagePriceForm.currency.$error.required}"
+                            ng-options="item.Id as item.Name for item in $ctrl.currencyList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>General Price</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="generalPrice" class="form-control"
+                           ng-class="{'invalid-input':isTriedSave && hiworkLanguagePriceForm.generalPrice.$error.required}"
+                           ng-model="$ctrl.modalData.GeneralPrice" only-decimal required/>
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>Special Price</span>
+                </div>
+                <div class="col-md-6">
+                 <input type="text" name="specialPrice" class="form-control"                     
+                           ng-model="$ctrl.modalData.SpecialPrice" only-decimal />
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>Patent Price</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="patentPrice" class="form-control"
+                           ng-model="$ctrl.modalData.PatentPrice" only-decimal />
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>   
+            <div class="form-group">
+                
+                    <div class="col-md-2"><span>{{'ACTIVE' | translator}}</span></div>
+                    <div class="col-md-6"><input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsActive" required /></div>                    
+         </div>
+           <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.SaveHiworkLanguagePrice()" value="Save" />
+             </div>
+        </form>
+    </div>
+</div>

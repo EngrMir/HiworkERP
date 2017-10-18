@@ -1,0 +1,462 @@
+﻿<div class="tab-pane" id="TR-Experience">
+
+    <div class="clearfix" style="height: 18px;"></div>
+
+
+    <div class="panel-body">
+
+        <form name="TRExperienceForm" novalidate role="form">
+
+            <fieldset>
+                <div class="col-md-4 col-xs-4 col-sm-4 ">
+
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray">
+                        <div class="col-md-6 col-xs-6 col-sm-6">
+                            <label class="pull-left"> Information </label>
+                            <span class="pull-right"><input type="checkbox" class="checkbox pull-left" />Don't Send e-Mail </span>
+                            <div class="clearfix"> </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>Priority (HR/TR)</option>
+                                </select>
+                            </div>
+                            <div class="form-group" show-errors>
+
+                                <ui-select ng-model="vm.staffSpecialField1.selected" ng-required="true" theme="bootstrap">
+                                    <ui-select-match placeholder="Speiclized Field 1">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="specialField in vm.staffSpecialField | filter: $select.search">
+                                        <span ng-bind-html="specialField.Name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="form-group">
+
+                                <ui-select ng-model="vm.staffSpecialField2.selected" ng-required="true" theme="bootstrap">
+                                    <ui-select-match placeholder="Speiclized Field 2">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="specialField in vm.staffSpecialField | filter: $select.search">
+                                        <span ng-bind-html="specialField.Name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            <div class="form-group">
+                                <ui-select ng-model="vm.staffSpecialField3.selected" ng-required="true" theme="bootstrap">
+                                    <ui-select-match placeholder="Speiclized Field 3">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="specialField in vm.staffSpecialField | filter: $select.search">
+                                        <span ng-bind-html="specialField.Name | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6">
+
+                            <ul class="list-unstyled">
+                                <li> <input type="checkbox" class="checkbox pull-left" {{vm.TRExperienceModel}} /> Don't Send e-Mail</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  ng-model="vm.TRExperienceModel.HasResearchExperience.selected" /> Research</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  ng-model="vm.TRExperienceModel.HasMSOfficeExperience.selected" /> MS Office</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  ng-model="vm.TRExperienceModel.HasMacOSExperience.selected" /> Mac OS</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  ng-model="vm.TRExperienceModel.HasAdobeExperience.selected" /> Adobe</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  {{vm.TRExperienceModel}} /> Mail NG</li>
+                                <li><input type="checkbox" class="checkbox pull-left"  {{vm.TRExperienceModel}} /> Mail NG</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 15px;"></div>
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray">
+                        <div class="clearfix" style="height: 10px;"></div>
+                        <div class="col-md-6 col-xs-6 col-sm-6 " show-errors>
+                            <input type="text" placeholder="Assigned Work" class="form-control" ng-model="vm.TRExperienceModel.AssignedWork" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Punctuality(%)" class="form-control" ng-model="vm.TRExperienceModel.PuntualityPercentage" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Delay" class="form-control" ng-model="vm.TRExperienceModel.WorkDelay" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Claim(%)" class="form-control" ng-model="vm.TRExperienceModel.ClaimPercentage" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Claim" class="form-control" ng-model="vm.TRExperienceModel.WorkClaim" ng-required="true" />
+                        </div>
+                        <div class="clearfix"></div>
+                        <label>Customer</label>
+                        <div class="clearfix"></div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Avg" class="form-control" ng-model="vm.TRExperienceModel.EvaluationAvg" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Trans" class="form-control" ng-model="vm.TRExperienceModel.EvaluationTrans" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="Interp" class="form-control" ng-model="vm.TRExperienceModel.EvaluationInterp" ng-required="true" />
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                            <input type="text" placeholder="DTP" class="form-control" ng-model="vm.TRExperienceModel.EvaluationDTP" ng-required="true" />
+                        </div>
+                        <div class="clearfix"></div>
+                        <h3>Claim list</h3>
+                        <div class="clearfix"></div>
+                        <div class="bg-white">
+                            <table class="table table-bordered white">
+                                <thead class="bg-light-blue">
+                                    <tr>
+                                        <td>Order No</td>
+                                        <td>Detail</td>
+                                        <td>Status</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 2017 </td>
+                                        <td> xxxx magazine </td>
+                                        <td> Publish </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2016 </td>
+                                        <td> xxxx Journal </td>
+                                        <td> Publish </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2015 </td>
+                                        <td> xxxx News paper </td>
+                                        <td> Academic </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-4 col-sm-4 ">
+                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                        <div class="col-md-5 col-xs-5 col-sm-5 bg-gray">
+                            <label>Rating (Trans)</label>
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Punctuality</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingPunctuality" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Quality</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingQuality" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Comment</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingComment" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Feedback</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingFeedback" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Layout</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingLayout" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Response</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingResponse" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>negosiation</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.TransRatingNegotiation" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 col-sm-1">
+                        </div>
+                        <div class="col-md-5 col-xs-5 col-sm-5 bg-gray">
+
+                            <label>Rating (Interp)</label>
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Punctuality</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingPunctuality" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Quality</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingQuality" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Research</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingComment" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Feedback</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingFeedback" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Report</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingReport" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>Manner</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InterpRatingManner" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding">
+                                    <lable>negosiation</lable>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-sm-4" show-errors>
+                                    <input type="text" class="form-control" placeholder="4.2" ng-model="vm.TRExperienceModel.InerpRatingNegotiation" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 20px;"></div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-12 col-xs-12 col-sm-12 remove-padding">
+                        <div class="col-md-5 col-xs-5 col-sm-5  bg-gray">
+                            <label>Price/Fee(Trans)</label>
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding" show-errors>
+                                    <input type="text" class="form-control" placeholder="Price/ Page" ng-model="vm.TRExperienceModel.TransPricePerPage" ng-required="true" />
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Requested" ng-model="vm.TRExperienceModel.TransPricePerPageRequested" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding" show-errors>
+                                    <input type="text" class="form-control" placeholder="Price/ Word" ng-model="vm.TRExperienceModel.TransPricePerWord" ng-required="true" />
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Requested" ng-model="vm.TRExperienceModel.TransPricePerWordRequested" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix" style="height: 5px;"></div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-xs-12 col-sm-12 remove-padding" show-errors>
+                                    <textarea class="form-control" placeholder="Notes" cols="100" rows="4" ng-model="vm.TRExperienceModel.TransPriceNote" ng-required="true"></textarea>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 col-xs-1 col-sm-1">
+                        </div>
+
+                        <div class="col-md-5 col-xs-5 col-sm-5  bg-gray">
+                            <label>Price/Fee(Interp)</label>
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding" show-errors>
+                                    <input type="text" class="form-control" placeholder="Price/ Page" ng-model="vm.TRExperienceModel.InterpPricePerDay" ng-required="true" />
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Requested" ng-model="vm.TRExperienceModel.InterpPricePerPageRequested" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding" show-errors>
+                                    <input type="text" class="form-control" placeholder="Price/ Page" ng-model="vm.TRExperienceModel.InterpPricePerHalfDay" ng-required="true" />
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Requested" ng-model="vm.TRExperienceModel.InterpPricePerHalfDayRequested" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-6 col-sm-6 remove-padding" show-errors>
+                                    <input type="text" class="form-control" placeholder="Price/ Page" ng-model="vm.TRExperienceModel.InterpPricePerHour" ng-required="true" />
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6" show-errors>
+                                    <input type="text" class="form-control" placeholder="Requested" ng-model="vm.TRExperienceModel.InterpPricePerHourRequested" ng-required="true" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix" style="height: 18px;"></div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-xs-12 col-sm-12 remove-padding" show-errors>
+                                    <textarea class="form-control" placeholder="Notes" cols="100" rows="2" ng-model="vm.TRExperienceModel.InterpPriceNote" ng-required="true"></textarea>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 col-xs-4 col-sm-4 bg-gray remove-padding">
+                    <div class="col-md-12 col-xs-12 col-sm-12 bg-gray">
+                        <h3>Experience(Translation)</h3>
+                        <div class="clearfix"></div>
+                        <div class="bg-white">
+                            <table class="table table-bordered white">
+                                <thead class="bg-light-blue">
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Detail</td>
+                                        <td>Type</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 2017 </td>
+                                        <td> xxxx magazine </td>
+                                        <td> Publish </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2016 </td>
+                                        <td> xxxx Journal </td>
+                                        <td> Publish </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2015 </td>
+                                        <td> xxxx News paper </td>
+                                        <td> Private </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2015 </td>
+                                        <td> xxxx News paper </td>
+                                        <td> Business </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2015 </td>
+                                        <td> xxxx News paper </td>
+                                        <td> Academic </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="clearfix" style="height: 25px;"></div>
+
+                            <h3>Experience(Interplitation)</h3>
+                            <div class="clearfix"></div>
+                            <div class="bg-white">
+                                <table class="table table-bordered white">
+                                    <thead class="bg-light-blue">
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>Detail</td>
+                                            <td>Type</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> 2017 </td>
+                                            <td> xxxx summit</td>
+                                            <td> Whispering </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 2016 </td>
+                                            <td> xxxx interpritation </td>
+                                            <td> Immidiate </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 2015 </td>
+                                            <td> xxxx interview </td>
+                                            <td> Normal </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <div class="col-md-12 col-xs-12 col-sm-12 remove-padding" show-errors>
+                                <textarea class="form-control" placeholder="Coordinator&Sales's note" cols="100" rows="4" ng-model="vm.TRExperienceModel.CoordinatorSalesNote" ng-required="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

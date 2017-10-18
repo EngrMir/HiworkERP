@@ -1,0 +1,65 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{'BUSINESSCATEGORYDETAILS' | translator}}
+        </h3>
+    </div>
+    <div class="panel-body" ng-init="$ctrl.init();">
+        <div>
+            <button class="btn btn-primary" value="addModal" ng-click="$ctrl.open(null,'Add Business Category Details')">{{'ADDNEW' | translator}}</button>
+        </div>   
+        <div class="clearfix" style="height: 5px;"></div>
+        <div class="table-responsive">
+            <table st-table="displayColl" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">
+                <thead class="bg-light-blue">
+                    <tr>
+                        <th st-sort="BusinessCategory.Name">{{'BUSINESSCATEGORY' | translator}}<i st-sort="BusinessCategory.Name"></i></th>
+                        <th st-sort="Description" st-sort-default="regular">{{'DESCRIPTION' | translator}}<i st-sort="Description"></i></th>
+                        <th>{{'ACTIVE' | translator}}</th>
+                        <th>{{'ACTION' | translator}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="BusinessCategory.Name" placeholder="{{'SEARCHBYBUSINESSCATEGORY' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Description" placeholder="{{'SEARCHBYDESCRIPTION' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="businesscategorydetails in displayColl">
+                        <td>{{ businesscategorydetails.BusinessCategory.Name}}</td>
+                        <td>{{ businesscategorydetails.Description }}</td>
+                        <td><input style="width: 16px;height: 16px;" type="checkbox" value="{{businesscategorydetails.IsActive}}" ng-disabled="true" ng-checked="businesscategorydetails.IsActive" ng-model="businesscategorydetails.IsActive" /> </td>
+                        <td>
+                            <div class="glyphicon glyphicon-edit" value="Edit" ng-click="$ctrl.open(businesscategorydetails,'Edit Business Category Details')"> </div>
+                            <div class="glyphicon glyphicon-remove" confirm-window
+                                 confirm-data="{{businesscategorydetails}}"
+                                 confirm-url="{{'businesscategorydetails/delete'}}" confirm-value="{{businesscategorydetails.Description}}"
+                                 modal-title="Are you sure you want to delete '{{businesscategorydetails.Description}}'?">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="border:none !important;">
+                    <tr style="border:none !important;">
+                        <td colspan="5" class="text-center" style="border:none !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div st-items-by-page="15" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+</div>

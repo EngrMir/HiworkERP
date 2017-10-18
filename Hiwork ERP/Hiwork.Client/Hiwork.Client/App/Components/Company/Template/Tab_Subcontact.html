@@ -1,0 +1,276 @@
+﻿<div role="tabpanel" class="tab-pane" id="subcontract">
+    <form class="box-body" ng-submit="saveCompany(4)" name="Tabsubcontact">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-3 ">
+                <div class="form-inline">
+                    <input type="text" class="form-control" placeholder="Staff No">
+                    <input type="button" value="Preview" class="btn btn-default">
+                </div>
+                <div class="form-inline">
+                    <label>{{'SPECIALFIELD'|translator}}</label>
+                </div>
+                <div class="form-inline">
+                    <label>{{'NO.OFSALESPERSONS'|translator}}</label>
+                </div>
+                <div class="form-inline">
+                    <label>{{'NO.OFCOORDINATORS'|translator}}</label>
+                </div>
+                <div class="form-inline">
+                    <label>{{'ORDERINGSYSTEM'|translator}}</label>
+                </div>
+                <div class="form-inline">
+                    <input type="text" class="form-control" placeholder="{{'QUOTATIONNO'|translator}}">
+                    <input type="button" value="Send Request" class="btn btn-default" ng-click="openEmailWindow()">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9 thumbnail">
+                <div class="=col-md-3 col-sm-3 col-xs-3">
+                    <label>Price list for Subcontractor</label>
+                    <div class="hidden" ng-model="newprice.ID"></div>
+                    <select class="form-control" name="estimation"
+                            ng-model="newprice.EstimationTypeID"
+                            ng-class="{'invalid-input':isTriedSave && Tabsubcontact.estimation.$error.required}"
+                            ng-options="item.ID as item.Name for item in vm.EstimationTypeList">
+                        <option value="" selected="selected" disabled="disabled">Estimation Type</option>
+                    </select>
+                    <select class="form-control"
+                            ng-model="newprice.SourceLanguageID" name="sourceLanguage"
+                            ng-class="{'invalid-input':isTriedSave && Tabsubcontact.sourceLanguage.$error.required}"
+                            ng-options="item.ID as item.Name for item in vm.LanguageList">
+                        <option value="" selected="selected" disabled="disabled">Language 1</option>
+                    </select>
+
+                    <select class="form-control"
+                            ng-model="newprice.DestinationLanguageID" name="targetlanguage"
+                            ng-class="{'invalid-input':isTriedSave && Tabsubcontact.targetlanguage.$error.required}"
+                            ng-options="item.ID as item.Name for item in vm.LanguageList">
+                        <option value="" selected="selected" disabled="disabled">Language 2</option>
+                    </select>
+                    <select  class="form-control" name="specialize"
+                            ng-model="newprice.SpecializedFieldID"
+                            ng-class="{'invalid-input':isTriedSave && Tabsubcontact.specialize.$error.required}"
+                            ng-options="r.ID as r.Name for r in vm.SpecializationList">
+                        <option value="" selected="selected" disabled="disabled">Specialized Field</option>
+                    </select>
+                </div>
+                <div class="=col-md-3 col-sm-3 col-xs-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="AgencyPrice.Unit" placeholder="Unit" />
+                        <select name="CalculationOn" class="form-control"
+                                ng-model="newprice.PriceCalculationOnID"
+                                 ng-class="{'invalid-input':isTriedSave && Tabsubcontact.CalculationOn.$error.required}"
+                                ng-options="item.Id as item.Name for item in vm.PriceCalculateTypeList">
+                            <option value="" selected="selected" disabled="disabled">Type</option>
+                        </select>
+                        <input type="text" class="form-control" ng-model="newprice.UnitPrice" placeholder="Unit Price" />
+                    </div>
+
+                    <label><input type="checkbox" /> Delete</label>
+                    <input type="button" class="btn btn-default" value="Add"  ng-click="AddPrice(newprice)"/>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="table-container">
+                        <table class="table table-striped table-condensed table-bordered">
+                            <thead>
+                                <tr class="bg-light-blue text-center">
+                                    <td>
+                                        Service Type
+                                    </td>
+                                    <td>
+                                        Language_1
+                                    </td>
+                                    <td>
+                                        Language_2
+                                    </td>
+                                    <td style="width:25%;">
+                                        Specialized field
+                                    </td>
+                                    <td>
+                                        unit
+                                    </td>
+                                    <td>
+                                        words/page
+                                    </td>
+                                    <td>
+                                        unit price
+                                    </td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="p in vm.PriceList">
+                                    <td>
+                                        {{p.EstimationTypeName}}
+                                    </td>
+                                    <td>
+                                        {{p.SourceLanguageName}}
+                                    </td>
+                                    <td>
+                                        {{p.DestinationLanguageName}}
+                                    </td>
+                                    <td>
+                                        {{p.SpecializedFieldName}}
+                                    </td>
+                                    <td>
+                                        {{p.Unit}}
+                                    </td>
+                                    <td>
+                                        {{p.PriceCalculationOnName}}
+                                    <td>
+                                        {{p.UnitPrice}}
+                                    </td>
+                                    <td> <a href="javascript:void(0)" ng-click="edit(p)">edit</a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+            <div class="col-md-7 col-sm-7 col-xs-7">
+                <p>Quotation request list</p>
+                <div class="table-container">
+                    <table class="table table-responsive table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Order no</td>
+                                <td>Title</td>
+                                <td>Quotation price</td>
+                                <td>Subcontractor price</td>
+                                <td>Status</td>
+                                <td>Reason</td>
+                                <td>Person in charge</td>
+                                <td>Resueted date</td>
+                                <td>Check</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>160905H001</td>
+                                <td>Translation ENG to JPN</td>
+                                <td>10000</td>
+                                <td>5000</td>
+                                <td>○</td>
+                                <td>best price</td>
+                                <td>smith</td>
+                                <td>2017/7/14</td>
+                                <td>2017/7/22</td>
+                            </tr>
+                            <tr>
+                                <td>160905H002</td>
+                                <td>Translation ENG to JPN</td>
+                                <td>10000</td>
+                                <td>5000</td>
+                                <td>○</td>
+                                <td>best price</td>
+                                <td>smith</td>
+                                <td>2017/7/14</td>
+                                <td>2017/7/22</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5"></div>
+
+
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+            <div class="col-md-7 col-sm-7 col-xs-7">
+
+                <label><input type="checkbox">Subcontractor/Agency</label>
+                <div class="form-group">
+                    <label>Basic Subcontract fee rate</label>
+                    <input type="text" value="10%" />
+                </div>
+
+                <label>Subcontract client list</label>
+                <table class="table table-responsive table-bordered table-striped">
+                    <thead>
+                        <tr class="bg-light-blue text-center">
+                            <td>Client no</td>
+                            <td>Client name</td>
+                            <td>Order amount<br>(This month)</td>
+                            <td>Subcontract fee<br>(This month)</td>
+                            <td>Order amount<br /> (total)</td>
+                            <td>Subcontact fee<br>(Total)</td>
+                            <td>Trading date</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1000004720</td>
+                            <td>ABC Agency</td>
+                            <td>25000</td>
+                            <td>2500</td>
+                            <td>850000</td>
+                            <td>85000</td>
+                            <td>2016/11/23</td>
+                        </tr>
+                        <tr>
+                            <td>1000004722</td>
+                            <td>ABC Inc.</td>
+                            <td>500000</td>
+                            <td>50000</td>
+                            <td>1200000</td>
+                            <td>120000</td>
+                            <td>2016/11/23</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5">
+                <label>Person In Charge Info</label>
+                <div class="form-group">
+                    <select class="col-md-5 col-sm-5 col-xs-5">
+                        <option>PIC e-mail address</option>
+                    </select>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5 thumbnail">
+                    <label>History list of emails with PIC</label>
+                    <table class="table table-responsive table-bordered table-striped">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <td>Date</td>
+                                <td>Time</td>
+                                <td>department</td>
+                                <td>PIC</td>
+                                <td>Status</td>
+                                <td>comment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR </td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                            <tr>
+                                <td>7/22</td>
+                                <td>12:00</td>
+                                <td>TR </td>
+                                <td>Mr.ABC</td>
+                                <td>replied</td>
+                                <td>appointment...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <!--<button class="btn btn-primary" ng-click="SaveCompanyIndustryClassification()">Submit</button>-->
+            <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step" ui-sref="CompanyRegistration.salesRecord">Previous</button></li>
+                <li><button type="submit" class="btn btn-primary next-step">Save and continue</button></li>
+            </ul>
+        </div>
+        </form>
+</div>

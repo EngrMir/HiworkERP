@@ -1,0 +1,42 @@
+﻿
+<div class="modal-content" >
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="selectionForm">
+            <div class="modal-body" style="overflow-y:scroll; min-height:350px; max-height:500px; width:100%;">
+                <div class="table-responsive">
+                    <table st-table="$ctrl.dataList" id="smartTable" class="table table-striped table-hover">
+                        <thead class="bg-light-blue">
+                            <tr>
+                                <th ng-if="$ctrl.modalData.multiselect">
+                                    <input type="checkbox" style="margin-left:6px;"  ng-disabled="!$ctrl.enableSave" ng-model="$ctrl.selectEverything" ng-change="$ctrl.allItemsSelectionChanged()" />
+                                </th>
+                                <th>{{'NAME' | translator}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in $ctrl.dataList">
+                                <td ng-if="$ctrl.modalData.multiselect">
+                                    <input type="checkbox" ng-model="item.IsSelected" ng-change="$ctrl.itemSelectionChanged(item)" />
+                                </td>
+                                <td style="cursor:pointer;" ng-click="$ctrl.itemClicked(item)">
+                                    <div>
+                                        <input ng-if="!$ctrl.modalData.multiselect" type="checkbox" ng-checked="item.IsSelected" />
+                                        {{item[$ctrl.name]}}
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="$ctrl.Close()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-click="$ctrl.ChooseSelected($ctrl.modalData.obj)" ng-disabled="!$ctrl.enableSave"> OK </button>
+            </div>
+        </form>
+    </div>
+</div>

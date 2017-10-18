@@ -1,0 +1,98 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Penalty Management
+        </h3>
+    </div>
+    <div class="panel-body" ng-init="$ctrl.init();">
+        <div>
+            <button class="btn btn-primary" value="addModal" ng-click="$ctrl.open(null,'Add New Penalty')">{{'ADDNEW' | translator}}</button>
+        </div>
+        <div class="clearfix" style="height: 5px;"></div>
+        <div class="table-responsive">
+            <table st-table="displayColl" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">
+                <thead class="bg-light-blue">
+                    <tr>
+                        <th st-sort="ApplicationName" st-sort-default="regular">{{'APPLICATION' | translator}}<i st-sort="Name"></i></th>
+                        <th st-sort="CategoryName" st-sort-default="regular">{{'CATEGORY' | translator}}<i st-sort="Name"></i></th>
+                        <th st-sort="NAME">{{'NAME' | translator}}<i st-sort="Country.Name"></i></th>
+                        <th st-sort="Score">{{'SCORE' | translator}}<i st-sort="Currency.Name"></i></th>
+                        <th st-sort="Contents">{{'CONTENTS' | translator}}<i st-sort="Currency.Name"></i></th>
+                        <th st-sort="Response">{{'RESPONSE' | translator}}<i st-sort="Currency.Name"></i></th>
+                        <th>{{'ACTIVE' | translator}}</th>
+                        <th>{{'ACTION' | translator}}</th>
+                    </tr>
+                </thead>              
+                 <tbody>
+                    <tr>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="ApplicationName" placeholder="Search by Application" class="input-sm form-control" type="search" />
+                            </div>
+                       </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="CategoryName" placeholder="Search by Category" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="NAME" placeholder="Search by Item" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Score" placeholder="Search by Score" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Contents" placeholder="Search by Contents" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Response" placeholder="Search by Response" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th></th>
+                        <th> </th>
+                    </tr>
+                    <tr ng-repeat="penalty in displayColl">
+                        <td>{{ penalty.ApplicationName}}</td>
+                        <td>{{ penalty.CategoryName}}</td>
+                        <td>{{ penalty.Name}}</td>
+                        <td>{{ penalty.Score}}</td>
+                        <td>{{ penalty.Contents}}</td>
+                        <td>{{ penalty.Response}}</td>
+                        <td><input style="width: 16px;height: 16px;" type="checkbox" value="{{penalty.IsActive}}" ng-disabled="true" ng-checked="penalty.IsActive" ng-model="penalty.IsActive" /> </td>
+                        <td>
+                            <div class="glyphicon glyphicon-edit" value="Edit" ng-click="$ctrl.open(penalty,'Edit Penalty')"> </div>
+                             <div class="glyphicon glyphicon-remove" confirm-window
+                                 confirm-data="{{penalty}}"
+                                 confirm-url="{{'penalty/delete'}}" confirm-value="{{penalty.Name}}"
+                                 modal-title="Are you sure you want to delete '{{penalty.Name}}'?">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                  <tfoot style="border:none !important;">
+                    <tr style="border:none !important;">
+                        <td colspan="5" class="text-center" style="border:none !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div st-items-by-page="15" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        </div>
+</div>

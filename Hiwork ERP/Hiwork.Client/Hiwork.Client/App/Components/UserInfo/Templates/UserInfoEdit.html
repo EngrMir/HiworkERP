@@ -1,0 +1,176 @@
+﻿<form class="form-horizontal" name="userForm" novalidate>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="vm.cancel()">×</button>
+            <h4 class="modal-title" align="center">User Information</h4>
+        </div>
+        <div class="modal-body">
+
+
+            <div class="form-group" ng-class="{'has-error':userForm.inputfirstName.$invalid &&
+                                    userForm.inputfirstName.$dirty}">
+
+                <div class="col-md-2"><span>First Name </span></div>
+                <div class="col-md-6">
+                    <input id="inputfirstName" type="text" name="inputfirstName" class="form-control"
+                           ng-model="vm.entity.FirstName" required ng-maxlength="24" />
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.inputfirstName.$error.required">
+                        First name is required.
+                    </span>
+                    <!--<span ng-show="userForm.inputfirstName.$error.minlength">
+                        First Name must be at least 4 characters in length.
+                    </span>-->
+                    <span ng-show="userForm.inputfirstName.$error.maxlength">
+                        First Name cannot exceed 24 characters in length.
+                    </span>
+                </span>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.inputLastName.$invalid && userForm.inputfirstName.$dirty}">
+
+                <div class="col-md-2"><span>Last Name </span></div>
+                <div class="col-md-6">
+                    <input type="text" name="inputLastName" class="form-control"
+                           ng-model="vm.entity.LastName" required ng-maxlength="24" />
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.inputLastName.$error.required">
+                        Last Name is required.
+                    </span>
+                    <!--<span ng-show="userForm.inputLastName.$error.minlength">
+                        Last Name must be at least 4 characters in length.
+                    </span>-->
+                    <span ng-show="userForm.inputLastName.$error.maxlength">
+                        Last Name cannot exceed 24 characters in length.
+                    </span>
+                </span>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.userName.$invalid && userForm.userName.$dirty}">
+
+                <div class="col-md-2"><span>User Name </span></div>
+                <div class="col-md-6">
+                    <input type="text" id="txtUserName" name="userName" class="form-control" username-available ng-model-options="{ updateOn: 'blur' }"
+                           ng-model="vm.entity.Username" required ng-maxlength="10" ng-disabled="vm.entity.isDisabled" />
+
+
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.userName.$error.required">
+                        User Name is required.
+                    </span>
+                    <!--<span ng-show="userForm.userName.$error.minlength">
+                        User Name must be at least 3 characters in length.
+                    </span>-->
+                    <span ng-show="userForm.userName.$error.maxlength">
+                        User Name cannot exceed 10 characters in length.
+                    </span>
+                    <span ng-show="userForm.userName.$pending.usernameExists">
+                        Checking....
+                    </span>
+                    <span ng-show="userForm.userName.$error.usernameExists">
+                        User name exists already
+                    </span>
+                    <span ng-show="userForm.userName.$valid.usernameExists">
+                        Accepted
+                    </span>
+                </span>
+
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.email.$invalid && userForm.email.$dirty}">
+
+                <div class="col-md-2">
+                    <span>Email</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="email" class="form-control" ng-change="vm.checkExistsEmail()"
+                           ng-model="vm.entity.Email" required />
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.email.$error.required">
+                        email is required.
+                    </span>
+                    <span ng-show="userForm.email.$error.email">
+                        email must be at least 4 characters in length.
+                    </span>
+
+                </span>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.password.$invalid && userForm.password.$dirty}">
+
+                <div class="col-md-2">
+                    <span>Password</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" name="password" class="form-control"
+                           ng-model="vm.entity.Password" ng-disabled="vm.entity.isDisabledPassword" required ng-minlength="6" ng-maxlength="100" />
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.password.$error.required">
+                        password is required.
+                    </span>
+                    <span ng-show="userForm.password.$error.minlength">
+                        password must be at least 6 characters in length.
+                    </span>
+                    <span ng-show="userForm.password.$error.maxlength">
+                        password cannot exceed 30 characters in length.
+                    </span>
+                </span>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.role.$invalid && userForm.role.$dirty}">
+                <div class="col-md-2">
+                    <span>User Role</span>
+                </div>
+                <div class="col-sm-6">
+                    <ui-select name="role" ng-model="vm.entity.roles.selected" required theme="bootstrap" title="Choose a Role">
+                        <ui-select-match placeholder="Select or search a role...">{{$select.selected.Name}}</ui-select-match>
+                        <ui-select-choices repeat="role in vm.entity.roles | filter: $select.search">
+                            <span ng-bind-html="role.Name | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.role.$error.required">
+                        role is required.
+                    </span>
+
+                </span>
+            </div>
+            <div class="form-group" ng-class="{'has-error':userForm.userType.$invalid && userForm.userType.$dirty}">
+                <div class="col-md-2">
+                    <span>User type</span>
+                </div>
+                <div class="col-sm-6">
+                    <ui-select name="userType" ng-model="vm.entity.userTypes.selected" required theme="bootstrap" title="Choose a User Type">
+                        <ui-select-match placeholder="Select or search a user type...">{{$select.selected.Name}}</ui-select-match>
+                        <ui-select-choices repeat="type in vm.entity.userTypes | filter: $select.search">
+                            <span ng-bind-html="type.Name | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <span class="help-block has-error">
+                    <span ng-show="userForm.userType.$error.required">
+                        User type is required.
+                    </span>
+
+                </span>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2"><span>{{'ACTIVE' | translator}}</span></div>
+                <div class="col-md-6"><input type="checkbox" style="width:20px;height:20px;" value="true" ng-model="vm.entity.IsActive" /></div>
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button id="btnClose" type="button" class="btn btn-default" ng-click="vm.cancel()">Close</button>
+            <input type="button" id="btnSave" class="btn btn-success" ng-click="vm.save(userForm.$valid)" ng-disabled="userForm.$invalid" value="Save" />
+        </div>
+    </div>
+</form>

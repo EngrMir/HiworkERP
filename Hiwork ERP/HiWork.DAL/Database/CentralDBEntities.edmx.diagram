@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5c3ef7e917134762b1469c8565c060e7" Name="Diagram1">
+        <EntityTypeShape EntityType="CentralDBModel.AccessLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.AdditionalOperationPermission" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.AdditionalScreenPermission" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.AdvertizementSetting" Width="1.5" PointX="9.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Application" Width="1.5" PointX="15.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Company" Width="1.5" PointX="0.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Company_AgencyPrice" Width="1.5" PointX="3" PointY="105.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Company_Department" Width="1.5" PointX="6.5" PointY="113.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Company_TransproPartner" Width="1.5" PointX="32.25" PointY="91.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyAgentBusiness" Width="1.5" PointX="20" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyAgentCharacterstic" Width="1.5" PointX="18" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyAgentDesignation" Width="1.5" PointX="18" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyBusinessHistory" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyBusinessInformation" Width="1.5" PointX="6" PointY="104" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyCooperativeInfo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyIndustryClassification" Width="1.5" PointX="9" PointY="85.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyRFMAnalysi" Width="1.5" PointX="6" PointY="81" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyShare" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.CompanyTradingCategory" Width="1.5" PointX="13.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.ContactU" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EmailDeliverySetting" Width="1.5" PointX="23.25" PointY="100" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EmailHistory" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EmailTemplate" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Employee" Width="1.5" PointX="4.5" PointY="141.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.ErrorLog" Width="1.5" PointX="5.25" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.ErrorReportWeb" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Estimation" Width="1.5" PointX="6.75" PointY="133.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationAction" Width="1.5" PointX="9" PointY="141.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationActionType" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationApproval" Width="1.5" PointX="12" PointY="150.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationCompetency" Width="1.5" PointX="9" PointY="149.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationDeliveryFileType" Width="1.5" PointX="9" PointY="152.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationDetail" Width="1.5" PointX="9" PointY="100.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationFile" Width="1.5" PointX="11.25" PointY="98.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationNarrationExpense" Width="1.5" PointX="9" PointY="155.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationProject" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationRequestHistory" Width="1.5" PointX="3" PointY="81.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationUserAccess" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.EstimationWorkContent" Width="1.5" PointX="9" PointY="162" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.HiworkLanguagePrice" Width="1.5" PointX="3" PointY="100.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Address" Width="1.5" PointX="3.75" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_AgentBusiness" Width="1.5" PointX="17.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_AgentCharacterstics" Width="1.5" PointX="15.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_AgentFreeDesignation" Width="1.5" PointX="15.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Bank" Width="1.5" PointX="24" PointY="76.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_BankAccount" Width="1.5" PointX="35.25" PointY="107.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_BankAccountType" Width="1.5" PointX="24" PointY="122.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_BankBranch" Width="1.5" PointX="24" PointY="127.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_BranchOffice" Width="1.5" PointX="1.5" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyBusinessService" Width="1.5" PointX="3.75" PointY="122.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyBusinessSpeciality" Width="1.5" PointX="3.75" PointY="127.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyIndustryClassification" Width="1.5" PointX="6.75" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyIndustryClassificationItem" Width="1.5" PointX="6.75" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyTradingCategory" Width="1.5" PointX="8.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyTradingCategoryItem" Width="1.5" PointX="11" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CompanyTradingDivision" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Country" Width="1.5" PointX="1.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Culture" Width="1.5" PointX="3.75" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Currency" Width="1.5" PointX="3.75" PointY="91.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_CurrencyRate" Width="1.5" PointX="6" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_DeliveryMethod" Width="1.5" PointX="1.5" PointY="117.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Department" Width="1.5" PointX="2.25" PointY="147.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Designation" Width="1.5" PointX="11" PointY="91.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Division" Width="1.5" PointX="3.75" PointY="62.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EmailCategorySettings" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EmailGroupSettings" Width="1.5" PointX="19.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationRoutes" Width="1.5" PointX="4.5" PointY="159.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationServiceType" Width="1.5" PointX="3" PointY="132.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationSpecializedField" Width="1.5" PointX="3.75" PointY="85.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationStatus" Width="1.5" PointX="21.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationSubSpecializedField" Width="1.5" PointX="3.75" PointY="117" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_EstimationType" Width="1.5" PointX="0.75" PointY="126.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Language" Width="1.5" PointX="0.75" PointY="103.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Market" Width="1.5" PointX="27" PointY="132.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_PartnerServiceType" Width="1.5" PointX="1.5" PointY="122.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_PaymentType" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Penalty" Width="1.5" PointX="18" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffBusinessCategory" Width="1.5" PointX="27" PointY="92.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffBusinessCategoryDetails" Width="1.5" PointX="27" PointY="87.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffCategory" Width="1.5" PointX="22.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffCurrentState" Width="1.5" PointX="21" PointY="120.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffDevelopmentSkill" Width="1.5" PointX="21" PointY="126" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffDevelopmentSkillItem" Width="1.5" PointX="21" PointY="132" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffEducationalDegree" Width="1.5" PointX="24" PointY="134.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffEmploymentType" Width="1.5" PointX="27" PointY="120.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffInterpretationFields" Width="1.5" PointX="24" PointY="83.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffJobCategory" Width="1.5" PointX="24" PointY="89.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffJobCategoryDetails" Width="1.5" PointX="27" PointY="126.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffKnowledgeField" Width="1.5" PointX="15" PointY="126" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffKnowledgeFieldItem" Width="1.5" PointX="15" PointY="132" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffLanguageQualifications" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffMajorSubject" Width="1.5" PointX="24" PointY="140.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffMajorSubjectDetails" Width="1.5" PointX="26.25" PointY="140" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffMedicalField" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffNarrationType" Width="1.5" PointX="23.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffPatentField" Width="1.5" PointX="23.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffProfession" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffResearchField" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffSoftwareSkill" Width="1.5" PointX="21" PointY="90.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffSpecialField" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffTechnicalSkillCategory" Width="1.5" PointX="10.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffTechnicalSkillItems" Width="1.5" PointX="13" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffTranslationFields" Width="1.5" PointX="21" PointY="138.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffType" Width="1.5" PointX="25.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_StaffVisaType" Width="1.5" PointX="25.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Team" Width="1.5" PointX="12" PointY="114.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_TeamToMarket" Width="1.5" PointX="29.25" PointY="116.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_Unit" Width="1.5" PointX="0.75" PointY="132.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_UnitPriceSetting" Width="1.5" PointX="3" PointY="111.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_WebOrderStatus" Width="1.5" PointX="18.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Master_WorkingStatus" Width="1.5" PointX="20.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Menu" Width="1.5" PointX="6" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Message" Width="1.5" PointX="25.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Module" Width="1.5" PointX="1.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Notice" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Order" Width="1.5" PointX="18" PointY="69" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Order_DeliveryDocuments" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Order_StaffAllowance" Width="1.5" PointX="9" PointY="164.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Order_Web" Width="1.5" PointX="12" PointY="102.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Order_WebDocuments" Width="1.5" PointX="26.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.OrderAppointedToStaff_Web" Width="1.5" PointX="20.25" PointY="100.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.OrderDetail" Width="1.5" PointX="20.25" PointY="104.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.OrderEvaluationByCustomer" Width="1.5" PointX="20.25" PointY="111.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.OrderRequestedToStaff_Web" Width="1.5" PointX="23.25" PointY="106.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.ProfitShareSetting" Width="1.5" PointX="27.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Role" Width="1.5" PointX="5.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.RoleAudit" Width="1.5" PointX="27.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.RoleWiseOperationPermission" Width="1.5" PointX="7.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.RoleWiseScreenPermission" Width="1.5" PointX="10.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Screen" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.ScreenOperation" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff" Width="1.5" PointX="15" PointY="91.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_BankAccountInfo" Width="1.5" PointX="26.25" PointY="104" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_CurrentStates" Width="1.5" PointX="23.25" PointY="110.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_DevelopmentSkill" Width="1.5" PointX="23.25" PointY="114.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_EditingproInformation" Width="1.5" PointX="17.25" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_EducationalHistory" Width="1.5" PointX="26.25" PointY="112.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_InterpretationSpecialFields" Width="1.5" PointX="26.25" PointY="100.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_JobCategories" Width="1.5" PointX="26.25" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_JobHistory" Width="1.5" PointX="29.25" PointY="99.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_KnowledgeFields" Width="1.5" PointX="17.25" PointY="116.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_ManagementExperience" Width="1.5" PointX="17.25" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_NarrationInformation" Width="1.5" PointX="17.25" PointY="156.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_NarrationVoiceFiles" Width="1.5" PointX="17.25" PointY="148.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_ProfessionalSpeciality" Width="1.5" PointX="20.25" PointY="96.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_ServiceTypes" Width="1.5" PointX="20.25" PointY="116.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_SkillCertificate" Width="1.5" PointX="17.25" PointY="100.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_SoftwareSkill" Width="1.5" PointX="23.25" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_TechnicalCertificate" Width="1.5" PointX="17.25" PointY="174" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_TranslateInterpretExperience" Width="1.5" PointX="17.25" PointY="188.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_TranslationSpecialFields" Width="1.5" PointX="23.25" PointY="118.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.Staff_TransproInformation" Width="1.5" PointX="17.25" PointY="181.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.sysdiagram" Width="1.5" PointX="27.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TranslationCertificateSetting" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TranslationLevel" Width="1.5" PointX="6" PointY="76.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TranslatorBlackList" Width="1.5" PointX="27.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TranslatorFavouriteList" Width="1.5" PointX="27.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TransproDeliveryPlanSetting" Width="1.5" PointX="6" PointY="91.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TransproLanguagePriceCategory" Width="1.5" PointX="6" PointY="96.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.UserInformation" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.UserInRole" Width="1.5" PointX="7.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.UserType" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.IdentityInformation" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.PayPalTransaction" Width="1.5" PointX="28.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.TransproLanguagePriceDetail" Width="1.5" PointX="8.25" PointY="96.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.RoleManagement" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.staff_tbd" Width="1.5" PointX="14.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.VW_GetAdvancedSearch" Width="1.5" PointX="22.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CentralDBModel.VW_GetAdvancedSearch_OLD" Width="1.5" PointX="29.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="CentralDBModel.FK_AdditionalOperationPermissions_ScreenOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_AdditionalOperationPermissions_UserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_AdditionalScreenPermissions_UserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Penalty_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_AgencyPrice_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Department_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TransproPartner_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Master_DeliveryMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Master_DeliveryMethod1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Master_DeliveryMethod2" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Master_PartnerServiceType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyIndustryClassification_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CustomerEvaluation_Web_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EmailDeliverySettings_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderAppointed_Web_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderRequestedToStaff_Web_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_AgencyPrice_Master_EstimationSpecializedField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_AgencyPrice_Master_EstimationType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_AgencyPrice_Master_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_AgencyPrice_Master_Language1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Department_Master_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TransproPartner_Master_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TransproPartner_Master_BankAccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TransproPartner_Master_BankBranch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyAgentBusiness_Master_AgentBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyAgentCharacterstics_Master_AgentCharacterstics" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyAgentDesignation_Master_AgentFreeDesignation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyBusinessInformation_Master_CompanyBusinessService" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyBusinessInformation_Master_CompanyBusinessSpeciality" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyBusinessInformation_Master_Language1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyBusinessInformation_Master_Language2" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyIndustryClassification_Master_CompanyIndustryClassification" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyIndustryClassification_Master_CompanyIndustryClassificationItem" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyRFMAnalysis_AvgOrderedCompanyCurrency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyRFMAnalysis_AvgOrderedPersonCurrency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyRFMAnalysis_AvgQuotCompanyCurrency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyRFMAnalysis_AvgQuotPersonCurrency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyTradingCategory_Master_CompanyTradingCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CompanyTradingCategory_Master_CompanyTradingCategoryItem" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_ContactUs_UserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EmailDeliverySettings_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Employee_Master_BranchOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Employee_Master_BranchOffice1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Employee_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Employee_Master_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Approver" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Assistant" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Coordinator" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_LargeSales" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_OutwardSales" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_SalesPerson" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationApproval_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_ErrorLog_UserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Master_EstimationRoutes" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Estimation_Master_EstimationType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationActions_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationApproval_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationCompetency_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationDeliveryFileType_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationDetails_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationFiles_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationWorkContent_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstmationNarrationExpense_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_StaffAllowance_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Estimation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationDetails_SourceLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationDetails_TargetLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_EstimationFiles_EstimationDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderDetails_EstimationDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_HiworkLanguagePrice_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_HiworkLanguagePrice_SourceLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_HiworkLanguagePrice_TargetLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Address_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Bank_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Bank_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_BankAccount_Master_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_BankBranch_Master_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_BankAccountInfo_Master_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_BankAccount_Master_BankAccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_BankAccount_Master_BankBranch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_BankAccountInfo_Master_BankAccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_BankAccountInfo_Master_BankBranch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Branch_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Department_Company_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Designation_Company_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Team_Company_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_CompanyIndustryClassificationItem_Master_CompanyIndustryClassification" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_CompanyTradingCategoryItem_Master_CompanyTradingCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Department_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Designation_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Team_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Country_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Culture_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_Division_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_EducationalHistory_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_CurrencyRate_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_UnitPrice_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TranslationLevel_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceCategory_Master_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Designation_Company_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Team_Company_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Designation_Company_Division" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Designation_Company_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_Team_Company_Division" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_EstimationServiceType_Master_EstimationType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_EstimationSubSpecializedField_Master_EstimationSpecializedField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_Master_EstimationSpecializedField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_ProfessionalSpeciality_Master_StaffProfession" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceCategory_Master_EstimationSpecializedField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceCategory_Master_EstimationSubSpecializedField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_UnitPriceSetting_Master_UnitPriceSetting" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_ServiceTypes_Staff_ServiceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_UnitPrice_SourceLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_UnitPrice_TargetLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_Master_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_TargetLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_SkillCertificate_ForeignLanguage1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_SkillCertificate_ForeignLanguage2" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_SkillCertificate_ForeignLanguage3" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_SkillCertificate_Master_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Language1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Language2" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Language3" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_Master_Language4" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceCategory_SourceLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceCategory_TargetLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TeamToMarket_Company_Market" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_StaffBusinessCategoryDetails_Master_StaffBusinessCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffBusinessCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffBusinessCategoryDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_CurrentStates_Staff_CurrentStates" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_StaffDevelopmentSkillItem_Master_StaffDevelopmentSkill" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_DevelopmentSkill_Master_StaffDevelopmentSkill" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_DevelopmentSkill_Master_StaffDevelopmentSkillItem" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_EducationalHistory_staffeducationalDegree" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Staff_Master_StaffEmplymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_InterpretationSpecialFields_Master_StaffInterpretationFields" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobCategories_Master_StaffJobCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobCategoryDetails_Staff_JobCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffJobCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffJobCategory1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffJobCategoryDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Master_StaffJobCategoryDetails1" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_StaffKnowledgeFieldItem_Master_StaffKnowledgeField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_KnowledgeFields_Master_StaffKnowledgeField" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_KnowledgeFields_Master_StaffKnowledgeFieldItem" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_StaffMajorSubjectDetails_Master_StaffMajorSubject" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_EducationalHistory_Master_StaffMajorSubject" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_StaffSoftwareSkill_Master_StaffSoftwareSkill" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TechnicalSkillItems_Staff_TechnicalSkillCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TranslationSpecialFields_Master_StaffTranslationFields" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TeamToMarket_Company_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Company_TeamToMarket_Company_TeamToMarket" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Master_UnitPrice_Master_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Menu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Menu_Screen" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Screens_Modules" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderDetails_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_DeliveryDocuments_Order_DeliveryDocuments" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CustomerEvaluation_Web_CustomerEvaluation_Web" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Order_Web_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderAppointed_Web_Order_Web" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderRequestedToStaff_Web_Order_Web" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderAppointed_Web_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderDetails_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_CustomerEvaluation_Web_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_OrderRequestedToStaff_Web_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Role_UserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_RoleWiseOperationPermissions_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_RoleWiseScreenPermissions_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_UserInformation_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_UserInRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_RoleWiseOperationPermissions_ScreenOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_RoleWiseScreenPermission_Screen" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_ScreenOperation_Screen" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_BankAccountInfo_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_CurrentStates_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_DevelopmentSkill_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_EditingproInformation_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_EducationalHistory_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_InterpretationSpecialFields_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobCategories_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_JobHistory_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_KnowledgeFields_Staff_KnowledgeFields" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_ManagementExperience_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_NarrationInformation_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_NarrationVoiceFiles_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_ProfessionalSpeciality_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_ServiceTypes_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_SkillCertificate_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TechnicalCertificate_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TranslateInterpretExpertises_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TranslationSpecialFields_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_Staff_TransproInformation_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_StaffSoftwareSkill_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceDetails_TransproDeliveryPlanSetting" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_TransproLanguagePriceDetails_TransproLanguagePriceCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_UserInformation_UserType" ManuallyRouted="false" />
+        <AssociationConnector Association="CentralDBModel.FK_UserInRole_UserInformation" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

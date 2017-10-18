@@ -1,0 +1,371 @@
+﻿<!--<h1>Staff Tax Report</h1>-->
+<div class="content-wrapper staff-registration dashboard">
+    <section class="content-header">
+        <h1>
+        {{ 'STAFFTAXREPORT'|translator}}
+            <small>{{  'CONTROLPANEL'|translator}}</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">StaffTaxReport</li>
+        </ol>
+    </section>
+    <div class="box box-primary">
+        <section class="content content-main">
+            <div class="container">
+                <div align="center">
+                    <button type="button" class="btn btn-default">{{'PRINTING'|translator}}</button>
+                    <button type="button" class="btn btn-default">{{'MAILCREATION'|translator}}</button>
+                    <button type="button" class="btn btn-default">{{'DATASTORAGE'|translator}}</button>
+                    <button type="button" class="btn btn-default">{{'PREVIOUSDATA'|translator}}</button>
+                   
+                </div>
+            </div>
+            <div class="bordered-container">
+                <span class="border-title">
+       {{ 'SEARCHPANNEL'|translator}}
+                </span>
+                <div class="bordered-container-inner">
+                    <form class="well form-inline" name="frmStaffPayment">
+                        <div class="row">
+                            
+                            <div class="col-md-4 ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                      <label>{{'STAFF'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <comm-selection dlg-title="{{'STAFF'|translator}}" url="staff/list" data="{{vm.StaffMemberID}}" text="{{vm.StaffMemberName}}" listento="selectedstaff"></comm-selection>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix" style="height: 10px"></div>
+                                <!--<br />-->
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>{{  'EMAIL'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" name="Email" placeholder="{{'STAFFEMAILADDRESS'|translator}}">
+                                    </div>
+                                </div>
+                                <div class="clearfix" style="height: 10px"></div>
+                                <!--<br />-->
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>{{'TAXWITHHOLDING'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                      <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Trading Corporation" data-rule-required="true" name="landlord_id" id="landlord_id2">
+                                                <option value="" selected disabled>{{'TAXWITHHOLDING'|translator}}</option>
+                                                <option >{{ 'TARGET'|translator}}</option>
+                                                <option >{{ 'NONTARGET'|translator}}</option>
+                                            </select>   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-4" remove-padding>
+                                        <label>{{ 'TRADINGCORPORATION'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Trading Corporation" data-rule-required="true" name="landlord_id" id="landlord_id2">
+                                            <option value="" selected disabled>{{ 'TRADINGCORPORATION'|translator}}</option>
+                                            <option>{{'JAPAN'|translator}}</option>
+                                            <option>{{ 'KOREA'|translator}}</option>
+                                            <option>{{ 'CUBE'|translator}}</option>
+                                            <option>{{'ALL'|translator}}</option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                                <div class="clearfix" style="height: 10px"></div>
+                                <!--<br />-->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label> {{'BILLINGDATE'|translator}} </label>
+                                    </div>
+                                    <div class="col-md-8">
+                                       <div class="row">
+                                          
+
+                                           <div class="col-md-12 col-sm-6" >
+                                               <input type="text" id="from" name="from">
+                                               <label for="to">~</label>
+                                               <input type="text" id="to" name="to">
+                                           </div>
+
+
+
+                                       </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="clearfix" style="height: 10px"></div>
+                                <!--<br />-->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>  {{'REMITTANCEDATE'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+
+
+                                            <div class="col-md-12 col-sm-6">
+                                                <input type="text" id="from" name="from">
+                                                <label for="to">~</label>
+                                                <input type="text" id="to" name="to">
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                </div>
+
+
+                               
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>{{   'MYNUMBERREGISTRATION'|translator}}</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" name="Staff">
+                                    </div>
+                                </div>
+                                <!--<br />-->
+                                <div class="clearfix" style="height: 10px"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <!--<input type="text" class="form-control" placeholder="Search for...">-->
+                                    </div>
+                                    <div class="col-md-8">
+                                        
+                                            <button class="btn btn-flat btn-default" type="button"><i class="fa fa-search fa-fw"></i>{{  'SEARCH'|translator}}</button>
+                                        
+                                    </div>
+                                </div>
+                                  
+                                
+                            </div>    
+                        
+                         </div>
+                      
+
+                    </form>
+                </div>
+
+                <div class="panel panel-default">
+                    <span class="border-title">
+                       {{ 'DISPLAYLIST'|translator}}
+                    </span>
+                    <div class="panel-body">
+                     
+                        <form class="well form-inline" name="frmStaffPayment">
+                            <div class="row remove-padding">
+                                <div class="form-group">
+                                    <label class="control-label">{{ 'STAFFNUMBER'|translator}} </label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{  'PAYMENT'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'EXPENSE'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'TAXEXPENSE'|translator}} </label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'REMITTEDAMOUNT'|translator}} </label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-responsive">
+                                <thead class="bg-light-blue">
+
+                                    <tr>
+                                        <td>
+                                            {{ 'MAILSELECTION'|translator}}
+                                        </td>
+                                        <td>{{ 'STAFFNUMBER'|translator}}</td>
+                                        <!--<td>
+                                            <div>
+                                                <input type="text" name="Staffnumber" placeholder="total amount" readonly>
+
+                                            </div>
+                                            <label> Staffnumber</label>
+                                        </td>-->
+                                        <td>{{'STAFFNAME(local name)'|translator}}</td>
+                                        <td>{{ 'STAFFNAME(katakana)'|translator}}</td>
+                                        <td>{{  'STAFFADDRESS'|translator}}</td>
+                                        <td>
+                                            <label> {{'MYNUMBER'|translator}}</label> <input type="checkbox" name="My number">
+                                        </td>
+                                        <td>{{'DEPENDENTINFORMATION'|translator}}</td>
+                                        <td>{{ 'CLASSIFICATION'|translator}}</td>
+                                        <td>{{'TRADINGCORPORATION'|translator}}</td>
+                                        <td>{{'BILLINGDATE'|translator}}</td>
+                                        <td>{{'REMITTANCEDATE'|translator}}</td>
+                                        <td><label>{{  'PAYMENT'|translator}}</label><input type="checkbox" name="Payment">   </td>
+                                        <td>{{'SOURCE'|translator}}</td>
+                                        <td>{{'SOCIALINSURANCE'|translator}}</td>
+                                        <td><label>{{'EXPENSES(NOTSUBJECTTOTAXATION)'|translator}}</label><input type="checkbox" name="Expenses"></td>
+                                        <td>{{'TAXEXPENSE'|translator}}</td>
+                                        <td><label>{{'REMITTEDAMOUNT'|translator}}</label><input type="checkbox" name="Remittedamount"></td>
+                                        <td>{{'MAILADDRESS'|translator}}</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <span class="border-title">
+                        {{ 'SEARCHPANNEL'|translator}}
+                    </span>
+                    <div class="panel-body">
+                      
+              
+                            <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="col-md-2">
+                                    <label>{{'CLASSIFICATION'|translator}}</label>
+                                
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Classification" data-rule-required="true" name="landlord_id" id="landlord_id3">
+                                        <option value="" selected disabled>{{'CLASSIFICATION'|translator}}</option>
+                                        <option value="31">{{'COMPENSATIONSYSTEM'|translator}}</option>
+                                        <option value="34">{{ 'SALARYSYSTEM'|translator}}</option>
+                                    </select>   
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="col-md-2">
+                                    <label>{{'RESIDENCE'|translator}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Residence" data-rule-required="true" name="landlord_id" id="landlord_id3">
+                                            <option value="" selected disabled>{{'RESIDENCE'|translator}}</option>
+                                            <option value="31">{{'DOMESTIC'|translator}}</option>
+                                            <option value="34">{{'OVERSEAS'|translator}}</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                               
+                            </div>
+</div>
+                    </div>
+
+                <div class="panel panel-default">
+                    <span class="border-title">
+                        {{ 'DISPLAYLIST'|translator}}
+                    </span>
+                    <div class="panel-body">
+                      
+                        <form class="well form-inline" name="frmStaffPayment">
+                            <div class="row remove-padding">
+                                <div class="form-group">
+                                    <label class="control-label">{{  'PAYMENT'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{ 'CONSUMPTIONTAX'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'COMMUTINGEXPENSE'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'WITHDRAWAL'|translator}}</label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'EXPENSE'|translator}} </label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{{'REMITTEDAMOUNT'|translator}} </label>
+                                    <input type="text" name="adjustment_amount" placeholder="{{'TOTALAMOUNT'|translator}}" readonly>
+                                </div>
+
+                            </div>
+
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-responsive">
+
+                                <thead class="bg-light-blue">
+
+                                    <tr>
+                                        <td>{{'TRADINGCORPORATION'|translator}}</td>
+                                        <td>{{'PROPOSALNUMBER'|translator}}</td>
+                                        <td>{{'COORDINATOR'|translator}}</td>
+                                        <td>{{'COMPANYNUMBER'|translator}}</td>
+                                        <td>{{ 'CLIENT'|translator}}</td>
+                                        <td>
+                                            <!--<div class="" remove-padding>
+                                                <input type="text" name="project_title" placeholder="total amount" readonly>
+                                            </div>-->
+                                            {{'PROJECTTITLE'|translator}}
+
+                                        </td>
+                                        <td>{{ 'INVOICENUMBER'|translator}}</td>
+                                        <td>{{'BILLINGDATE'|translator}}</td>
+                                        <td>{{'REMITTANCEDATE'|translator}}</td>
+                                        <td>{{'RESIDENCE'|translator}}</td>
+                                        <td>{{ 'TAXCLASSIFICATION'|translator}}</td>
+                                        <td>{{'CLASSIFICATION'|translator}}</td>
+                                        <td><label>{{  'PAYMENT'|translator}}</label><input type="checkbox" name="Remittedamount"></td>
+                                        <td>{{ 'CONSUMPTIONTAX'|translator}}</td>
+                                        <td>{{'SOURCE'|translator}}</td>
+                                        <td>{{ 'SOCIALINSURANCE'|translator}}</td>
+                                        <td><label>{{'COMMUTINGEXPENSE'|translator}}</label><input type="checkbox" name="Commutingexpenses"></td>
+                                        <td><label>{{'EXPENSE'|translator}}</label><input type="checkbox" name="Expense"></td>
+
+                                        <td><label>{{'WITHDRAWAL'|translator}}</label><input type="checkbox" name="WithdrawalAmount"></td>
+
+                                        <!--<td><label>Withdrawal amount </label><input type="text" name="Withdrawal amount"></td>-->
+                                        <td><label>{{'REMITTEDAMOUNT'|translator}}<input type="checkbox" name="Remittedamount"></label></td>
+
+                                        <td>{{'ACCOUNTINGMEMO'|translator}}</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </div>
+  
+</div>
+
+

@@ -1,0 +1,838 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        {{'STAFFREGISTRATION' | translator}}
+    </div>
+
+    <div class="panel-body">
+
+        <div class="wrapper">
+
+            <!-- Content Wrapper. Contains page content -->
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+
+                <div class="row">
+                    <form name="staffRegForm" id="staffRegForm" novalidate role="form">
+                        <fieldset ng-disabled="vm.isDisabledStaff">
+
+                            <div>
+                                <alerts></alerts>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <div class="box">
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <label>{{'BUSINESSTYPE' | translator}}</label>
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10">
+                                        <div class="form-group">
+                                            <ul class="list-inline">
+                                                <li><label><input type="checkbox" ng-true-value="1" ng-model="vm.data.StaffTypeID" ng-change="vm.getStaffType()"></label> Corporated</li>
+                                                <li><label><input type="checkbox" ng-true-value="2" ng-model="vm.data.StaffTypeID" ng-change="vm.getStaffType()"></label> Partner Staff</li>
+                                                <li><label><input type="checkbox" ng-true-value="3" ng-model="vm.data.StaffTypeID" ng-change="vm.getStaffType()"></label> Disable Record </li>
+                                                <li><label><input type="checkbox" ng-true-value="4" ng-model="vm.data.StaffTypeID" ng-change="vm.getStaffType()"></label> Delete</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="box-body" >
+
+                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                            <div class="form-group">
+                                                <!--<div class="image-holder">
+
+                                                    <img src="content/images/avatar.jpg" class="img-responsive">
+
+                                                    <div class="clearfix" style="height: 15px;"></div>
+                                                    <label for="image-uploader" class="btn btn-flat btn-default btn-block" style="padding: 5px;"> Upload </label>
+                                                    <img ng-if="vm.Photo" class="img-responsive" ng-src="{{vm.Photo}}" />
+
+                                                </div>-->
+
+                                                <div class="image-holder">
+                                                    <div style="float: left; font-size: 100px;" enctype="multipart/form-data">
+                                                        <a class="preview">
+                                                            <!--<i class="fa fa-picture-o" aria-hidden="true"></i>-->
+                                                            <img src="content/images/avatar.jpg" class="img-responsive" ng-if="!vm.data.Image" />
+                                                            <img ng-if="vm.data.Image" class="img-responsive" ng-src="{{vm.data.Image}}" />
+                                                        </a>
+                                                        <div class="clearfix"></div>
+                                                        <label for="photoInput" class="btn btn-primary btn-flat btn-block">
+                                                            Upload Photo
+                                                            <input type="file" id="photoInput" load-image ng-model="vm.data.Image" data-max-size="200000" accept="image/*" style="display:none;" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                            <!--<div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Staff ID">
+                                            </div>-->
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputStaffID" type="text" name="inputStaffID" class="form-control" placeholder="{{'STAFFID' | translator}}"
+                                                           ng-model="vm.data.StaffEmailID" ng-required="true" ng-minlength="4" ng-maxlength="30" />
+
+                                                    <!--<span class="help-block"
+                                                          ng-if="staffRegForm.inputStaffID.$error.required">
+                                                        staff ID is required
+                                                    </span>
+                                                    <span class="help-block"
+                                                          ng-if="staffRegForm.inputStaffID.$error.minlength">
+                                                        Staff ID must be at least 4 characters in length.
+                                                    </span>
+                                                    <span class="help-block"
+                                                          ng-if="staffRegForm.inputStaffID.$error.maxlength">
+                                                        Staff ID cannot exceed 10 characters in length.
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputStaffNo" type="text" name="inputStaffNo" class="form-control" placeholder="{{'STAFFNO' | translator}}"
+                                                           ng-model="vm.data.RegistrationID" ng-required="true" ng-minlength="4" ng-maxlength="10" only-Digits />
+
+                                                    <!--<span class="help-block">
+                                                        <span class="help-block"
+                                                              ng-if="staffRegForm.inputStaffNo.$error.required">
+                                                            Staff No is required
+                                                        </span>
+                                                        <span class="help-block"
+                                                              ng-if="staffRegForm.inputStaffNo.$error.minlength">
+                                                            Staff No must be at least 4 characters in length.
+                                                        </span>
+                                                        <span class="help-block"
+                                                              ng-if="staffRegForm.inputStaffNo.$error.maxlength">
+                                                            Staff No cannot exceed 10 characters in length.
+                                                        </span>
+
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputFirstName" type="text" name="inputFirstName" class="form-control" placeholder="{{'STAFFFIRSTNAMELOCAL' | translator}}"
+                                                           ng-model="vm.data.FirstName" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputFirstName.$error.required">
+                                                            Local First Name is required
+                                                        </span>
+
+                                                        <span ng-if="staffRegForm.inputFirstName.$error.minlength">
+                                                            Local First Name must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFirstName.$error.maxlength">
+                                                            Local First Name cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputFirstNameGlobal" type="text" name="inputFirstNameGlobal" class="form-control" placeholder="{{'STAFFFIRSTNAMEGLOBAL' | translator}}"
+                                                           ng-model="vm.data.FirstNameGlobal" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+
+                                                        <span ng-if="staffRegForm.inputFirstNameGlobal.$error.required">
+                                                            Global First Name is required
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFirstNameGlobal.$error.minlength">
+                                                            Global First Name must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFirstNameGlobal.$error.maxlength">
+                                                            Global First Name cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputFirstNamePro" type="text" name="inputFirstNamePro" class="form-control" placeholder="{{'STAFFFIRSTNAMEPRONUNCIATION' | translator}}"
+                                                           ng-model="vm.data.Surname" ng-required="true" ng-maxlength="5" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputFirstNamePro.$error.required">
+                                                            First Name(Pronunciation) is required
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFirstNamePro.$error.maxlength">
+                                                            First Name(Pronunciation) cannot exceed 5 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputNickname" type="text" name="inputNickname" class="form-control" placeholder="{{'STAFFNICKNAME' | translator}}"
+                                                           ng-model="vm.data.NickName" ng-required="true" ng-minlength="4" ng-maxlength="10" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputNickname.$error.required">
+                                                            Nickname is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputNickname.$error.minlength">
+                                                            Nickname must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputNickname.$error.maxlength">
+                                                            Nickname cannot exceed 10 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputNickname" type="text" name="inputNickname" class="form-control" placeholder="{{'STAFFLASTNAME' | translator}}"
+                                                           ng-model="vm.data.LastName" ng-required="true" ng-minlength="4" ng-maxlength="10" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputNickname.$error.required">
+                                                            Nickname is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputNickname.$error.minlength">
+                                                            Nickname must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputNickname.$error.maxlength">
+                                                            Nickname cannot exceed 10 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="text"
+                                                           id="InputBirthDate"
+                                                           name="InputBirthDate"
+                                                           class="form-control"
+                                                           ng-required="true"
+                                                           uib-datepicker-popup="dd/MM/yyyy"
+                                                           placeholder="Birth Date (DD/MM/YYYY)"
+                                                           min-date="dateFrom"
+                                                           max-date="dateTo"
+                                                           close-text="Close"
+                                                           ng-model="vm.data.BirthDate"
+                                                           show-weeks="true"
+                                                           is-open="dateFromOpened"
+                                                           ng-click="dateFromOpened = true"
+                                                           filter-by="placed"
+                                                           filter-type="dateFrom"
+                                                           ng-blur="gridActions.filter()"
+                                                           ng-focus="gridActions.filter()" />
+                                                    <!--<span class="help-block" ng-if="staffRegForm.InputBirthDate.$error.required">
+                                                        Birth date is required.
+                                                    </span>-->
+                                                </div>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group">
+
+                                                <div class="form-group">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <span class="btn btn-flat btn-block btn-lg btn-default text-left pull-left remove-padding">My Number (Hidden)</span>
+                                                    </div>
+
+                                                    <div class="clearfix"></div>
+                                                    <div class="clearfix"></div>
+                                                    <label><input type="radio" ng-model="vm.data.Sex" ng-value="0">Male</label>
+                                                    <label><input type="radio" ng-model="vm.data.Sex" ng-value="1">Female</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputFamilyNameLocal" type="text" name="inputFamilyNameLocal" class="form-control" placeholder="{{'STAFFFAMILYNAMELOCAL' | translator}}"
+                                                           ng-model="vm.data.FamilyNameLocal" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputFamilyNameLocal.$error.required">
+                                                            Local Family Name is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNameLocal.$error.minlength">
+                                                            Local Family Name must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNameLocal.$error.maxlength">
+                                                            Local Family Name cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+
+                                                    <input id="inputFamilyNameGlobal" type="text" name="inputFamilyNameGlobal" class="form-control" placeholder="{{'STAFFFAMILYNAMEGLOBAL' | translator}}"
+                                                           ng-model="vm.data.FamilyNameGlobal" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputFamilyNameGlobal.$error.required">
+                                                            Global Family Name is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNameGlobal.$error.minlength">
+                                                            Global Family Name must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNameGlobal.$error.maxlength">
+                                                            Global Family Name cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+
+                                            <!--<div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Staff Family Name (Pronounciation)">
+                                            </div>-->
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputFamilyNamePro" type="text" name="inputFamilyNamePro" class="form-control" placeholder="{{'STAFFFAMILYNAMEPRONUNCIATION' | translator}}"
+                                                           ng-model="vm.data.FamilyNamePro" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputFamilyNamePro.$error.required">
+                                                            Family Name(Pronunciation) is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNamePro.$error.minlength">
+                                                            Family Name(Pronunciation) must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputFamilyNamePro.$error.maxlength">
+                                                            Family Name(Pronunciation) cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+                                            <!--<div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Staff Middle Name">
+                                            </div>-->
+                                            <div class="form-group" show-errors>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input id="inputMiddleName" type="text" name="inputMiddleName" class="form-control" placeholder="{{'STAFFMIDDLENAME' | translator}}"
+                                                           ng-model="vm.data.MiddleName" ng-required="true" ng-minlength="4" ng-maxlength="24" />
+
+                                                    <!--<span class="help-block">
+                                                        <span ng-if="staffRegForm.inputMiddleName.$error.required">
+                                                            Middle Name is required.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputMiddleName.$error.minlength">
+                                                            Middle Name must be at least 4 characters in length.
+                                                        </span>
+                                                        <span ng-if="staffRegForm.inputMiddleName.$error.maxlength">
+                                                            Middle Name cannot exceed 24 characters in length.
+                                                        </span>
+                                                    </span>-->
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <!--<div c
+                                            lass="form-group">
+                                                <input type="text" class="form-control" placeholder="Staff Nationality">
+                                            </div>-->
+                                            <!--<div c
+                                            lass="form-group" show-errors>
+                                                <ui-select id="inputNationality" name="inputNationality" ng-model="vm.countries.selected" ng-required="true" theme="bootstrap">
+                                                    <ui-select-match placeholder="{{'STAFFNATIONALITY' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                                    <ui-select-choices repeat="country in vm.countries | filter: $select.search">
+                                                        <span ng-bind-html="country.Name | highlight: $select.search"></span>
+                                                    </ui-select-choices>
+                                                </ui-select>
+
+                                                <span class="help-block">
+                                                    <span ng-if="staffRegForm.inputNationality.$error.required">
+                                                        staff nationality is required.
+                                                    </span>
+
+                                                </span>
+
+                                            </div>-->
+                                        </div>
+
+
+
+                                        <div class="col-md-5 col-sm-5 col-xs-5 remove-padding">
+
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 ">
+
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                    <input type="text" class="form-control datepicker" placeholder="{{'REGDATEDDMMYYYY' | translator}}" ng-model="vm.data.RegDate" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="text" class="form-control datepicker" placeholder="{{'LOGINDATEDDMMYYYY' | translator}}" ng-model="vm.data.LoginDate" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                    <input type="text" class="form-control datepicker" ng-model="vm.data.RegWebsite1" placeholder="{{'REGWEBSITE' | translator}}" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="text" class="form-control datepicker" ng-model="vm.data.RegWebsite2" placeholder="{{'REGWEBSITE' | translator}}" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                    <input type="text" class="form-control datepicker" ng-model="vm.data.UpdatedDate1" placeholder="{{'UPDATEDDATE' | translator}}" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="text" class="form-control datepicker" ng-model="vm.data.UpdatedDate2" placeholder="{{'UPDATEDDATE' | translator}}" />
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="clearfix"></div>
+
+                                        <span style="margin-top:0; display: block; width: 80px; float: right;">
+                                            <!--<button type="submit" class="btn btn-primary pull-left" ng-click="vm.saveStaff()" value="Submit">
+                                                <span class="glyphicon glyphicon-plus">Submit</span>
+                                            </button>-->
+                                            <button type="reset" class="btn btn-primary pull-right" ng-click="vm.resetForm()" value="Reset">
+                                                <span class="glyphicon glyphicon-refresh">Reset</span>
+                                            </button>
+
+                                        </span>
+
+                                        <span style="margin-top:0; display: block; width: 170px; float: right;">
+                                            <button type="submit" class="btn btn-primary btn-block" ng-click="vm.saveStaff()" value="Submit">
+                                                <span class="glyphicon glyphicon-plus">{{'SUBMITCONTINUE' | translator}}</span>
+                                            </button>
+                                        </span>
+
+
+
+                                        <div class="clearfix"></div>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-5 col-sm-4 col-xs-5">
+                                <div class="box">
+                                    <div class="box-body">
+                                        <table class="table table-bordered">
+                                            <thead class="bg-light-blue">
+                                                <tr>
+                                                    <td colspan="2"> Service type</td>
+                                                    <td> Total </td>
+                                                    <td> Claim </td>
+                                                    <td> % </td>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody id="data-table">
+                                                <tr>
+                                                    <td> <input type="checkbox"></td>
+                                                    <td> TR </td>
+                                                    <td> 22 </td>
+                                                    <td> 1 </td>
+                                                    <td> 1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <input type="checkbox"></td>
+                                                    <td> HR </td>
+                                                    <td> 1 </td>
+                                                    <td> 0 </td>
+                                                    <td> 0 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <input type="checkbox"></td>
+                                                    <td> Trans-pro </td>
+                                                    <td> 56 </td>
+                                                    <td> 1 </td>
+                                                    <td> 1 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <input type="checkbox"></td>
+                                                    <td> Editing-pro </td>
+                                                    <td> - </td>
+                                                    <td> - </td>
+                                                    <td> - </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <input type="checkbox"></td>
+                                                    <td> Grading </td>
+                                                    <td> 5 </td>
+                                                    <td> 0 </td>
+                                                    <td> 0 </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div class="box">
+                                    <div class="box-body">
+                                        <table class="table table-bordered">
+                                            <thead class="bg-light-blue">
+                                                <tr>
+                                                    <td> Order No</td>
+                                                    <td> Order Type </td>
+                                                    <td> Client Name </td>
+                                                    <td> Product anme </td>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody id="data-table">
+                                                <tr>
+
+                                                    <td> TR </td>
+                                                    <td> 22 </td>
+                                                    <td> 1 </td>
+                                                    <td> 1 </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td> HR </td>
+                                                    <td> 1 </td>
+                                                    <td> 0 </td>
+                                                    <td> 0 </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td> Trans-pro </td>
+                                                    <td> 56 </td>
+                                                    <td> 1 </td>
+                                                    <td> 1 </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td> Editing-pro </td>
+                                                    <td> - </td>
+                                                    <td> - </td>
+                                                    <td> - </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td> Grading </td>
+                                                    <td> 5 </td>
+                                                    <td> 0 </td>
+                                                    <td> 0 </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                            </div>
+                            <div class="col-sm-4">
+
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+
+
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 " id="navbar">
+                                <div class="chk">
+                                    <ul class="nav nav-tabs reg-tabs" id="regtabs">
+                                        <li id="dtLnk" ui-sref-active="active">
+                                            <a ui-sref=".details" id="dtAnc" ng-click="vm.changeStatus($event)">
+                                                {{'DETAILS' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisableEducationalInfo}" id="eduLnk">
+                                            <!--<a ui-sref=".educationalInfo"/>-->
+                                            <a ng-click="vm.changeStatus($event)" id="eduAnc">
+                                                {{'EDUCATIONALINFO' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisableJobHistory}" id="hstLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="hstAnc">
+                                                {{'JOBHISTORY' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledSkill}" id="sklLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="sklAnc">
+                                                {{'SKILLCERTIFICATE' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledTR}" id="trLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="trAnc">
+                                                {{'TREXPERIENCE' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledBankPayment}" id="bnkLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="bnkAnc">
+                                                {{'BANKPAYMENT' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledBasicHRInfo}" id="hrBasicLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="hrBasicAnc">
+                                                {{'BASICHRINFO' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledHRDetails}" id="hrDetailLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="hrDetailAnc">
+                                                {{'HRDETAILS' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledTRPro}" id="trProLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="trProAnc">
+                                                {{'TRANSPRO' | translator}}
+                                            </a>
+                                        </li>
+                                        <li ng-class="{'disabled':vm.isDisabledNarration}" id="nrrLnk">
+                                            <a ng-click="vm.changeStatus($event)" id="nrrAnc">
+                                                {{'NARRATION' | translator}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="tab-content ">
+                    <div class="tab-pane active" id="details">
+                        <div class="panel panel-default">
+                            <div class="panel-body remove-padding">
+                                <div ui-view></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- /.content -->
+</div>
+
+<!-- /.content-wrapper -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane" id="control-sidebar-home-tab">
+            <h3 class="control-sidebar-heading">{{'RECENTACTIVITY' | translator}}</h3>
+            <ul class="control-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                        <div class="menu-info">
+                            <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                            <p>Will be 23 on April 24th</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                        <div class="menu-info">
+                            <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                            <p>New phone +1(800)555-1234</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                        <div class="menu-info">
+                            <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                            <p>nora@example.com</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                        <div class="menu-info">
+                            <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                            <p>Execution time 5 seconds</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.control-sidebar-menu -->
+
+            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+            <ul class="control-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Custom Template Design
+                            <span class="label label-danger pull-right">70%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Update Resume
+                            <span class="label label-success pull-right">95%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Laravel Integration
+                            <span class="label label-warning pull-right">50%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <h4 class="control-sidebar-subheading">
+                            Back End Framework
+                            <span class="label label-primary pull-right">68%</span>
+                        </h4>
+
+                        <div class="progress progress-xxs">
+                            <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.control-sidebar-menu -->
+
+        </div>
+        <!-- /.tab-pane -->
+        <!-- Stats tab content -->
+        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+        <!-- /.tab-pane -->
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+            <form method="post">
+                <h3 class="control-sidebar-heading">{{'GENERALSETTINGS' | translator}}</h3>
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Report panel usage
+                        <input type="checkbox" class="pull-right" checked>
+                    </label>
+
+                    <p>
+                        Some information about this general settings option
+                    </p>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Allow mail redirect
+                        <input type="checkbox" class="pull-right" checked>
+                    </label>
+
+                    <p>
+                        Other sets of options are available
+                    </p>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Expose author name in posts
+                        <input type="checkbox" class="pull-right" checked>
+                    </label>
+
+                    <p>
+                        Allow the user to show his name in blog posts
+                    </p>
+                </div>
+                <!-- /.form-group -->
+
+                <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Show me as online
+                        <input type="checkbox" class="pull-right" checked>
+                    </label>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Turn off notifications
+                        <input type="checkbox" class="pull-right">
+                    </label>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Delete chat history
+                        <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                    </label>
+                </div>
+                <!-- /.form-group -->
+            </form>
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+</aside>
+
+

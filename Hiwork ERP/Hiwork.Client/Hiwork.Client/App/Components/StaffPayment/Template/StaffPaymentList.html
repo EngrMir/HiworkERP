@@ -1,0 +1,280 @@
+﻿<div class="content-wrapper staff-registration dashboard">
+    <section class="content-header">
+        <h1>
+           Staff Payment
+            <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">StaffPayment</li>
+        </ol>
+    </section>
+    <div class="box box-primary">
+       <section class="content content-main">
+        <div class="container">
+            <div class="span12">
+                <button type="button" class="btn btn-default">Mail Creation</button>
+                <button type="button" class="btn btn-default">Payment Email</button>
+                <button type="button" class="btn btn-default">Account Confirmation</button>
+                <button type="button" class="btn btn-default">Overseas Remittance</button>
+                <button type="button" class="btn btn-default">Visa Confirmation</button>
+                <button type="button" class="btn btn-default">Data Storage</button>
+                <button type="button" class="btn btn-default">Previous Data</button>
+            </div>
+        </div>
+           <div class="bordered-container">
+               <span class="border-title">
+                   Search Pannel
+               </span>
+               <div class="bordered-container-inner">
+                   <form class="well form-inline" name="frmStaffPayment">
+                       <div class="row">
+                           <div class="col-md-5">
+                       <div class="form-group">
+                           <label class="control-label">Staff </label> 
+                           <select name="companyIn" class="form-control"
+                                   ng-model="vm.StaffID"
+                                   ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                   ng-options="item.ID as item.Name for item in vm.CompanyDeptList"  required>
+                               <option value="" ng-selected="true">Select Staff</option>
+                               <option value="" selected="selected" disabled="disabled">Select Staff</option>
+                           </select>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label">Trading Office </label> 
+                           <select name="companyIn" class="form-control"
+                                   ng-model="vm.Dept.DepartmentID"
+                                   ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                   ng-options="item.ID as item.Name for item in vm.CompanyDeptList"  required>
+                               <option value="" ng-selected="true">Select Trading</option>
+                               <option value="" selected="selected" disabled="disabled">Select Trading</option>
+                           </select>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label">Tax </label>
+                           <select name="companyIn" class="form-control"
+                                   ng-model="vm.Dept.DepartmentID"
+                                   ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                   ng-options="item.ID as item.Name for item in vm.CompanyDeptList" required>
+                               <option value="" ng-selected="true">Select Tax</option>
+                               <option value="" selected="selected" disabled="disabled">Select Tax</option>
+                           </select>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label">Email </label>
+                           <select name="companyIn" class="form-control"
+                                   ng-model="vm.Dept.DepartmentID"
+                                   ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                   ng-options="item.ID as item.Name for item in vm.CompanyDeptList" required>
+                               <option value="" ng-selected="true">Select Email</option>
+                               <option value="" selected="selected" disabled="disabled">Select Email</option>
+                           </select>
+                       </div>
+                      </div>
+                       <div class="col-md-1">
+                           
+                       </div>
+                        <div class="col-md-5">
+                       <div class="form-group">
+                               <select class="form-control input-sm chosen chzn-select" tabindex="1" placeholder="Choose Transfer Category" data-rule-required="true" name="transfer_category" id="transfer_category">
+                                   <option value="" selected disabled>Select Transfer Category</option>
+                                   <option value="31">Remittance</option>
+                                   <option value="34">Non-Remittance</option>
+                                   <option value="35">All</option>
+                               </select>
+
+                       </div>
+                       <div class="form-group">
+                          
+                               <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Choose Bank Name" data-rule-required="true" name="bank_name" id="bank_name">
+                                   <option value="" selected disabled>Select Bank Name</option>
+                                   <option value="31">Registered Bank</option>
+                                   <option value="34">Paypal</option>
+                                   <option value="35">Direct Ownership</option>
+                                   <option value="36">Domestic</option>
+                                   <option value="37">Overseas</option>
+                                   <option value="38">Shortage & None</option>
+                                   <option value="39">All</option>
+                               </select>                            
+
+                          
+                       </div>
+                       <div class="form-group">
+                         
+                               <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Choose Residence" data-rule-required="true" name="residence" id="residence">
+                                   <option value="" selected disabled>Select Residence</option>
+                                   <option value="31">Domestic</option>
+                                   <option value="34">Overseas</option>
+                               </select>
+                          
+                       </div>
+                       <div class="form-group">
+                          
+                               <select class="form-control input-sm chosen chzn-select" tabindex="1" data-placeholder="Choose Payment Detail" data-rule-required="true" name="payment_detail" id="payment_detail">
+                                   <option value="" selected disabled>Select Payment Detail</option>
+                                   <option value="31">Outsourcing</option>
+                                   <option value="34">Translation Pro Cooperation</option>
+                                   <option value="35">Mick Lally</option>
+                                   <option value="36">Human Resource Alliance</option>
+                               </select>
+                          
+                       </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 10px"></div>
+                    <div class="col-md-5">
+                        <label for="form">Estimated Date:</label>
+                        <input type="text" id="estimatedfrom" name="estimatedfrom">
+                        <label for="to">~</label>
+                        <input type="text" id="estimatedto" name="estimatedto">
+                    </div>
+                           <div class="col-md-1">
+
+                           </div>
+                     <div class="col-md-5">
+                         <label for="form">Remittance Date:</label>
+                         <input type="text" id="from" name="from">
+                         <label for="to">~</label>
+                         <input type="text" id="to" name="to">
+                     </div>
+                  </div>
+                  </form>
+                </div>
+           </div>
+        
+            <section class="content">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Display List:
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="well form-inline" name="frmStaffPayment">
+                                <div class="row remove-padding">
+                                    <div class="form-group">
+                                        <label class="control-label">Remittable Amount </label>
+                                        <input type="text" name="adjustment_amount" placeholder="total amount" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Last Adjustment Amount </label>
+                                        <input type="text" name="adjustment_amount" placeholder="total amount" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Bcause Transfer Amount </label>
+                                        <input type="text" name="adjustment_amount" placeholder="total amount" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Staff Burden Fee </label>
+                                        <input type="text" name="adjustment_amount" placeholder="total amount" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Scheduled Transfer Amount </label>
+                                        <input type="text" name="adjustment_amount" placeholder="total amount" readonly>
+                                    </div>
+
+                                </div>
+
+                              </form>
+
+
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-responsive">
+                                            <thead class="bg-blue">
+                                                <tr>
+                                                    <th>
+                                                        <label>Staff Number</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Staff Name</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Trading Cooperation</label>
+                                                    </th>
+                                                    <th>
+                                                        <label> <input type="checkbox" name="vehicle" value="deposit_type" checked>Deposit Type</label>
+                                                    </th>
+                                                    <th>
+                                                        <label> <input type="checkbox" name="vehicle" value="bank_name" checked>Bank Name</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Branch Number</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Branch Name</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Account Holder</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Account Number</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Remittance Date</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Remittable Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Carryover</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Last Adjustment Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Scheduled Remittance Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Staff Burden Fee</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>B-Cause Burden Fee</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Staff Transfer Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Bcause Transfer Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Money Transfer</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Remitted Amount</label>
+                                                    </th>
+                                                    <th>
+
+                                                        <label>Adjustment Amount</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Notes</label>
+                                                    </th>
+                                                    <th>
+                                                        <label>Email</label>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                </div>
+</div>
+                    </div>
+                </div>
+
+            </section>
+           </section>
+         </div>
+    </div>
+
+
+    

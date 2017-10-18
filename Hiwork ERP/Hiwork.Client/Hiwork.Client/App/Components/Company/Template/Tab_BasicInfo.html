@@ -1,0 +1,443 @@
+﻿<div role="tabpanel" class="tab-pane active" id="company-information" ng-init="$ctrl.init();">
+    <form class="box-body" ng-submit="saveCompany(1)" name="companyBasicInfo">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label>{{'COMPANYINFORMATION(MAIN)'|translator}}</label>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                            <div class="form-group">
+                                <input type="hidden" ng-model="vm.ID" class="form-control" />
+                                <select name="companyType" class="form-control"
+                                        ng-model="vm.CompanyTypeID"
+                                        ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyType.$error.required}"
+                                        ng-options="item.Id as item.Name for item in vm.CompanyType" required>
+                                    <option value="" ng-selected="true" disabled="disabled">{{ 'CLIENTTYPE'|translator}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="companyIn"  class="form-control"
+                                        ng-model="vm.CompanyLocationID"
+                                        ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                        ng-options="item.Id as item.Name for item in vm.ClientLocationType" required>
+                                    <option value="" ng-selected="true" disabled="disabled">{{"CLIENT'SLOCATION"|translator}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+                            <div class="form-group">
+                                <select name="companyRegPurpose" class="form-control"
+                                        ng-model="vm.CompanyRegPurposeID"
+                                        ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyRegPurpose.$error.required}"
+                                        ng-options="item.Id as item.Name for item in vm.RegPurposeType" required>
+                                    <option value="" ng-selected="true" disabled="disabled">{{'PURPOSEOFREGISTRATION'|translator}}</option> 
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="Branchoffice" class="form-control"
+                                        ng-model="vm.CompanyTradingOfficeID"
+                                        ng-class="{'invalid-input':isTriedSave && companyBasicInfo.Branchoffice.$error.required}"
+                                        ng-options="item.ID as item.Name for item in vm.BranchOfficeList" required>
+                                    <option value="" ng-selected="true" disabled="disabled">Trading office</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-hide="IsHideClientNo" ng-disabled="true" ng-model="vm.RegistrationID" placeholder="{{'CLIENTNO'|translator}}" tooltip-placement="top" uib-tooltip="Client Number"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label><input type="checkbox" ng-model="vm.IsPartner" value="">Partner</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <select name="Tradingoffice" class="form-control" ng-disabled="!vm.IsPartner"
+                                        ng-model="vm.PartnerServiceTypeID"
+                                        ng-options="item.ID as item.Name for item in vm.PartnerServiceTypeList">
+                                    <option value="" ng-selected="true" disabled="disabled">Partner Service Type</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        
+                    </div>
+                    <!--<div class="form-group">
+                        <input type="text" class="form-control" id="ClientNo" ng-model="vm.ClientNo" placeholder="{{'CLIENTNO'|translator}}" tooltip-placement="top" uib-tooltip="Client no" readonly>
+                    </div>-->
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="ClientId" ng-model="vm.ClientID" placeholder="{{'CLIENTID'|translator}}" tooltip-placement="top" uib-tooltip="Client ID"   required/>
+                        
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.Name_Local" placeholder="{{'COMPANYNAME(LOCAL)'|translator}}" tooltip-placement="top" uib-tooltip="Company Name(Local)" required/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.Name_Global" placeholder="{{ 'COMPANYNAME(GLOBAL)'|translator}}" tooltip-placement="top" uib-tooltip="Company Name(Global)"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.WebSiteURL" placeholder="{{'WEBSITE'|translator}}" tooltip-placement="top" uib-tooltip="Website"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.RepresentativeDirector" placeholder="{{'REPRESENTATIONDIRECTOR'|translator}}" tooltip-placement="top" uib-tooltip="Representative director" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.Capital" placeholder="{{'CAPITAL'|translator}}" tooltip-placement="top" uib-tooltip="Capital of company"  only-Digits/>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">    
+                            <input type="text"
+                                   id="EstablishedDate"
+                                   class="form-control"
+                                   uib-datepicker-popup="dd/MM/yyyy"
+                                   placeholder="{{'ESTABLISHEDDATE'|translator}}"
+                                   min-date="dateFrom"
+                                   max-date="dateTo"
+                                   close-text="Close"
+                                   ng-model="vm.EstablishedDate"
+                                   show-weeks="true"
+                                   is-open="EstablishedDate"
+                                   ng-click="EstablishedDate = true"
+                                   filter-by="placed"
+                                   filter-type="dateFrom"
+                                   ng-blur="gridActions.filter()"
+                                   ng-focus="gridActions.filter()" />
+                            <span class="input-group-btn">
+                                <label for="EstablishedDate" class="btn btn-default remove-padding">
+                                    <i class="fa fa-calendar"></i>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" ng-model="vm.IsSubcontactual" value="">Subcontactual</label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                        <textarea  class="form-control" id="BusinessClassification"  style="min-height:100px;" ng-model="vm.BusinesClassification" placeholder="{{ 'BUSINESSCLASSIFICATION'|translator}}" tooltip-placement="top" uib-tooltip="Business classification"  ng-trim='false' />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="TransactionCategory" ng-model="vm.TransactionCategory" placeholder="{{'TRANSACTIONCATEGORY'|translator}}" tooltip-placement="top" uib-tooltip="Transaction Category"/>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" id="TransactionNotes" ng-model="vm.TransactionNotes" placeholder="{{'TRANSACTIONNOTES'|translator}}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" id="TransactionRecords" ng-model="vm.TransactionRecords" placeholder="{{'TRANSACTIONRECORDS'|translator}}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="extraFilewithInvoice" ng-model="vm.FilesWithInvoice" placeholder="{{'FILESNEEDTOSENDWITHINVOICE'|translator}}" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="IntroducedBy" ng-model="vm.IntroducedBy" placeholder="{{'INTRODUCEDBY'|translator}}" tooltip-placement="top" uib-tooltip="Introduce by"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                <div class="form-group">
+                    <label for="example-text-input"  class="col-sm-7 control-label remove-padding">Details of branch office, department</label>
+                    <div class="col-sm-5 remove-padding">
+                        <!--<select class="form-control pull-left">
+                            <option>Search trading office</option>
+                        </select>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12col-xs-12 thumbnail">
+                <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                    <div class="hidden" ng-model="vm.Dept.ID"></div>
+                    <div class="form-group">
+                        <select name="companyIn" class="form-control"
+                                ng-model="vm.Dept.DepartmentID"
+                                ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                ng-options="item.ID as item.Name for item in vm.CompanyDeptList" tooltip-placement="top" uib-tooltip="Department" required>
+                            <option value="" ng-selected="true">{{'SELECTDEPARTMENT'|translator}}</option>
+                            <option value="" selected="selected" disabled="disabled">Department</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="companyIn" class="form-control"
+                                ng-model="vm.Dept.DepartmentLocationID"
+                                ng-class="{'invalid-input':isTriedSave && companyBasicInfo.companyIn.$error.required}"
+                                ng-options="item.Id as item.Name for item in vm.ClientLocationType" tooltip-placement="top" uib-tooltip="Department location" required>
+                            <option value="" ng-selected="true">{{ 'DEPARTMENTLOCATION'|translator}}</option>
+                            <option value="" selected="selected" disabled="disabled">Department location</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="DeptTradingoffice" class="form-control"
+                                ng-model="vm.Dept.DepartmentTradingOfficeID"
+                                ng-class="{'invalid-input':isTriedSave && companyBasicInfo.DeptTradingoffice.$error.required}"
+                                ng-options="item.Id as item.Name for item in vm.TradingOfficeList" tooltip-placement="top" uib-tooltip="Trding office" required>
+                             <option value="" selected="selected" disabled="disabled">Trading office</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="DeptNameLocal" ng-model="vm.dept.DepartmentName_Local" placeholder="{{'DEPARTMENTNAME(LOCAL)'|translator}}" tooltip-placement="top" uib-tooltip="Department Name(Local)"  />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="DeptNameGlobal" ng-model="vm.dept.DepartmentName_Global" placeholder="{{'DEPARTMENTNAME(GLOBAL)'|translator}}" tooltip-placement="top" uib-tooltip="Department Name(Global)"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="deptPhoneNo" ng-model="vm.dept.DepartmentPhoneNo" placeholder="{{'PHONENUMBER'|translator}}" tooltip-placement="top" uib-tooltip="Phone Number" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="deptFax" ng-model="vm.dept.DepartmentFax" placeholder="{{'FAX'|translator}}" tooltip-placement="top" uib-tooltip="Fax" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="deptPostCode" ng-model="vm.dept.DepartmentPostalCode" placeholder="{{'POSTALCODE'|translator}}" tooltip-placement="top" uib-tooltip="Postal code"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="deptAddress" ng-model="vm.Address" placeholder="{{'ADDRESS'|translator}}" tooltip-placement="top" uib-tooltip="Address"/>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                <label  class="col-sm-7 control-label remove-padding">{{'BILLINGINFORMATION'|translator}}</label>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+
+                <div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <input type="text" name="" ng-model="vm.dept.BillingClientName" placeholder="{{'CLIENTNAME'|translator}}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" >
+                    </div>
+                    <div class="clearfix" ></div>
+                    <div class="clearfix" style="height: 4px;"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <input type="text" ng-model="vm.dept.BillingTo" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="{{'BILLINGTO'|translator}}">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 4px;"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <input type="text" ng-model="vm.dept.BillingEmail" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="{{'EMAILADDRESS'|translator}}" >
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 4px;"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty" rows="2" ng-model="vm.dept.BillingAddress" placeholder="{{ 'BILLINGADDRESS'|translator}}" ></textarea>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 4px;"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <input type="text" name="" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.dept.BillingContactNo" placeholder="{{ 'CONTACTNO'|translator}}" >
+                        <div class="clearfix"></div>
+                        <div class="clearfix" style="height: 4px;"></div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <input type="text" name="" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.dept.BillingFax" placeholder="{{'FAX'|translator}}" >
+                        <div class="clearfix"></div>
+                        <div class="clearfix" style="height: 4px;"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix" style="height: 4px;"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:2%">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.dept.BillingPaymentTerms" placeholder="{{ 'ENDOFNEXTMONTH'|translator}}" tooltip-placement="top" uib-tooltip="Payment terms"  >
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label  class="col-sm-6 col-md-6 col-xs-6 control-label remove-padding">{{'PERSONINCHARGEINFO'|translator}}</label>
+                    <div class="col-sm-6 col-md-6 col-xs-6 remove-padding">
+                        <!--<select class="form-control pull-left">
+                            <option>PIC e-mail address</option>
+                        </select>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 thumbnail">
+                <div class="col-md-6 col-sm-6 col-xs-12 remove-padding">
+                    <div class="form-group">
+                        <select name="PicCompanyType" class="form-control"
+                                ng-model="vm.Dept.InchargeClientTypeID"
+                                ng-class="{'invalid-input':isTriedSave && companyBasicInfo.PicCompanyType.$error.required}"
+                                ng-options="item.Id as item.Name for item in vm.CompanyType" required>
+                            <option value="" selected="selected" disabled="disabled">{{'CLIENTTYPE'|translator}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="PicTradingoffice" class="form-control"
+                                ng-model="vm.Dept.InchargeTradingOfficeID"
+                                ng-class="{'invalid-input':isTriedSave && companyBasicInfo.PicTradingoffice.$error.required}"
+                                ng-options="item.Id as item.Name for item in vm.TradingOfficeList" required>
+                            <option value="" selected="selected" disabled="disabled">Trading office</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InchargeNameLocal" ng-model="vm.Dept.InchargeName_Local" placeholder="{{'NAME(LOCAL)'|translator}}" tooltip-placement="top" uib-tooltip="PIC Name(Local)"  />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InchargeNamePronounciation" ng-model="vm.Dept.InchargeName_pronounciation" placeholder="{{ 'NAME(kana=pronunciation)'|translator}}" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InchargeNameGlobal" ng-model="vm.Dept.InchargeName_Global" placeholder="{{ 'NAME(Global)'|translator}}" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InchargePhoneNo" ng-model="vm.Dept.InchargePhoneNo" placeholder="{{'PHONE'|translator}}" tooltip-placement="top" uib-tooltip="PIC Phone Number" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InchargeCellPhoneNo" ng-model="vm.Dept.InchargeCellPhoneNo" placeholder="{{'CELLPHONENO.PRIORITY'|translator}}" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="InchargeEmail" ng-model="vm.Dept.InchargeEmail" placeholder="{{ 'EMAILADDRESS3'|translator}}" tooltip-placement="top" uib-tooltip="PIC Email" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="InchargePromotionEmail" ng-model="vm.Dept.InchargePromotionEmail" placeholder="{{'PROMOTIONEMAILPERMITTED'|translator}}" />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="InchargeEmailCC" ng-model="vm.Dept.InchargeEmail_CC" placeholder="{{'CC'|translator}}" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="eamil" ng-model="vm.Dept.InchargePassword" placeholder="'PASSWORD'|translator" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="eamil" placeholder="{{  'CORRESPONDENECOMMUNICATIONHISTORY'|translator}}" />
+                </div>
+                <div class="form-group">  
+                    <div class="input-group">
+                        <input type="text"
+                               id="PicSalesPlanDate"
+                               class="form-control"
+                               uib-datepicker-popup="dd/MM/yyyy"
+                               placeholder="{{'SALESPLANDATE'|translator}}"
+                               min-date="dateFrom"
+                               max-date="dateTo"
+                               close-text="Close"
+                               ng-model="vm.Dept.InchargeSalesPlanDate"
+                               show-weeks="true"
+                               is-open="PicSalesPlanDate"
+                               ng-click="PicSalesPlanDate = true"
+                               filter-by="placed"
+                               filter-type="dateFrom"
+                               ng-blur="gridActions.filter()"
+                               ng-focus="gridActions.filter()" />
+                        <span class="input-group-btn">
+                            <label for="PicSalesPlanDate" class="btn btn-default remove-padding">
+                                <i class="fa fa-calendar"></i>
+                            </label>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="PICInternalName" ng-model="vm.Dept.InchargeInternalName" placeholder="{{ 'INTERNALPIC'|translator}}" />
+                </div>
+            </div>
+           
+        </div>
+        <div class="form-group">
+            <ul class="list-inline pull-right">
+                <li><button type="submit" class="btn btn-primary next-step">{{'SAVEANDCONTINUE'| translator}}</button></li>
+            </ul>
+        </div>
+    </form>
+    <section>
+        <div class="col-md-4 col-sm-4 col-xs-4 remove-padding">
+            <div class="box box-success">
+                <div class="box-title">
+                    <h2> Claim List </h2>
+                </div>
+                <div class="box-body" style="width: 100%; overflow: scroll;">
+                    <table class="table table table-bordered table-stripped">
+                        <thead class="bg-light-blue">
+                            <tr>
+                                <td>No.</td>
+                                <td>Order No.</td>
+                                <td>Person in charge</td>
+                                <td>Detail</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>160406B002</td>
+                                <td>木村  雅之</td>
+                                <td>160804_李  請求書印刷</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>160406B002</td>
+                                <td>木村  雅之</td>
+                                <td>160804_李  請求書印刷</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8 remove-padding">
+            <div class="box box-primary">
+                <div class="box-title"><h2> On going order list  </h2></div>
+                <div class="box-body" style="width: 100%; overflow: scroll;">
+                    <table class="table-bordered table table-stripped">
+                        <thead class="bg-light-blue">
+                            <tr>
+                                <td>No.</td>
+                                <td>Order No.</td>
+                                <td>Type</td>
+                                <td>Title</td>
+                                <td>Order status</td>
+                                <td>Volume</td>
+                                <td>Unit price</td>
+                                <td>Discount</td>
+                                <td>Days</td>
+                                <td>Person in charge</td>
+                                <td>Sales activity</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>170524H009</td>
+                                <td>翻訳</td>
+                                <td>
+                                    日本語→英語
+                                    学校パンフレット＋専門翻訳
+                                </td>
+                                <td>△</td>
+                                <td>L</td>
+                                <td>&nbsp;</td>
+                                <td>4100</td>
+                                <td>0%</td>
+                                <td>4100</td>
+                                <td>0%</td> 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>160719H007</td>
+                                <td>翻訳</td>
+                                <td>
+                                    日本語→英語
+                                    テレビ番組紹介カタログ1番組＋専門翻訳
+                                </td>
+                                <td>Х</td>
+                                <td>M</td>
+                                <td>&nbsp;</td>
+                                <td>4100</td>
+                                <td>0%</td>
+                                <td>4100</td>
+                                <td>0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </section>
+</div>
+        

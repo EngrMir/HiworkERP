@@ -1,0 +1,66 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{'STAFFMAJORSUBJECT' | translator}}
+        </h3>
+    </div>
+    <div class="panel-body" ng-init="$ctrl.init();">
+        <div>
+            <button class="btn btn-primary" value="addModal" ng-click="$ctrl.open(null,'Add Staff Major Subject')">{{'ADDNEW' | translator}}</button>
+        </div>
+        <div class="clearfix" style="height: 5px;"></div>
+        <div class="table-responsive">
+            <table st-table="staffmajorsubcoll" st-safe-src="rowCollection" id="smartTable" class="table table-striped table-bordered table-hover">
+                <thead class="bg-light-blue">
+                    <tr>
+                        <th st-sort="Name" st-sort-default="regular">{{'NAME' | translator}}<i st-sort="Name"></i></th>
+                        <th st-sort="Code">{{'CODE' | translator}}<i st-sort="Code"></i></th>
+                        <th>{{'ACTIVE' | translator}}</th>
+                        <th>{{'ACTION' | translator}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Name" placeholder="{{'SEARCHBYNAME' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th>
+                            <div class="search-container">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+                                <input id="search" st-search="Code" placeholder="{{'SEARCHBYCODE' | translator}}" class="input-sm form-control" type="search" />
+                            </div>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr ng-repeat="staffmajorsub in staffmajorsubcoll">
+                        <td>{{ staffmajorsub.Name }}</td>
+                        <td>{{ staffmajorsub.Code}}</td>
+                        <td><input style="width: 16px;height: 16px;" type="checkbox" value="{{staffmajorsub.IsActive}}" ng-disabled="true" ng-checked="staffmajorsub.IsActive" ng-model="staffmajorsub.IsActive" /> </td>
+                        <td>
+                            <div class="glyphicon glyphicon-edit" value="Edit" ng-click="$ctrl.open(staffmajorsub,'Edit Staff Major Subject')"> </div>
+                            <div class="glyphicon glyphicon-remove" confirm-window
+                                 confirm-data="{{staffmajorsub}}"
+                                 confirm-url="{{'staffmajorsub/delete'}}" confirm-value="{{staffmajorsub.Name}}"
+                                 modal-title="Are you sure you want to delete '{{staffmajorsub.Name}}'?">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot style="border:none !important;">
+                    <tr style="border:none !important;">
+                        <td colspan="5" class="text-center" style="border:none !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div st-items-by-page="20" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        </div>
+</div>

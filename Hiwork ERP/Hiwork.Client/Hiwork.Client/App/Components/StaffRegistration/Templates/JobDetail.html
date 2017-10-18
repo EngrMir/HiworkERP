@@ -1,0 +1,396 @@
+﻿<div class="tab-pane active" id="details">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ng-form name="jobRegForm">
+                <form name="jobRegForm" novalidate role="form">
+
+                    <fieldset ng-disabled="vm.isDisabledJobDetail">
+
+                        <div class="col-md-2 col-sm-2 col-xs-2 ">
+                            <div class="panel bg-gray">
+                                <div class="panel-body">
+                                    <div class="form-group" style="color: #000;">
+                                        <span>{{'CURRENTADDRESS' | translator}}</span> <br />
+                                        <input type="checkbox" class="checkbox pull-left">{{'DOMESTIC' | translator}}
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Post code">
+                                    </div>
+                                    <div class="form-group" show-errors>
+                                        <ui-select id="inputCountry" name="inputCountry" ng-model="vm.countryData.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Country">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="country in vm.countryData | filter: $select.search">
+                                                <span ng-bind-html="country.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <!--<span class="help-block"
+                                      ng-if="jobRegForm.inputCountry.$error.required">
+                                    {{'STAFFCOUNTRYISREQUIRED' | translator}}
+                                </span>-->
+                                    </div>
+
+
+                                    <div class="form-group" show-errors>
+
+                                        <ui-select id="inputPrefecture" name="inputPrefecture" ng-model="vm.staffStateData.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="Prefecture">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="staffCurrentState in vm.staffStateData | filter: $select.search">
+                                                <span ng-bind-html="staffCurrentState.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <!--<span class="help-block"
+                                      ng-if="jobRegForm.inputPrefecture.$error.required">
+                                  {{'STAFFPREFECTUREISREQUIRED' | translator}}
+                                </span>-->
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="form-group" show-errors>
+                                            <input id="inputAddress" type="text" name="inputAddress" class="form-control" placeholder="{{'STAFFFADDRESS' | translator}}"
+                                                   ng-model="vm.data.Address" ng-required="true" />
+
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputAddress.$error.required">
+                                     {{'STAFFADDRESSSISREQUIRED' | translator}}
+                                    </span>-->
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="{{'CONTACTNO1' | translator}}">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="{{'CONTACTNO2' | translator}}">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="{{'FAX' | translator}}">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="{{'EMAILADDRESS1' | translator}}">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="{{'EMAILADDRESS2' | translator}}">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="Facebook">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="text" class="form-control" placeholder="Linkedin">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                            <div class="panel bg-gray">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label>
+                                            <span style="color: #000; font-weight: normal;">Skill</span>
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group" show-errors>
+
+                                        <div class="col-md-10 col-sm-10 col-xs-10">
+                                            <div>
+                                                <ui-select id="inputmainLanguages1" name="inputmainLanguages1" ng-model="vm.staffLanguageData.selected" ng-required="true" theme="bootstrap">
+                                                    <ui-select-match placeholder="Main Language">{{$select.selected.Name}}</ui-select-match>
+                                                    <ui-select-choices repeat="staff in vm.staffLanguageData  | filter: $select.search">
+                                                        <span ng-bind-html="staff.Name | highlight: $select.search"></span>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                                <!--<span class="help-block"
+                                              ng-if="jobRegForm.inputmainLanguages1.$error.required">
+                                           {{'STAFFLANGUAGEISREQUIRED' | translator}}
+                                        </span>-->
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-2 col-xs-2 col-sm-2" show-errors>
+                                            <ui-select name="inputSkillLevelsFL1" id="inputSkillLevelsFL1" ng-model="vm.skilLevels1.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="skilLevel in vm.skilLevels1 | filter: $select.search">
+                                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputSkillLevelsML1.$error.required">
+                                          {{'STAFFLANGUAGELEVELREQUIRED' | translator}}
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-sm-10 col-xs-10" show-errors>
+
+                                            <ui-select id="inputForeginLanguage1" name="inputForeginLanguage1" ng-model="vm.staffLanguagefl1.selected" ng-required="true" theme="bootstrap">
+                                                <ui-select-match placeholder="Foregin Language 1">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="staffFL1 in vm.staffLanguagefl1 | filter: $select.search">
+                                                    <span ng-bind-html="staffFL1.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block" ng-if="jobRegForm.inputForeginLanguage1.$error.required">
+                                        Staff foreign Language  is required {{'STAFFLANGUAGELEVELREQUIRED' | translator}}
+                                    </span>-->
+                                        </div>
+                                        <div class="col-md-2 col-xs-2 col-sm-2" show-errors>
+                                            <ui-select name="inputSkillLevelsFL1" id="inputSkillLevelsFL1" ng-model="vm.skilLevels2.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="skilLevel in vm.skilLevels2 | filter: $select.search">
+                                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputForeginLanguage1.$error.required">
+                                        Staff foreign Language 1 is required
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-sm-10 col-xs-10" show-errors>
+
+                                            <ui-select name="inputForeginLanguage2" id="inputForeginLanguage2" ng-model="vm.staffLanguagefl2.selected" ng-required="true" theme="bootstrap">
+                                                <ui-select-match placeholder="Foregin Language 2">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="staffFL2 in vm.staffLanguagefl2 | filter: $select.search">
+                                                    <span ng-bind-html="staffFL2.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputForeginLanguage2.$error.required">
+                                        Staff foreign Language 2 is required
+                                    </span>-->
+                                        </div>
+                                        <div class="col-md-2 col-xs-2 col-sm-2" show-errors>
+                                            <ui-select name="inputSkillLevelsFL2" id="inputSkillLevelsFL2" ng-model="vm.skilLevels3.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="skilLevel in vm.skilLevels3 | filter: $select.search">
+                                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search">
+                                                    </span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputSkillLevelsFL2.$error.required">
+                                        Staff skill levels FL 2 is required
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-sm-10 col-xs-10" show-errors>
+                                            <ui-select name="inputForeginLanguage3" id="inputForeginLanguage3" ng-model="vm.staffLanguagefl3.selected" ng-required="true" theme="bootstrap">
+                                                <ui-select-match placeholder="Foregin Language 3">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="staffFL3 in vm.staffLanguagefl3 | filter: $select.search">
+                                                    <span ng-bind-html="staffFL3.Name | highlight: $select.search">
+
+                                                    </span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputForeginLanguage3.$error.required">
+                                        Staff foreign language 3 is required
+                                    </span>-->
+                                        </div>
+                                        <div class="col-md-2 col-xs-2 col-sm-2" show-errors>
+                                            <ui-select name="inputSkillLevelsFL4" append-to-body="true" id="inputSkillLevelsFL4" ng-model="vm.skilLevels4.selected" ng-required="true" theme="bootstrap" title="Choose a Skill Level">
+                                                <ui-select-match placeholder="Level">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="skilLevel in vm.skilLevels4 | filter: $select.search">
+                                                    <span ng-bind-html="skilLevel.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputSkillLevelsFL2.$error.required">
+                                        Staff skill level FL 3 is required
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8 col-xs-8">
+                                            <input type="text" class="form-control" placeholder="{{'CERTIFICATE1' | translator}}">
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4">
+                                            <input type="text" class="form-control datepicker" placeholder="06/01/2017">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8 col-xs-8">
+                                            <input type="text" class="form-control" placeholder="{{'CERTIFICATE2' | translator}}">
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4">
+                                            <input type="text" class="form-control datepicker" placeholder="06/01/2017">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8 col-xs-8">
+                                            <input type="text" class="form-control" placeholder="{{'CERTIFICATE3' | translator}}">
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4">
+                                            <input type="text" class="form-control datepicker" placeholder="06/01/2017">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Skype">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="{{'PORTFOLIO' | translator}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 ">
+                            <div class="panel bg-gray remove-margin">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label>
+                                            <span style="color: #000; font-weight: normal;">{{'BANKINFORMATION' | translator}}</span>
+                                        </label>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-5 col-xs-5" show-errors>
+                                            <ui-select name="inputCountry" id="inputCountry" ng-model="vm.countryDataBank.selected" ng-required="true" theme="bootstrap" title="Choose a Country">
+                                                <ui-select-match placeholder="--Country--">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="country in vm.countryDataBank | filter: $select.search">
+                                                    <span ng-bind-html="country.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputCountry.$error.required">
+                                        Staff country is required
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                            <ui-select name="inputBank" id="inputBank" ng-model="vm.staffBankBranchData.selected" ng-required="true" theme="bootstrap" title="Choose a Bank Name">
+                                                <ui-select-match placeholder="--Bank Name--">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="bank in vm.staffBankBranchData | filter: { CountryID : vm.countryData.selected.Id }">
+                                                    <span ng-bind-html="bank.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputBank.$error.required">
+                                        Staff Bank is required
+                                    </span>-->
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6" show-errors>
+                                            <ui-select name="inputAccountType" id="inputAccountType" ng-model="vm.bankAccountTypeData.selected" ng-required="true" theme="bootstrap" title="Choose a Account Type">
+                                                <ui-select-match placeholder="--Account Type--">{{$select.selected.Name}}</ui-select-match>
+                                                <ui-select-choices repeat="accountType in vm.bankAccountTypeData | filter: $select.search">
+                                                    <span ng-bind-html="accountType.Name | highlight: $select.search"></span>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <!--<span class="help-block"
+                                          ng-if="jobRegForm.inputAccountType.$error.required">
+                                        Staff Account Type is required
+                                    </span>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" placeholder="{{'ACCOUNTNUMBER' | translator}}" ng-model="vm.dataBankAccountNumber">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-sm-10 col-xs-10">
+                                            <input type="text" placeholder="Account Holder's Name"   ng-model="vm.data.BankAccountName">
+                                        </div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                            <input type="checkbox"> Yes
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <h2 class="text-center remove-margin">c</h2>
+                            <div class="clearfix"></div>
+                            <div class="panel bg-gray">
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 ">
+                            <div class="panel bg-gray remove-margin">
+                                <div class="panel-body">
+                                    <div class="form-group" show-errors>
+                                        <ui-select name="inputVisaType" id="inputVisaType" ng-model="vm.staffVisaTypeData.selected" ng-required="true" theme="bootstrap" title="Choose a Visa Type">
+                                            <ui-select-match placeholder="-- Visa Type -- ">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="visaType in vm.staffVisaTypeData | filter: $select.search">
+                                                <span ng-bind-html="visaType.Name | highlight: $select.search"></span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <!--<span class="help-block"
+                                      ng-if="jobRegForm.inputVisaType.$error.required">
+                                    Staff Visa Type is required
+                                </span>-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="color: #000; font-weight: normal;">{{'EXPIRYDATE' | translator}}</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="text" class="form-control datepicker" value="06/08/2017">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                        <h2 style="color: #000; font-weight: normal;">{{'SELFINTRODUCTION' | translator}}</h2>
+                                        <p class="text-left" style="color: #000;">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        </p>
+                                    </div>
+                                    <div class="form-group"> 
+                                        <input id="txt" type="text" value="Self Introduction Video"
+                                               onclick="javascript:document.getElementById('file').click();">
+                                        <input id="file" type="file"  style='visibility: hidden;' name="img" onchange="ChangeText(this, 'txt');" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+
+
+                </form>
+            </ng-form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function ChangeText(oFileInput, sTargetID) {
+
+        document.getElementById(sTargetID).value = oFileInput.value;
+
+    }
+
+</script>

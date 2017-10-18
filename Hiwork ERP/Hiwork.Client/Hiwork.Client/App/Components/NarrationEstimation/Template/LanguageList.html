@@ -1,0 +1,7 @@
+﻿<ui-select ng-model="vm.narrationLanguage.selected" theme="bootstrap">
+    <ui-select-match placeholder="Select Language">{{$select.selected.Name}}</ui-select-match>
+    <ui-select-choices repeat="language in vm.narrationLanguage | filter: $select.search">
+        <span ng-bind-html="language.Name | highlight: $select.search">
+        </span>
+    </ui-select-choices>
+</ui-select>

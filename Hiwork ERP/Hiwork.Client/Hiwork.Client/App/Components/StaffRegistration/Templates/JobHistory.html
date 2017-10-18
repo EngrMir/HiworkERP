@@ -1,0 +1,325 @@
+﻿<div class="tab-pane" id="job-history">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-7 col-sm-7 col-xs-7">
+                <form name="staffstaffJobHistoryForm" novalidate role="form">
+
+                    <div class="box bg-gray remove-margin">
+                        <div class="box-body">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <label class="staff-reg-label">{{'JOBHISTORY' | translator}}</label>
+                                <div class="form-group" show-errors>
+                                    <ui-select name="EmploymentType" ng-model="vm.employmentTypes.selected" ng-required="true" theme="bootstrap" title="Choose an Employment Type">
+                                        <ui-select-match placeholder="Employment Type">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="EmploymentType in vm.employmentTypes | filter: $select.search">
+                                            <span ng-bind-html="EmploymentType.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                    <span class="help-block"
+                                          ng-if="staffstaffJobHistoryForm.EmploymentType.$error.required">
+                                          {{'REQUIRED' | translator}}
+                                    </span>
+                                </div>
+                                <!--<div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Company Name">
+                                </div>-->
+                                <div class="form-group" show-errors>
+                                    <input id="inputCompanyName" type="text" name="inputCompanyName" class="form-control" placeholder="{{'COMPANYNAME' | translator}}"
+                                           ng-model="vm.CompanyName" ng-required="true" ng-minlength="4" ng-maxlength="20" />
+
+                                    <span class="help-block"
+                                          ng-if="staffstaffJobHistoryForm.inputCompanyName.$error.required">
+                                        {{'REQUIRED' | translator}}
+                                    </span>
+                                </div>
+
+                                <div class="form-group" show-errors>
+                                    <ui-select name="BusinessType" ng-model="vm.businessCategories.selected" ng-required="true" theme="bootstrap">
+                                        <ui-select-match placeholder="Business Type">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="businessCategory in vm.businessCategories | filter: $select.search">
+                                            <span ng-bind-html="businessCategory.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                    <span class="help-block"
+                                          ng-if="staffstaffJobHistoryForm.BusinessType.$error.required">
+                                       {{'REQUIRED' | translator}}
+                                    </span>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <input id="inputLocation" type="text" name="inputLocation" class="form-control" placeholder="{{'LOCATION' | translator}}"
+                                           ng-model="vm.Location" ng-required="true" ng-minlength="4" ng-maxlength="10" />
+                                    <span class="help-block"
+                                          ng-if="staffstaffJobHistoryForm.inputLocation.$error.required">
+                                       {{'REQUIRED' | translator}}
+                                    </span>
+
+                                </div>
+                                <div class="form-group">
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <ui-select name="JobCategory" ng-model="vm.jobCategories.selected" ng-required="true" theme="bootstrap" title="Choose a Job Type / Role 2">
+                                        <ui-select-match placeholder="Job Type / Role 2">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="jobCategory in vm.jobCategories | filter: $select.search">
+                                            <span ng-bind-html="jobCategory.Name | highlight: $select.search"></span>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                    <span class="help-block"
+                                          ng-if="staffstaffJobHistoryForm.jobCategories.$error.required">
+                                       {{'REQUIRED' | translator}}
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                        <select class="form-control">
+                                            <option> Job Type / Role Sub Category 2 </option>
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padding">
+                                        <a href="#" class="btn btn-default">{{'SAVE' | translator}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!--<div class="form-group">
+                                    <label class="staff-reg-label col-md-4 col-sm-4 col-xs-4"> Join Date </label>
+                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                        <input type="text" class="form-control datepicker" value="06/14/2017">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>-->
+                                <div class="form-group" show-errors>
+                                    <label class="staff-reg-label col-md-4 col-sm-4 col-xs-4">{{'JOINDATEDDMMYYYY' | translator}}</label>
+                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                        
+                                        <input type="text"
+                                               name="newJoinDate"
+                                               class="form-control"
+                                               uib-datepicker-popup="dd/MM/yyyy"
+                                               ng-required="true"
+                                               placeholder="{{'JOINDATEDDMMYYYY' | translator}}"
+                                               min-date="dateFrom"
+                                               max-date="dateTo"
+                                               close-text="Close"
+                                               ng-model="vm.JoinDate"
+                                               show-weeks="true"
+                                               is-open="newJoinOpened"
+                                               ng-click="newJoinOpened = true"
+                                               filter-by="placed"
+                                               filter-type="dateFrom"
+                                               ng-blur="gridActions.filter()"
+                                               ng-focus="gridActions.filter()" required />
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.newJoinDate.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <label class="staff-reg-label col-md-4 col-sm-4 col-xs-4">{{'RESIGNDATEDDMMYYYY' | translator}}</label> 
+                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                        <input type="text"
+                                               name="resignDate"
+                                               class="form-control"
+                                               ng-required="true"
+                                               uib-datepicker-popup="dd/MM/yyyy"
+                                               placeholder="{{'RESIGNDATEDDMMYYYY' | translator}}"
+                                               min-date="dateFrom"
+                                               max-date="dateTo"
+                                               close-text="Close"
+                                               ng-model="vm.ResignDate"
+                                               show-weeks="true"
+                                               is-open="resignDateOpened"
+                                               ng-click="resignDateOpened = true"
+                                               filter-by="placed"
+                                               filter-type="dateFrom"
+                                               ng-blur="gridActions.filter()"
+                                               ng-focus="gridActions.filter()" required />
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.resignDate.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Company name in private">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>-->
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputCompanyNamePrivate" type="text" name="inputCompanyNamePrivate" class="form-control" placeholder="{{'COMPANYNAMEPRIVATE' | translator}}"
+                                               ng-model="vm.CompanyNamePrivate" ng-required="true" ng-minlength="4" ng-maxlength="20" />
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.inputCompanyNamePrivate.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <ui-select name="BusinessSubCategory" ng-model="vm.businessSubCategories.selected" ng-required="true" theme="bootstrap">
+                                            <ui-select-match placeholder="{{'BUSINESSTYPESUBCATEGORY' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="businessSubCategory in vm.businessSubCategories | filter: {BusinessCategoryId: vm.businessCategories.selected.ID}">
+                                                <span ng-bind-html="businessSubCategory.Description | highlight: $select.search">
+
+                                                </span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.BusinessSubCategory.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                                <!--<div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Position">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>-->
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input id="inputPosition" type="text" name="inputPosition" class="form-control" placeholder="{{'POSITION' | translator}}"
+                                               ng-model="vm.Position" ng-required="true" ng-minlength="4" ng-maxlength="20" />
+
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.inputPosition.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <select class="form-control">
+                                            <option> Job Type / Role Sub Category</option>
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix"></div>
+                                <div class="form-group" show-errors>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <ui-select name="JobSubCategory2" ng-model="vm.jobSubCategories.selected" ng-required="true" theme="bootstrap" title="Choose a Job Type / Role Sub Category 2">
+                                            <ui-select-match placeholder="{{'JOBTYPEROLESUBCATEGORY2' | translator}}">{{$select.selected.Name}}</ui-select-match>
+                                            <ui-select-choices repeat="jobSubCategory in vm.jobSubCategories | filter: { JobCategoryId : vm.jobCategories.selected.ID}">
+                                                <span ng-bind-html="jobSubCategory.Description | highlight: $select.search">
+
+                                                </span>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <span class="help-block"
+                                              ng-if="staffstaffJobHistoryForm.JobSubCategory2.$error.required">
+                                            {{'REQUIRED' | translator}}
+                                        </span>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5">
+                <div class="box bg-gray">
+                    <div class="box-body remove-margin">
+
+                        <div class="form-group">
+                            <label class="staff-reg-label col-md-2 col-sm-2 col-xs-2">{{'JOBRESPONSIBILITY' | translator}}</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="staff-reg-label  col-md-2 col-sm-2 col-xs-2">{{'ACHIVMENTCONTRIBUTEDPROJECT' | translator}}</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="staff-reg-label  col-md-2 col-sm-2 col-xs-2">{{'INTERVIEWNOTE' | translator}}</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h2 class="staff-reg-label remove-margin">{{'LISTOFJOBSTORY' | translator}}</h2>
+            <div class="box bg-gray">
+                <div class="box-body">
+
+                    <table class="table table-bordered " id="job-history-table">
+                        <thead>
+                            <tr>
+                                <td>Employement Type</td>
+                                <td> Compnay Name </td>
+                                <td> Compnay Name in Private </td>
+                                <td> Joined Date </td>
+                                <td> Resigned Date </td>
+                                <td> Bussiness Type </td>
+                                <td> Bussiness Type Sub Category </td>
+                                <td> Location  </td>
+                                <td> Position  </td>
+                                <td> Job Role  </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> Full Time </td>
+                                <td> ABC INC </td>
+                                <td> Chemical Industry </td>
+                                <td> 2007/04 </td>
+                                <td>  2011/03 </td>
+                                <td> Chemical </td>
+                                <td> Life Science </td>
+                                <td> Head Office  </td>
+                                <td> Manager  </td>
+                                <td> Sales  </td>
+                            </tr>
+                            <tr>
+                                <td> Part Time </td>
+                                <td> XXX CO. LTD </td>
+                                <td> R&D Company </td>
+                                <td> 2001/04 </td>
+                                <td>  2006/03 </td>
+                                <td> Research Institute </td>
+                                <td> Investment </td>
+                                <td> XX Branch  </td>
+                                <td> Associate  </td>
+                                <td> Accounts  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+
+.backgroundCell {
+    background-color: transparent !important;
+    border: none !important;
+    border-right:1px solid !important;    
+    border-right-color: black !important;
+    overflow: visible !important;
+    text-align: right !important;     
+}

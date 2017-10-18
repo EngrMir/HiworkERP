@@ -1,0 +1,55 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        User List
+    </div>
+
+    <div class="panel-body">
+        <!--<div>
+            <alerts></alerts>
+        </div>-->
+        <fieldset>
+            <div class="form-group">                
+                <div class="col-lg-3 input">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </div>
+                        <input class="form-control" id="inputSearchTags" type="text" ng-change="vm.filter()"
+                               placeholder="Please search user"
+                               ng-model="vm.filterValue" style="height:30px" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 input">
+                <button type="submit" class="btn btn-sm btn-primary" ng-click="vm.AddNewUser()" value="submit">
+                    <span class="glyphicon glyphicon-plus"> Add</span>
+                </button>
+            </div>
+
+        </fieldset>
+        <br />
+        <fieldset>
+            <div class="table-responsive">                
+                <div id="grid1" ui-grid="vm.gridOptions" class="grid" ui-grid-selection ui-grid-exporter ui-grid-auto-resize ng-style="vm.getTableHeight()"></div>
+            </div>
+        </fieldset>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,206 @@
+﻿<div class="content-wrapper">
+    <form class="well form-inline" name="advertiseForm">
+        <section class="content-header">
+            <h1 class="ng-binding">
+                Advertisement Settings
+                <small class="ng-binding">Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Advertisement Settings</li>
+            </ol>
+        </section>
+        <div class="panel-body box box-primary">
+          <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6 ">
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Title</label>
+                          </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <input type="text" style="width: 50%" class="form-control" ng-model="vm.model.Title" name="Title" placeholder="Title" ng-class="{'invalid-input':isTriedSave && advertiseForm.Title.$error.required }" required />
+                      </div>
+
+                      </div>
+                  <div class="clearfix" style="height: 10px"></div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Valid Date</label>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <div class="input-group" style="width: 322px">
+                              <input type="text"
+                                     id="RegisteredDate"
+                                     class="form-control"
+                                     uib-datepicker-popup="dd/MM/yyyy"
+                                     placeholder="Valid DateTime"
+                                     min-date="dateFrom"
+                                     max-date="dateTo"
+                                     close-text="Close"
+                                     ng-model="vm.model.ValidDateTime"
+                                     show-weeks="true"
+                                     is-open="EstablishedDate"
+                                     ng-click="EstablishedDate = true"
+                                     filter-by="placed"
+                                     filter-type="dateFrom"
+                                     ng-blur="gridActions.filter()"
+                                     ng-focus="gridActions.filter()" />
+                              <span class="input-group-btn">
+                                  <label for="EstablishedDate" class="btn btn-default remove-padding">
+                                      <i class="fa fa-calendar"></i>
+                                  </label>
+                              </span>
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="clearfix" style="height: 10px"></div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Description</label>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <input type="text" style="width: 50%" class="form-control" ng-model="vm.model.Description" name="description" placeholder="Description" ng-class="{'invalid-input':isTriedSave && advertiseForm.description.$error.required }" required />
+                          <!--<textarea style="resize: none; width:400px; height:200px" class="form-control" ng-model="vm.model.Description" name="description" placeholder="Description"></textarea>-->
+                      </div>
+
+                  </div>
+                  
+                  </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 ">
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Background Image</label>
+                         
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <!--<img ng-src="data:image/jpeg;base64,{{data.UserPhoto}}" id="photo-id" />-->
+                          <input type="file" name="file" load-file ng-model="vm.ImageFile" ngf="vm.ImageFile" id="photo-upload" />
+                      </div>
+                  </div>
+                  <div class="clearfix" style="height: 10px"></div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Uploaded File Name</label>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <input type="text" style="width: 30%" class="form-control" ng-model="vm.model.BackgroundImageFile" name="UploadedFileName" ngf="vm.ImageFile" placeholder="Uploaded File Name" readonly>
+                      </div>
+
+                  </div>
+                  <div class="clearfix" style="height: 10px"></div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          <label>Background Color</label>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                    
+                          <input type="text"
+                                 ng-model="vm.model.BackgroundColor" 
+                                 ng-init="vm.model.BackgroundColor = '#f05a28'">
+
+                      <ui-colorpicker ng-model="vm.model.BackgroundColor"></ui-colorpicker> 
+                      </div>
+                  </div>
+                  <div class="clearfix" style="height: 10px"></div>
+
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-3 ">
+                          
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 ">
+                          <button type="submit" class="btn btn-primary next-step" ng-click="vm.saveData()">Save</button>
+                      </div>
+                  </div>
+                  <!--Color: <ui-colorpicker ng-model="targetColor"></ui-colorpicker>-->
+                  <div class="clearfix"></div>
+     <div class="clearfix" style="height :200px"></div>
+              </div>
+             
+              </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table id="smartTable" class="table table-striped table-bordered table-hover" st-safe-src="rowCollection"  st-table="vm.Advertizementlist">
+                        <thead>
+                            <tr class="bg-light-blue text-center">
+                                <!--<th class="text-center">Title</th>
+                                <th class="text-center">ValidDateTime</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">BackgroundColor</th>
+                                <th class="text-center">BackgroundImage</th>-->
+                                <th st-sort="Title" st-sort-default="regular">Title<i st-sort="Title"></i></th>
+                                <th st-sort="ValidDateTime">ValidDateTime<i st-sort="ValidDateTime"></i></th>
+                                <th st-sort="Description">Description<i st-sort="Description"></i></th>
+                                <th st-sort="BackgroundColor">BackgroundColor<i st-sort="BackgroundColor"></i></th>
+                                <!--<th st-sort="BackgroundImage">Image<i st-sort="BackgroundImage"></i></th>-->
+                                <th>Image</th>
+                                <th>Action</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div class="search-container">
+                                        <span class="icon"><i class="fa fa-search"></i></span>
+                                        <input id="search" st-search="Title" placeholder="Search by Title" class="input-sm form-control" type="search" style="width:100%;" />
+                                       
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="search-container">
+                                        <span class="icon"><i class="fa fa-search"></i></span>
+                                        <input id="search" st-search="ValidDateTime" placeholder="Search by ValidDateTime" class="input-sm form-control" type="search" style="width:100%;"/>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="search-container">
+                                        <span class="icon"><i class="fa fa-search"></i></span>
+                                        <input id="search" st-search="Description" placeholder="Search by Description" class="input-sm form-control" type="search" style="width:100%;"/>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="search-container">
+                                        <span class="icon"><i class="fa fa-search"></i></span>
+                                        <input id="search" st-search="BackgroundColor" placeholder="Search by BackgroundColor" class="input-sm form-control" type="search" style="width:100%;"/>
+                                    </div>
+                                </th>
+                                <th style="border-right:1px solid #000">                                   
+                                </th>
+                                <th style="border-right:1px solid #000">
+                                </th>
+                                
+                            </tr>
+                            <tr ng-repeat="list in vm.Advertizementlist">
+                                <td style="width:25%; white-space:normal;">{{list.Title }}</td>
+                                <td style="width:25%;">{{list.ValidDateTime|date}}</td>
+                                <td style="width:25%; white-space:normal;">{{list.Description}}</td>
+                                <td style="background-color: {{list.BackgroundColor}}; width: 20%;">&nbsp;</td>
+                                <td style="width:5%"><img style="width: 100%; height:auto" ng-src="{{list.BackgroundImageFile}}" /> </td>
+                                <td style="width:auto">
+                                    <div class="glyphicon glyphicon-edit" value="Edit" ng-click="vm.edit(list)"> </div>
+                                    <div class="glyphicon glyphicon-remove" confirm-window
+                                         confirm-data="{{list }}"
+                                         confirm-url="{{'AdvertizementSettings/delete'}}"
+                                         confirm-value="{{list.Title}}"
+                                         modal-title="Are you sure you want to delete '{{list.Title}}'?">
+                                    </div>
+                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot style="border:none !important;">
+                            <tr style="border:none !important;">
+                                <td colspan="5" class="text-center" style="border:none !important;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div st-items-by-page="5" st-pagination="" st-template="../views/pagination/paginationTemplate.html"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            </div>
+</form>
+</div>

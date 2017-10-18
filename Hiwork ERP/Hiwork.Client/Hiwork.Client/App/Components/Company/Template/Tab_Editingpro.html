@@ -1,0 +1,99 @@
+﻿<div role="tabpanel" class="tab-pane" id="accounts-use">
+    <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+        <div class="box box-success">
+            <div class="box-title">
+                <h2>{{'ACCOUNTINGINFO' | translator}}</h2>
+                <table class="table table-bordered table-striped">
+                    <thead class="bg-light-blue">
+                        <tr>
+                            <td>{{'SALES' | translator}}</td>
+                            <td>{{'BILLINGDATE' | translator}}</td>
+                            <td>{{'SCHEDULEDDEPOSIT' | translator}}</td>
+                            <td>{{'BILLINGACCOUNT' | translator}}</td>
+                        </tr>
+                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>2014-06-30</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>2014-06-30</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>2014-06-30</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td> {{'TOTALBILLINGAMOUNT' | translator}}</td>
+                            <td></td>
+                            <td></td>
+                            <td>3000</td>
+                        </tr>
+                    </tbody>
+                </table>   				    							
+            </div>
+         </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 remove-padding">
+        <div class="box box-primary">
+            <div class="box-title">
+                <h2>Deposit Input</h2>
+                <table class="table table-bordered table-striped">
+                    <thead class="bg-light-blue">
+                        <tr>
+                            <td>{{'DEPOSITDATE' | translator}}</td>
+                            <td>{{'AMOUNTOFMONEY' | translator}}</td>
+                            <td>{{'ADJUSTMENT' | translator}}</td>
+                            <td>{{'UNCOLLECTED' | translator}}</td>
+                            <td>{{'COMMENT' | translator}}</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>0</td>
+                            <td>1000</td>
+                            <td>Fee</td>
+                        </tr>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>-150</td>
+                            <td>1000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>140610O006</td>
+                            <td>2014-05-01</td>
+                            <td>150</td>
+                            <td>1000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Total Deposit</td>
+                            <td>3000</td>
+                            <td>3000</td>
+                            <td>3000</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <ul class="list-inline pull-right">
+            <li><button type="button" class="btn btn-default prev-step" ui-sref="CompanyRegistration.transpro">{{'PREVIOUS' | translator}}</button></li>
+            <li><button type="button" class="btn btn-primary next-step">{{'SAVEANDCONTINUE' | translator}}</button></li>
+        </ul>
+    </div>  
+</div>

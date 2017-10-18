@@ -1,0 +1,81 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.Close()">×</button>
+        <h4 class="modal-title" align="center">{{$ctrl.title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" name="bankAccForm">
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'BANK' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="bank" id="changeBank" class="form-control"
+                            ng-model="$ctrl.modalData.BankID"
+                            ng-class="{'invalid-input':isTriedSave && bankAccForm.bank.$error.required}"
+                            ng-options="item.Id as item.Name for item in $ctrl.bankList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'BRANCH' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="branch" id="changeBankBranch" class="form-control"
+                            ng-model="$ctrl.modalData.BankBranchID"
+                            ng-class="{'invalid-input':isTriedSave && bankAccForm.branch.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.bankBranchList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'ACC TYPE' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <select name="acctype" id="changeBankAccountType" class="form-control"
+                            ng-model="$ctrl.modalData.AccountTypeID"
+                            ng-class="{'invalid-input':isTriedSave && bankAccForm.acctype.$error.required}"
+                            ng-options="item.ID as item.Name for item in $ctrl.bankAccountTypeList" required>
+                        <option value="" ng-selected="true">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'ACCOUNT NAME' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="accname" class="form-control"
+                           ng-class="{'invalid-input':isTriedSave && bankAccForm.accname.$error.required}"
+                           ng-model="$ctrl.modalData.AccountName" required />
+                </div>
+            </div>
+            <div class="clearfix" style="height: 2px;"></div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <span>{{'ACCOUNT NO' | translator}}</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="accno" class="form-control"
+                           ng-class="{'invalid-input':isTriedSave && bankAccForm.accno.$error.required}"
+                           ng-model="$ctrl.modalData.AccountNo" required />
+                </div>
+            </div>
+            <div class="form-group">
+                    <div class="col-md-2"><span>{{'ACTIVE' | translator}}</span></div>
+                    <div class="col-md-6"><input type="checkbox" style="width:20px;height:20px;" ng-model="$ctrl.modalData.IsActive" required /></div>                    
+             </div>
+             <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-danger" ng-click="$ctrl.Close()">Close</button>
+                <input type="button" id="btnSave" class="btn btn-primary" ng-click="$ctrl.Save()" value="Save" />
+             </div>
+        </form>
+    </div>
+</div>

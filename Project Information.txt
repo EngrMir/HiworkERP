@@ -1,0 +1,16 @@
+Thechnology which is used to developed Hiwork
+
+1. C#
+2. Asp.net MVC
+3. Web Api
+4. Microsoft SQL Server 2012
+5. Entity Framework.
+6. HTML 5
+7. Bootstrap CSS.
+8. Angular JS/Angular Component
+9. Unit of Work.
+10. Identity 2
+11. SVN Version Controller.
+
+N.B: In my gihub project file, one can easily check my Source Code But for running this application need Database 
+File which is not uploaded in github
